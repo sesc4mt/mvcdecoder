@@ -1,0 +1,5 @@
+Aim of this sem:
+	realtime decoding of 2-way mvc video stream
+	*on a intel core quad
+	*with nvidia gpu
+	*on a atom platform

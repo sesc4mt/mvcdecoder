@@ -1,0 +1,165 @@
+BODY {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: Arial, sans-serif; BACKGROUND: #fafafa; COLOR: #333333; FONT-SIZE: small; PADDING-TOP: 0px
+}
+UL LI {
+	PADDING-BOTTOM: 5px; FONT-SIZE: 90%
+}
+LI UL {
+	MARGIN-TOP: 5px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 10px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #2762ac; FONT-SIZE: 120%; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #888; FONT-SIZE: 100%; PADDING-TOP: 0px
+}
+P + H4 {
+	MARGIN-TOP: 10px
+}
+LEGEND {
+	COLOR: #888; FONT-SIZE: 100%; FONT-WEIGHT: bold
+}
+P {
+	TEXT-ALIGN: justify; MARGIN: 0px; FONT-SIZE: 90%
+}
+P + P {
+	MARGIN-TOP: 10px
+}
+TABLE {
+	BORDER-BOTTOM: #2762ac 1px solid; BORDER-LEFT: #2762ac 1px solid; BORDER-COLLAPSE: collapse; BORDER-TOP: #2762ac 1px solid; BORDER-RIGHT: #2762ac 1px solid
+}
+.m3d-text TABLE {
+	WIDTH: 460px
+}
+TH {
+	BORDER-BOTTOM: #2762ac 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #2762ac 1px solid; COLOR: #888; BORDER-TOP: #2762ac 1px solid; BORDER-RIGHT: #2762ac 1px solid
+}
+TD {
+	BORDER-BOTTOM: #2762ac 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #2762ac 1px solid; BORDER-TOP: #2762ac 1px solid; BORDER-RIGHT: #2762ac 1px solid
+}
+.narrator {
+	FONT-STYLE: italic
+}
+.citation {
+	FONT-SIZE: 83%
+}
+.details {
+	FONT-STYLE: italic; FONT-SIZE: 83%
+}
+.summary {
+	FONT-STYLE: italic; FONT-SIZE: 83%
+}
+.figure {
+	TEXT-ALIGN: center; FONT-STYLE: italic
+}
+P.date {
+	MARGIN: 0px
+}
+LI.annex {
+	LIST-STYLE-TYPE: none
+}
+A {
+	COLOR: #2762ac; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #639021
+}
+.m3d-container {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 768px; PADDING-RIGHT: 0px; BACKGROUND: white; PADDING-TOP: 0px
+}
+.m3d-header {
+	PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 768px; PADDING-RIGHT: 0px; BACKGROUND: #fafafa; HEIGHT: 92px; PADDING-TOP: 0px
+}
+.m3d-logo {
+	MARGIN-TOP: 40px; WIDTH: 220px; FLOAT: left; HEIGHT: 48px
+}
+.m3d-title {
+	TEXT-ALIGN: right; MARGIN-TOP: 40px; WIDTH: 548px; FLOAT: left; HEIGHT: 48px
+}
+H1 {
+	MARGIN: 0px; FONT-SIZE: 20px; FONT-WEIGHT: normal
+}
+.m3d-nav-container {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 768px; PADDING-RIGHT: 0px; BACKGROUND: url(http://sp.cs.tut.fi/mobile3dtv/img/navbar.gif) #2762ac repeat-x; HEIGHT: 35px; CLEAR: left; PADDING-TOP: 0px
+}
+.m3d-nav {
+	PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FLOAT: left; PADDING-TOP: 10px
+}
+.m3d-nav LI {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; COLOR: #2762ac; FONT-SIZE: 90%; PADDING-TOP: 0px
+}
+.m3d-nav A {
+	BORDER-BOTTOM: #2762ac 1px solid; BORDER-LEFT: #4792cc 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; COLOR: #eee; BORDER-TOP: #4792cc 1px solid; BORDER-RIGHT: #2762ac 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.m3d-nav A:hover {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #fff 1px solid; BORDER-TOP: #fff 1px solid; BORDER-RIGHT: #000 1px solid
+}
+.m3d-nav A.active {
+	BORDER-BOTTOM: #67a2ec 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND: #2762ac; COLOR: #fff; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #67a2ec 1px solid; TEXT-DECORATION: none
+}
+.m3d-subnav-container {
+	BORDER-BOTTOM: #360 1px solid; PADDING-BOTTOM: 2px; MARGIN-TOP: 4px; PADDING-LEFT: 0px; WIDTH: 768px; PADDING-RIGHT: 0px; BACKGROUND: #90c065; PADDING-TOP: 2px
+}
+.m3d-subnav {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.m3d-subnav LI {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; COLOR: #360; FONT-SIZE: 90%; PADDING-TOP: 0px
+}
+.m3d-subnav A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; COLOR: #360; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.m3d-subnav A.active {
+	COLOR: #fff; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.m3d-subnav A:hover {
+	TEXT-DECORATION: underline
+}
+.m3d-subsubnav-container {
+	PADDING-BOTTOM: 2px; MARGIN-TOP: 4px; PADDING-LEFT: 0px; WIDTH: 768px; PADDING-RIGHT: 0px; BACKGROUND: #eee; PADDING-TOP: 2px
+}
+.m3d-subsubnav {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 27px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.m3d-subsubnav A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #639021; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.m3d-subsubnav A.active {
+	COLOR: #360; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.m3d-subsubnav A:hover {
+	TEXT-DECORATION: underline
+}
+.m3d-main {
+	PADDING-BOTTOM: 20px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 720px; PADDING-RIGHT: 0px; PADDING-TOP: 20px
+}
+.m3d-text {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; WIDTH: 460px; PADDING-RIGHT: 5px; DISPLAY: block; FLOAT: left; PADDING-TOP: 5px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.m3d-text2 {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; WIDTH: 220px; PADDING-RIGHT: 5px; DISPLAY: block; FLOAT: left; PADDING-TOP: 5px
+}
+.m3d-side {
+	TEXT-ALIGN: center; WIDTH: 250px; DISPLAY: block; FLOAT: left; PADDING-TOP: 35px
+}
+.m3d-sidetop {
+	TEXT-ALIGN: left; PADDING-LEFT: 20px; WIDTH: 200px; DISPLAY: block; FLOAT: left; PADDING-TOP: 7px
+}
+.m3d-videothumb {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; FONT-STYLE: italic; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 225px; PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; PADDING-TOP: 0px
+}
+.m3d-youtube {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 10px 0px; PADDING-LEFT: 0px; WIDTH: 225px; PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; PADDING-TOP: 0px
+}
+.m3d-footer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #2762ac; CLEAR: left; FONT-SIZE: 83%; BORDER-TOP: #2762ac 1px solid; PADDING-TOP: 10px
+}
