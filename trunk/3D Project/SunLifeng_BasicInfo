@@ -1,0 +1,31 @@
+Lifeng Sun	FIT 1-512	62786910	sunlf@tsinghua.edu.cn
+
+Area of interests
+	video streaming
+	interactive multi-view video
+	distributed video coding
+	ad-hoc network streaming
+	peer-to-peer video transmission
+	
+Lab of Multimedia and Networking
+	multimedia networking and video streaming
+		led by Shiqiang Yang
+	interactive multiview video and parallelism over multi-core
+		led by Shiqiang Yang, Lifeng Sun and Pin Tao
+	video analysis and video mining
+		led by Lifeng Sun
+	compressive sensing
+	image restoration and enhancement
+		led by Shiqiang Yang, Jianwei Zhang and Lifeng Sun
+	digital rights management
+	social network
+
+Papers
+	heuristic scheduling for parallel processing on multi-core architecture
+	delay-guaranteed interactive multiview video streaming
+	gen of layered depth images from multi-view video
+	iGridMedia: providing delay-guaranteed p2p live streaming service
+	opt of sys perf for dvc applications with energy constraints over ad hoc net
+	opt the throughput of data-driven p2p streaming
+	spatial and temporal data parallelization of multi-view video encoding algo
+	understanding the power of pull-based streaming protocol: can we do better?
