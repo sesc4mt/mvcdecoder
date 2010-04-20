@@ -4,12 +4,22 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
-#include <strsafe.h>
+//#include <strsafe.h>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+#include <cstdlib>
+#include <atlconv.h>
+//#include <wchar.h>
 
+#include "mytimer.h"
 #include "utils.h"
 
 // include the Direct3D Libary file
 #pragma comment (lib, "d3d9.lib")
+
+using namespace std;
 
 
 
@@ -18,8 +28,8 @@ IDirect3DSurface9*	gImageSrc = NULL; //Source stereo image
 IDirect3DSurface9* gBackBuf = NULL;
 
 // screen and image size
-int					gImageWidth = 1680;
-int					gImageHeight = 1050;
+int					gImageWidth = 1024;
+int					gImageHeight = 768;
 
 
 
@@ -34,6 +44,7 @@ RECT destRect; // rectangle to change the destination of the 2 image we are load
 void initD3D(HWND hWnd);  // set up and initializes Direct3D
 void render_frame(void);  // renders a single frame
 void cleanD3D(void);  // closes Direct3D and releases memory
+void loadFrame(int _frame); // load frame No._frame 
 
 // 3D Vision
 void render3D(void); // stretches our surface to the backbuffer
@@ -100,35 +111,18 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	// create the surface
 	d3ddev->CreateOffscreenPlainSurface(gImageWidth *2, gImageHeight + 1, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &gImageSrc, NULL);
 	
-	// load left image
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/3L.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+	//loadFrame(0);
 
-	// shift destRect to the right
-	destRect.left = gImageWidth;
-	destRect.top = 0;
-	destRect.bottom = gImageHeight;
-	destRect.right = gImageWidth*2;
-	
-	// load right image
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/3R.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+	MyTimer timerIns;
+	double fps = 23.97;
+	int totalFrames = 100;
+	timerIns.Start();
+	LONGLONG _start = timerIns.getElapsedTime();
+	LONGLONG _current;
+	int frameToRender;
+	int lastRenderedFrame = -1;
+	bool buffered = false;
 
-	// Lock the stereo image
-	D3DLOCKED_RECT lr;
-	gImageSrc->LockRect(&lr,NULL,0);
-	// write stereo signature in the last raw of the stereo image
-	LPNVSTEREOIMAGEHEADER pSIH =
-	(LPNVSTEREOIMAGEHEADER)(((unsigned char *) lr.pBits) + (lr.Pitch * (gImageHeight)));
-	
-	// Update the signature header values
-	pSIH->dwSignature = NVSTEREO_IMAGE_SIGNATURE;
-	pSIH->dwBPP = 32;
-	//pSIH->dwFlags = SIH_SWAP_EYES; // Src image has left on left and right on right, thats why this flag is not needed.
-	pSIH->dwWidth = gImageWidth*2;
-	pSIH->dwHeight = gImageHeight;
-	
-	// Unlock surface
-	gImageSrc->UnlockRect();
-	
     // enter the main loop:
 
     // this struct holds Windows event messages
@@ -149,9 +143,24 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		// If the message is WM_QUIT, exit the while loop
 		if(msg.message == WM_QUIT)
 			break;
-		
-		render_frame();
 
+		_current = timerIns.getElapsedTime() - _start;
+		frameToRender = _current * fps / 1000000;
+		if(frameToRender > totalFrames - 1){
+			_start = timerIns.getElapsedTime(); // start over
+		}
+		if(buffered==false){
+			loadFrame(lastRenderedFrame+1);
+			buffered=true;
+		}
+		if(frameToRender!=lastRenderedFrame)
+		{
+			render_frame();
+			lastRenderedFrame = frameToRender;
+			buffered = false;
+		}
+		//loadFrame(3);
+		//render_frame();
 	}
 
 	// clean up DirectX and COM
@@ -246,4 +255,77 @@ void render3D(void)
 	d3ddev->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &gBackBuf);
 	d3ddev->StretchRect(gImageSrc, NULL, gBackBuf, &destRect, D3DTEXF_NONE); 
 
+}
+
+wstring s2ws(const string& s)
+{
+	int len;
+	int slength = (int)s.length() + 1;
+	len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0); 
+	wchar_t* buf = new wchar_t[len];
+	MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
+	wstring r(buf);
+	delete[] buf;
+	return r;
+}
+
+void loadFrame(int _frame){
+	//D:\FTProot\MVC\incoming\MSR_Ballet\cam0\color-cam0-f000.bmp
+	string strL,strR;
+	/*
+	string prefixL = "../Direct3DTutorial/img/L-";
+	string prefixR = "../Direct3DTutorial/img/R-";
+	string suffix = ".jpg";
+	*/
+	//string prefixR = "D:/FTProot/MVC/incoming/MSR_Ballet/cam0/color-cam0-f";
+	//string prefixL = "D:/FTProot/MVC/incoming/MSR_Ballet/cam1/color-cam1-f";
+	string prefixR = "R:/cam0/color-cam0-f";
+	string prefixL = "R:/cam1/color-cam1-f";
+	string suffix = ".bmp";
+	stringstream   inter;    
+	inter<<prefixL<<setw(3)<<setfill('0')<<_frame<<suffix;   
+	inter>>strL;
+	inter.clear();
+	inter<<prefixR<<setw(3)<<setfill('0')<<_frame<<suffix;
+	inter>>strR;
+	inter.clear();
+
+	//string strL = "../Direct3DTutorial/img/3L.jpg";
+	//string strR = "../Direct3DTutorial/img/3R.jpg";
+	wstring stempL = s2ws(strL);
+	wstring stempR = s2ws(strR);
+	LPCWSTR filenameL = stempL.c_str();
+	LPCWSTR filenameR = stempR.c_str();
+
+
+	// load left image
+	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/3L.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameL, NULL, D3DX_DEFAULT, 0, NULL);
+	
+	// shift destRect to the right
+	destRect.left = gImageWidth;
+	destRect.top = 0;
+	destRect.bottom = gImageHeight;
+	destRect.right = gImageWidth*2;
+
+	// load right image
+	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/3R.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameR, NULL, D3DX_DEFAULT, 0, NULL);
+	
+	// Lock the stereo image
+	D3DLOCKED_RECT lr;
+	gImageSrc->LockRect(&lr,NULL,0);
+	// write stereo signature in the last raw of the stereo image
+	LPNVSTEREOIMAGEHEADER pSIH =
+		(LPNVSTEREOIMAGEHEADER)(((unsigned char *) lr.pBits) + (lr.Pitch * (gImageHeight)));
+
+	// Update the signature header values
+	pSIH->dwSignature = NVSTEREO_IMAGE_SIGNATURE;
+	pSIH->dwBPP = 32;
+	//pSIH->dwFlags = SIH_SWAP_EYES; // Src image has left on left and right on right, thats why this flag is not needed.
+	pSIH->dwWidth = gImageWidth*2;
+	pSIH->dwHeight = gImageHeight;
+
+	// Unlock surface
+	gImageSrc->UnlockRect();
 }
