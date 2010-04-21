@@ -19,10 +19,9 @@
 
 // include the Direct3D Libary file
 #pragma comment (lib, "d3d9.lib")
+#pragma comment (lib, "d3dx9.lib")
 
 using namespace std;
-
-
 
 //HWND g_hWnd = NULL;
 IDirect3DSurface9*	gImageSrc = NULL; //Source stereo image
@@ -31,9 +30,21 @@ IDirect3DSurface9* gBackBuf = NULL;
 // screen and image size
 int					gImageWidth = 720;
 int					gImageHeight = 576;
+wstring filenameWstrL,filenameWstrR;
+string filenameStrL,filenameStrR;
+
+/* still image test
+string prefixL = "../Direct3DTutorial/img/L-";
+string prefixR = "../Direct3DTutorial/img/R-";
+string suffix = ".jpg";
+*/
 
 
-
+//* knight's quest test
+string prefixR = "R:/L/Knights_Quest_576p";
+string prefixL = "R:/R/Knights_Quest_576p";
+string suffix = ".jpg";
+//*/
 
 // global declarations
 LPDIRECT3D9 d3d;  //pointer to our Direct3D interface
@@ -45,7 +56,9 @@ RECT destRect; // rectangle to change the destination of the 2 image we are load
 void initD3D(HWND hWnd);  // set up and initializes Direct3D
 void render_frame(void);  // renders a single frame
 void cleanD3D(void);  // closes Direct3D and releases memory
-void loadFrame(int _frame); // load frame No._frame 
+void getFilename(int); // get filename of the next img src
+void loadFrame(int); // load frame No._frame 
+void configureSurface();
 
 // 3D Vision
 void render3D(void); // stretches our surface to the backbuffer
@@ -77,15 +90,17 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     // wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
-    wc.lpszClassName = L"WindowClass1";
+	string lpszClassNameStr = "WindowClass1";
+	string windowNameStr = "3DVision Test";
+    wc.lpszClassName = lpszClassNameStr.c_str();
 
     // register the window class
     RegisterClassEx(&wc);
 
     // create the window and use the result as the handle
     hWnd = CreateWindowEx(NULL,
-                          L"WindowClass1",    // name of the window class
-                          L"3DVision Test",   // title of the window
+                          lpszClassNameStr.c_str(),    // name of the window class
+                          windowNameStr.c_str(),   // title of the window
                           WS_EX_TOPMOST | WS_POPUP,    // fullscreen values
                           0,    // x-position of the window
                           0,    // y-position of the window
@@ -111,14 +126,12 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	//3D VISION
 	// create the surface
 	d3ddev->CreateOffscreenPlainSurface(gImageWidth *2, gImageHeight + 1, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &gImageSrc, NULL);
-	
-	//loadFrame(0);
 
 	ofstream fout;
 	fout.open("R:/result.txt");
 	MyTimer timerIns;
-	double fps = 25;
-	int totalFrames = 200;
+	double fps = 200;
+	int totalFrames = 2615;
 	timerIns.Start();
 	LONGLONG _start = timerIns.getElapsedTime();
 	LONGLONG _current;
@@ -126,6 +139,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	int lastRenderedFrame = -1;
 	bool buffered = false;
 
+	configureSurface();
 
     // enter the main loop:
 
@@ -151,14 +165,16 @@ int WINAPI WinMain(HINSTANCE hInstance,
 			break;
 
 		_current = timerIns.getElapsedTime() - _start;
-		frameToRender = _current * fps / 1000000;
+		frameToRender = (int)(_current * fps / (double)1000000);
 		if(frameToRender > totalFrames - 1){
 			//_start = timerIns.getElapsedTime(); // start over
 			//continue;
 			break;
 		}
 		if(buffered==false){
+			getFilename(lastRenderedFrame+1);
 			loadFrame(lastRenderedFrame+1);
+			//configureSurface();
 			bufcounter++;
 			buffered=true;
 		}
@@ -170,14 +186,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
 			lastRenderedFrame = frameToRender;
 			buffered = false;
 		}
-		//loadFrame(3);
-		//render_frame();
 	}
 
 	// clean up DirectX and COM
 	cleanD3D();
 	fout<< "total frames buffered = "<<bufcounter<<endl;
 	fout<< "total frames rendered = "<<counter<<endl;
+	double perf = (double)counter * 1000000/ timerIns.getElapsedTime();
+	fout << "actual fps reached = "<< perf << endl;
 	fout.close();
     // return this part of the WM_QUIT message to Windows
     return msg.wParam;
@@ -282,43 +298,29 @@ wstring s2ws(const string& s)
 	return r;
 }
 
-void loadFrame(int _frame){
+void getFilename(int _frame){
 	//D:\FTProot\MVC\incoming\MSR_Ballet\cam0\color-cam0-f000.bmp
-	string strL,strR;
-	/* still image test
-	string prefixL = "../Direct3DTutorial/img/L-";
-	string prefixR = "../Direct3DTutorial/img/R-";
-	string suffix = ".jpg";
-	*/
-	
-	/* ballet dancer test
-	string prefixR = "R:/cam0/color-cam0-f";
-	string prefixL = "R:/cam1/color-cam1-f";
-	string suffix = ".bmp";
-	*/
+	stringstream   filenamer;
 
-	///* knight's quest test
-	string prefixR = "R:/L/Knights_Quest_576p";
-	string prefixL = "R:/R/Knights_Quest_576p";
-	string suffix = ".jpg";
-	//*/
-	stringstream   inter;    
-	inter<<prefixL<<setw(4)<<setfill('0')<<_frame+1000<<suffix;   
-	inter>>strL;
-	inter.clear();
-	inter<<prefixR<<setw(4)<<setfill('0')<<_frame+1000<<suffix;
-	inter>>strR;
-	inter.clear();
+	filenamer<<prefixL<<setw(4)<<setfill('0')<<_frame<<suffix;   
+	filenamer>>filenameStrL;
+	filenameWstrL = s2ws(filenameStrL);
 
-	wstring stempL = s2ws(strL);
-	wstring stempR = s2ws(strR);
-	LPCWSTR filenameL = stempL.c_str();
-	LPCWSTR filenameR = stempR.c_str();
+	filenamer.clear();
+	filenamer<<prefixR<<setw(4)<<setfill('0')<<_frame<<suffix;
+	filenamer>>filenameStrR;
+	filenamer.clear();
+	filenameWstrR = s2ws(filenameStrR);
+}
 
-
+void loadFrame(int _frame){
+	LPCWSTR filenameL = filenameWstrL.c_str();
+	LPCWSTR filenameR = filenameWstrR.c_str();
+	LPCSTR filenameLL = filenameStrL.c_str();
+	LPCSTR filenameRR = filenameStrR.c_str();
 	// load left image
 	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/L-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameL, NULL, D3DX_DEFAULT, 0, NULL);
+	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameLL, NULL, D3DX_DEFAULT, 0, NULL);
 	
 	// shift destRect to the right
 	destRect.left = gImageWidth;
@@ -328,8 +330,10 @@ void loadFrame(int _frame){
 
 	// load right image
 	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/R-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameR, NULL, D3DX_DEFAULT, 0, NULL);
-	
+	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameRR, NULL, D3DX_DEFAULT, 0, NULL);
+}
+
+void configureSurface(){
 	// Lock the stereo image
 	D3DLOCKED_RECT lr;
 	gImageSrc->LockRect(&lr,NULL,0);
