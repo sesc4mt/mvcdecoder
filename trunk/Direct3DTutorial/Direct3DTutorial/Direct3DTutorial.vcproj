@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="d3dxof.lib dxguid.lib d3dx9d.lib d3d9.lib winmm.lib"
+				AdditionalDependencies="d3dxof.lib dxguid.lib winmm.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="0"
