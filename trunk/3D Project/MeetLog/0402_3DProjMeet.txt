@@ -1,0 +1,16 @@
+CUDA Driver & 3D Vision Driver incompatible
+
+
+current demo in WMV container
+
+look up 3d vision player interface
+
+try out videos other than wmv format
+see if the player calls wmp
+
+use nokia’s enc/dec and test the perf
+
+vtune profile the mvc project
+
+
+deadline: 0410

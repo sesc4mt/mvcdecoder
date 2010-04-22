@@ -1,0 +1,10 @@
+Interface between capturing and encoding devices are settled
+
+TODO
+
+1. Read mem data and display 3D image on screen
+2. vTune the MVC project
+3. get xvid, ffmpeg source code and see if any assembly code can be utilized
+4. stereo high profile
+5. view the test series
+6. send perf test report
