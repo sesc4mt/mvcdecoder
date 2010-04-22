@@ -4,13 +4,12 @@
 #define NVSTEREO_IMAGE_SIGNATURE 0x4433564e //NV3D
 
 
-typedef struct _Nv_Stereo_Image_Header
-{
-unsigned int dwSignature;
-unsigned int dwWidth;
-unsigned int dwHeight;
-unsigned int dwBPP;
-unsigned int dwFlags;
+typedef struct _Nv_Stereo_Image_Header {
+    unsigned int dwSignature;
+    unsigned int dwWidth;
+    unsigned int dwHeight;
+    unsigned int dwBPP;
+    unsigned int dwFlags;
 } NVSTEREOIMAGEHEADER, *LPNVSTEREOIMAGEHEADER;
 
 

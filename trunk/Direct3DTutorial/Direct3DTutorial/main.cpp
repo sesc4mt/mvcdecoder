@@ -16,6 +16,7 @@
 
 #include "mytimer.h"
 #include "utils.h"
+#include "config.h"
 
 // include the Direct3D Libary file
 #pragma comment (lib, "d3d9.lib")
@@ -26,25 +27,6 @@ using namespace std;
 //HWND g_hWnd = NULL;
 IDirect3DSurface9*	gImageSrc = NULL; //Source stereo image
 IDirect3DSurface9* gBackBuf = NULL;
-
-// screen and image size
-int					gImageWidth = 720;
-int					gImageHeight = 576;
-wstring filenameWstrL,filenameWstrR;
-string filenameStrL,filenameStrR;
-
-/* still image test
-string prefixL = "../Direct3DTutorial/img/L-";
-string prefixR = "../Direct3DTutorial/img/R-";
-string suffix = ".jpg";
-*/
-
-
-//* knight's quest test
-string prefixR = "R:/L/Knights_Quest_576p";
-string prefixL = "R:/R/Knights_Quest_576p";
-string suffix = ".jpg";
-//*/
 
 // global declarations
 LPDIRECT3D9 d3d;  //pointer to our Direct3D interface
@@ -57,24 +39,86 @@ void initD3D(HWND hWnd);  // set up and initializes Direct3D
 void render_frame(void);  // renders a single frame
 void cleanD3D(void);  // closes Direct3D and releases memory
 void getFilename(int); // get filename of the next img src
-void loadFrame(int); // load frame No._frame 
+void loadFrame(int); // load frame No._frame
 void configureSurface();
 
 // 3D Vision
 void render3D(void); // stretches our surface to the backbuffer
 
+void loadFrame(int _frame) {
+    LPCWSTR filenameL = filenameWstrL.c_str();
+    LPCWSTR filenameR = filenameWstrR.c_str();
+    LPCSTR filenameLL = filenameStrL.c_str();
+    LPCSTR filenameRR = filenameStrR.c_str();
+    // load left image
+    //D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/L-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+    static bool loaded = false;
+    static char *data1 = 0, *data2 = 0;
+    int dataSize1 = 0, dataSize2 = 0;
+    /*
+    if (!loaded)
+    {
+    loaded = true;
+    FILE *f = fopen(filenameStrL.c_str(), "rb");
+    //fseek(f, 0, SEEK_END);
+    //int fsize = ftell(f);
+    //fseek(f, 0, SEEK_SET);
+    int fsize = 10 * 1024 * 1024;
+    data1 = new char[10*1024*1024];
+    dataSize1 = fread(data1, 1, fsize, f);
+    fclose(f);
+
+    f = fopen(filenameStrR.c_str(), "rb");
+    //fseek(f, 0, SEEK_END);
+    //fsize = ftell(f);
+    //fseek(f, 0, SEEK_SET);
+    data2 = new char[fsize];
+    dataSize2 = fread(data2, 1, fsize, f);
+    fclose(f);
+
+    fout << "Size = " << dataSize1 << " " << dataSize2 << endl;
+    }
+
+    D3DXLoadSurfaceFromFileInMemory(gImageSrc, NULL, &destRect, data1, dataSize1, NULL, D3DX_DEFAULT, 0, NULL);
+    destRect.left = gImageWidth;
+    destRect.top = 0;
+    destRect.bottom = gImageHeight;
+    destRect.right = gImageWidth*2;
+    D3DXLoadSurfaceFromFileInMemory(gImageSrc, NULL, &destRect, data2, dataSize2, NULL, D3DX_DEFAULT, 0, NULL);
+    */
+
+    D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameLL, NULL, D3DX_DEFAULT, 0, NULL);
+
+    static bool first = true;
+
+    //if (first)
+    {
+        first = false;
+        // shift destRect to the right
+        destRect.left = gImageWidth;
+        destRect.top = 0;
+        destRect.bottom = gImageHeight;
+        destRect.right = gImageWidth*2;
+
+        // load right image
+        //D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/R-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
+        D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameRR, NULL, D3DX_DEFAULT, 0, NULL);
+    }
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // the WindowProc function prototype
 LRESULT CALLBACK WindowProc(HWND hWnd,
-                         UINT message,
-                         WPARAM wParam,
-                         LPARAM lParam);
+                            UINT message,
+                            WPARAM wParam,
+                            LPARAM lParam);
 
 // the entry point for any Windows program
 int WINAPI WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
                    LPSTR lpCmdLine,
-                   int nCmdShow)
-{
+                   int nCmdShow) {
     // the handle for the window, filled by a function
     HWND hWnd;
     // this struct holds information for the window class
@@ -90,8 +134,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     // wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
-	string lpszClassNameStr = "WindowClass1";
-	string windowNameStr = "3DVision Test";
+    string lpszClassNameStr = "WindowClass1";
+    string windowNameStr = "3DVision Test";
     wc.lpszClassName = lpszClassNameStr.c_str();
 
     // register the window class
@@ -114,113 +158,112 @@ int WINAPI WinMain(HINSTANCE hInstance,
     // display the window on the screen
     ShowWindow(hWnd, nCmdShow);
 
-	// set up and initialize Direct3D
-	initD3D(hWnd);
-	
-	// set up destRect
-	destRect.left = 0;
-	destRect.top = 0;
-	destRect.bottom = gImageHeight;
-	destRect.right = gImageWidth;
+    // set up and initialize Direct3D
+    initD3D(hWnd);
 
-	//3D VISION
-	// create the surface
-	d3ddev->CreateOffscreenPlainSurface(gImageWidth *2, gImageHeight + 1, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &gImageSrc, NULL);
+    // set up destRect
+    destRect.left = 0;
+    destRect.top = 0;
+    destRect.bottom = gImageHeight;
+    destRect.right = gImageWidth;
 
-	ofstream fout;
-	fout.open("R:/result.txt");
-	MyTimer timerIns;
-	double fps = 200;
-	int totalFrames = 2615;
-	timerIns.Start();
-	LONGLONG _start = timerIns.getElapsedTime();
-	LONGLONG _current;
-	int frameToRender;
-	int lastRenderedFrame = -1;
-	bool buffered = false;
+    //3D VISION
+    // create the surface
+    d3ddev->CreateOffscreenPlainSurface(gImageWidth *2, gImageHeight + 1, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &gImageSrc, NULL);
 
-	configureSurface();
+
+    fout.open("R:/result.txt");
+    MyTimer timerIns;
+    timerIns.Start();
+    LONGLONG _start = timerIns.getElapsedTime();
+    LONGLONG _current;
+    int frameToRender;
+    int lastRenderedFrame = -1;
+    bool buffered = false;
+
+    configureSurface();
 
     // enter the main loop:
 
     // this struct holds Windows event messages
     MSG msg;
 
-	int counter = 0;
-	int bufcounter = 0;
-    while(TRUE)
-	{
-		// wait for the next message in the queue, store the result in 'msg'
-		while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-		{
-			// translate keystroke messages into the right format
-			TranslateMessage(&msg);
+    int counter = 0;
+    int bufcounter = 0;
+    while(TRUE) {
+        // wait for the next message in the queue, store the result in 'msg'
+        while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+            // translate keystroke messages into the right format
+            TranslateMessage(&msg);
 
-			// send the message to the WindowProc function
-			DispatchMessage(&msg);
-		}
+            // send the message to the WindowProc function
+            DispatchMessage(&msg);
+        }
 
-		// If the message is WM_QUIT, exit the while loop
-		if(msg.message == WM_QUIT)
-			break;
+        // If the message is WM_QUIT, exit the while loop
+        if(msg.message == WM_QUIT)
+            break;
 
-		_current = timerIns.getElapsedTime() - _start;
-		frameToRender = (int)(_current * fps / (double)1000000);
-		if(frameToRender > totalFrames - 1){
-			//_start = timerIns.getElapsedTime(); // start over
-			//continue;
-			break;
-		}
-		if(buffered==false){
-			getFilename(lastRenderedFrame+1);
-			loadFrame(lastRenderedFrame+1);
-			//configureSurface();
-			bufcounter++;
-			buffered=true;
-		}
-		if(frameToRender!=lastRenderedFrame)
-		{
-			//fout<<"rendering frame "<<frameToRender<<endl;
-			render_frame();
-			counter++;
-			lastRenderedFrame = frameToRender;
-			buffered = false;
-		}
-	}
+        _current = timerIns.getElapsedTime() - _start;
+        frameToRender = (int)(_current * fps / (double)1000000);
+        //frameToRender = frameToRender % 3 + 400;
+        //if (counter>250)
+        //{
+        //	break;
+        //}
+        if(frameToRender > totalFrames - 1) {
+            //_start = timerIns.getElapsedTime(); // start over
+            //continue;
+            break;
+        }
+        if(buffered==false) {
+            getFilename(lastRenderedFrame+1);
+            loadFrame(lastRenderedFrame+1);
+            //configureSurface();
+            bufcounter++;
+            buffered=true;
+        }
+        if(frameToRender!=lastRenderedFrame) {
+            //fout<<"rendering frame "<<frameToRender<<endl;
+            render_frame();
+            counter++;
+            lastRenderedFrame = frameToRender;
+            buffered = false;
+        }
+    }
 
-	// clean up DirectX and COM
-	cleanD3D();
-	fout<< "total frames buffered = "<<bufcounter<<endl;
-	fout<< "total frames rendered = "<<counter<<endl;
-	double perf = (double)counter * 1000000/ timerIns.getElapsedTime();
-	fout << "actual fps reached = "<< perf << endl;
-	fout.close();
+    // clean up DirectX and COM
+
+    fout<< "total frames buffered = "<<bufcounter<<endl;
+    fout<< "total frames rendered = "<<counter<<endl;
+    double perf = (double)counter * 1000000/ timerIns.getElapsedTime();
+    fout << "actual fps reached = "<< perf << endl;
+    fout.close();
     // return this part of the WM_QUIT message to Windows
+    cleanD3D();
     return msg.wParam;
 }
 
+///////////////////////////////////////////////////////////////////////////////
 // this is the main message handler for the program
-LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
     // sort through and find what code to run for the message given
-    switch(message)
-    {
+    switch(message) {
         // this message is read when the window is closed
-        case WM_DESTROY:
-            {
-                // close the application entirely
-                PostQuitMessage(0);
-                return 0;
-            } break;
+    case WM_DESTROY: {
+        // close the application entirely
+        PostQuitMessage(0);
+        return 0;
+    }
+    break;
     }
 
     // Handle any messages the switch statement didn't
     return DefWindowProc (hWnd, message, wParam, lParam);
-} 
+}
 
 // this function initializes and prepares Direct3D for use
-void initD3D(HWND hWnd)
-{
+void initD3D(HWND hWnd) {
     d3d = Direct3DCreate9(D3D_SDK_VERSION);    // create the Direct3D interface
 
     D3DPRESENT_PARAMETERS d3dpp;    // create a struct to hold various device information
@@ -229,11 +272,11 @@ void initD3D(HWND hWnd)
     d3dpp.Windowed = FALSE;    // program fullscreen
     d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;    // discard old frames
     d3dpp.hDeviceWindow = hWnd;    // set the window to be used by Direct3D
-	d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;  // set the back buffer format to 32 bit
-	d3dpp.BackBufferWidth = gImageWidth;
-	d3dpp.BackBufferHeight = gImageHeight;
-	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
-	d3dpp.BackBufferCount = 1;
+    d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;  // set the back buffer format to 32 bit
+    d3dpp.BackBufferWidth = gImageWidth;
+    d3dpp.BackBufferHeight = gImageHeight;
+    d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
+    d3dpp.BackBufferCount = 1;
 
 
     // create a device class using this information and information from the d3dpp stuct
@@ -246,15 +289,14 @@ void initD3D(HWND hWnd)
 }
 
 // this is the function used to render a single frame
-void render_frame(void)
-{
+void render_frame(void) {
     // clear the window to a deep blue
     d3ddev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 40, 100), 1.0f, 0);
 
     d3ddev->BeginScene();    // begins the 3D scene
 
     // do 3D rendering on the back buffer here
-	render3D();
+    render3D();
 
 
     d3ddev->EndScene();    // ends the 3D scene
@@ -264,90 +306,67 @@ void render_frame(void)
 
 
 // this is the function that cleans up Direct3D and COM
-void cleanD3D(void)
-{
+void cleanD3D(void) {
     d3ddev->Release();    // close and release the 3D device
     d3d->Release();    // close and release Direct3D
 }
 
 
 // this is the function that combines two images.
-void render3D(void)
-{
-	// set destRect
-	destRect.left = 0;
-	destRect.top = 0;
-	destRect.bottom = gImageHeight;
-	destRect.right = gImageWidth;
-	
-	// Get the Backbuffer then Stretch the Surface on it.
-	d3ddev->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &gBackBuf);
-	d3ddev->StretchRect(gImageSrc, NULL, gBackBuf, &destRect, D3DTEXF_NONE); 
+void render3D(void) {
+    // set destRect
+    destRect.left = 0;
+    destRect.top = 0;
+    destRect.bottom = gImageHeight;
+    destRect.right = gImageWidth;
+
+    // Get the Backbuffer then Stretch the Surface on it.
+    d3ddev->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &gBackBuf);
+    d3ddev->StretchRect(gImageSrc, NULL, gBackBuf, &destRect, D3DTEXF_NONE);
 
 }
 
-wstring s2ws(const string& s)
-{
-	int len;
-	int slength = (int)s.length() + 1;
-	len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0); 
-	wchar_t* buf = new wchar_t[len];
-	MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
-	wstring r(buf);
-	delete[] buf;
-	return r;
+wstring s2ws(const string& s) {
+    int len;
+    int slength = (int)s.length() + 1;
+    len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
+    wchar_t* buf = new wchar_t[len];
+    MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
+    wstring r(buf);
+    delete[] buf;
+    return r;
 }
 
-void getFilename(int _frame){
-	//D:\FTProot\MVC\incoming\MSR_Ballet\cam0\color-cam0-f000.bmp
-	stringstream   filenamer;
+void getFilename(int _frame) {
+    //D:\FTProot\MVC\incoming\MSR_Ballet\cam0\color-cam0-f000.bmp
+    stringstream   filenamer;
 
-	filenamer<<prefixL<<setw(4)<<setfill('0')<<_frame<<suffix;   
-	filenamer>>filenameStrL;
-	filenameWstrL = s2ws(filenameStrL);
+    filenamer<<prefixL<<setw(4)<<setfill('0')<<_frame<<suffix;
+    filenamer>>filenameStrL;
+    filenameWstrL = s2ws(filenameStrL);
 
-	filenamer.clear();
-	filenamer<<prefixR<<setw(4)<<setfill('0')<<_frame<<suffix;
-	filenamer>>filenameStrR;
-	filenamer.clear();
-	filenameWstrR = s2ws(filenameStrR);
+    filenamer.clear();
+    filenamer<<prefixR<<setw(4)<<setfill('0')<<_frame<<suffix;
+    filenamer>>filenameStrR;
+    filenamer.clear();
+    filenameWstrR = s2ws(filenameStrR);
 }
 
-void loadFrame(int _frame){
-	LPCWSTR filenameL = filenameWstrL.c_str();
-	LPCWSTR filenameR = filenameWstrR.c_str();
-	LPCSTR filenameLL = filenameStrL.c_str();
-	LPCSTR filenameRR = filenameStrR.c_str();
-	// load left image
-	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/L-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameLL, NULL, D3DX_DEFAULT, 0, NULL);
-	
-	// shift destRect to the right
-	destRect.left = gImageWidth;
-	destRect.top = 0;
-	destRect.bottom = gImageHeight;
-	destRect.right = gImageWidth*2;
+void configureSurface() {
+    // Lock the stereo image
+    D3DLOCKED_RECT lr;
+    gImageSrc->LockRect(&lr,NULL,0);
+    // write stereo signature in the last raw of the stereo image
+    LPNVSTEREOIMAGEHEADER pSIH =
+        (LPNVSTEREOIMAGEHEADER)(((unsigned char *) lr.pBits) + (lr.Pitch * (gImageHeight)));
 
-	// load right image
-	//D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, L"../Direct3DTutorial/img/R-003.jpg", NULL, D3DX_DEFAULT, 0, NULL);
-	D3DXLoadSurfaceFromFile(gImageSrc, NULL, &destRect, filenameRR, NULL, D3DX_DEFAULT, 0, NULL);
-}
+    // Update the signature header values
+    pSIH->dwSignature = NVSTEREO_IMAGE_SIGNATURE;
+    pSIH->dwBPP = 32;
+    //pSIH->dwFlags = SIH_SWAP_EYES; // Src image has left on left and right on right, thats why this flag is not needed.
+    pSIH->dwWidth = gImageWidth*2;
+    pSIH->dwHeight = gImageHeight;
 
-void configureSurface(){
-	// Lock the stereo image
-	D3DLOCKED_RECT lr;
-	gImageSrc->LockRect(&lr,NULL,0);
-	// write stereo signature in the last raw of the stereo image
-	LPNVSTEREOIMAGEHEADER pSIH =
-		(LPNVSTEREOIMAGEHEADER)(((unsigned char *) lr.pBits) + (lr.Pitch * (gImageHeight)));
-
-	// Update the signature header values
-	pSIH->dwSignature = NVSTEREO_IMAGE_SIGNATURE;
-	pSIH->dwBPP = 32;
-	//pSIH->dwFlags = SIH_SWAP_EYES; // Src image has left on left and right on right, thats why this flag is not needed.
-	pSIH->dwWidth = gImageWidth*2;
-	pSIH->dwHeight = gImageHeight;
-
-	// Unlock surface
-	gImageSrc->UnlockRect();
+    // Unlock surface
+    gImageSrc->UnlockRect();
 }
