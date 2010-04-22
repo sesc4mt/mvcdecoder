@@ -1,0 +1,7 @@
+3D China -> Find 3D players
+
+Find out what video codec does nVidia’s 3D video player support
+
+Try to get registered developer NVAPI
+
+Does ATI’s 3D glasses has such a SDK?
