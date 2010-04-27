@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "framerate_cap", "framerate_cap\framerate_cap.vcproj", "{22B1C0CE-39B6-4C12-B17D-475EC03AC987}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "framerate_cap", "framerate_cap\framerate_cap.vcxproj", "{22B1C0CE-39B6-4C12-B17D-475EC03AC987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
