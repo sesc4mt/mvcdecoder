@@ -1,0 +1,12 @@
+The player should fit into a filter
+using COM
+
+test the player with bmp src imgs
+
+check the cpu utilization while playing
+
+see if assync would be awful
+
+start tuning up the decoder
+
+detailed perf report

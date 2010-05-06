@@ -1,0 +1,4 @@
+Test the decoder with D1 video.
+record the fps of a 2-way video
+
+optimize the decoder code using asm and cuda
