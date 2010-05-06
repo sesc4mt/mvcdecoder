@@ -1,0 +1,15 @@
+Recent work:
+	selected a 960x720 video clip
+		error decoding with MVCDecoder
+	code level optimization
+		320x240 8-way 26344ms -> 23813ms
+						i.e.	23.65fps -> 26.16fps
+
+Target: 720x576 2-way single thread 30fps on a dual-core
+
+todo1: 960x720 -> 720x576 then try decoding again
+todo2: diff decoding results of ffmpeg and JMVC
+todo3: is the framework of ffmpeg and mvcdecoder the same
+todo4: test the speed of the ffmpeg without output or on a ramdisk
+
+report: the correctness and speed of ffmpeg
