@@ -1,0 +1,14 @@
+Recent work:
+	720x576 single-way on single core 48fps
+
+TODO:
+	stereo high profile support
+	main profile support at least
+	
+FFMPEG out of the way
+check the CABAC part in xvid
+
+Aim:
+	60FPS then multi-thread
+	
+Send the yuv file to LH
