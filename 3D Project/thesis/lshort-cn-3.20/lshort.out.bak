@@ -1,0 +1,91 @@
+\BOOKMARK [0][-]{title.0}{封面}{}
+\BOOKMARK [0][-]{chapter*.1}{鸣谢！}{}
+\BOOKMARK [0][-]{chapter*.2}{前言}{}
+\BOOKMARK [0][-]{chapter.1}{基本知识}{}
+\BOOKMARK [1][-]{section.1.1}{游戏的名目}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.1.1}{TeX}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.2}{LaTeX}{section.1.1}
+\BOOKMARK [1][-]{section.1.2}{LaTeX 基础}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.2.1}{作者、图书设计者和排版者}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.2}{版面设计}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.3}{优势和不足}{section.1.2}
+\BOOKMARK [1][-]{section.1.3}{LaTeX 源文件}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.3.1}{空白距离}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.2}{特殊字符}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.3}{LaTeX 命令}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.4}{注释}{section.1.3}
+\BOOKMARK [1][-]{section.1.4}{源文件的结构}{chapter.1}
+\BOOKMARK [1][-]{section.1.5}{一个典型的命令行过程}{chapter.1}
+\BOOKMARK [1][-]{section.1.6}{文档布局}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.6.1}{文档类}{section.1.6}
+\BOOKMARK [2][-]{subsection.1.6.2}{宏包}{section.1.6}
+\BOOKMARK [1][-]{section.1.7}{各类 LaTeX 文件}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.7.1}{页面式样}{section.1.7}
+\BOOKMARK [1][-]{section.1.8}{大型文档}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{文档排版}{}
+\BOOKMARK [1][-]{section.2.1}{文档和语言的结构}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{断行和分页}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.2.1}{段落整理}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.2}{断字}{section.2.2}
+\BOOKMARK [1][-]{section.2.3}{学习字符串排版}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{特殊字符和符号}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.4.1}{引号}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.2}{破折号和连字号}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.3}{波浪号}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.4}{度的符号}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.5}{省略号\(...\)}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.6}{连字}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.7}{注音符号和特殊字符}{section.2.4}
+\BOOKMARK [1][-]{section.2.5}{支持使用国际语言}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{对德语的支持}{section.2.5}
+\BOOKMARK [1][-]{section.2.6}{单词的间隔}{chapter.2}
+\BOOKMARK [1][-]{section.2.7}{标题，章和节}{chapter.2}
+\BOOKMARK [1][-]{section.2.8}{交叉引用}{chapter.2}
+\BOOKMARK [1][-]{section.2.9}{脚注}{chapter.2}
+\BOOKMARK [1][-]{section.2.10}{强调}{chapter.2}
+\BOOKMARK [1][-]{section.2.11}{环境}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.11.1}{Itemize, Enumerate, and Description}{section.2.11}
+\BOOKMARK [2][-]{subsection.2.11.2}{Flushleft, Flushright, and Center}{section.2.11}
+\BOOKMARK [2][-]{subsection.2.11.3}{Quote, Quotation, and Verse}{section.2.11}
+\BOOKMARK [2][-]{subsection.2.11.4}{逐字打印}{section.2.11}
+\BOOKMARK [2][-]{subsection.2.11.5}{表格}{section.2.11}
+\BOOKMARK [1][-]{section.2.12}{浮动体}{chapter.2}
+\BOOKMARK [1][-]{section.2.13}{保护脆弱命令}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{数学公式}{}
+\BOOKMARK [1][-]{section.3.1}{基本知识}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{数学模式中的分组}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{建立数学公式模块}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{数学空格}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{垂直对齐}{chapter.3}
+\BOOKMARK [1][-]{section.3.6}{幻影}{chapter.3}
+\BOOKMARK [1][-]{section.3.7}{数学字体大小}{chapter.3}
+\BOOKMARK [1][-]{section.3.8}{定理、定义 ...}{chapter.3}
+\BOOKMARK [1][-]{section.3.9}{粗体符号}{chapter.3}
+\BOOKMARK [1][-]{section.3.10}{数学符号表}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{特殊功能}{}
+\BOOKMARK [1][-]{section.4.1}{包含 EPS 图形}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{参考文献}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{索引}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{定制页眉和页脚}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{Verbatim 宏包}{chapter.4}
+\BOOKMARK [1][-]{section.4.6}{下载并安装 LaTeX 宏包}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{定制 LaTeX}{}
+\BOOKMARK [1][-]{section.5.1}{建立新的命令、环境和包}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{建立新的命令}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{建立新的环境}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.3}{建立你自己的宏包}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{字体和尺寸}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{字体变换命令}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Danger, Will Robinson, Danger}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{建议}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{文档对象之间的间隔}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.3.1}{行距}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.2}{段落格式}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.3}{水平距离}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.4}{垂直距离}{section.5.3}
+\BOOKMARK [1][-]{section.5.4}{页面的布局}{chapter.5}
+\BOOKMARK [1][-]{section.5.5}{关于长度的更详细的信息}{chapter.5}
+\BOOKMARK [1][-]{section.5.6}{盒子}{chapter.5}
+\BOOKMARK [1][-]{section.5.7}{标尺和支撑}{chapter.5}
+\BOOKMARK [0][-]{chapter*.7}{参考文献}{}
+\BOOKMARK [0][-]{section*.8}{索引}{}

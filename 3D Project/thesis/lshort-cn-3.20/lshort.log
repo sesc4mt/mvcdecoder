@@ -1,0 +1,1258 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (MiKTeX 2.4) (preloaded format=latex 2005.8.27)  31 AUG 2005 21:32
+entering extended mode
+**lshort.tex
+(lshort.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+(C:\CTeX\texmf\tex\latex\base\book.cls
+Document Class: book 2004/02/16 v1.4f Standard LaTeX document class
+(C:\CTeX\texmf\tex\latex\base\bk11.clo
+File: bk11.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\CTeX\texmf\tex\latex\thumbpdf\thumbpdf.sty
+Package: thumbpdf 2005/07/06 v3.8 Inclusion of thumbnails (HO)
+
+
+Package thumbpdf Warning: Thumbnail data file `lshort.tpt' not found.
+
+) (lshort.sty
+Package: lshort 
+ (C:\CTeX\texmf\tex\generic\babel\babel.sty
+Package: babel 2005/05/21 v3.8g The Babel package
+
+(C:\CTeX\texmf\tex\generic\babel\english.ldf
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+(C:\CTeX\texmf\tex\generic\babel\babel.def
+File: babel.def 2005/05/21 v3.8g Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(C:\CTeX\texmf\tex\latex\tools\verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+) (fancyhea.sty
+\headrulewidth=\dimen104
+\footrulewidth=\dimen105
+\plainheadrulewidth=\dimen106
+\plainfootrulewidth=\dimen107
+\headwidth=\dimen108
+)
+(C:\CTeX\texmf\tex\latex\tools\calc.sty
+Package: calc 1998/07/07 v4.1b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen109
+\calc@Bdimen=\dimen110
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 59.
+LaTeX Info: Redefining \addtolength on input line 60.
+\calc@denominator=\count91
+)
+(C:\CTeX\texmf\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(C:\CTeX\texmf\tex\latex\amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(C:\CTeX\texmf\tex\latex\amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen111
+))
+(C:\CTeX\texmf\tex\latex\amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen112
+)
+(C:\CTeX\texmf\tex\latex\amsmath\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks19
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+\symbbox=\box28
+
+(C:\CTeX\texmf\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(C:\CTeX\texmf\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(C:\CTeX\texmf\tex\latex\amsfonts\eucal.sty
+Package: eucal 2001/10/01 v2.2d Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 55.
+)
+\example@out=\write3
+\c@exacnt=\count104
+\savefboxrule=\skip48
+\savefboxsep=\skip49
+\outdent=\skip50
+)
+(C:\CTeX\texmf\tex\latex\base\makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(C:\CTeX\texmf\tex\latex\base\shortvrb.sty
+Package: shortvrb 2004/02/09 v2.1b Standard LaTeX documentation package (FMi)
+)
+(C:\CTeX\texmf\tex\latex\base\latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+) (mylayout.sty
+Package: mylayout 1995/06/25 v1.1i Show layout parameters
+\oneinch=\count105
+\cnt@paperwidth=\count106
+\cnt@paperheight=\count107
+\cnt@hoffset=\count108
+\cnt@voffset=\count109
+\cnt@textheight=\count110
+\cnt@textwidth=\count111
+\cnt@topmargin=\count112
+\cnt@oddsidemargin=\count113
+\cnt@evensidemargin=\count114
+\cnt@headheight=\count115
+\cnt@headsep=\count116
+\cnt@marginparsep=\count117
+\cnt@marginparwidth=\count118
+\cnt@marginparpush=\count119
+\cnt@footskip=\count120
+\fheight=\count121
+\ref@top=\count122
+\ref@hoffset=\count123
+\ref@voffset=\count124
+\ref@head=\count125
+\ref@body=\count126
+\ref@foot=\count127
+\ref@margin=\count128
+\ref@marginwidth=\count129
+\ref@marginpar=\count130
+\Interval=\count131
+\ExtraYPos=\count132
+\PositionX=\count133
+\PositionY=\count134
+\ArrowLength=\count135
+)
+(C:\CTeX\texmf\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2003/11/30 v6.74m Hypertext links for LaTeX
+
+(C:\CTeX\texmf\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+\@linkdim=\dimen120
+\Hy@linkcounter=\count136
+\Hy@pagecounter=\count137
+
+(C:\CTeX\texmf\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2003/11/30 v6.74m Hyperref: PDFDocEncoding definition (HO)
+)
+(C:\CTeX\texmf\tex\latex\00miktex\hyperref.cfg
+File: hyperref.cfg 2003/03/08 v1.0 MiKTeX 'hyperref' configuration
+)
+Package hyperref Info: Option `CJKbookmarks' set `true' on input line 1830.
+Package hyperref Info: Option `colorlinks' set `true' on input line 1830.
+Package hyperref Info: Option `hyperindex' set `true' on input line 1830.
+Package hyperref Info: Option `plainpages' set `false' on input line 1830.
+Package hyperref Info: Hyper figures OFF on input line 1880.
+Package hyperref Info: Link nesting OFF on input line 1885.
+Package hyperref Info: Hyper index ON on input line 1888.
+Package hyperref Info: Plain pages OFF on input line 1895.
+Package hyperref Info: Backreferencing OFF on input line 1900.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2004.
+(C:\CTeX\texmf\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip11
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2143.
+\Fld@menulength=\count138
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+\Choice@toks=\toks22
+\Field@toks=\toks23
+Package hyperref Info: Hyper figures OFF on input line 2618.
+Package hyperref Info: Link nesting OFF on input line 2623.
+Package hyperref Info: Hyper index ON on input line 2626.
+Package hyperref Info: backreferencing OFF on input line 2633.
+Package hyperref Info: Link coloring ON on input line 2636.
+\c@Item=\count139
+\c@Hfootnote=\count140
+)
+*hyperref using driver hpdftex*
+(C:\CTeX\texmf\tex\latex\hyperref\hpdftex.def
+File: hpdftex.def 2003/11/30 v6.74m Hyperref driver for pdfTeX
+
+(C:\CTeX\texmf\tex\latex\psnfss\pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(C:\CTeX\texmf\tex\latex\psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(C:\CTeX\texmf\tex\latex\psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\Fld@listcount=\count141
+\@outlinefile=\write4
+)
+(C:\CTeX\localtexmf\tex\latex\CJK\CJK.sty
+Package: CJK 2003/03/28 4.5.2
+
+(C:\CTeX\localtexmf\tex\latex\CJK\mule\MULEenc.sty
+File: MULEenc.sty 2003/03/28 4.5.2
+)
+(C:\CTeX\localtexmf\tex\latex\CJK\CJK.enc
+File: CJK.enc 2003/03/28 4.5.2
+)
+LaTeX Info: Redefining \selectfont on input line 661.
+\CJK@indent=\box29
+)
+(C:\CTeX\localtexmf\tex\latex\CJK\CJKnumb.sty
+Package: CJKnumb 2003/03/28 4.5.2
+\CJK@q=\count142
+\CJK@r=\count143
+)
+(C:\CTeX\texmf\tex\latex\tools\indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(C:\CTeX\texmf\tex\latex\setspace\setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+)
+\@indexfile=\write5
+
+Writing index file lshort.idx
+Copyright T.Oetiker, H.Partl, E.Schlegl, I.Hyna
+(lshort.aux (title.aux) (contrib.aux) (overview.aux) (things.aux) (typeset.aux)
+(math.aux) (lssym.aux) (spec.aux) (custom.aux) (biblio.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+
+(C:\CTeX\texmf\tex\latex\graphics\color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(C:\CTeX\texmf\tex\latex\00miktex\color.cfg
+File: color.cfg 2003/03/08 v1.0 MiKTeX 'color' configuration
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+
+(C:\CTeX\texmf\tex\latex\graphics\pdftex.def
+File: pdftex.def 2005/06/20 v0.03m graphics/color for pdftex
+\Gread@gobject=\count144
+
+(C:\CTeX\texmf\tex\context\base\supp-pdf.tex
+(C:\CTeX\texmf\tex\context\base\supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count145
+\scratchcounter=\count146
+\scratchtoks=\toks24
+\scratchdimen=\dimen123
+\scratchskip=\skip51
+\scratchmuskip=\muskip12
+\scratchbox=\box30
+\scratchread=\read2
+\scratchwrite=\write6
+\zeropoint=\dimen124
+\onepoint=\dimen125
+\onebasepoint=\dimen126
+\minusone=\count147
+\thousandpoint=\dimen127
+\onerealpoint=\dimen128
+\emptytoks=\toks25
+\nextbox=\box31
+\nextdepth=\dimen129
+\everyline=\toks26
+\!!counta=\count148
+\!!countb=\count149
+\recursecounter=\count150
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen130
+\MPnumerator=\count154
+\everyMPtoPDFconversion=\toks27
+)))
+Package hyperref Info: Link coloring ON on input line 123.
+ (C:\CTeX\texmf\tex\latex\hyperref\nameref.sty
+Package: nameref 2003/12/03 v2.21 Cross-referencing by name of section
+\c@section@level=\count155
+)
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+ (lshort.out) (lshort.out)
+(C:\CTeX\localtexmf\tex\latex\CJK\standard.bdg
+File: standard.bdg 2003/03/28 4.5.2
+)
+(C:\CTeX\localtexmf\tex\latex\CJK\extended.enc
+File: extended.enc 2003/03/28 4.5.2
+)
+(C:\CTeX\localtexmf\tex\latex\CJK\extended.chr
+File: extended.chr 2003/03/28 4.5.2
+)
+LaTeX Font Info:    Try loading font information for C19+com on input line 127.
+
+ (c19com.fd
+File: c19com.fd 2002/05/01 4.5.0
+) (title.tex
+\centeroffset=\skip52
+LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+
+(C:\CTeX\texmf\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+
+(C:\CTeX\texmf\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 25.
+
+(C:\CTeX\texmf\tex\latex\base\ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [1
+
+
+
+{psfonts.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+
+(C:\CTeX\texmf\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+) [2] (contrib.tex [3
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4])
+[5] (overview.tex [6
+
+
+
+]) [7] (lshort.toc [8
+
+
+] [9])
+\tf@toc=\write7
+ [10] (lshort.lof)
+\tf@lof=\write8
+ [11
+
+]
+(lshort.lot [12
+
+])
+\tf@lot=\write9
+ [13] [14
+
+] (things.tex
+\CJKchar {"0D5}{"0C2} 1.
+[1
+
+
+] (kees.fig) [2]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 179.
+ [3] [4]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [5]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Overfull \hbox (14.21614pt too wide) in paragraph at lines 403--407
+[]\C19/com/m/n/10.95/60 N \C19/com/m/n/10.95/40 ı \C19/com/m/n/10.95/50 ∑ \C19/
+com/m/n/10.95/49 - \C19/com/m/n/10.95/60 I \C19/com/m/n/10.95/61 á ò \C19/com/m
+/n/10.95/42 á \C19/com/m/n/10.95/37 Î \C19/com/m/n/10.95/55 Í \C19/com/m/n/10.9
+5/26 £[]\OT1/cmr/m/n/10.95 parameter\C19/com/m/n/10.95/26 § \C19/com/m/n/10.95/
+37 ø \C19/com/m/n/10.95/62 ^ \C19/com/m/n/10.95/61 ò \C19/com/m/n/10.95/40 È \C
+19/com/m/n/10.95/39 å \C19/com/m/n/10.95/48 ) \C19/com/m/n/10.95/43 “ \C19/com/
+m/n/10.95/26 £[]\OT1/cmr/m/n/10.95 curly braces\C19/com/m/n/10.95/26 §[]\OT1/cm
+tt/m/n/10.95 { }
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [6]
+Overfull \hbox (3.48387pt too wide) in paragraph at lines 447--449
+\C19/com/m/n/10.95/46 ∏ \C19/com/m/n/10.95/25 " \C19/com/m/n/10.95/40  \C19/co
+m/m/n/10.95/54 , \C19/com/m/n/10.95/26 ß \C19/com/m/n/10.95/51 \ \C19/com/m/n/1
+0.95/60 I \C19/com/m/n/10.95/61 á \C19/com/m/n/10.95/63 3  \C19/com/m/n/10.95/
+58 © \C19/com/m/n/10.95/45 á \C19/com/m/n/10.95/40   \C19/com/m/n/10.95/60 Û 
+\C19/com/m/n/10.95/53 ´ \C19/com/m/n/10.95/48 p \C19/com/m/n/10.95/45 \ \C19/co
+m/m/n/10.95/54 ˛ \C19/com/m/n/10.95/50 ∑ \C19/com/m/n/10.95/49 - []\OT1/cmtt/m/
+n/10.95 \usepackage{verbatim}\C19/com/m/n/10.95/25 " 
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa) [7] [8] [9] [10]
+Overfull \hbox (27.42036pt too wide) in paragraph at lines 864--867
+[]\C19/com/m/n/10.95/40  \C19/com/m/n/10.95/51 \ \C19/com/m/n/10.95/55 ¶ \C19/
+com/m/n/10.95/62 ^ \OT1/cmr/m/n/10.95 L[]T[]X \C19/com/m/n/10.95/40  \C19/com/
+m/n/10.95/55 û \C19/com/m/n/10.95/43 ˇ \C19/com/m/n/10.95/26 ß \C19/com/m/n/10.
+95/51 \ \C19/com/m/n/10.95/47 å \C19/com/m/n/10.95/51 U \C19/com/m/n/10.95/43 È
+ \C19/com/m/n/10.95/47 Ø \C19/com/m/n/10.95/41 u \C19/com/m/n/10.95/59 y \C19/c
+om/m/n/10.95/51 \ \C19/com/m/n/10.95/37  \C19/com/m/n/10.95/42 à \C19/com/m/n/
+10.95/64 ´ \C19/com/m/n/10.95/37 ÿ \C19/com/m/n/10.95/57 ” \C19/com/m/n/10.95/4
+8 * \C19/com/m/n/10.95/63 – \C19/com/m/n/10.95/50 ∂ \C19/com/m/n/10.95/26 £[]\O
+T1/cmr/m/n/10.95 extensions\C19/com/m/n/10.95/26 §
+ []
+
+[11] [12] [13]
+Overfull \hbox (10.54668pt too wide) in paragraph at lines 1043--1046
+[]\OT1/cmtt/m/n/10.95 \include \C19/com/m/n/10.95/50 ∑ \C19/com/m/n/10.95/49 - 
+\C19/com/m/n/10.95/63 3 \C19/com/m/n/10.95/60 # \C19/com/m/n/10.95/61 ê \C19/co
+m/m/n/10.95/54 ˛ \C19/com/m/n/10.95/51 ¸ \C19/com/m/n/10.95/36 á ù \C19/com/m/n
+/10.95/48 ) \C19/com/m/n/10.95/46 ? \C19/com/m/n/10.95/48 5 \C19/com/m/n/10.95/
+40  \C19/com/m/n/10.95/58 © \C19/com/m/n/10.95/37  \C19/com/m/n/10.95/26 ß \C
+19/com/m/n/10.95/63 ˘ \C19/com/m/n/10.95/40 È \C19/com/m/n/10.95/62 u \C19/com/
+m/n/10.95/55 ¶ \C19/com/m/n/10.95/62 ^ [][]\OT1/cmtt/m/n/10.95 \includeonly
+ []
+
+) [14] (typeset.tex
+\CJKchar {"0D5}{"0C2} 2.
+[15
+
+
+
+] [16] [17]
+File: lshort.exa  (verbatim)
+ (lshort.exa) [18]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [19]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [20]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 565.
+
+
+(C:\CTeX\texmf\tex\latex\base\omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 565.
+ [21] [22] [23]
+File: lshort.exa  (verbatim)
+ (lshort.exa) [24]
+[25]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 980.
+
+Overfull \hbox (55.55135pt too wide) in paragraph at lines 980--983
+\C19/com/m/n/10.95/55 Í \C19/com/m/n/10.95/65 i \C19/com/m/n/10.95/25 " \C19/co
+m/m/n/10.95/40 È \C19/com/m/n/10.95/62 u \C19/com/m/n/10.95/64  \C19/com/m/n/1
+0.95/58 © \C19/com/m/n/10.95/53 c \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/51
+ S \C19/com/m/n/10.95/54 N \C19/com/m/n/10.95/52   \C19/com/m/n/10.95/37 H \C19
+/com/m/n/10.95/55 ¶ \C19/com/m/n/10.95/62 ^ \C19/com/m/n/10.95/39 ë \C19/com/m/
+n/10.95/60 ( \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/50 ∑ \C19/com/m/n/10.95
+/49 - \C19/com/m/n/10.95/26 £ \C19/com/m/n/10.95/48 ~ \C19/com/m/n/10.95/54 X \
+C19/com/m/n/10.95/26 ß[]\OT1/cmtt/m/n/10.95 \chapter*{Preface}\C19/com/m/n/10.9
+5/26 § ß
+ []
+
+[26]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [27]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5.
+
+)
+Overfull \hbox (50.78749pt too wide) in paragraph at lines 1172--1174
+[]\OT1/cmtt/m/n/10.95 itemize \C19/com/m/n/10.95/44 Ç \C19/com/m/n/10.95/46 ∏ \
+C19/com/m/n/10.95/62 ^ u \C19/com/m/n/10.95/45 { \C19/com/m/n/10.95/39 ¸ \C19/c
+om/m/n/10.95/40  \C19/com/m/n/10.95/49  \C19/com/m/n/10.95/37 L \C19/com/m/n/
+10.95/26 ß[][]\OT1/cmtt/m/n/10.95 enumerate \C19/com/m/n/10.95/44 Ç \C19/com/m/
+n/10.95/46 ∏ \C19/com/m/n/10.95/62 ^ u \C19/com/m/n/10.95/39 ë \C19/com/m/n/10.
+95/60 S \C19/com/m/n/10.95/43 “ \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/49 
+ \C19/com/m/n/10.95/37 L \C19/com/m/n/10.95/26 ß[][]\OT1/cmtt/m/n/10.95 descrip
+tion
+ []
+
+[28]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Overfull \hbox (4.27881pt too wide) in paragraph at lines 1208--1211
+\C19/com/m/n/10.95/49 · \C19/com/m/n/10.95/25 "[][]\OT1/cmtt/m/n/10.95 center \
+C19/com/m/n/10.95/44 Ç \C19/com/m/n/10.95/46 ∏ \C19/com/m/n/10.95/38  \C19/com
+/m/n/10.95/55 ) \C19/com/m/n/10.95/46 ÿ \C19/com/m/n/10.95/64 • \C19/com/m/n/10
+.95/40  \C19/com/m/n/10.95/58 © \C19/com/m/n/10.95/37  \C19/com/m/n/10.95/25 
+" \C19/com/m/n/10.95/54 X \C19/com/m/n/10.95/43 J \C19/com/m/n/10.95/51 \ \C19/
+com/m/n/10.95/37 ÿ \C19/com/m/n/10.95/55 — \C19/com/m/n/10.95/54 \ \C19/com/m/n
+/10.95/50 ∑ \C19/com/m/n/10.95/49 - [][]\OT1/cmtt/m/n/10.95 \\ \C19/com/m/n/10.
+95/64 ç \C19/com/m/n/10.95/40 Ω ‰ \C19/com/m/n/10.95/60 1 \C19/com/m/n/10.95/40
+ : \C19/com/m/n/10.95/26 ß\OT1/cmr/m/n/10.95 L[]T[]X
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [29]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [30]
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [31]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [32]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [33] [34] [35])
+[36] (math.tex
+\CJKchar {"0D5}{"0C2} 3.
+File: lshort.exa  (verbatim)
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [37
+
+
+
+]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [38]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [39]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [40]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 388
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 388.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 388.
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 388--388
+[][]\C19/com/m/n/9/65 5 \C19/com/m/n/9/61 ø \C19/com/m/n/9/63 ˘ \C19/com/m/n/9/
+60 
+ \C19/com/m/n/9/46 Œ \C19/com/m/n/9/50 ∑ \C19/com/m/n/9/49 - \C19/com/m/n/9/63 
+3 [][]\OT1/cmss/m/n/9 ams-math \C19/com/m/n/9/43 ˜ \C19/com/m/n/9/45 8 \C19/com
+/m/n/9/64 • \C19/com/m/n/9/46 B \C19/com/m/n/9/64 é \C19/com/m/n/9/55 ¶ \C19/co
+m/m/n/9/62 ^ \C19/com/m/n/9/26 ß \C19/com/m/n/9/41  \C19/com/m/n/9/55 ¥ \C19/c
+om/m/n/9/62 ^ [][]\OT1/cmtt/m/n/9 \binom\C19/com/m/n/9/43 ⁄ [][]\OT1/cmtt/m/n/9
+ \genfrac\C19/com/m/n/9/48 5
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 2.
+
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 2.
+
+)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [41]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+[42]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [43]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa) [44]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [45]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [46]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa
+\c@law=\count156
+) [47]
+File: lshort.exa  (verbatim)
+ (lshort.exa
+\c@mur=\count157
+)
+File: lshort.exa  (verbatim)
+
+(lshort.exa
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
+) [48]
+File: lshort.exa  (verbatim)
+ (lshort.exa)) [49] (lssym.tex [50
+
+
+]
+LaTeX Font Info:    Try loading font information for U+eus on input line 404.
+
+(C:\CTeX\texmf\tex\latex\amsfonts\ueus.fd
+File: ueus.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+euf on input line 409.
+
+(C:\CTeX\texmf\tex\latex\amsfonts\ueuf.fd
+File: ueuf.fd 2002/01/19 v2.2g AMS font definitions
+)) [51] [52] [53] [54] [55] [56]
+(spec.tex
+\CJKchar {"0D5}{"0C2} 4.
+
+Underfull \hbox (badness 1087) in paragraph at lines 61--61
+[][]\C19/com/m/n/9/49 , \C19/com/m/n/9/58 	 \C19/com/m/n/9/61 ò \C19/com/m/n/9/
+42 á \C19/com/m/n/9/47 å \C19/com/m/n/9/61 ± \C19/com/m/n/9/62 ^ \C19/com/m/n/9
+/48 5 \C19/com/m/n/9/55 — \C19/com/m/n/9/38 — \OT1/cmr/m/n/9 PostScript \C19/co
+m/m/n/9/40  \C19/com/m/n/9/42 Û \C19/com/m/n/9/46 ‰ \C19/com/m/n/9/55 ¥ []\OT1
+/cmr/m/sc/9 GhostScript \C19/com/m/n/9/54 ^ \C19/com/m/n/9/45 á \C19/com/m/n/9/
+26 ß \C19/com/m/n/9/56 ß \C19/com/m/n/9/47 å \C19/com/m/n/9/61 ± \C19/com/m/n/9
+/39 l
+ []
+
+[57
+
+
+
+
+] [58]
+File: lshort.exa  (verbatim)
+ (lshort.exa) [59
+
+] [60] [61]
+Overfull \hbox (81.38104pt too wide) in paragraph at lines 538--540
+\C19/com/m/n/10.95/58  \C19/com/m/n/10.95/54 ˛ \C19/com/m/n/10.95/40   \C19/
+com/m/n/10.95/25 " \C19/com/m/n/10.95/63 3 \C19/com/m/n/10.95/44 p \C19/com/m/n
+/10.95/48 È \C19/com/m/n/10.95/58  \C19/com/m/n/10.95/60 œ \C19/com/m/n/10.95/
+63 È \C19/com/m/n/10.95/61  \C19/com/m/n/10.95/55 ™ \C19/com/m/n/10.95/43 ˜ \C
+19/com/m/n/10.95/36 ù \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/61 ò \C19/com/
+m/n/10.95/42 á \C19/com/m/n/10.95/64 Ã \C19/com/m/n/10.95/61 á \C19/com/m/n/10.
+95/40  / \C19/com/m/n/10.95/41 ê \C19/com/m/n/10.95/46 “ \C19/com/m/n/10.95/55
+ ¥ \OT1/cmr/m/n/10.95 CTAN([]\OT1/cmtt/m/n/10.95 http://www.ctan.org/\OT1/cmr/m
+/n/10.95 )\C19/com/m/n/10.95/25 " 
+ []
+
+[62]
+Overfull \hbox (32.9238pt too wide) in paragraph at lines 571--573
+[]\C19/com/m/n/10.95/36 r \OT1/cmtt/m/n/10.95 .sty \C19/com/m/n/10.95/58 © \C19
+/com/m/n/10.95/45 á \C19/com/m/n/10.95/61 £ \C19/com/m/n/10.95/40  \C19/com/m/
+n/10.95/59 X \C19/com/m/n/10.95/57 ⁄ \C19/com/m/n/10.95/51 U \C19/com/m/n/10.95
+/63 È \C19/com/m/n/10.95/40   / \C19/com/m/n/10.95/41 ê \C19/com/m/n/10.95/25
+ " \C19/com/m/n/10.95/57 œ \C19/com/m/n/10.95/38 ~ \C19/com/m/n/10.95/55 ¥ \C19
+/com/m/n/10.95/63 3 \OT1/cmtt/m/n/10.95 .../\OT1/cmtt/m/it/10.95 localtexmf\OT1
+/cmtt/m/n/10.95 /tex/latex
+ []
+
+) [63] (custom.tex
+\CJKchar {"0D5}{"0C2} 5.
+File: lshort.exa  (verbatim)
+(lshort.exa) [64
+
+
+
+]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [65]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Overfull \hbox (2.88095pt too wide) in paragraph at lines 150--153
+\C19/com/m/n/10.95/46 ∏ \C19/com/m/n/10.95/26 ß \C19/com/m/n/10.95/51 \ \C19/co
+m/m/n/10.95/47 å \C19/com/m/n/10.95/61 ± \C19/com/m/n/10.95/55 ¶ \C19/com/m/n/1
+0.95/62 ^ \C19/com/m/n/10.95/50 ∑ \C19/com/m/n/10.95/49 - [][]\OT1/cmtt/m/n/10.
+95 \renewenvironment\C19/com/m/n/10.95/26 ß \C19/com/m/n/10.95/56 ß \C19/com/m/
+n/10.95/55 ¶ \C19/com/m/n/10.95/62 ^ \C19/com/m/n/10.95/43 ⁄ \C19/com/m/n/10.95
+/50 ∑ \C19/com/m/n/10.95/49 - [][]\OT1/cmtt/m/n/10.95 \newenvironment
+ []
+
+[66]
+File: lshort.exa  (verbatim)
+ (lshort.exa) [67]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Underfull \vbox (badness 3179) has occurred while \output is active []
+
+ [68]
+File: lshort.exa  (verbatim)
+
+(lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa) [69]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Overfull \hbox (22.45712pt too wide) in paragraph at lines 380--382
+[]\C19/com/m/n/10.95/48 ~ \C19/com/m/n/10.95/54 X \C19/com/m/n/10.95/50 ∑ \C19/
+com/m/n/10.95/49 - []\OT1/cmtt/m/n/10.95 \linespread{1.3} \C19/com/m/n/10.95/45
+ Ú \C19/com/m/n/10.95/38  \C19/com/m/n/10.95/55 ) $\OT1/cmr/m/n/10.95 1\OML/cm
+m/m/it/10.95 :\OT1/cmr/m/n/10.95 5$ \C19/com/m/n/10.95/37  \C19/com/m/n/10.95/
+60 1 \C19/com/m/n/10.95/46 Â \C19/com/m/n/10.95/26 ß \C19/com/m/n/10.95/41  \C
+19/com/m/n/10.95/50 ∑ \C19/com/m/n/10.95/49 - []\OT1/cmtt/m/n/10.95 \linespread
+{1.6}
+ []
+
+[70] [71]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Overfull \hbox (20.8828pt too wide) in paragraph at lines 459--461
+[]\C19/com/m/n/10.95/56 ß \C19/com/m/n/10.95/45 Ú \C19/com/m/n/10.95/38  \C19/
+com/m/n/10.95/55 ) \C19/com/m/n/10.95/61 ò \C19/com/m/n/10.95/42 á \C19/com/m/n
+/10.95/45 Ú \C19/com/m/n/10.95/61 ò \C19/com/m/n/10.95/60 1 \C19/com/m/n/10.95/
+40  \C19/com/m/n/10.95/47 ∞ \C19/com/m/n/10.95/40 › \C19/com/m/n/10.95/38 ø \C
+19/com/m/n/10.95/49 ˜ \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/38  \C19/com/
+m/n/10.95/40 › \C19/com/m/n/10.95/25 " \C19/com/m/n/10.95/54 X \C19/com/m/n/10.
+95/43 J \C19/com/m/n/10.95/48 ¸ \C19/com/m/n/10.95/42 á []\OT1/cmtt/m/n/10.95 \
+hspace{\stretch{\OT1/cmr/m/it/10.95 n[]\OT1/cmtt/m/n/10.95 }}
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa) [72]
+Two-sided document style, odd page.
+
+Overfull \hbox (10.52335pt too wide) in paragraph at lines 508--515
+[][] \C19/com/m/n/10.95/63 # \C19/com/m/n/10.95/60 N \C19/com/m/n/10.95/51 \ \C
+19/com/m/n/10.95/63 3 []\OT1/cmtt/m/n/10.95 \documentclass \C19/com/m/n/10.95/5
+0 ∑ \C19/com/m/n/10.95/49 - \C19/com/m/n/10.95/64 • ç \C19/com/m/n/10.95/40 Ω \
+C19/com/m/n/10.95/61 ê \C19/com/m/n/10.95/50 ° \C19/com/m/n/10.95/38 ∫ \C19/com
+/m/n/10.95/39 Ä \C19/com/m/n/10.95/26 £[]\OT1/cmr/m/n/10.95 paper size\C19/com/
+m/n/10.95/26 § \C19/com/m/n/10.95/25 "
+ []
+
+[73] [74]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+Underfull \vbox (badness 4686) has occurred while \output is active []
+
+ [75]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+File: lshort.exa  (verbatim)
+
+(lshort.exa
+Underfull \hbox (badness 10000) detected at line 4
+\OT1/cmr/m/n/10 s p r e a d
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+Overfull \hbox (57.68648pt too wide) in paragraph at lines 665--667
+[]\C19/com/m/n/10.95/54 4 \C19/com/m/n/10.95/51 \ U \C19/com/m/n/10.95/43 
+ \C19/com/m/n/10.95/40 Ω \C19/com/m/n/10.95/61 ¬ \C19/com/m/n/10.95/43 › \C19/c
+om/m/n/10.95/65 f \C19/com/m/n/10.95/40  \C19/com/m/n/10.95/42 p \C19/com/m/n/
+10.95/40 › \C19/com/m/n/10.95/25 " \C19/com/m/n/10.95/51 \ \C19/com/m/n/10.95/4
+7 å \C19/com/m/n/10.95/61 ± \C19/com/m/n/10.95/53 c \C19/com/m/n/10.95/50 ° \C1
+9/com/m/n/10.95/54 n \C19/com/m/n/10.95/42 á \C19/com/m/n/10.95/37 Î \C19/com/m
+/n/10.95/55 Í \C19/com/m/n/10.95/64 • \C19/com/m/n/10.95/55 ¶ \C19/com/m/n/10.9
+5/62 ^ [][]\OT1/cmtt/m/n/10.95 \width\C19/com/m/n/10.95/25 ![][]\OT1/cmtt/m/n/1
+0.95 \height\C19/com/m/n/10.95/25 ![][]\OT1/cmtt/m/n/10.95 \depth
+ []
+
+File: lshort.exa  (verbatim)
+(lshort.exa) [78]
+File: lshort.exa  (verbatim)
+ (lshort.exa)
+File: lshort.exa  (verbatim)
+ (lshort.exa)) [79] (biblio.tex [80
+
+
+
+
+]) [81]
+(lshort.ind [82
+
+
+] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92
+
+]) [93
+
+]
+(lshort.aux (title.aux) (contrib.aux) (overview.aux) (things.aux) (typeset.aux)
+(math.aux) (lssym.aux) (spec.aux) (custom.aux) (biblio.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 7783 strings out of 95515
+ 82939 string characters out of 1189349
+ 175423 words of memory out of 1135686
+ 8719 multiletter control sequences out of 60000
+ 115408 words of font info for 412 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 4999
+ 38i,20n,42p,389b,905s stack positions out of 1500i,500n,5000p,200000b,32768s
+PDF statistics:
+ 2460 PDF objects out of 300000
+ 326 named destinations out of 300000
+ 745 words of extra memory for PDF output out of 65536
+
+! pdfTeX warning (dest): name{Hfootnote.39} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.38} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.37} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.36} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.35} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.34} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.33} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.32} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.31} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+! pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+<C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong81.pfb><C:\CTeX\texmf\fo
+nts\type1\bluesky\cm\cmsl12.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmbx9.pfb
+><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr17.pfb><C:\CTeX\localtexmf\fonts\type
+1\chinese\gbkkai\gbkkai43.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gb
+kkai54.pfb><C:\CTeX\texmf\fonts\type1\bluesky\euler\eufm10.pfb><C:\CTeX\texmf\f
+onts\type1\bluesky\euler\eusm10.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmu10
+.pfb><C:\CTeX\texmf\fonts\type1\bluesky\symbols\msam10.pfb><C:\CTeX\texmf\fonts
+\type1\bluesky\cm\cmmi8.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\lasy10.pfb><C
+:\CTeX\texmf\fonts\type1\bluesky\cm\cmmi5.pfb><C:\CTeX\texmf\fonts\type1\bluesk
+y\cm\cmsy8.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmmi9.pfb><C:\CTeX\texmf\f
+onts\type1\bluesky\symbols\msbm10.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\g
+bkkai\gbkkai51.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmex10.pfb><C:\CTeX\lo
+caltexmf\fonts\type1\chinese\gbkkai\gbkkai59.pfb><C:\CTeX\localtexmf\fonts\type
+1\chinese\gbkkai\gbkkai61.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gb
+kkai46.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai52.pfb><C:\CTeX
+\localtexmf\fonts\type1\chinese\gbkkai\gbkkai63.pfb><C:\CTeX\localtexmf\fonts\t
+ype1\chinese\gbkkai\gbkkai50.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai
+\gbkkai56.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmmi7.pfb><C:\CTeX\texmf\fo
+nts\type1\bluesky\cm\cmss9.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmitt10.pf
+b><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmssi10.pfb><C:\CTeX\localtexmf\fonts\t
+ype1\chinese\gbkkai\gbkkai53.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai
+\gbkkai57.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr7.pfb><C:\CTeX\texmf\fon
+ts\type1\bluesky\cm\cmsy6.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gb
+kkai62.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr12.pfb><C:\CTeX\texmf\fonts
+\type1\bluesky\cm\cmsy7.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkh
+ei52.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmssbx10.pfb><C:\CTeX\localtexmf
+\fonts\type1\chinese\gbksong\gbksong74.pfb><C:\CTeX\texmf\fonts\type1\bluesky\c
+m\cmti7.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai58.pfb><C:\CTe
+X\localtexmf\fonts\type1\chinese\gbkhei\gbkhei38.pfb><C:\CTeX\texmf\fonts\type1
+\bluesky\cm\cmsl10.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmsy9.pfb><C:\CTeX
+\texmf\fonts\type1\bluesky\cm\cmtt9.pfb><C:\CTeX\localtexmf\fonts\type1\chinese
+\gbkkai\gbkkai65.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai36.pf
+b><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai47.pfb><C:\CTeX\localtex
+mf\fonts\type1\chinese\gbkkai\gbkkai48.pfb><C:\CTeX\localtexmf\fonts\type1\chin
+ese\gbkkai\gbkkai42.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai40
+.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei48.pfb><C:\CTeX\texmf
+\fonts\type1\bluesky\cm\cmti8.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr9.pf
+b><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai45.pfb><C:\CTeX\localtex
+mf\fonts\type1\chinese\gbkkai\gbkkai49.pfb><C:\CTeX\localtexmf\fonts\type1\chin
+ese\gbkhei\gbkhei43.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei25
+.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmcsc10.pfb><C:\CTeX\texmf\fonts\typ
+e1\bluesky\cm\cmmi6.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr5.pfb><C:\CTeX
+\texmf\fonts\type1\bluesky\cm\cmr6.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cm
+tt8.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\line10.pfb><C:\CTeX\texmf\fonts\t
+ype1\bluesky\cm\lcircle1.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbk
+hei62.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmss8.pfb><C:\CTeX\texmf\fonts\
+type1\bluesky\cm\cmss10.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkh
+ei47.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmbx8.pfb><C:\CTeX\localtexmf\fo
+nts\type1\chinese\gbkhei\gbkhei44.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\g
+bkhei\gbkhei51.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei56.pfb>
+<C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei54.pfb><C:\CTeX\localtexmf
+\fonts\type1\chinese\gbkkai\gbkkai55.pfb><C:\CTeX\localtexmf\fonts\type1\chines
+e\gbkkai\gbkkai37.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei53.p
+fb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei42.pfb><C:\CTeX\localte
+xmf\fonts\type1\chinese\gbkhei\gbkhei59.pfb><C:\CTeX\localtexmf\fonts\type1\chi
+nese\gbkhei\gbkhei39.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei4
+9.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong52.pfb><C:\CTeX\lo
+caltexmf\fonts\type1\chinese\gbksong\gbksong39.pfb><C:\CTeX\texmf\fonts\type1\b
+luesky\cm\cmmi10.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmtt10.pfb><C:\CTeX\
+texmf\fonts\type1\bluesky\cm\cmr8.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\g
+bkhei\gbkhei60.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei50.pfb>
+<C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong53.pfb><C:\CTeX\localtex
+mf\fonts\type1\chinese\gbksong\gbksong46.pfb><C:\CTeX\localtexmf\fonts\type1\ch
+inese\gbksong\gbksong42.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbk
+song59.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong47.pfb><C:\CT
+eX\localtexmf\fonts\type1\chinese\gbksong\gbksong38.pfb><C:\CTeX\localtexmf\fon
+ts\type1\chinese\gbksong\gbksong57.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\
+gbksong\gbksong50.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong55
+.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong48.pfb><C:\CTeX\loc
+altexmf\fonts\type1\chinese\gbksong\gbksong49.pfb><C:\CTeX\localtexmf\fonts\typ
+e1\chinese\gbksong\gbksong56.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkson
+g\gbksong40.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong45.pfb><
+C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong61.pfb><C:\CTeX\texmf\fon
+ts\type1\bluesky\cm\cmsy10.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\
+gbksong54.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmbx10.pfb><C:\CTeX\localte
+xmf\fonts\type1\chinese\gbksong\gbksong63.pfb><C:\CTeX\localtexmf\fonts\type1\c
+hinese\gbksong\gbksong58.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gb
+ksong51.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong41.pfb><C:\C
+TeX\localtexmf\fonts\type1\chinese\gbksong\gbksong26.pfb><C:\CTeX\localtexmf\fo
+nts\type1\chinese\gbksong\gbksong37.pfb><C:\CTeX\localtexmf\fonts\type1\chinese
+\gbksong\gbksong36.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong6
+5.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong60.pfb><C:\CTeX\lo
+caltexmf\fonts\type1\chinese\gbksong\gbksong44.pfb><C:\CTeX\localtexmf\fonts\ty
+pe1\chinese\gbksong\gbksong62.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkso
+ng\gbksong43.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbksong\gbksong64.pfb>
+<C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei58.pfb><C:\CTeX\localtexmf
+\fonts\type1\chinese\gbkhei\gbkhei64.pfb><C:\CTeX\localtexmf\fonts\type1\chines
+e\gbksong\gbksong25.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmr10.pfb><C:\CTe
+X\localtexmf\fonts\type1\chinese\gbkhei\gbkhei26.pfb><C:\CTeX\localtexmf\fonts\
+type1\chinese\gbkhei\gbkhei65.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhe
+i\gbkhei36.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei63.pfb><C:\
+CTeX\texmf\fonts\type1\bluesky\cm\cmmi12.pfb><C:\CTeX\texmf\fonts\type1\bluesky
+\cm\cmti10.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai60.pfb><C:\
+CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai64.pfb><C:\CTeX\localtexmf\fon
+ts\type1\chinese\gbkkai\gbkkai41.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmti
+12.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkkai\gbkkai44.pfb><C:\CTeX\loc
+altexmf\fonts\type1\chinese\gbkhei\gbkhei55.pfb><C:\CTeX\localtexmf\fonts\type1
+\chinese\gbkhei\gbkhei46.pfb><C:\CTeX\texmf\fonts\type1\bluesky\cm\cmmib10.pfb>
+<C:\CTeX\texmf\fonts\type1\bluesky\cm\cmbx12.pfb><C:\CTeX\localtexmf\fonts\type
+1\chinese\gbkhei\gbkhei40.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gb
+khei45.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei\gbkhei57.pfb><C:\CTeX
+\localtexmf\fonts\type1\chinese\gbkhei\gbkhei37.pfb><C:\CTeX\localtexmf\fonts\t
+ype1\chinese\gbkhei\gbkhei41.pfb><C:\CTeX\localtexmf\fonts\type1\chinese\gbkhei
+\gbkhei61.pfb>
+Output written on lshort.pdf (107 pages, 2184401 bytes).

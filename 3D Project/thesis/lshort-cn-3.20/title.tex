@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents: The title page
+% $Id: title.tex,v 1.2 2002/05/26 22:44:33 zuohuijun Exp $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifx\pdfoutput\undefined % We're not running pdftex
+\else
+\pdfbookmark{封面}{title}
+\fi
+\newlength{\centeroffset}
+\setlength{\centeroffset}{-0.5\oddsidemargin}
+\addtolength{\centeroffset}{0.5\evensidemargin}
+%\addtolength{\textwidth}{-\centeroffset}
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+\flushright
+%{\Huge\bfseries The Not So Short\\
+%Introduction to \LaTeXe
+%
+%}
+{\huge \bfseries 一份不太简短的~\LaTeXe{}~介绍}
+\noindent\rule[-1ex]{\textwidth}{5pt}\\[2.5ex]
+\hfill\emph{\Large 或~\pageref{verylast}~分钟学会~\LaTeXe}
+\end{minipage}}
+
+%\vspace{\stretch{1}}
+%\noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+%\flushright
+%{\bfseries
+%by Tobias Oetiker\\[1.5ex]
+%Hubert Partl, Irene Hyna and  Elisabeth Schlegl\\[3ex]}
+%Version~3.20, 09 August, 2001
+%\end{minipage}}
+\vspace{\stretch{1.5}}
+\noindent\hspace*{\centeroffset}\makebox[0pt][l]{%
+%\flushright
+\begin{minipage}{\textwidth}{%
+{\bfseries 原版作者：}Tobias Oetiker\\[1.5ex]
+　　　　　            Hubert Partl, Irene Hyna and  Elisabeth Schlegl\\[1.5ex]
+{\bfseries 原版版本：}Version~3.20, 09 August, 2001\\[3ex]
+{\bfseries 中文翻译：}中国~C\TeX{}~用户小组\\[1.5ex]
+{\bfseries 中文版本：}版本~3.20，\CJKdigits{2002}年\CJKdigits{5}月}
+\end{minipage}}
+
+%\addtolength{\textwidth}{\centeroffset}
+\vspace{\stretch{2}}
+
+\pagebreak
+\begin{small}
+\CJKindent
+%  Copyright \copyright 2000 Tobias Oetiker and all the Contributers to
+%  LShort.  All rights reserved.
+   Tobias\ Oetiker\ 拥有版权~\copyright\ 2000~以及~LShort~的所有的发行版本。
+   保留所有权利。
+
+%  This document is free; you can redistribute it and/or modify it
+%  under the terms of the GNU General Public License as published by
+%  the Free Software Foundation; either version 2 of the License, or
+%  (at your option) any later version.
+   这份文档是免费的；在自由软件组织颁布的~GNU~通用出版许可证的条款下，
+   你可以再版或者修改它。许可证可以是第二版，或者任何后继版本（随你意）。
+
+%  This document is distributed in the hope that it will be useful, but
+%  WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\@.  See the GNU
+%  General Public License for more details.
+   发布这份文档是希望它会有用，但并不提供任何保障；甚至没有用于商业的或者
+   适用某一特定目的的暗含保证。更多的细节请查看~GNU~通用出版许可证。
+
+%  You should have received a copy of the GNU General Public License
+%  along with this document; if not, write to the Free Software
+%  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   你应该随这份文档收到一份~GNU~通用出版许可证的拷贝；如果没有，写信到
+   自由软件组织，地址：675 Mass Ave, Cambridge, MA 02139, USA。
+\end{small}
+
+
+\endinput
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "lshort2e"
+%%% End:

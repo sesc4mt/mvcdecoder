@@ -1,0 +1,629 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents: Specialities of the LaTeX system
+% $Id: spec.tex,v 1.4 2002/06/13 15:35:49 aloft Exp $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapter{Specialities}
+%\begin{intro}
+%  When putting together a large document, \LaTeX{} will help you
+%  with some special features like index generation,
+%  bibliography management, and other things.
+%  A much more complete description of specialities and
+%  enhancements possible with \LaTeX{} can be found in the
+%  {\normalfont\manual{}} and {\normalfont \companion}.
+%\end{intro}
+\chapter{特殊功能}
+\begin{intro}
+  当你处理一个大型文档时，~\LaTeX{}~的一些特殊功能，例如索引的自动生成、
+  参考文献的管理等等，会给你以很大的帮助。
+  详细的关于~\LaTeX{}~的特殊功能以及可能的增强功能的描述可以在
+  ~{\normalfont\manual{}}~和~{\normalfont \companion}~找到。
+\end{intro}
+
+%\section{Including EPS Graphics}
+\section{包含~EPS~图形}
+
+%\LaTeX{} provides the basic facilities to work with floating bodies
+%such as images or graphics, with the \texttt{figure} and the
+%\texttt{table} environment.
+\LaTeX{}~通过~\texttt{figure}~和~\texttt{table}~环境提供了
+处理图像或者图形等浮动对象的基本能力。
+
+%There are also several possibilities to generate the actual
+%\wi{graphics} with basic \LaTeX{} or a \LaTeX{} extension package.
+%Unfortunately, most users find them quite difficult to understand.
+%Therefore this will not be explained any further in this manual.
+%Please refer to \companion{} and the \manual{} for more information on
+%that subject.
+有几种办法可以通过使用基本~\LaTeX{}~命令或者~\LaTeX{}~扩展宏包来产生实际的
+~\wi{图形}~。但是大多数用户发现这些命令相当难以理解。因此我们不打算在这个
+手册里深入介绍这些内容。如果需要这方面的详细信息，请参阅~\companion{}~和~\manual{}~。
+
+%A much easier way to get graphics into a document, is to generate them
+%with a specialised software package\footnote{Such as XFig, CorelDraw!,
+%  Freehand, Gnuplot, \ldots} and then include the finished graphics
+%into the document. Here again, \LaTeX{} packages offer many ways to do
+%that. In this introduction, only the use of \wi{Encapsulated
+%  PostScript} (EPS) graphics will be discussed, because it is quite
+%easy to do and widely used.  In order to use pictures in the EPS
+%format, you must have a \wi{PostScript} printer\footnote{Another
+%  possibility to output PostScript is the \textsc{\wi{GhostScript}}
+%  program available from
+%  \texttt{CTAN:/tex-archive/support/ghostscript}. Windows and OS/2 users might
+%  want to look for \textsc{GSview}.} available for output.
+一个比较简单的在文档中加入图形的办法就是使用特定的软件包~\footnote{例如~XFig,
+CorelDraw!, Freehand, Gnuplot, \ldots}~生成图形文件，然后将最终的图形文件包含
+到文档中。~\LaTeX{}~的宏包提供了许多方法来完成这个工作。在这个手册里，我们只
+讨论~\wi{Encapsulated PostScript}(EPS)~图形文件的使用。因为它比较简单而且被广
+泛地使用。为了使用~EPS~格式的图片，你必须有一个~\wi{PostScript}~打印机
+\footnote{另外一个可以用来输出~PostScript~的工具是~\textsc{\wi{GhostScript}}~软件，
+它可以从~\texttt{CTAN:/tex-archive/support/ghostscript}得到。~Windows~和~OS/2~
+用户可能更喜欢用~\textsc{GSview}~。}~来输出结果。
+
+%A good set of commands for inclusion of graphics is provided in
+%the \pai{graphicx} package by D.~P.~Carlisle. It is part of a
+%whole family of packages called the ``graphics''
+%bundle\footnote{\texttt{CTAN:/tex-archive/macros/latex/required/graphics}}.
+由~D.\nbs P.\nbs Carlisle~制作的~\pai{graphicx}~宏包包含了一套很好的命令来
+包含图形。它是一个叫作~``graphics''~的宏包集中的一部分
+\footnote{\texttt{CTAN:/tex-archive/macros/latex/required/graphics}}~。
+
+%Assuming you are working on a system with a
+%PostScript printer available for output and with the \textsf{graphicx}
+%package installed, you can use the following step by step guide to
+%include a picture into your document:
+假设你使用的系统安装了~PostScript~打印机和~\textsf{graphicx}~宏包，
+那么你就可以通过下面的步骤一步步地把一幅图片加入你的文档中：
+
+%\begin{enumerate}
+%\item Export the picture from your graphics program in EPS
+%  format.\footnote{If your software can not export into EPS format, you
+%    can try to install a PostScript printer driver (some Apple
+%    LaserWriter for example) and then print to a file with this
+%    driver. With some luck this file will be in EPS format. Note that
+%    an EPS must not contain more than one page. Some printer drivers
+%    can be explicitly configured to produce EPS format.}
+%\item Load the \textsf{graphicx} package in the preamble of the input
+%  file with
+%\begin{lscommand}
+%\verb|\usepackage[|\emph{driver}\verb|]{graphicx}|
+%\end{lscommand}
+%where \emph{driver} is the name of your ``dvi to postscript''
+%converter program. The most
+%widely used program is called \texttt{dvips}. The name of the driver is
+%required, because there is no standard on how graphics are included in
+%\TeX{}. Knowing the name of the \emph{driver}, the
+%\textsf{graphicx} package can choose the correct method to insert
+%information about the graphics into the \texttt{.dvi}~file, so that the
+%printer understands it and can correctly include the \texttt{.eps} file.
+%\item Use the command
+%\begin{lscommand}
+%\ci{includegraphics}\verb|[|\emph{key}=\emph{value}, \ldots\verb|]{|\emph{file}\verb|}|
+%\end{lscommand}
+%to include \emph{file} into your document. The optional parameter
+%accepts a comma separated list of \emph{keys} and associated
+%\emph{values}. The \emph{keys} can be used to alter the width,
+%height and rotation of the included graphic. Table~\ref{keyvals}
+%lists the most important keys.
+%\end{enumerate}
+\begin{enumerate}
+\item 用你的图像软件输出~EPS~格式的图形文件\footnote{如果你的软件不能输出~EPS~
+      格式的文件，你可以尝试安装一个~PostScript~打印机驱动程序（例如~Apple 
+      LaserWriter~），然后将你的图形通过这个驱动程序打印到文件。运气好的话，
+      这个文件可能会是~EPS~格式的。注意一个~EPS~文件不能包含超过一页的内容。
+      一些打印机驱动程序可以明确地指定为输出~EPS~文件。}。
+\item 在输入文件的导言中加上下面的命令来装入~\textsf{graphicx}~宏包。
+      \begin{lscommand}
+         \verb|\usepackage[|\emph{driver}\verb|]{graphicx}|
+      \end{lscommand}
+      这里~\emph{driver}~是你使用的``dvi~到~postscript''的转换程序。最常用的
+      是~\texttt{dvips}。因为~\TeX{}~中没有规定包含图形的标准，所以程序的名字
+      是必需的。知道了~\emph{driver}~的名字，\textsf{graphicx}~宏包就可以选择
+      合适的方法在~\texttt{.dvi}~文件中插入关于图形的信息。这样打印机才能理解
+      这些信息并正确的包含这些~\texttt{.eps}~文件。
+\item 使用命令
+      \begin{lscommand}
+         \ci{includegraphics}\verb|[|\emph{key}=\emph{value}, \ldots\verb|]{|\emph{file}\verb|}|
+      \end{lscommand}
+      来把文件~\emph{file}~加入你的文档。可选的参数是一系列由逗号隔开的关键词
+      ~\emph{keys}~和相应的值~\emph{values}。关键词~\emph{keys}~可以用来改变包
+      含的图形的宽度、高度以及旋转角度等等。表~\ref{keyvals}~列出了最主要的几个关键词。
+\end{enumerate}
+
+%\begin{table}[htb]
+%\caption{Key Names for \textsf{graphicx} Package.} \label{keyvals}
+%\begin{lined}{9cm}
+%\begin{tabular}{@{}ll}
+%\texttt{width}& scale graphic to the specified width\\
+%\texttt{height}& scale graphic to the specified height\\
+%\texttt{angle}& rotate graphic counterclockwise\\
+%\texttt{scale}& scale graphic \\
+%\end{tabular}
+%
+%\bigskip
+%\end{lined}
+%\end{table}
+\begin{table}[htb]
+\caption{\textsf{graphicx}~宏包使用的关键词} \label{keyvals}
+\begin{lined}{9cm}
+\begin{tabular}{@{}ll}
+\texttt{width}& 把图形缩放到指定的宽度\\
+\texttt{height}& 把图形缩放到指定的高度\\
+\texttt{angle}& 逆时针旋转图形\\
+\texttt{scale}& 缩放图形\\
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+
+%\pagebreak
+
+%The following example code will hopefully make things clear:
+%\begin{code}
+%\begin{verbatim}
+%\begin{figure}
+%\begin{center}
+%\includegraphics[angle=90, width=0.5\textwidth]{test}
+%\end{center}
+%\end{figure}
+%\end{verbatim}
+%\end{code}
+%It includes the graphic stored in the file \texttt{test.eps}. The
+%graphic is \emph{first} rotated by an angle of 90 degrees and
+%\emph{then} scaled to the final width of 0.5 times the width of a
+%standard paragraph.  The aspect ratio is $1.0$, because no special
+%height is specified.  The width and height parameters can also be
+%specified in absolute dimensions. Refer to Table~\ref{units} on
+%page~\pageref{units} for more information. If you want to know
+%more about this topic, make sure to read \cite{graphics} and
+%\cite{eps}.
+下面这个例子可以帮助我们理解整个过程：
+\begin{code}
+\begin{verbatim}
+\begin{figure}
+\begin{center}
+\includegraphics[angle=90, width=0.5\textwidth]{test}
+\end{center}
+\end{figure}
+\end{verbatim}
+\end{code}
+这段代码把存储在文件~\texttt{test.eps}~中的图形包含到文档里。\emph{首先}
+图形被旋转~90~度，\emph{然后}进行缩放使得图形的宽度等于标准页面宽度的~$0.5$~倍。
+因为没有指定图形的高度，图形的高宽变化的比例是~$1.0$，也就是保持原来的高宽比。
+高度和宽度参数也可以用绝对长度单位来指定。详细的信息可以在第~\pageref{units}~页
+的表~\ref{units}~中找到。如果你想知道更多这方面的知识，请阅读文献~\cite{graphics}~
+和~\cite{eps}。
+
+%\section{Bibliography}
+\section{参考文献}
+
+%You can produce a \wi{bibliography} with the \ei{thebibliography}
+%environment.  Each entry starts with
+%\begin{lscommand}
+%\ci{bibitem}\verb|{|\emph{marker}\verb|}|
+%\end{lscommand}
+%The \emph{marker} is then used to cite the book, article or paper
+%within the document.
+%\begin{lscommand}
+%\ci{cite}\verb|{|\emph{marker}\verb|}|
+%\end{lscommand}
+%The numbering of the entries is generated automatically.  The
+%parameter after the \verb|\begin{thebibliography}| command sets the maximum
+%width of these numbers. In the example below, \verb|{99}| tells
+%\LaTeX{} to expect that none of the bibliography item numbers will be
+%wider than the number 99.
+%\enlargethispage{2cm}
+%\begin{example}
+%Partl~\cite{pa} has
+%proposed that \ldots
+%\begin{thebibliography}{99}
+%\bibitem{pa} H.~Partl:
+%\emph{German \TeX},
+%TUGboat Volume~9, Issue~1 (1988)
+%\end{thebibliography}
+%\end{example}
+
+你可以通过~\ei{thebibliography}~环境来产生一个~\wi{参考文献}~。每个参考文献的
+条目以如下的命令开头
+  \begin{lscommand}
+    \ci{bibitem}\verb|{|\emph{marker}\verb|}|
+  \end{lscommand}
+然后使用~\emph{marker}~在正文中引用这本书、这篇文章或者论文。
+  \begin{lscommand}
+    \ci{cite}\verb|{|\emph{marker}\verb|}|
+  \end{lscommand}
+参考文献条目的编号是自动生成的。~\verb|\begin{thebibliography}|~
+命令后的参数设置了最大的编号宽度。在下面的例子中，~\verb|{99}|~告诉
+~\LaTeX{}~参考文献条目的编号不会比数字~$99$~更宽。
+%\enlargethispage{2cm}
+ \begin{example}
+ Partl~\cite{pa} has
+ proposed that \ldots
+ \begin{thebibliography}{99}
+ \bibitem{pa} H.~Partl:
+ \emph{German \TeX},
+ TUGboat Volume~9, Issue~1 (1988)
+ \end{thebibliography}
+ \end{example}
+
+%\chaptermark{Specialities} % w need to fix the damage done by the
+%                           %bibliography example.
+\chaptermark{特殊功能} % w need to fix the damage done by the
+                           %bibliography example.
+
+\thispagestyle{fancyplain}
+
+%\newpage
+
+%For larger projects, you might want to check out the Bib\TeX{}
+%program. Bib\TeX{} is included with most \TeX{} distributions. It
+%allows you to maintain a bibliographic database and then extract
+%the references relevant to things you cited in your paper. The
+%visual presentation of Bib\TeX{} generated bibliographies is based
+%on a style sheets concept which allows you to create
+%bibliographies following a wide range of established designs.
+对于大型的项目，你也许需要使用~Bib\TeX{}~程序。~Bib\TeX{}~包含在大多数
+的~\TeX{}~发行版本中。它能够让你维护一个参考文献数据库，并从中生成你的
+论文引用到的文献条目。~Bib\TeX{}~对参考文献的描述是基于一种样式表的概念，
+它可以让你按照大量预先设计好的格式来创建你的参考文献。
+
+%\section{Indexing}
+\section{索引}\label{sec:indexing}
+
+%A very useful feature of many books is their \wi{index}. With \LaTeX{}
+%and the support program \texttt{makeindex}\footnote{On systems not
+%  necessarily supporting
+%  filenames longer than 8~characters, the program may be called
+%  \texttt{makeidx}.}, an index can be generated quite easily.  In this
+%introduction, only the basic index generation commands will be explained.
+%For a more in-depth view, please refer to \companion.  \index{makeindex
+%  program} \index{makeidx package}
+许多书籍最有用的部分莫过于它们的~\wi{索引}~了。使用~\LaTeX{}~和辅助工具
+~\texttt{makeindex}\footnote{在文件名不允许超过~8~个字符的操作系统上，
+这个程序被命名为~\texttt{makeidx}。}，我们能够很容易的生成索引。在这个手册里，
+只介绍了最基本的索引生成命令。更进一步的了解请参考~\companion。
+\index{makeindex program} \index{makeidx package}
+
+%To enable the indexing feature of \LaTeX{}, the \pai{makeidx} package
+%must be loaded in the preamble with:
+%\begin{lscommand}
+%\verb|\usepackage{makeidx}|
+%\end{lscommand}
+%\noindent and the special indexing commands must be enabled by putting
+%the
+%\begin{lscommand}
+%  \ci{makeindex}
+%\end{lscommand}
+%\noindent command into the input file preamble.
+为了使用~\LaTeX{}~的索引功能，宏包~\pai{makeidx}~必须在导言部分被引入：
+\begin{lscommand}
+  \verb|\usepackage{makeidx}|
+\end{lscommand}
+\noindent 然后在导言中使用
+\begin{lscommand}
+  \ci{makeindex}
+\end{lscommand}
+\noindent 激活索引命令。
+
+%The content of the index is specified with
+%\begin{lscommand}
+%  \ci{index}\verb|{|\emph{key}\verb|}|
+%\end{lscommand}
+%\noindent commands, where \emph{key} is the index entry. You enter the
+%index commands at the points in the text where you want the final index
+%entries to point to.  Table~\ref{index} explains the syntax of the
+%\emph{key} argument with several examples.
+索引的内容通过命令
+\begin{lscommand}
+  \ci{index}\verb|{|\emph{key}\verb|}|
+\end{lscommand}
+\noindent 指定，这里~\emph{key}~是索引项的关键词。你可以在需要被索引的地方
+加入这条命令。表~\ref{index}~举例解释了~\emph{key}~参数用法。
+
+%\begin{table}[!tp]
+%\caption{Index Key Syntax Examples.}
+%\label{index}
+%\begin{center}
+%\begin{tabular}{@{}lll@{}}
+%  \textbf{Example} &\textbf{Index Entry} &\textbf{Comment}\\\hline
+%  \rule{0pt}{1.05em}\verb|\index{hello}| &hello, 1 &Plain entry\\
+%\verb|\index{hello!Peter}|   &\hspace*{2ex}Peter, 3 &Subentry under `hello'\\
+%\verb|\index{Sam@\textsl{Sam}}|     &\textsl{Sam}, 2& Formatted entry\\
+%\verb|\index{Lin@\textbf{Lin}}|     &\textbf{Lin}, 7& Same as above\\
+%\verb.\index{Jenny|textbf}.     &Jenny, \textbf{3}& Formatted page number\\
+%\verb.\index{Joe|textit}.     &Joe, \textit{5}& Same as above
+%\end{tabular}
+%\end{center}
+%\end{table}
+\begin{table}[!tp]
+\caption{索引关键词格式示例。} \label{index}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+  \textbf{示例} &\textbf{索引项} &\textbf{注解}\\\hline
+  \rule{0pt}{1.05em}\verb|\index{hello}| &hello, 1 & 普通格式的索引项\\
+\verb|\index{hello!Peter}|   &\hspace*{2ex}Peter, 3 & `hello'下的子项\\
+\verb|\index{Sam@\textsl{Sam}}|     &\textsl{Sam}, 2& 定义索引项的格式\\
+\verb|\index{Lin@\textbf{Lin}}|     &\textbf{Lin}, 7& 同上\\
+\verb.\index{Jenny|textbf}.     &Jenny, \textbf{3}& 定义页码的格式\\
+\verb.\index{Joe|textit}.     &Joe, \textit{5}& 同上
+\end{tabular}
+\end{center}
+\end{table}
+
+%When the input file is processed with \LaTeX{}, each \verb|\index|
+%command writes an appropriate index entry together with the current
+%page number to a special file. The file has the same name as the
+%\LaTeX{} input file, but a different extension (\verb|.idx|). This
+%\texttt{.idx} file can then be processed with the \texttt{makeindex}
+%program.
+当~\LaTeX{}~处理输入文档时，每个~\verb|\index|~命令都会将适当的索引项
+和当前页码写入一个特殊的文件中。这个文件的名字和~\LaTeX{}~输入文档相同，
+但具有不同的扩展名后缀~(\verb|.idx|)。这个~\texttt{.idx}~文件需要用
+~\texttt{makeindex}~程序来处理。
+
+%\begin{lscommand}
+%  \texttt{makeindex} \emph{filename}
+%\end{lscommand}
+%The \texttt{makeindex} program generates a sorted index with the same base
+%file name, but this time with the extension \texttt{.ind}. If now the
+%\LaTeX{} input file is processed again, this sorted index gets
+%included into the document at the point where \LaTeX{} finds
+%\begin{lscommand}
+%  \ci{printindex}
+%\end{lscommand}
+\begin{lscommand}
+  \texttt{makeindex} \emph{filename}
+\end{lscommand}
+\texttt{makeindex}~程序生成一个与源文件同名的排序索引文件，
+这个文件使用~\texttt{.ind}~为扩展名。当再次用~\LaTeX{}~处理源文件时，
+这个排序的索引文件将被包含到源文件中
+\begin{lscommand}
+  \ci{printindex}
+\end{lscommand}
+\noindent 命令出现的位置。
+
+%The \pai{showidx} package which comes with \LaTeXe{} prints out all
+%index entries in the left margin of the text. This is quite useful for
+%proofreading a document and verifying the index.
+\LaTeXe{}~附带的宏包~\pai{showidx}~可以在正文的左边打印出索引项。
+这个功能在校对文档和索引项时十分有用。
+
+%\section{Fancy Headers}
+%\label{sec:fancy}
+\section{定制页眉和页脚}
+\label{sec:fancy}
+
+%The \pai{fancyhdr} package,\footnote{Available from
+%  \texttt{CTAN:/tex-archive/macros/latex/contrib/supported/fancyhdr}.} written by
+%Piet van Oostrum, provides a few simple commands which allow you to
+%customize the header and footer lines of your document.  If you look
+%at the top of this page, you can see a possible application of this
+%package.
+Piet van Oostrum~编写的~\pai{fancyhdr}~宏包\footnote{可以在
+  \texttt{CTAN:/tex-archive/macros/latex/contrib/supported/fancyhdr}得到。}，
+提供了一些简单的命令使得我们可以定制文档的页眉和页脚。看一眼本页的顶部，
+你就能发现这个宏包的用处。
+
+%\begin{figure}[!htbp]
+%\begin{lined}{\textwidth}
+%\begin{verbatim}
+%\documentclass{book}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%% with this we ensure that the chapter and section
+%% headings are in lowercase.
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{}  % delete current setting for header and footer
+%\fancyhead[LE,RO]{\bfseries\thepage}
+%\fancyhead[LO]{\bfseries\rightmark}
+%\fancyhead[RE]{\bfseries\leftmark}
+%\renewcommand{\headrulewidth}{0.5pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\addtolength{\headheight}{0.5pt} % make space for the rule
+%\fancypagestyle{plain}{%
+%   \fancyhead{} % get rid of headers on plain pages
+%   \renewcommand{\headrulewidth}{0pt} % and the line
+%}
+%\end{verbatim}
+%\end{lined}
+%\caption{Example \pai{fancyhdr} Setup.} \label{fancyhdr}
+%\end{figure}
+\begin{figure}[!htbp]
+\begin{lined}{\textwidth}
+\begin{verbatim}
+\documentclass{book}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% with this we ensure that the chapter and section
+% headings are in lowercase.
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}  % delete current setting for header and footer
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % make space for the rule
+\fancypagestyle{plain}{%
+   \fancyhead{} % get rid of headers on plain pages
+   \renewcommand{\headrulewidth}{0pt} % and the line
+}
+\end{verbatim}
+\end{lined}
+\caption{\pai{fancyhdr}~设置实例。} \label{fancyhdr}
+\end{figure}
+
+
+%The tricky problem when customising headers and footers is to get
+%things like running section and chapter names in there. \LaTeX{}
+%accomplishes this with a two-stage approach. In the header and footer
+%definition, you use the commands \ci{rightmark} and \ci{leftmark} to
+%represent the current section and chapter heading, respectively.
+%The values of these two commands are overwritten whenever a chapter or
+%section command is processed.
+定制页眉和页脚时最棘手的事情莫过于得到每个页面所属的章节名称了。
+\LaTeX{}~通过两个步骤来完成这个任务。在定义页眉和页脚时，你可以使用
+~\ci{rightmark}~命令来代表当前的节名，使用~\ci{leftmark}~来代表当前的章名。
+这两个命令的值将在处理~chapter~或者~section~命令时被赋值。
+
+%For ultimate flexibility, the \verb|\chapter| command and its friends
+%do not redefine \ci{rightmark} and \ci{leftmark} themselves, they call
+%yet another command called \ci{chaptermark}, \ci{sectionmark} or
+%\ci{subsectionmark} which is responsible for redefining \ci{rightmark}
+%and \ci{leftmark}.
+为了获得最大的灵活性，~\verb|\chapter|~等命令并不直接对~\ci{rightmark}~和
+~\ci{leftmark}~进行重新定义，而是通过调用~\ci{chaptermark}~命令或者
+~\ci{sectionmark}、\ci{subsectionmark}~来定义~\ci{rightmark}~和
+~\ci{leftmark}。
+
+%So, if you wanted to change the look of the chapter
+%name in the header line, you simply have to ``renew'' the \ci{chaptermark}
+%command. \cih{sectionmark}\cih{subsectionmark}
+因此，如果你想修改页眉上显示的章名的话，只需要简单地重新定义
+~\ci{chaptermark}命令。\cih{sectionmark}\cih{subsectionmark}
+
+
+%Figure~\ref{fancyhdr} shows a possible setup for the \pai{fancyhdr}
+%package which makes the headers look about the same as they look in
+%this booklet. In any case I suggest you fetch the documentation for
+%the package at the address mentioned in the footnote.
+图~\ref{fancyhdr}~显示了如何配置~\pai{fancyhdr}~来得到和本文相似的页眉。
+无论如何我还是建议你先阅读一下宏包所带的文档。
+
+
+%\section{The Verbatim Package}
+\section{Verbatim~宏包}
+
+%Earlier in this book, you got to know the \ei{verbatim}
+%\emph{environment}.  In this section, you are going to learn about the
+%\pai{verbatim} \emph{package}. The \pai{verbatim} package is basically
+%a re-implementation of the \ei{verbatim} environment, which works around
+%some of the limitations of the original \ei{verbatim} environment.
+%This by itself is not spectacular, but with the implementation of the
+%\pai{verbatim} package, there was also new functionality added, and
+%this is the reason I am mentioning the package here. The \pai{verbatim}
+%package provides the
+在本文的前面部分你已经知道了~\ei{verbatim}~\emph{环境}。在这一节中，
+你将学会使用~\pai{verbatim}~\emph{宏包}。~\pai{verbatim}~宏包重新
+实现了~\ei{verbatim}~环境，并解决了原来的~\ei{verbatim}~环境的一些限制。
+这本身并没有什么特别的，但~\pai{verbatim}~宏包还实现了一些新增的功能，
+这才是我在这里提到这个宏包的原因。~\pai{verbatim}~宏包提供了
+
+\begin{lscommand}
+  \ci{verbatiminput}\verb|{|\emph{filename}\verb|}|
+\end{lscommand}
+
+%\noindent command which allows you to include raw ASCII text into your
+%document as if it was inside a \ei{verbatim} environment.
+\noindent
+命令，这个命令允许你把一个~ASCII~码的文本文件包含到你的文档中来，
+就好像它们是在~\ei{verbatim}~环境中一样。
+
+%As the \pai{verbatim} package is part of the `tools' bundle, you
+%should find it preinstalled on most systems. If you want to know more
+%about this package, make sure to read \cite{verbatim}
+\pai{verbatim}~宏包是~`tools'~宏包集的一部分，大多数的系统中都预装了这个宏包。
+如果你想更多地了解这个宏包，可以阅读~\cite{verbatim}。
+
+
+%\section{Downloading and Installing \LaTeX{} Packages}
+\section{下载并安装~\LaTeX{}~宏包}
+
+%Most \LaTeX{} installations come with a large set of pre-installed
+%style packages, but there are many more available on the net. The main
+%place to look for style package on the Internet is CTAN (\verb|http://www.ctan.org/|).
+大多数的~\LaTeX{}~安装都带有大量预装的样式宏包，但还有很多可以在网上得到。
+在互联网寻找样式宏包的一个主要的地方就是~CTAN(\verb|http://www.ctan.org/|)。
+
+%Packages, such as, \pai{geometry}, \pai{hyphenat}, and many
+%others, are typically made up of two files: a file with the extension
+%\texttt{.ins} and another with the extension \texttt{.dtx}. Often
+%there will be a \texttt{readme.txt} with a brief description of the
+%package. You should of course read this file first.
+各种宏包的源文件，例如~\pai{geometry}~，~\pai{hyphenat}~等等，一般来说都包含
+两个文件：一个扩展名为~\texttt{.ins}，另一个扩展名为~\texttt{.dtx}。
+此外，通常会有一个~\texttt{readme.txt}~对宏包进行简要的说明。你应该先阅读这个文件。
+
+%In any event, once you have copied the package files onto your
+%machine, you still have to process them in a way that (a) your
+%\TeX\ distribution knows about the new style package and (b) you get
+%the documentation.  Here's how you do the first part:
+无论如何，一旦你得到了宏包的源文件，你还要对它们进行处理使得~(a)~
+你的~\TeX{}~系统知道这个新的宏包，~(b)~生成说明文档。下面是第一部分的步骤：
+
+%\begin{enumerate}
+%\item Run \LaTeX{} on the \texttt{.ins} file. This will
+%  extract a \texttt{.sty} file.
+%\item Move the \texttt{.sty} file to a place where your distribution
+%  can find it. Usually this is in your \texttt{\ldots/\emph{localtexmf}/tex/latex}
+%  subdirectory (Windows or OS/2 users should feel free to change the
+%  direction of the slashes).
+%\item Refresh your distribution's file-name database. The command
+%  depends on the \LaTeX-Distribution you use:
+%  teTeX, fpTeX -- \texttt{texhash}; web2c -- \texttt{maktexlsr};
+%  MikTeX -- \texttt{initexmf -update-fndb} or use the GUI.
+%\end{enumerate}
+\begin{enumerate}
+\item 对~\texttt{.ins}~文件运行~\LaTeX{}~命令。这将会产生一个~\texttt{.sty}~文件。
+\item 把~\texttt{.sty}~文件移到系统能找到的地方。通常是在~
+      \texttt{\ldots/\emph{localtexmf}/tex/latex}~子目录下（Windows~或者~OS/2~用户应该改变斜线为反斜线）。
+\item 刷新系统的文件名数据库。具体的命令取决于你使用的~\LaTeX{}~系统：
+      ~teTeX, fpTeX -- \texttt{texhash}; web2c -- \texttt{maktexlsr};
+      MikTeX -- \texttt{initexmf -update-fndb}~或者使用图形界面。
+\end{enumerate}
+
+%\noindent Now you can extract the documentation from the
+%\texttt{.dtx} file:
+\noindent 现在你可以从~\texttt{.dtx}~文件生成说明文档：
+
+%\begin{enumerate}
+%\item Run \LaTeX\ on the \texttt{.dtx} file.  This will generate a
+%  \texttt{.dvi} file. Note that you may have to run \LaTeX\
+%  several times before it gets the cross-references right.
+%\item Check to see if \LaTeX\ has produced a \texttt{.idx} file
+%  among the various files you now have.
+%  If you do not see this file, then you may proceed to
+%  step~\ref{step:final}.
+%\item In order to generate the index, type the following:\\
+%        \fbox{\texttt{makeindex -s gind.ist \textit{name}}}\\
+%        (where \textit{name} stands for the main-file name without any
+%    extension).
+% \item Run \LaTeX\ on the \texttt{.dtx} file once again. \label{step:next}
+%
+%\item Last but not least, make a \texttt{.ps} or \texttt{.pdf}
+%  file to increase your reading pleasure.\label{step:final}
+%
+%\end{enumerate}
+\begin{enumerate}
+\item 对~\texttt{.dtx}~文件运行~\LaTeX{}~命令。这会生成一个~\texttt{.dvi}~文件。
+      注意你可能需要多次运行~\LaTeX{}~命令来正确处理交叉引用。
+\item 检查一下~\LaTeX{}~命令是否产生了~\texttt{.idx}~文件。如果没发现这个文件，
+      你就可以执行第~\ref{step:final}~步了。
+\item 为了生成索引，敲入命令：\\
+      \fbox{\texttt{makeindex -s gind.ist \textit{name}}}\\
+      (这里~\textit{name}~表示不带扩展名的主文件名)。
+\item 再次对~\texttt{.dtx}~文件运行~\LaTeX{}~命令。\label{step:next}
+\item 最后一步但不是必需的，生成~\texttt{.ps}~文件或者~\texttt{.pdf}~文件以方便阅读。\label{step:final}
+
+\end{enumerate}
+
+%Sometimes you will see that a \texttt{.glo} (glossary) file has
+%been produced. Run the following command between
+%step~\ref{step:next} and~\ref{step:final}:
+有时你会看见生成了一个~\texttt{.glo}(glossary)~文件。在第~\ref{step:next}~步和第~\ref{step:final}~步之间
+运行下面的命令：
+
+\noindent\texttt{makeindex -s gglo.ist -o \textit{name}.gls \textit{name}.glo}
+
+%\noindent Be sure to run \LaTeX\ on the \texttt{.dtx} one last
+%time before moving on to step~\ref{step:final}.
+\noindent 确认在执行第~\ref{step:final}~步前最后对~\texttt{.dtx}~文件运行一遍~\LaTeX{}~命令。
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "lshort"
+%%% End:

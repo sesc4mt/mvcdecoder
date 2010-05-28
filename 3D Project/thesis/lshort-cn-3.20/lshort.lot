@@ -1,0 +1,41 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces 文档类}}{10}{table.1.1}
+\contentsline {table}{\numberline {1.2}{\ignorespaces 文档类选项}}{10}{table.1.2}
+\contentsline {table}{\numberline {1.3}{\ignorespaces 伴随\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \LaTeX {}\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 发布的一些宏包}}{12}{table.1.3}
+\contentsline {table}{\numberline {1.4}{\ignorespaces The Predefined Page Styles of \LaTeX .}}{13}{table.1.4}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces 注音符号和特殊字符.}}{22}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces 德语特殊字符.}}{24}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces 浮动允许放置参量。}}{34}{table.2.3}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces 数学模式重音符}}{50}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces 小写希腊字母}}{50}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces 大写希腊字母}}{50}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces 二元关系符}}{51}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces 二元运算符}}{51}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces 大尺寸运算符}}{52}{table.3.6}
+\contentsline {table}{\numberline {3.7}{\ignorespaces 箭头}}{52}{table.3.7}
+\contentsline {table}{\numberline {3.8}{\ignorespaces 定界符}}{52}{table.3.8}
+\contentsline {table}{\numberline {3.9}{\ignorespaces 大尺寸定界符}}{52}{table.3.9}
+\contentsline {table}{\numberline {3.10}{\ignorespaces 其它符号}}{53}{table.3.10}
+\contentsline {table}{\numberline {3.11}{\ignorespaces 非数学符号}}{53}{table.3.11}
+\contentsline {table}{\numberline {3.12}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 定界符}}{53}{table.3.12}
+\contentsline {table}{\numberline {3.13}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 希腊和希伯来字母}}{53}{table.3.13}
+\contentsline {table}{\numberline {3.14}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 二元关系符}}{54}{table.3.14}
+\contentsline {table}{\numberline {3.15}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 箭头}}{54}{table.3.15}
+\contentsline {table}{\numberline {3.16}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 二元否定关系符和箭头}}{55}{table.3.16}
+\contentsline {table}{\numberline {3.17}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 二元运算符}}{55}{table.3.17}
+\contentsline {table}{\numberline {3.18}{\ignorespaces AMS\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 其它符号}}{56}{table.3.18}
+\contentsline {table}{\numberline {3.19}{\ignorespaces 数学字母}}{56}{table.3.19}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces \textsf {graphicx}\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 宏包使用的关键词}}{58}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces 索引关键词格式示例。}}{60}{table.4.2}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces 字体}}{68}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces 字体尺寸}}{68}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces 标准文档类型中字体的绝对大小}}{69}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces 数学字体}}{69}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}的长度单位}}{73}{table.5.5}
