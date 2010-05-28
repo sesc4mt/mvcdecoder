@@ -1,0 +1,7 @@
+hwd: verify the satisfaction of stereo high profile
+
+TODO: 720x576 60FPS in a week
+AND:	multi-thread debug(while composing thesis)
+
+863 project mid-time check: late July
+Aim: demo ready
