@@ -1,0 +1,17 @@
+This is makeindex, version 2.14 [02-Oct-2002] (with Thai support).
+Scanning input file lshort.idx....
+!! Input index error (file = lshort.idx, line = 333):
+   -- Incomplete first argument (premature LFD).
+
+!! Input index error (file = lshort.idx, line = 418):
+   -- Incomplete first argument (premature LFD).
+!! Input index error (file = lshort.idx, line = 419):
+   -- Incomplete first argument (premature LFD).
+
+!! Input index error (file = lshort.idx, line = 439):
+   -- Incomplete first argument (premature LFD).
+done (953 entries accepted, 4 rejected).
+Sorting entries..........done (10369 comparisons).
+Generating output file lshort.ind....done (974 lines written, 0 warnings).
+Output written in lshort.ind.
+Transcript written in lshort.ilg.

@@ -1,0 +1,1809 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents: Typesetting Part of LaTeX2e Introduction
+% $Id: typeset.tex,v 1.3 2002/07/19 09:25:20 zuohuijun Exp $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Typesetting Text}
+\chapter{文档排版}
+
+\iffalse
+\begin{intro}
+  After reading the previous chapter, you should know about the basic
+  stuff of which a \LaTeXe{} document is made. In this chapter I
+  will fill in the remaining structure you will need to know in order
+  to produce real world material.
+\end{intro}
+\fi
+\begin{intro}
+  阅读前一章后，就可以了解~\LaTeXe{}~文档的基本结构了。
+  在这一章我将补充其余的部分，以使你能够生成实用的文档。
+\end{intro}
+
+%\section{The Structure of Text and Language}
+\section{文档和语言的结构}
+
+\iffalse The main point of writing a text (some modern
+DAAC\footnote{Different
+  At All Cost, a translation of the Swiss German UVA (Um's Verrecken
+  Anders).} literature excluded), is to convey ideas, information, or
+knowledge to the reader.  The reader will understand the text
+better if these ideas are well-structured, and will see and feel
+this structure much better if the typographical form reflects the
+logical and semantical structure of the content.\fi
+%%%%%%%%%%%%%%
+
+写作文档（一些现代~DAAC\footnote{为标新立异不计代价， 译自~Swiss German
+UVA (Um's Verrecken Anders)。}文学除外）的主旨在于向读者传递观点、信息或知识。
+如果这些观点组织得很好，读者将能更好地理解。如果排版风格反映了内容的逻辑和
+语义结构，读者就能看见和感觉到文章的这种脉络。
+
+\iffalse\LaTeX{} is different from other typesetting systems in that you just
+have to tell it the logical and semantical structure of a text.  It
+then derives the typographical form of the text according to the
+``rules'' given in the document class file and in various style files.\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\LaTeX{}~与其他排版系统的不同在于你只要告诉它文档的逻辑和语义结构，
+它就按照文档类型和各种格式文件指定的``规则''导出文档的排版风格。
+
+\iffalse The most important text unit in \LaTeX{} (and in typography) is the
+\wi{paragraph}.  We call it ``text unit'' because a paragraph is the
+typographical form which should reflect one coherent thought, or one
+idea.  You will learn in the following sections, how you can force
+linebreaks with e.g.{} \texttt{\bs\bs} and paragraph breaks with e.g.{}
+leaving an empty line in the source code.  Therefore, if a new thought
+begins, a new paragraph should begin, and if not, only linebreaks
+should be used.  If in doubt about paragraph breaks, think about your
+text as a conveyor of ideas and thoughts.  If you have a paragraph
+break, but the old thought continues, it should be removed.  If some
+totally new line of thought occurs in the same paragraph, then it
+should be broken. \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+在~\LaTeX{}（在印刷术）中段落是最重要的文档单位。我们之所以称之为``文档单位''，
+因为段落是反映一个连贯思想或观点的排版风格形式。在下面的章节中你将学习如何用
+~\texttt{\bs\bs}~强行断行，通过在源文件中留一空行强行转段。所以，如果开始一个
+新思想，就另起一段，否则，只应使用断行。如果还犹豫是否应转段，可以把文档想象为
+观点和思想的传递者。如果旧的思路还在继续，就不应转段。如果同一段中出现了全新的
+思路，就应该另起一段。
+
+\iffalse
+Most people completely underestimate the importance of well-placed
+paragraph breaks.  Many people do not even know what the meaning of
+a paragraph break is, or, especially in \LaTeX, introduce paragraph
+breaks without knowing it.  The latter mistake is especially easy to
+make if equations are used in the text.  Look at the following
+examples, and figure out why sometimes empty lines (paragraph breaks)
+are used before and after the equation, and sometimes not.  (If you
+don't yet understand all commands well enough to understand these
+examples, please read this and the following chapter, and then read
+this section again.)
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+大多数人完全低估恰当设置转段点的重要性。许多人甚至不知道转段点的含义是什么，
+或者在~\LaTeX{}~中引进了转段点却浑然不知。如果在文档中使用了公式，后一个错误
+特别容易发生。看看下面的例子，想想为什么有时在方程前后使用多个空行（转段点），
+有时却不用。（如果你还不完全理解这些例子中的命令，请阅读本章和下一章，然后重新
+阅读本节内容。）
+
+\begin{code}%%%%%%%%%%%
+\begin{verbatim}
+% Example 1
+\ldots when Einstein introduced his formula
+\begin{equation}
+  e = m \cdot c^2 \; ,
+\end{equation}
+which is at the same time the most widely known
+and the least well understood physical formula.
+
+
+% Example 2
+\ldots from which follows Kirchoff's current law:
+\begin{equation}
+  \sum_{k=1}^{n} I_k = 0 \; .
+\end{equation}
+
+Kirchhoff's voltage law can be derived \ldots
+
+
+% Example 3
+\ldots which has several advantages.
+
+\begin{equation}
+  I_D = I_F - I_R
+\end{equation}
+is the core of a very different transistor model. \ldots
+\end{verbatim}
+\end{code}%%%%%%%%%%%%%%%%
+
+\iffalse
+The next smaller text unit is a sentence.  In English texts, there is
+a larger space after a period which ends a sentence than after one
+which ends an abbreviation.  \LaTeX{} tries to figure out which one
+you wanted to have.  If \LaTeX{} gets it wrong, you must tell it what
+you want.  This is explained later in this chapter.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+下一个较小的文档单位是句子。在英语文档中，在一个句子结尾处句号后的空间
+大于缩写词句号后的空间。\LaTeX{}~试图分辨出你需要那一个。如果~\LaTeX{}~给
+错了，你必须告诉~\LaTeX{}~你到底需要什么。在本章的后面将对此予以解释。
+
+\iffalse
+The structuring of text even extends to parts of sentences.  Most
+languages have very complicated punctuation rules, but in many
+languages (including German and English), you will get almost every
+comma right if you remember what it represents: a short stop in the
+flow of language.  If you are not sure about where to put a comma,
+read the sentence aloud, and take a short breath at every comma.  If
+this feels awkward at some place, delete that comma, if you feel the
+urge to breathe (or make a short stop) at some other place, insert a
+comma.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+句子也有结构。大多数语言具有非常复杂的标点符号系统，但是在很多语言中
+（包括德语和英语）只要你记住它表示什么：语言流中的短暂停顿，你就能近
+乎完美地使用逗号。如果你不肯定在哪里使用逗号，就大声地朗读这个句子，
+在每个逗号处做一短呼吸。在什么地方如果你感到别扭，就删掉这个逗号；
+如果在什么地方，你感到必须呼吸（或做了短暂停顿）就插入一个逗号。
+
+\iffalse Finally, the paragraphs of a text should also be
+structured logically at a higher level, by putting them into
+chapters, sections, subsections, and so on.  However, the
+typographical effect of writing e.g.{} \verb|\section{The|
+\texttt{Structure of Text and Language}\verb|}| is so obvious that
+it is almost self-evident how these high-level structures should
+be used.
+\fi
+ %%%%%%%%%%%%%%%%%%%%%%%%
+最后，通过分成章、节、子节等形式，文档中的段落应该按逻辑在更高的
+层次进行组织。但是，使用~\verb|\section{The| \texttt{Structure of Text and
+Language}\verb|}|~的排版效果是如此明显，以致如何使用这些高水平的
+结构几乎是不证自明的。
+
+%\section{Linebreaking and Pagebreaking}
+\section{断行和分页}
+
+
+%\subsection{Justified Paragraphs}
+\subsection{段落整理}
+
+\iffalse Often books are typeset with each line having the same
+length. \LaTeX{} inserts the necessary \wi{linebreak}s and spaces
+between words by optimizing the contents of a whole paragraph. If
+necessary, it also hyphenates words that would not fit comfortably
+on a line. How the paragraphs are typeset depends on the document
+class. Normally the first line of a paragraph is indented, and
+there is no additional space between two paragraphs. Refer to
+section~\ref{parsp} for more information.
+\fi %%%%%%%%%%%%%%%%%
+
+通常书籍是用等长的行来排版的。为了优化整个段落的内容，\LaTeX{}~在
+单词之间插入必要的\wi{断行点}（\wi{linebreak}）和间隔。如果一行的
+单词排不下，\LaTeX{}~也会进行必要的断字。段落如何排版依赖于文档类别。
+通常，每一段的第一行有缩进，在两段之间没有额外的间隔。更多的信息请
+参考第~\ref{parsp}~节。
+
+\iffalse
+In special cases it might be necessary to order \LaTeX{}
+to break a line:
+\begin{lscommand}
+\ci{\bs} or \ci{newline}
+\end{lscommand}
+\noindent starts a new line without starting a new paragraph.
+\fi%%%%%%%%%
+
+在特殊情形下，有必要命令~\LaTeX{}~断行
+\begin{lscommand}
+\ci{\bs} or \ci{newline}
+\end{lscommand}
+\noindent 另起一行，而不另起一段。
+
+
+\iffalse
+\begin{lscommand} \ci{\bs*}
+\end{lscommand}
+\noindent additionally prohibits a pagebreak after the forced
+linebreak.
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lscommand} \ci{\bs*}
+\end{lscommand}
+\noindent 在强行断行后，还禁止分页。
+
+\begin{lscommand}
+\ci{newpage}
+\end{lscommand}
+%\noindent starts a new page.
+\noindent 另起一新页。
+
+\begin{lscommand}
+\ci{linebreak}\verb|[|\emph{n}\verb|]|,
+\ci{nolinebreak}\verb|[|\emph{n}\verb|]|,
+\ci{pagebreak}\verb|[|\emph{n}\verb|]| and
+\ci{nopagebreak}\verb|[|\emph{n}\verb|]|
+\end{lscommand}
+\iffalse \noindent do what their names say. They enable the author
+to influence their actions with the optional argument \emph{n}. It
+can be set to a number between zero to four. By setting \emph{n}
+to a value below 4 you leave \LaTeX{} the option of ignoring your
+command if the result would look very bad. Do not confuse these
+``break'' commands with the ``new'' commands. Even when you give a
+``break'' command, \LaTeX{} still tries to even out the right
+border of the page and the total length of the page as described
+in the next section. If you really want to start a ``new line'',
+then use the corresponding command. Guess its name!
+\fi %%%%%%%%%%%%
+\noindent
+上述命令的效果可以从它们的名称看出来。通过可选参数~\emph{n}，
+作者可以影响这些命令的效果。\emph{n}~可以置为~0~和~4~之间的数。
+如果命令的效果看起来非常差，把~\emph{n}~取为小于~4~的数，可以让
+~\LaTeX{}~选择忽略这个命令。不要这些~``break''~命令与~``new''~
+命令混淆。即使你给出了~``break''~命令，\LaTeX{}~仍然试图对齐
+页面的右边界。%and the total length of the page as described in the next section.
+如果你真想另起一行，就使用相应的命令。猜猜该是什么命令！
+
+ \iffalse
+ \LaTeX{} always tries to produce the best linebreaks
+ possible. If it cannot find a way to break the lines in a manner
+which meets its high standards, it lets one line stick out on the
+right of the paragraph. \LaTeX{} then complains (``\wi{overfull
+hbox}'') while processing the input file. This happens most often
+when \LaTeX{} cannot find a suitable place to hyphenate a
+word.\footnote{Although \LaTeX{} gives
+  you a warning when that happens (Overfull hbox) and displays the
+  offending line, such lines are not always easy to find. If you use
+  the option \texttt{draft} in the \ci{documentclass} command, these
+  lines will be marked with a thick black line on the right margin.}
+You can instruct \LaTeX{} to lower its standards a little by
+giving the \ci{sloppy} command. It prevents such over-long lines
+by increasing the inter-word spacing --- even if the final output
+is not optimal.  In this case a warning (``\wi{underfull hbox}'')
+is given to the user.  In most such cases the result doesn't look
+very good. The command \ci{fussy} brings \LaTeX{} back to its
+default behaviour.
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LaTeX{}~总是尽可能产生最好的断行效果。如果断行无法达到~\LaTeX{}~的高标准，
+就让这一行在段落的右侧溢出。然后在处理输入文件的同时，报告溢出的消息
+（``\wi{overfull hbox}''）。这最可能发生在~\LaTeX{}~找不到合适的地方断字时候。
+\footnote{当发生（盒子溢出）时，虽然~\LaTeX{}~给出一个警告并显示溢出的那一行，
+但是不太容易发现溢出的行。如果你在~\ci{documentclass}~命令中使用选项~\texttt{draft}，
+\LaTeX{}~就在溢出行的右边标以粗黑线。}你可以使用~\ci{sloppy}~命令，
+告诉~\LaTeX{}~降低一点儿标准。虽然最终的输出结果不是最优的，
+它通过增加单词之间的间隔，以防止出现过长的行。在这种情况下给出警告
+（``\wi{underfull hbox}''）。在大多数情况下得到的结果看起来不会非常好。
+\ci{fussy}~命令把~\LaTeX{}~恢复为缺省状态。
+
+
+%\subsection{Hyphenation} \label{hyph}
+\subsection{断字}
+
+\iffalse
+\LaTeX{} hyphenates words whenever necessary. If the
+hyphenation algorithm does not find the correct hyphenation
+points, you can remedy the situation by using the following
+commands to tell \TeX{} about the exception.
+\fi %%%%%%%%%%%%
+必要时就会出现断字。如果断字算法不能确定正确的断字点，可以使用如下命令
+告诉~\TeX{}~如何弥补这个缺憾。
+
+
+%The command
+命令
+\begin{lscommand}
+\ci{hyphenation}\verb|{|\emph{word list}\verb|}|
+\end{lscommand}
+\noindent \iffalse causes the words listed in the argument to be
+hyphenated only at the points marked by ``\verb|-|''.  The
+argument of the command should only contain words built from
+normal letters or rather signes which are regarded as normal
+letters in the active context. The hyphenation hints are stored
+for the language which is active when the hyphenation command
+occurs. This means that if you place a hyphenation command into
+the preamble of your document it will influence the english
+language hyphenation. If you place the command after the
+\verb|\begin{document}| and you are using some package for
+national language support like \pai{babel}, then the hyphenation
+hints will be active in the language activated through
+\pai{babel}. \fi%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+使列于参量中的单词仅在注有~``\verb|-|''~的点断字。命令的参量仅由
+正常字母构成的单词，或由激活文本中视为正常字母的符号组成。应用于
+（特殊）语言的已存好，当断字命令出现时，就为激活的语言储存断字可选点。
+这意味着如果你在文档导言中设置了断字命令，它将影响英文的断字。
+如果断字命令置于~\verb|\begin{document}|~后面，而且你正使用
+类似~\pai{babel}~的国际语言支持宏包，那么断字可选点在由~\pai{babel}~
+激活的语言中就处于活动状态。
+
+
+\iffalse The example below will allow ``hyphenation'' to be
+hyphenated as well as ``Hyphenation'', and it prevents
+``FORTRAN'', ``Fortran'' and ``fortran'' from being hyphenated at
+all.  No special characters or symbols are allowed in the
+argument.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+下面的例子允许对~``hyphenation''~和~``Hyphenation''~进行断字，
+却根本不允许~``FORTRAN'', ``Fortran''~和~``fortran''~进行断字。
+在参量中不允许出现特殊的字符和符号。
+
+
+%Example:
+例子：
+\begin{code}
+\verb|\hyphenation{FORTRAN Hy-phen-a-tion}|
+\end{code}
+
+\iffalse
+The command \ci{-} inserts a discretionary hyphen into a
+word. This also becomes the only point hyphenation is allowed in
+this word. This command is especially useful for words containing
+special characters (e.g.{} accented characters), because \LaTeX{}
+does not automatically hyphenate words containing special
+characters.
+%\footnote{Unless you are using the new
+%\wi{DC fonts}.}.
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+命令~\ci{-}~在单词中插入一个自主的断字点。它也就成为这个单词中
+允许出现的唯一断字点。对于包含特殊字符（注音字符）的单词，这个
+命令是特别有用的，因为对于包含特殊字符的单词~\LaTeX{}~不自动断字。
+
+\begin{example}
+I think this is: su\-per\-cal\-%
+i\-frag\-i\-lis\-tic\-ex\-pi\-%
+al\-i\-do\-cious
+\end{example}
+
+%Several words can be kept together on one line with the command
+命令
+\begin{lscommand}
+\ci{mbox}\verb|{|\emph{text}\verb|}|
+\end{lscommand}
+\noindent 保证把几个单词排在同一行上。
+%It causes its argument to be kept together under all circumstances.
+在任何情况下，这个命令把它的参量排在一起（同一行上）。
+
+\begin{example}
+My phone number will change soon.
+It will be \mbox{0116 291 2319}.
+
+The parameter
+\mbox{\emph{filename}} should
+contain the name of the file.
+\end{example}
+
+\iffalse
+\ci{fbox} is similar to mbox, but in addition there will
+be a visible box drawn around the content.
+\fi
+%%%%%%%%%%%%%%%%%%
+命令~\ci{fbox}~和~\ci{mbox}~类似，此外它还能围绕内容画一个框。
+
+%\section{Ready made Strings}
+\section{学习字符串排版}
+
+\iffalse In some of the examples on the previous pages you have
+seen some very simple \LaTeX{} commands for typesetting special
+text strings:\fi %%%%%%%%%%%%%%%%%%%%%%%%%%
+在前面的例子中，你已经看到用来排特殊字符串的非常简单的~\LaTeX{}~命令。
+
+
+\vspace{2ex}
+
+\noindent
+\begin{tabular}{@{}lll@{}}
+Command&Example&Description\\
+\hline
+\ci{today} & \today   &  Current date in the current language\\
+\ci{TeX} & \TeX       & The name of your favorite typesetter\\
+\ci{LaTeX} & \LaTeX   & The name of the Game\\
+\ci{LaTeXe} & \LaTeXe & The current incarnation of \LaTeX\\
+\end{tabular}
+
+%\section{Special Characters and Symbols}
+\section{特殊字符和符号}
+
+%\subsection{Quotation Marks}
+\subsection{引号}
+
+\iffalse You should \emph{not} use the \verb|"| for \wi{quotation
+marks} \index{""@\texttt{""}} as you would on a typewriter.  In
+publishing there are special opening and closing quotation marks.
+In \LaTeX{}, use two~\verb|`|s (grace accent) for opening
+quotation marks and two~\verb|'|s (apostrophe) for closing
+quotation marks. For single quotes you use just one of each. \fi
+%%%%%%%%%%%
+你~\emph{不}~要像在打字机上那样，把~\verb|"|~用作\wi{引号}\index{""@\texttt{""}}。
+在印刷中有专门的左引号和右引号。在~\LaTeX{}~中，用两个~\verb|`|~产生左引号，
+用两个~\verb|'|~产生右引号。一个~\verb|`|~和一个~\verb|'|~产生一个单引号。
+\begin{example}
+``Please press the `x' key.''
+\end{example}
+
+%\subsection{Dashes and Hyphens}
+\subsection{破折号和连字号}
+
+\iffalse \LaTeX{} knows four kinds of \wi{dash}es. You can access
+three of them with different numbers of consecutive dashes. The
+fourth sign is actually not a dash at all: It is the mathematical
+minus sign: \index{-} \index{--} \index{---} \index{-@$-$}
+\index{mathematical!minus} \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LaTeX{}~中右四种短划标点符号。连续用不同数目的短划，可以得到其中的三种。
+第四个实际不是标点符号，它是数学中的减号：\index{-} \index{--}
+\index{---} \index{-@$-$} \index{mathematical!minus}
+
+\begin{example}
+daughter-in-law, X-rated\\
+pages 13--67\\
+yes---or no? \\
+$0$, $1$ and $-1$
+\end{example}
+%The names for these dashes are:
+%`-' \wi{hyphen}, `--' \wi{en-dash}, `---' \wi{em-dash} and
+%`$-$' \wi{minus sign}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+这些短划线的名称是:
+`-'~\wi{连字号}，`--'~\wi{短破折号}，`---'~\wi{长破折号} 和~
+`$-$'~\wi{减号}。
+
+
+%\subsection{Tilde ($\sim$)}
+\subsection{波浪号\texorpdfstring{~($\sim$)}{}}
+
+\iffalse \index{www}\index{URL}\index{tilde} A character, often
+seen with web addresses is the tilde. To generate this in \LaTeX{}
+you can use \verb|\~| but the result: \~{} is not really what you
+want. Try this instead:\fi %%%%%%%%%%%%%%
+波浪号\index{www}\index{URL}\index{tilde}经常和网址用在一起。它在
+~\LaTeX{}~中，可用~\verb|\~|~产生，但其结果：\~{}却不是你真正想要的。
+试一下这个：
+
+\begin{example}
+http://www.rich.edu/\~{}bush \\
+http://www.clever.edu/$\sim$demo
+\end{example}
+
+%\subsection{Degree Symbol ($\circ$)}
+\subsection{度的符号\texorpdfstring{~($\circ$)}{}}
+
+
+%How to print a \wi{degree symbol} in \LaTeX{}?
+在\LaTeX{}中如何排\wi{度的符号}？
+
+\begin{example}
+Its $-30\,^{\circ}\mathrm{C}$,
+I will soon start to
+super-conduct.
+\end{example}
+
+%\subsection{Ellipsis ( \ldots )}
+\subsection{省略号\texorpdfstring{~(\ldots )}{(...)}}
+
+\iffalse
+On a typewriter a \wi{comma} or a \wi{period} takes the
+same amount of space as any other letter. In book printing these
+characters occupy only a little space and are set very close to
+the preceding letter. Therefore you cannot enter `\wi{ellipsis}'
+by just typing three dots, as the spacing would be wrong. Besides
+that there is a special command for these dots. It is called \fi
+%%%%%%%%%%%%%
+在打字机上，\wi{逗号}或\wi{句号}占据的空间和其他字母相等。
+在书籍印刷中，这些字符仅占据一点儿空间，并且与前一个字母
+贴得非常紧。所以不能只键入三个点来输出`\wi{省略号}'，因为
+间隔划分得不对。有一个专门的命令输出省略号。它称为
+
+\begin{lscommand}
+\ci{ldots}
+\end{lscommand}
+\index{...@\ldots}
+
+
+\begin{example}
+Not like this ... but like this:\\
+New York, Tokyo, Budapest, \ldots
+\end{example}
+
+%\subsection{Ligatures}
+\subsection{连字}
+
+\iffalse Some letter combinations are typeset not just by setting
+the different letters one after the other, but by actually using
+special symbols.\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+一些字母组合不是简单键入一个个字母得到得的，而实际上用到了一些特殊符号。
+\begin{code}
+效果应为{\large ff fi fl ffi\ldots}\quad 而不是%instead of
+\quad {\large f{}f
+f{}i f{}l f{}f{}i \ldots}
+\end{code}
+\iffalse These so-called \wi{ligature}s can be prohibited by
+inserting an \ci{mbox}\verb|{}| between the two letters in
+question. This might be necessary with words built from two
+words.\fi %%%%%%%%%%%%%%
+这就是所谓的连字，在两个字母之间插入一个~\ci{mbox}\verb|{}|，可以禁止连字。
+对于由两个词构成的单词，这可能是必要的。
+
+\begin{example}
+不是%Not
+shelfful\\
+而是%but
+shelf\mbox{}ful
+\end{example}
+
+%\subsection{Accents and Special Characters}
+\subsection{注音符号和特殊字符}
+
+\iffalse
+\LaTeX{} supports the use of \wi{accent}s and \wi{special
+character}s from many languages. Table~\ref{accents} shows all
+sorts of accents being applied to the letter o. Naturally other
+letters work too.\fi %%%%%%%%%%%%%%
+\LaTeX{}~支持来自许多语言中的\wi{注音符号}和\wi{特殊字符}。表\nbs\ref{accents}~
+就字母~o~列出了所有的注音符号。对于其他字母也自然有效。
+
+\iffalse To place an accent on top of an i or a j, its dots have
+to be removed. This is accomplished by typing \verb|\i| and
+\verb|\j|.\fi %%%%%%%%%%%%%%%%%%
+在字母~i~和~j~上标一个注音符号，它的点儿必须去掉。这个可由~\verb|\i|~和~\verb|\j|~做到。
+
+\begin{example}
+H\^otel, na\"\i ve, \'el\`eve,\\
+sm\o rrebr\o d, !`Se\~norita!,\\
+Sch\"onbrunner Schlo\ss{}
+Stra\ss e
+\end{example}
+
+\begin{table}[!hbp]
+%\caption{Accents and Special Characters.}
+\caption{注音符号和特殊字符.} \label{accents}
+\begin{lined}{10cm}
+\begin{tabular}{*4{cl}}
+\A{\`o} & \A{\'o} & \A{\^o} & \A{\~o} \\
+\A{\=o} & \A{\.o} & \A{\"o} & \B{\c}{c}\\[6pt]
+\B{\u}{o} & \B{\v}{o} & \B{\H}{o} & \B{\c}{o} \\
+\B{\d}{o} & \B{\b}{o} & \B{\t}{oo} \\[6pt]
+\A{\oe}  &  \A{\OE} & \A{\ae} & \A{\AE} \\
+\A{\aa} &  \A{\AA} \\[6pt]
+\A{\o}  & \A{\O} & \A{\l} & \A{\L} \\
+\A{\i}  & \A{\j} & !` & \verb|!`| & ?` & \verb|?`|
+\end{tabular}
+\index{dotless \i{} and \j}\index{Scandinavian letters}
+\index{ae@\ae}\index{umlaut}\index{grave}\index{acute}
+\index{oe@\oe}
+
+\bigskip
+\end{lined}
+\end{table}
+
+%\section{International Language Support}
+\section{支持使用国际语言}
+
+\iffalse
+\index{international}  If you need to write documents in
+\wi{language}s other than English, there are two areas where
+\LaTeX{} has to be configured appropriately:\fi %%%%%%%%%%%%%
+\index{international}如果你需要用英语以外的\wi{语言}书写文件，\LaTeX{}~有两个地方必须
+适当配置：
+
+
+\begin{enumerate}
+\item \iffalse All automatically generated text
+strings\footnote{Table of
+    Contents, List of Figures, \ldots} have to be adapted to the new
+  language.  For many languages, these changes can be accomplished by
+  using the \pai{babel} package by Johannes Braams.\fi %%%%%%%%%%
+  所有自动生成的字符串\footnote{表目录, 图目录,
+  \ldots}必须适用于新语言。对于许多种语言，这个任务可由~Johannes
+  Braams~编的宏包~\pai{babel}~完成。
+
+\item
+\iffalse\LaTeX{} needs to know the hyphenation rules for the
+new
+  language. Getting hyphenation rules into \LaTeX{} is a bit more
+  tricky. It means rebuilding the format file with different
+  hyphenation patterns enabled. Your \guide{} should give more
+  information on this.\fi %%%%%%%%%%%%%%%%%%%%%
+对于一种新语言，\LaTeX{}~需要知道它的断字规则。将断字规则输入~\LaTeX{}~有些难度。
+这是说为不同断字模式重建格式文件是行得通的。对此~\guide{}~给了更多的信息。
+\end{enumerate}
+
+\iffalse
+If your system is already configured appropriately, you
+can activate the \pai{babel} package by adding the command
+\begin{lscommand}
+\ci{usepackage}\verb|[|\emph{language}\verb|]{babel}|
+\end{lscommand}
+\noindent after the \verb|\documentclass| command. The
+\emph{language}s your system supports should also be listed in the
+Local Guide. Babel will automatically activate the apropriate
+hyphenation rules for the language you choose. If your \LaTeX{}
+format does not support hyphenation in the language of your
+choice, babel will still work but it will disable hyphenation
+which has quite a negative effect on the visual appearance of the
+typeset document.\fi %%%%%%%%
+如果你的系统已经配置好了，你可以通过在命令~\verb|\documentclass|~后添加命令
+\begin{lscommand}
+\ci{usepackage}\verb|[|\emph{language}\verb|]{babel}|
+\end{lscommand}
+\noindent
+来激活宏包~\pai{babel}。系统支持的\emph{语言}也应列于~\guide{}~中。对于选定的语言，
+宏包~\pai{babel}~将自动激活适当的断字规则。如果~\LaTeX{}~的格式文件不支持在所
+选择的语言中断字，
+除了失去断字功能，宏包~\pai{babel}~仍起作用，这对于排版效果有很大的负面影响。
+
+\iffalse
+For some languages, \textsf{babel} also specifies new
+commands which simplify the input of special characters. The
+\wi{German} language, for example, contains a lot of umlauts
+(\"a\"o\"u). With \textsf{babel}, you can enter an \"o by typing
+\verb|"o| instead of~\verb|\"o|.
+\fi %%%%%%%%%%%%%%%%%%
+对于很多种语言，宏包~\pai{babel}~也提供专门的新命令来简化特殊字符的输入。
+例如~\wi{German}，包含很多类似的字符（\"a\"o\"u）。利用~\textsf{babel}，
+你能用~\verb|"o|~而不是~\verb|\"o|~来输入~\"o。
+
+\iffalse
+Some computer systems allow you to input special
+characters directly from the keyboard. \LaTeX{} can handle such
+characters. Since the December 1994 release of \LaTeXe{}, support
+for several input encodings is included in the basic distribution
+of \LaTeXe. Check the \pai{inputenc} package:
+\begin{lscommand}
+\ci{usepackage}\verb|[|\emph{encoding}\verb|]{inputenc}|
+\end{lscommand}\fi %%%%%%%%%%%%
+一些计算机系统允许通过键盘直接输入特殊的字符。\LaTeX{}~能够处理这些字符。
+从~1994~年~12~月发布的~\LaTeXe{}~开始，\LaTeXe{}~的基本版本包括了对几种
+输入编码的支持。请检查宏包
+\pai{inputenc}：
+\begin{lscommand}
+\ci{usepackage}\verb|[|\emph{encoding}\verb|]{inputenc}|
+\end{lscommand}
+
+\iffalse When using this package, you should consider that other
+people might not be able to display your input files on their
+computer, because they use a different encoding. For example, the
+German umlaut \"a on a PC is encoded as 132, but on some Unix
+systems using ISO-LATIN~1 it is encoded as 228. Therefore you
+should use this feature with care. The following encodings may
+come handy, depending on the type of system you are working on:
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+当使用这宏包时，应该考虑其他人在其计算机上或许不能显示你的输入文件，因为
+他们使用不同的编码。例如，德语~\"a~在微机上的编码为~132，但是在一些使用~ISO-LATIN\nbs1~
+的~Unix~系统上，它的编码为~228。所以应小心使用这个功能。根据系统的类型，可能有下列编码。
+
+\begin{center}
+\begin{tabular}{l | r}
+Operating system & encoding\\
+\hline
+Mac     &  \texttt{applemac} \\
+Unix    &  \texttt{latin1} \\
+Windows &  \texttt{ansinew} \\
+OS/2    &  \texttt{cp850}
+\end{tabular}
+\end{center}
+
+\iffalse Font encoding is a different matter. It defines at which
+position inside a \TeX-font each letter is stored. The original
+Computer Modern \TeX{} font does only contain the 128 characters
+of the old 7-bit ASCII character set. When accented characters are
+required, \TeX{} creates them by combining a normal character with
+an accent. While the resulting output looks perfect, this approach
+stops the automatic hyphenation from working inside words
+containing accented characters. \fi%%%%%%%%%%%%%%%%%%
+字体编码是不同的问题。它定义于一种~\TeX{}-字体的每个字母的所在位置。
+原始的计算机现代~\TeX{}~字体仅包含旧的~7－字节~ASCII~字符集中的~128~个
+字符。当需要注音字母的时候，由~\TeX{}~利用正常字母和注音符号生成。
+这个方法停止对含有注音字母的单词进行断字，同时保证输出效果
+看起来很完美。
+
+\iffalse
+ Fortunately, most modern \TeX{} distributions contain a
+copy of the EC fonts. These fonts look like the Computer Modern
+fonts, but contain special characters for most of the accented
+characters used in European languages. By using these fonts you
+can improve hyphenation in non-English documents. The EC fonts are
+activated by including the \pai{fontenc} package in the preamble
+of your document.\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%
+幸运的是大多数~\TeX{}~的现代版本带有一套~EC~字体。这些字体看起来
+像现代计算机字体，但是包含用于欧洲语言大多数注音字母的特殊字符。
+使用这些字体，可以改进非英语文档中的断字。EC~字体由包含于文档导言
+中~\pai{fontenc}~宏包来激活。
+
+\begin{lscommand}
+\ci{usepackage}\verb|[T1]{fontenc}|
+\end{lscommand}
+\newpage
+
+%\subsection{Support for German}
+\subsection{对德语的支持}
+
+\iffalse Some hints for those creating \wi{German}\index{Deutsch}
+documents with \LaTeX{}. You can load German language support with
+the command:
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+用~\LaTeX{}~生成\wi{德语}\index{Deutsch}文档的一些提示。可以用命令
+
+\begin{lscommand}
+\verb|\usepackage[german]{babel}|
+\end{lscommand}
+\noindent 加载对德语的支持。
+
+\iffalse This enables German hyphenation, if you have configured
+your LaTeX system accordingly. It also changes all automatic text
+into German. Eg. ``Chapter'' becomes ``Kapitel''. Further a set of
+new commands becomes available which allows you to write German
+input files more quickly. Check out table \ref{german} for
+inspiration. \fi %%%%%%%%%%%
+如果~\LaTeX{}~系统已经做了相应的配置，就能保证德语单词的断字。
+同时它把自动文本替换为德语，即把“章”变为~``Kapitel''。而且提供了
+一套新命令使得输入德语文件更加迅速。从表\nbs\ref{german}~中
+能获得灵感。
+
+
+\begin{table}[!hbp]
+%\caption{German Special Characters.}
+\caption{德语特殊字符.} \label{german}
+\begin{lined}{5cm}
+\begin{tabular}{*2{cl}}
+\verb|"a| & \"a \hspace*{1ex} & \verb|"s| & \ss \\[1ex]
+\verb|"`| & \glqq & \verb|"'| & \grqq \\[1ex]
+\verb|"<| & \flqq  & \verb|">| & \frqq \\[1ex]
+\ci{dq} & " \\
+\end{tabular}
+\bigskip
+\end{lined}
+\end{table}
+
+
+%\section{The Space between Words}
+\section{单词的间隔}
+
+\iffalse To get a straight right margin in the output, \LaTeX{}
+inserts varying amounts of space between the words. It inserts
+slightly more space at the end of a sentence, as this makes the
+text more readable.  \LaTeX{} assumes that sentences end with
+periods, question marks or exclamation marks. If a period follows
+an uppercase letter, this is not taken as a sentence ending, since
+periods after uppercase letters normally occur in abbreviations.
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+为了使输出的右边界对齐，\LaTeX{}~在单词间插入不等的间隔。
+在句子的末尾插入的空间稍多一些，因为这使得文本更具可读性。
+\LaTeX{}~假定句子以句号、问号或惊叹号结尾。
+如果句号紧跟一个大写字母，它就不视为句子的结尾。
+因为一般在有缩写地方，才出现句号紧跟大写字母的情况。
+
+\iffalse Any exception from these assumptions has to be specified
+by the author. A backslash in front of a space generates a space
+which will not be enlarged. A tilde~`\verb|~|' character generates
+a space which cannot be enlarged and which additionally prohibits
+a linebreak. The command \verb|\@| in front of a period specifies
+that this period terminates a sentence even when it follows an
+uppercase letter. \cih{"@} \index{~@ \verb.~.} \index{tilde@tilde
+( \verb.~.)} \index{., space after} \fi %%%%%%%%%%%%%%%%%%%%%%
+作者必须详细说明，这些假设中的任何一个例外。空格前的反斜线符号
+产生一个不能伸长的空格。波浪字符~`\verb|~|'~也产生一个不能伸长
+的空格，并且禁止断行。句号前的命令~\verb|\@|~说明这个句号是
+句子的末尾，即使它紧跟一个大写字母。\cih{"@} \index{~@ \verb.~.}
+\index{tilde@tilde ( \verb.~.)} \index{., space after}
+
+\begin{example}
+Mr.~Smith was happy to see her\\
+cf.~Fig.~5\\
+I like BASIC\@. What about you?
+\end{example}
+
+\iffalse
+The additional space after periods can be disabled with
+the command
+\begin{lscommand}
+\ci{frenchspacing}
+\end{lscommand}
+\noindent which tells \LaTeX{} \emph{not} to insert more space
+after a period than after ordinary character. This is very common
+in non-English languages, except bibliographies. If you use
+\ci{frenchspacing}, the command \verb|\@| is not necessary.
+\fi %%%%%%%%%%%%%%%
+命令
+\begin{lscommand}
+\ci{frenchspacing}
+\end{lscommand}
+\noindent 能禁止在句号后插入额外的空间，它告诉~\LaTeX{}~在句号
+后\emph{不}要插入比正常字母更多的空间。除了参考文献，这在非英语
+语言中非常普遍。如果使用了~\ci{frenchspacing}，命令~\verb|\@|~就
+不必要了。
+
+
+%\section{Titles, Chapters, and Sections}
+\section{标题，章和节}
+
+\iffalse To help the reader find his or her way through your work,
+you should divide it into chapters, sections, and subsections.
+\LaTeX{} supports this with special commands which take the
+section title as their argument.  It is up to you to use them in
+the correct order.\fi %%%%%%%%%%%%%%%%%%%
+为便于读者理解，应该把文档划分为章，节和子节。\LaTeX{}~用特殊的命令
+支持这个工作，这些命令把节的标题作为参量。你的任务是按正确次序使用它们。
+
+%The following sectioning commands are available for the
+%\texttt{article} class:
+对\texttt{article}风格的文档，有下列分节命令：
+ \nopagebreak
+\begin{code}
+\ci{section}\verb|{...}           |\ci{paragraph}\verb|{...}|\\
+\ci{subsection}\verb|{...}        |\ci{subparagraph}\verb|{...}|\\
+\ci{subsubsection}\verb|{...}|
+\end{code}
+
+%You can use two additional sectioning commands for the \texttt{report}
+%and the \texttt{book} class:
+对~\texttt{report}~和~\texttt{book}~风格的文档，还有其他两个分节命令：
+
+\begin{code}
+\ci{part}\verb|{...}              |\ci{chapter}\verb|{...}|
+\end{code}
+
+\iffalse As the \texttt{article} class does not know about
+chapters, it is quite easy to add articles as chapters to a book.
+The spacing between sections, the numbering and the font size of
+the titles will be set automatically by \LaTeX. \fi %%%%%%%%%%%%%
+因为~\texttt{article}~风格的文档不划分为章，所以很容易把它作为
+一章插入书籍文档中。节之间的间隔，节的序号和标题的字号由~\LaTeX{}~自动
+设置。
+
+\pagebreak[3]
+\iffalse
+Two of the sectioning commands are a bit
+special:
+\begin{itemize}
+\item The \ci{part} command does
+  not influence the numbering sequence of chapters.
+\item The \ci{appendix} command does not take an argument. It just
+  changes the chapter numbering to letters.\footnote{For the article
+    style it changes the section numbering.}
+\end{itemize}\fi %%%%%%%%%%%%%%%%%%%%%%%%
+分节的两个命令有些特殊性：
+\begin{itemize}
+\item 命令~\ci{part}~不影响章的序号。
+\item 命令~\ci{appendix}~不带参量，只把章的序号改用为字母标记。
+\footnote{对~\texttt{article}~风格的文档改变节的序号。}
+\end{itemize}
+
+\iffalse
+ \LaTeX{} creates a table of contents by taking the
+section headings and page numbers from the last compile cycle of
+the document. The command
+\begin{lscommand}
+\ci{tableofcontents}
+\end{lscommand}
+\noindent expands to a table of contents at the place where it is
+issued. A new document has to be compiled (``\LaTeX ed'') twice to
+get a correct \wi{table of contents}. Sometimes it might be
+necessary to compile the document a third time. \LaTeX{} will tell
+you when this is necessary.
+\fi %%%%%%%%%%%%%
+\LaTeX{}~在文档编译的最后一个循环中，提取节的标题和页码以生成目录。命令
+\begin{lscommand}
+\ci{tableofcontents}
+\end{lscommand}
+\noindent
+在其出现的位置插入目录。为了得到正确的\wi{目录}内容，一个新文档必须
+编译两次。有时还要编译三次。届时~\LaTeX{}~会通知你。
+
+\iffalse
+All sectioning commands listed above also exist as
+``starred'' versions.  A ``starred'' version of a command is built
+by adding a star \verb|*| after the command name.  They generate
+section headings which do not show up in the table of contents and
+which are not numbered. The command \verb|\section{Help}|, for
+example, would become \verb|\section*{Help}|.
+\fi %%%%%%%%%%%%%%
+上面列出的分节命令也以“带星”的形式出现。“带星”的命令通过在命令
+名称后加~\verb|*|~来实现。它们生成的节标题既不出现于目录，也不带序号。
+例如，命令~\verb|\section{Help}|~的“带星”形式为~\verb|\section*{Help}|。
+
+\iffalse Normally the section headings show up in the table of
+contents exactly as they are entered in the text. Sometimes this
+is not possible, because the heading is too long to fit into the
+table of contents. The entry for the table of contents can then be
+specified as an optional argument in front of the actual heading.
+\fi %%%%%%%%%%%%%%%%%%%%%%
+目录出现的标题，一般与输入的文本完全一致。有时这是不可能的，
+因为标题太长排不进目录。在这种情况下，目录的条目可由真实标题前
+的可选参量确定。
+
+\begin{code}
+\verb|\chapter[Title for the table of contents]{A long|\\
+\verb|    and especially boring title, shown in the text}|
+\end{code}
+
+\iffalse
+The \wi{title} of the whole document is generated by
+issuing a
+\begin{lscommand}
+\ci{maketitle}
+\end{lscommand}
+\noindent command. The contents of the title have to be defined by the commands
+\begin{lscommand}
+\ci{title}\verb|{...}|, \ci{author}\verb|{...}|
+and optionally \ci{date}\verb|{...}|
+\end{lscommand}
+\noindent before calling \verb|\maketitle|. In the argument of
+\ci{author}, you can supply several names separated by \ci{and}
+commands.
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+整篇文档的标题由命令
+\begin{lscommand} \ci{maketitle}
+\end{lscommand}
+\noindent 产生。标题的内容必须在调用~\verb|\maketitle|~以前，由命令
+\begin{lscommand}
+\ci{title}\verb|{...}|, \ci{author}\verb|{...}| 和可选的%
+%% and optionally
+ \ci{date}\verb|{...}|
+\end{lscommand}
+\noindent
+定义。在命令~\ci{author}~中，可以输入几个用~\ci{and}~命令分开的名字。
+
+%An example of some of the commands mentioned above can be found in
+%Figure~\ref{document} on page~\pageref{document}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+在第\nbs\pageref{document}~页的图\nbs\ref{document}~中，能找到有关
+上述命令的一个例子。
+
+\iffalse Apart from the sectioning commands explained above,
+\LaTeXe{} introduced three additional commands for use with the
+\verb|book| class. They are useful for dividing your publication.
+The commands alter chapter headings and page numbering to work as
+you would expect it in a book: \fi %%%%%%%%%%%%%%%%%%%%%
+除了上面解释的分节命令，\LaTeXe{}~引进了其他三个命令用于~\verb|book|~风格
+的文档。它们对划分出版物有用，也能如愿改变章的标题和页码：
+
+\iffalse
+\begin{description} \item[\ci{frontmatter}] should be the
+very first command after
+  \verb|\begin{document}|. It will switch page numbering to Roman
+    numerals. It is common to use the starred sectioning commands (eg
+    \verb|\chapter*{Preface}|) for
+    frontmatter as this stopps \LaTeX{} from
+    enumerating them.
+\item[\ci{mainmatter}] comes after right befor the first chapter of
+  the book. It turns on Arabic page numbering and restarts the page
+  counter.
+\item[\ci{appendix}] marks the start of additional material in your
+  book. After this command chapters will be numbered with letters.
+\item[\ci{backmatter}] should be inserted before the very last items
+  in your book like the bibliography and the index. In the standard
+  document classes, this has no visual effect.
+\end{description}
+\fi %%%%%%%%%%%%%%%%
+\begin{description}
+\item[\ci{frontmatter}] 应接着命令~\verb|\begin{document}|~使用。
+     它把页码更换为罗马数字。对于正文前的内容普遍使用带星的命令
+     （例如，\verb|\chapter*{Preface}|），以阻止~\LaTeX{}~对它们排序。
+\item[\ci{mainmatter}] 应出现在书的第一章紧前面。它打开阿拉伯
+     页码计数器，并对页码从新计数。
+\item[\ci{appendix}] 标志书中附录材料的开始。该命令后的各章序号改用字母标记。
+\item[\ci{backmatter}] 应该插入与书中最后一部分内容的紧前面，
+     如参考文献和索引。在标准文档类型中，它对页面没有什么效果。
+\end{description}
+
+
+
+
+
+%\section{Cross References}
+\section{交叉引用}
+
+\iffalse
+In books, reports and articles, there are often
+\wi{cross-references} to figures, tables and special segments of
+text. \LaTeX{} provides the following commands for cross
+referencing
+\begin{lscommand}
+\ci{label}\verb|{|\emph{marker}\verb|}|, \ci{ref}\verb|{|\emph{marker}\verb|}|
+and \ci{pageref}\verb|{|\emph{marker}\verb|}|
+\end{lscommand}
+\noindent where \emph{marker} is an identifier chosen by the user. \LaTeX{}
+replaces \verb|\ref| by the number of the section, subsection, figure,
+table, or theorem after which the corresponding \verb|\label| command
+was issued. \verb|\pageref| prints the page number of the
+page where the \verb|\label| command occurred.\footnote{Note that these commands
+  are not aware of what they refer to. \ci{label} just saves the last
+  automatically generated number.} Just as the section titles, the
+numbers from the previous run are used. \fi %%%%%%%%%%%%%%%%%
+在书籍、报告和论文中，需要对图、表和文本的特殊段落进行交叉引用。
+\LaTeX{}~提供了如下交叉引用命令
+\begin{lscommand}
+\ci{label}\verb|{|\emph{marker}\verb|}|,
+\ci{ref}\verb|{|\emph{marker}\verb|}| and
+\ci{pageref}\verb|{|\emph{marker}\verb|}|
+\end{lscommand}
+\noindent
+其中~\emph{marker}~是使用者选择的标识符。如果在节、子节、图、表或定理
+后面输入~\verb|\label|~命令，\LaTeX{}~把~\verb|\ref|~替换为相应的序号。
+\verb|\pageref|~命令排印~\verb|\label|~输入处的页码。\footnote{注意这些
+命令对它们指向什么并没有意识。命令~\ci{label}~只是保存了上一次自动产生的序号。}
+和章节标题一样，使用的序号是前面编译所产生。
+
+
+\begin{example}
+A reference to this subsection
+\label{sec:this} looks like:
+``see section~\ref{sec:this} on
+page~\pageref{sec:this}.''
+\end{example}
+
+%\section{Footnotes}
+\section{脚注}
+
+\iffalse With the command
+\begin{lscommand}
+\ci{footnote}\verb|{|\emph{footnote text}\verb|}|
+\end{lscommand}
+\noindent a footnote is printed at the foot of the current page.  Footnotes
+should always be put\footnote{``put'' is one of the most common
+  English words.} after the word or sentence they refer to. Footnotes
+referring to a sentence or part of it should therefore be put after
+the comma or period.\footnote{Note, that footnotes are
+  distracting the reader from the main body of your document. After all
+  everybody reads the footnotes, we are a curious species. So why not
+  just integrate everything you want to say into the body of the
+  document.\footnotemark}
+\footnotetext{A guidepost doesn't necessarily go where it's
+pointing to :-).}
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+利用命令
+\begin{lscommand}
+\ci{footnote}\verb|{|\emph{footnote text}\verb|}|
+\end{lscommand}
+\noindent
+把脚注内容排印于当前页的页脚位置。脚注命令总是置于（put）
+\footnote{``put''~是最常使用的英语单词之一。}其指向的单词或句子
+的后面。脚注是一个句子或句子的一部分，所以应用逗号或句号结尾。
+\footnote{注意，脚注把读者的注意力从文档的正文引开。我们是好奇
+的动物，每个人都会阅读脚注。所以为什么不把你想说的所有东西都
+写入正文中。\footnotemark}
+\footnotetext{ 路标不必走向它指向的地方~:-).}
+
+\begin{example}
+Footnotes\footnote{This is
+  a footnote.} are often used
+by people using \LaTeX.
+\end{example}
+
+%\section{Emphasized Words}
+\section{强调}
+
+\iffalse
+If a text is typed using a typewriter, \texttt{important
+words are
+  emphasized by \underline{underlining} them.}
+\begin{lscommand}
+\ci{underline}\verb|{|\emph{text}\verb|}|
+\end{lscommand}
+In printed books,
+however, words are emphasized by typesetting them in an \emph{italic}
+font.  \LaTeX{} provides the command
+\begin{lscommand}
+\ci{emph}\verb|{|\emph{text}\verb|}|
+\end{lscommand}
+\noindent to emphasize text.  What the command actually does with
+its argument depends on the context:
+\fi %%%%%%%%%%%%%%%%%%%
+如果文本是用打字机键入的，
+\texttt{用\underline{下划线}来强调重要的单词。}
+\begin{lscommand}
+\ci{underline}\verb|{|\emph{text}\verb|}|
+\end{lscommand}
+但是在印刷的书中，用一种\emph{斜体}字体排印要强调的单词。
+\LaTeX{}~提供命令
+\begin{lscommand}
+\ci{emph}\verb|{|\emph{text}\verb|}|
+\end{lscommand}
+\noindent
+来强调文本。这些命令对其参量的实际作用效果依赖于它的上下文：
+
+
+\begin{example}
+\emph{If you use
+  emphasizing inside a piece
+  of emphasized text, then
+  \LaTeX{} uses the
+  \emph{normal} font for
+  emphasizing.}
+\end{example}
+
+%Please note the difference between telling \LaTeX{} to
+%\emph{emphasize} something and telling it to use a different
+%\emph{font}:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+请注意要求~\LaTeX{}~\emph{强调}什么和要求它使用不同\emph{字体}的不同效果:
+
+\begin{example}
+\textit{You can also
+  \emph{emphasize} text if
+  it is set in italics,}
+\textsf{in a
+  \emph{sans-serif} font,}
+\texttt{or in
+  \emph{typewriter} style.}
+\end{example}
+
+%\section{Environments} \label{env}
+\section{环境} \label{env}
+
+
+% To typeset special purpose text, \LaTeX{} defines many different
+% \wi{environment}s for all sorts of formatting:
+\iffalse
+\begin{lscommand}
+\ci{begin}\verb|{|\emph{environment}\verb|}|\quad
+   \emph{text}\quad
+\ci{end}\verb|{|\emph{environment}\verb|}|
+\end{lscommand}
+\noindent Where \emph{environment} is the name of the environment. Environments can be
+called several times within each other as long as the calling order is
+maintained.
+\begin{code}
+\verb|\begin{aaa}...\begin{bbb}...\end{bbb}...\end{aaa}|
+\end{code}
+\fi %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lscommand}
+\ci{begin}\verb|{|\emph{environment}\verb|}|\quad
+   \emph{text}\quad
+\ci{end}\verb|{|\emph{environment}\verb|}|
+\end{lscommand}
+\noindent
+其中~\emph{environment}~是环境的名称。只要保持调用顺序，环境可以嵌套几次。
+\begin{code}
+\verb|\begin{aaa}...\begin{bbb}...\end{bbb}...\end{aaa}|
+\end{code}
+
+
+%\noindent In the following sections all important environments are explained.
+\noindent 在下面的章节中，对所有重要的环境都做了解释。
+
+\subsection{Itemize, Enumerate, and Description}
+
+\iffalse The \ei{itemize} environment is suitable for simple
+lists, the \ei{enumerate} environment for enumerated lists, and
+the \ei{description} environment for descriptions. \cih{item} \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ei{itemize}~环境用于简单的列表，\ei{enumerate}~环境用于带序号的列表，
+\ei{description}~环境用于带描述的列表。 \cih{item}
+
+
+\begin{example}
+\flushleft
+\begin{enumerate}
+\item You can mix the list
+environments to your taste:
+\begin{itemize}
+\item But it might start to
+look silly.
+\item[-] With a dash.
+\end{itemize}
+\item Therefore remember:
+\begin{description}
+\item[Stupid] things will not
+become smart because they are
+in a list.
+\item[Smart] things, though, can be
+presented beautifully in a list.
+\end{description}
+\end{enumerate}
+\end{example}
+
+\subsection{Flushleft, Flushright, and Center}
+
+\iffalse
+The environments \ei{flushleft} and \ei{flushright}
+generate paragraphs which are either left- or \wi{right-aligned}.
+\index{left
+  aligned} The \ei{center} environment generates centred text. If you
+do not issue \ci{\bs} to specify linebreaks, \LaTeX{} will
+automatically determine linebreaks.
+ \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ei{flushleft}~和~\ei{flushright}~环境分别产生\wi{靠左排列}和\wi{靠右排列}\index{left
+  aligned}的段落。\ei{center}~环境产生居中的文本。如果你不输入命令~\ci{\bs}~指定断行点，
+  \LaTeX{}~将自行决定。
+
+\begin{example}
+\begin{flushleft}
+This text is\\ left-aligned.
+\LaTeX{} is not trying to make
+each line the same length.
+\end{flushleft}
+\end{example}
+
+\begin{example}
+\begin{flushright}
+This text is right-\\aligned.
+\LaTeX{} is not trying to make
+each line the same length.
+\end{flushright}
+\end{example}
+
+\begin{example}
+\begin{center}
+At the centre\\of the earth
+\end{center}
+\end{example}
+
+\subsection{Quote, Quotation, and Verse}
+
+%The \ei{quote} environment is useful for quotes, important phrases
+%and examples.
+\ei{quote}~环境对重要断语和例子的引用很重要。
+
+\begin{example}
+A typographical rule of thumb
+for the line length is:
+\begin{quote}
+On average, no line should
+be longer than 66 characters.
+\end{quote}
+This is why \LaTeX{} pages have
+such large borders by default and
+also why multicolumn print is
+used in newspapers.
+\end{example}
+
+\iffalse
+There are two similar environments: the \ei{quotation}
+and the \ei{verse} environments. The \texttt{quotation}
+environment is useful for longer quotes going over several
+paragraphs, because it does indent paragraphs. The \texttt{verse}
+environment is useful for poems where the line breaks are
+important. The lines are separated by issuing a \ci{\bs} at the
+end of a line and a empty line after each verse.
+\fi %%%%%%%%%%%%%%%%%%%%
+有两个类似的环境：\ei{quotation}~和~\ei{verse}~环境。\texttt{quotation}~环境
+用于超过几段的较长引用，因为它对段落进行缩进。\texttt{verse}~环境用于诗歌，在诗歌中
+断行很重要。在一行的末尾用~\ci{\bs}~断行，在每一段后留一空行。
+
+\begin{example}
+I know only one English poem by
+heart. It is about Humpty Dumpty.
+\begin{flushleft}
+\begin{verse}
+Humpty Dumpty sat on a wall:\\
+Humpty Dumpty had a great fall.\\
+All the King's horses and all
+the King's men\\
+Couldn't put Humpty together
+again.
+\end{verse}
+\end{flushleft}
+\end{example}
+
+%\subsection{Printing Verbatim}
+\subsection{逐字打印}
+
+\iffalse Text which is enclosed between
+\verb|\begin{|\ei{verbatim}\verb|}| and \verb|\end{verbatim}| will
+be directly printed, as if it was typed on a typewriter, with all
+linebreaks and spaces, without any \LaTeX{} command being
+executed. \fi %%%%%%%%%%%%%%%%%%%%%%
+
+位于~\verb|\begin{|\ei{verbatim}\verb|}|~和~\verb|\end{verbatim}|~
+之间的文本将直接打印，包括所有的断行和空白，就像在打字机上键入一样，
+不执行任何~\LaTeX{}~命令。
+
+
+\iffalse
+Within a paragraph, similar behavior can be accessed with
+\begin{lscommand}
+\ci{verb}\verb|+|\emph{text}\verb|+|
+\end{lscommand}
+\noindent The \verb|+| is just an example of a delimiter
+character. You can use any character except letters, \verb|*| or
+space. Many \Latex{} examples in this booklet are typeset with
+this command. \fi %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+在一个段落中，类似的功能可由
+\begin{lscommand}
+\ci{verb}\verb|+|\emph{text}\verb|+|
+\end{lscommand}
+\noindent 完成。\verb|+|~仅是分隔符的一个例子。除了~\verb|*|~
+或空格，可以使用任意一个字符。 这个小册子中的许多%\Latex{}% \Latex{}
+例子是用这个命令排印的。
+
+\begin{example}
+The \verb|\ldots| command \ldots
+
+\begin{verbatim}
+10 PRINT "HELLO WORLD ";
+20 GOTO 10
+\end{verbatim}
+\end{example}
+
+\begin{example}
+\begin{verbatim*}
+the starred version of
+the      verbatim
+environment emphasizes
+the spaces   in the text
+\end{verbatim*}
+\end{example}
+
+%The \ci{verb} command can be used in a similar fashion with a star:
+带星的命令~\ci{verb}~能以类似的方式使用：
+
+\begin{example}
+\verb*|like   this :-) |
+\end{example}
+
+%The \texttt{verbatim} environment and the \verb|\verb| command may
+%not be used within parameters of other commands.
+\texttt{verbatim}~环境和~\verb|\verb|~命令不能在其他命令的参数中使用。
+
+%\subsection{Tabular}
+\subsection{表格}
+
+\iffalse
+The \ei{tabular} environment can be used to typeset beautiful
+\wi{table}s with optional horizontal and vertical lines. \LaTeX{}
+determines the width of the columns automatically.\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ei{tabular}~环境能用来排印带有水平和铅直表线的漂亮表格。\LaTeX{}~自动确定每一列的宽度。
+
+
+\iffalse
+The \emph{table spec} argument of the
+\begin{lscommand}
+\verb|\begin{tabular}{|\emph{table spec}\verb|}|
+\end{lscommand}
+\noindent command defines the format of the table. Use an \texttt{l} for a column of
+left-aligned text, \texttt{l}, and \texttt{c} for
+centred text; \verb|p{|\emph{width}\verb|}| for a column containing justified
+text with linebreaks, and \verb.|. for a vertical line.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+命令
+\begin{lscommand}
+\verb|\begin{tabular}{|\emph{table spec}\verb|}|
+\end{lscommand}
+\noindent 的参量~\emph{table spec}~定义了表格的式样。用一个~\texttt{l}~产生
+左对齐的列，用一个~\texttt{r}~产生右对齐的列，用一个~\texttt{c}~产生居中的列；
+用~\verb|p{|\emph{宽度值 width}\verb|}|~产生相应宽度、包含自动断行文本的列；
+\verb.|.~产生铅直表线。
+
+
+
+\iffalse
+Within a \texttt{tabular} environment, \verb|&| jumps to the next column, \ci{\bs}
+starts a new line and \ci{hline} inserts a horizontal line.
+You can add partial Lines by using the \ci{cline}\verb|{j-i}| whereby
+j and i are the column numbers the line should extend over.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+在~\texttt{tabular}~环境中，用~\verb|&|~跳入下一列，用~\ci{\bs}~开始新的一行，
+用~\ci{hline}~插入水平表线。用~\ci{cline}\verb|{j-i}|~可添加部分表线，
+其中~j~和~i~分别表示表线的起始列和终止列的序号。
+
+\index{"|@ \verb."|.}
+
+\begin{example}
+\begin{tabular}{|r|l|}
+\hline
+7C0 & hexadecimal \\
+3700 & octal \\ \cline{2-2}
+11111000000 & binary \\
+\hline \hline
+1984 & decimal \\
+\hline
+\end{tabular}
+\end{example}
+
+\begin{example}
+\begin{tabular}{|p{4.7cm}|}
+\hline
+Welcome to Boxy's paragraph.
+We sincerely hope you'll
+all enjoy the show.\\
+\hline
+\end{tabular}
+\end{example}
+
+\iffalse
+The column separator can be specified with the \verb|@{...}|
+construct. This command kills the inter-column space and replaces it
+with whatever is between the curly braces.  One common use for
+this command is explained below in the decimal alignment problem.
+Another possible application is to suppress leading space in a table with
+\verb|@{}|.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+表列分隔符可由~\verb|@{...}|~构造。这个命令去掉表列之间的间隔，
+代之为两个花括号间的任何输入。一个用途在于下面要解释的十进制数对齐问题。
+另一个可能应用在于用~\verb|@{}|~压缩表列右端空间。
+
+\begin{example}
+\begin{tabular}{@{} l @{}}
+\hline
+no leading space\\
+\hline
+\end{tabular}
+\end{example}
+
+\begin{example}
+\begin{tabular}{l}
+\hline
+leading space left and right\\
+\hline
+\end{tabular}
+\end{example}
+
+%
+% This part by Mike Ressler
+%
+
+\iffalse
+\index{decimal alignment} Since there is no built-in way to align
+numeric columns to a decimal point,\footnote{If the `tools' bundle is
+  installed on your system, have a look at the \pai{dcolumn} package.}
+we can ``cheat'' and do it by using two columns: a right-aligned
+integer and a left-aligned fraction. The \verb|@{.}| command in the
+\verb|\begin{tabular}| line replaces the normal inter-column spacing with
+just a ``.'', giving the appearance of a single,
+decimal-point-justified column.  Don't forget to replace the decimal
+point in your numbers with a column separator (\verb|&|)! A column label
+can be placed above our numeric ``column'' by using the
+\ci{multicolumn} command.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+由于没有内建的方法使十进制数按小数点对齐，\footnote{如果系统安装了~`tools'~包，
+请看一下宏包~\pai{dcolumn}。}我们可以使用两列“作弊”到达这个目的：
+整数右对齐，小数左对齐。\verb|\begin{tabular}|~行中的命令~\verb|@{.}|~用一个
+~``.''~取代了表列间的正常间隔，从而给出了按小数点表列对齐的效果。不要忘记用
+表列分隔符~(\verb|&|)~取代十进制数的小数点！使用命令~\ci{multicolumn}~可在
+数值“表列”上放置一个表列标签。
+\begin{example}
+\begin{tabular}{c r @{.} l}
+Pi expression       &
+\multicolumn{2}{c}{Value} \\
+\hline
+$\pi$               & 3&1416  \\
+$\pi^{\pi}$         & 36&46   \\
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+\end{tabular}
+\end{example}
+
+\begin{example}
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Ene} \\
+\hline
+Mene & Muh! \\
+\hline
+\end{tabular}
+\end{example}
+
+%Material typeset with the tabular environment always stays together on
+%one page. If you want to typeset long tables you might want to have a
+%look at the \pai{supertabular} and the \pai{longtabular} environments.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+用表格环境排印的材料总是呆在同一页上。如果要排印一个长表格，可以看一下
+~\pai{supertabular}~和~\pai{longtabular}~环境。
+
+%\section{Floating Bodies}
+\section{浮动体}
+\iffalse
+Today most publications contain a lot of figures and tables. These
+elements need special treatment, because they cannot be broken across
+pages.  One method would be to start a new page every time a figure or
+a table is too large to fit on the present page. This approach would
+leave pages partially empty, which looks very bad.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+今天大多数出版物含有许多图片和表格。由于不能把它们分割在不同的页面上，所以需要专门的处理。
+如果一个图片或一个表格太大在当前页面排不下，一个解决办法就是每次新开一页。这个方法在页面上留下
+部分空白，效果看起来很差。
+
+\iffalse
+The solution to this problem is to `float' any figure or table which
+does not fit on the current page to a later page, while filling the
+current page with body text. \LaTeX{} offers two environments for
+\wi{floating bodies}; one for tables and  one for figures.  To
+take full advantage of these two environments it is important to
+understand approximately how \LaTeX{} handles floats internally.
+Otherwise floats may become a major source of frustration, because
+\LaTeX{} never puts them where you want them to be.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+对于在当前排不下的任何一个图片或表格，其解决办法是把它们“浮动”到下一页，与此同时当前页面用
+正文文本填充。\LaTeX{}~提供了两个\wi{浮动体}环境；一个用于图片，一个用于表格。要充分发挥这两个
+环境的优越性，应该大致了解\LaTeX{}~处理浮动体的内在原理。但是浮动可能成为令人沮丧的主要原因，
+因为~\LaTeX{}~总不把浮动体放在你想要的地方。
+
+\bigskip
+%Let's first have a look at the commands \LaTeX{} supplies
+%for floats:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+首先看一下供浮动使用的~\LaTeX{}~命令：
+
+\iffalse Any material enclosed in a \ei{figure} or \ei{table} environment will
+be treated as floating matter. Both float environments support an optional
+parameter
+\begin{lscommand}
+\verb|\begin{figure}[|\emph{placement specifier}\verb|]| or
+\verb|\begin{table}[|\emph{placement specifier}\verb|]|
+\end{lscommand}
+\noindent called the \emph{placement specifier}. This parameter
+is used to tell \LaTeX{} about the locations to which the float
+is allowed to be moved.  A \emph{placement specifier} is constructed by building a string
+of \emph{float-placing permissions}. See Table~\ref{tab:permiss}.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+包围于环境~\ei{figure}~或环境~\ei{table}~中的任何材料都将被视为浮动内容。
+两个浮动环境都支持可选参数
+\begin{lscommand}
+\verb|\begin{figure}[|\emph{placement specifier}\verb|]| or
+\verb|\begin{table}[|\emph{placement specifier}\verb|]|
+\end{lscommand}
+\noindent 称为\emph{放置说明符}，它由\emph{浮动允许放置参量}写成的字符串组成。
+请见表\nbs\ref{tab:permiss}。
+
+\iffalse
+\begin{table}[!bp]
+\caption{Float Placing Permissions.}\label{tab:permiss}
+\noindent \begin{minipage}{\textwidth}
+\medskip
+\begin{center}
+\begin{tabular}{@{}cp{10cm}@{}}
+Spec&Permission to place the float \ldots\\
+\hline
+\rule{0pt}{1.05em}\texttt{h} & \emph{here} at the very place in the text
+  where it occurred.  This is useful mainly for small floats.\\[0.3ex]
+\texttt{t} & at the \emph{top} of a page\\[0.3ex]
+\texttt{b} & at the \emph{bottom} of a page\\[0.3ex]
+\texttt{p} & on a special \emph{page} containing only floats.\\[0.3ex]
+\texttt{!} & without considering most of the  internal parameters\footnote{Such as the
+    maximum number of floats allowed  on one page.} which could stop this
+  float from being placed.
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{table}
+Note: The \texttt{0pt} and \texttt{1.05em} are \TeX{} units. Read more
+on this in table \ref{units} on page \pageref{units}.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[!bp]
+\caption{浮动允许放置参量。}\label{tab:permiss}
+\noindent \begin{minipage}{\textwidth}
+\medskip
+\begin{center}
+\begin{tabular}{@{}cp{10cm}@{}}
+放置说明符 & 浮动体允许放置位置\ldots\\
+\hline
+\rule{0pt}{1.05em}\texttt{h} &  浮动体\emph{就}放在当前页面上。这主要用于小浮动体。 \\[0.3ex]
+\texttt{t} & 放在页面\emph{顶部}\\[0.3ex]
+\texttt{b} & 放在页面\emph{底部}\\[0.3ex]
+\texttt{p} & 放在一专门页面，仅含一个浮动体。\\[0.3ex]
+\texttt{!} & 忽略阻止浮动体放置的大多数内部参数\footnote{例如一页中允许的浮动体的最大个数。}。
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{table}
+注意： \texttt{0pt}~和~\texttt{1.05em}~都是~\TeX{}~长度单位。第\nbs\pageref{units}~页中的
+表\nbs\ref{units}~含有更多的有关信息。
+
+
+\pagebreak[3]
+\iffalse
+A table could be started with the following line e.g.{}
+\begin{code}
+\verb|\begin{table}[!hbp]|
+\end{code}
+\noindent The \wi{placement specifier} \verb|[!hbp]| allows \LaTeX{} to
+place the table right here (\texttt{h}) or at the bottom (\texttt{b})
+of some page
+or on a special floats page (\texttt{p}), and all this even if it does not
+look that good (\texttt{!}). If no placement specifier is given, the standard
+classes assume \verb|[tbp]|.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+一个表格可以由如下命令，例如
+\begin{code}
+\verb|\begin{table}[!hbp]|
+\end{code}
+\noindent 开始，\wi{放置说明符}~\verb|[!hbp]|~允许~\LaTeX{}~把表格就放当前页，
+或放在某页的底部~(\texttt{b})，或放在一个专门的浮动页上~(\texttt{p})，
+严格按照放置说明符放置即使看起来不好~(\texttt{!})%%%%!!!!!and all this even if it does not
+如果没有给定放置说明符，缺省值为~\verb|[tbp]|。
+
+\iffalse
+\LaTeX{} will place every float it encounters, according to the
+placement specifier supplied by the author. If a float cannot be
+placed on the current page it is deferred either to the
+\emph{figures} or the \emph{tables} queue\footnote{These are fifo -
+  `first in first out' queues!}.  When a new page is started,
+\LaTeX{} first checks if it is possible to fill a special `float'
+page with floats from the queues. If this is not possible, the first
+float on each queue is treated as if it had just occurred in the
+text: \LaTeX{} tries again to place it according to its
+respective placement specifiers (except `h' which is no longer
+possible).  Any new floats occurring in the text get placed into the
+appropriate queues. \LaTeX{} strictly maintains the original order of
+appearance for each type of float. That's why a figure which cannot
+be placed pushes all further figures to the end of the document.
+Therefore:
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LaTeX{}~将按照作者提供的放置说明符，安排它遇到的每一个浮动体。如果浮动体在当前页
+不能安排，就把它寄存在\emph{图片}或\emph{表格}等待序列中\footnote{它们是“先来先走”序列！}。
+当新的一页开始的时候，\LaTeX{}~首先检查是否可能用等待序列中的浮动体填充一个专门的“浮动”页面。
+如果这不可能，就像对待刚在文本中出现的浮动体一样，处理等待序列中的第一个浮动体：\LaTeX{}~从新
+尝试按照其相应的放置说明符（除了不再可能的~`h'）来处理它。文本中出现的任何一个
+新浮动体寄存在相应的等待序列中。对于每一种浮动体，\LaTeX{}~保持它们出现的顺序。
+这就说明了为什么一个不能安排的图片把所有后来的图片都推到文档末尾的原因。所以：
+
+\iffalse
+\begin{quote}
+If \LaTeX{} is not placing the floats as you expected,
+it is often only one float jamming one of the two float queues.
+\end{quote}\fi %%%%%%%%%%%%
+\begin{quote}如果~\LaTeX{}~没有像你期望的那样安排浮动体，那么经常是仅有一个浮动体
+堵塞了两个中的某一个等待序列。
+\end{quote}
+
+\iffalse While it is possible to give LaTeX single-location placement
+specifiers, this causes problems.  If the float does not fit in the
+location specified, then it becomes stuck, blocking subsequent floats.
+In particular, you should never ever use the [h] option, it is so bad
+that in more recent versions of LaTeX, it is automatically replaced by
+[ht].\fi
+%%%%%%%%%%%%%%%%%
+仅给定单个放置说明符是允许的，但这会引起问题。如果在指定的位置安排不了，它就会成为障碍，堵住
+后续的浮动体。不要单独使用参量~[h]，在~\LaTeX{}~最近的版本中，它的效果太差了以至于被~[ht]~
+自动替换。
+
+\bigskip
+\noindent
+%Having explained the difficult bit, there are some more things to
+%mention about the \ei{table} and \ei{figure} environments.
+%With the
+虽然对浮动体问题已经作了些说明，对~\ei{table}~和~\ei{figure}~环境还有些内容要交代。利用
+
+\begin{lscommand}
+\ci{caption}\verb|{|\emph{caption text}\verb|}|
+\end{lscommand}
+
+\noindent
+%command, you can define a caption for the float. A running number and
+%the string ``Figure'' or ``Table'' will be added by \LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+命令，可以给浮动体定义一个标题。序号和字符串“图”或“表”将由~\LaTeX{}~自动添加。
+
+%The two commands
+两个命令
+
+\begin{lscommand}
+\ci{listoffigures} and \ci{listoftables}
+\end{lscommand}
+
+\noindent
+\iffalse
+operate analogously to the \verb|\tableofcontents| command,
+printing a list of figures or tables, respectively.  In these lists,
+the whole caption will be repeated. If you tend to use long captions,
+you must have a shorter version of the caption going into the lists.
+This is accomplished by entering the short version in brackets after
+the \verb|\caption| command.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+用起来和~\verb|\tableofcontents|~命令类似，分别排印一个图目录和表目录。
+在这些目录中，所有的标题都将重复。如果打算使用长标题，就必须准备一个
+能放进目录的，较短版本的标题。即在~\verb|\caption|~命令后面的括号内输入
+较短版本的标题。
+
+\begin{code}
+\verb|\caption[Short]{LLLLLoooooonnnnnggggg}|
+\end{code}
+
+%With \verb|\label| and \verb|\ref|, you can create a reference to a float
+%within your text.
+利用~\verb|\label|~和~\verb|\ref|，在文本中可以为浮动体创建交叉引用。
+
+
+
+%The following example draws a square and inserts it into the
+%document. You could use this if you wanted to reserve space for images
+%you are going to paste into the finished document.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+下面的例子画一个方形，并将它插入文档。如果想在完成的文档中为你打算粘上的图片保留空间，你可以
+利用这个例子。
+
+\begin{code}
+\begin{verbatim}
+Figure~\ref{white} is an example of Pop-Art.
+\begin{figure}[!hbp]
+\makebox[\textwidth]{\framebox[5cm]{\rule{0pt}{5cm}}}
+\caption{Five by Five in Centimetres.} \label{white}
+\end{figure}
+\end{verbatim}
+\end{code}
+
+
+\iffalse
+\noindent In the example above,
+\LaTeX{} will try \emph{really hard}~(\texttt{!}) to place the figure
+right \emph{here}~(\texttt{h}).\footnote{assuming the figure queue is
+  empty.} If this is not possible, it tries to place the figure at the
+\emph{bottom}~(\texttt{b}) of the page.  Failing to place the figure
+on the current page, it determines whether it is possible to create a float
+page containing this figure and maybe some tables from the tables
+queue. If there is not enough material for a special float page,
+\LaTeX{} starts a new page, and once more treats the figure as if it
+had just occurred in the text.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+在上面的例子中，为了把图片\emph{就放在当前页面}~(\texttt{h})\footnote{假设图片等待序列已空。}，
+\LaTeX{}~尝试得\emph{真辛苦}~(\texttt{!})
+如果这不可能，它将试图图片安排在页面的\emph{底部}~(\texttt{b})。如果不能将图片安排在
+当前页面，它将决定是否可能开一个新页面以安排这张图片，或来自表格等待序列中的一些表格。
+如果没有足够的材料填充一个专门浮动页面，\LaTeX{}~就开一个新页，像对文本中刚出现的图片一样，
+再一次处理这个图片。
+
+
+%Under certain circumstances it might be necessary to use the
+在一定情况下，可能需要使用命令
+
+\begin{lscommand}
+\ci{clearpage} or even the \ci{cleardoublepage}
+\end{lscommand}
+
+\noindent command.
+%It orders \LaTeX{} to immediately place all
+%floats remaining in the queues and then start a new
+%page. \ci{cleardoublepage} even goes to a new righthand page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+它命令~\LaTeX{}~立即安排等待序列中所有剩下的浮动体，并且开一新页。
+命令~\ci{cleardoublepage}~甚至会命令~\LaTeX{}~新开奇数页面。
+
+%You will learn how to include PostScript
+%drawings into your \LaTeXe{} documents later in this introduction.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+在本书的后面，将介绍如何在~\LaTeXe{}~文档中插入~PostScript~图形。
+
+
+%\section{Protecting fragile commands}
+\section{保护脆弱命令}
+
+\iffalse
+Text given as arguments of commands like \ci{caption} or \ci{section} may
+show up more than once in the document (e.g. in the table of contents as
+well as in the body of the document). Some commands fail when used in the
+argument of \ci{section}-like commands. These are called \wi{fragile commands}.
+Fragile commands are for example \ci{footnote} or \ci{phantom}. What these
+fragile commands need to work, is protection (don't we all?). You can
+protect them by putting the \ci{protect} command in front of them.
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+作为命令（如~\ci{caption}~或~\ci{section}）参量的文本，可能在文档中出现多次（例如，在文档的
+目录和正文中）。当用于类似~\ci{section}~的命令参量时，一些命令会失效。它们被称为
+\wi{脆弱命令}。\ci{footnote}~或~\ci{phantom}~是脆弱命令的例子. 这些脆弱命令需要的，正是保护。%%%!!!!(don't we all?)
+把~\ci{protect}~命令放在它们前面，就能保护它们。
+
+
+%\ci{protect} only refers to the command which follows right behind, not even
+%to its arguments. In most cases a superfluous \ci{protect} won't hurt.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ci{protect}~仅仅保护紧跟其右侧的命令，连它的参量也不惠及。在大多数情形下，
+过多的~\ci{protect}~并不碍事。
+
+\begin{code}
+\verb|\section{I am considerate|\\
+\verb|      \protect\footnote{and protect my footnotes}}|
+\end{code}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "lshort"
+%%% En
