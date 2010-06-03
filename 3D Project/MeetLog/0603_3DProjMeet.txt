@@ -1,0 +1,8 @@
+TODO: 
+    Test without disk writes
+    Profile the release version : get the percentage of time for each function
+    
+    Find if idct4x4 is included in IPP
+
+hwd
+    rewrite the scheduler
