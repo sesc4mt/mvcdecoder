@@ -1,0 +1,6 @@
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 利用 Xfig 制图\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 包含子图形的大图形\relax }}{14}{figure.caption.19}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {第一个小图形}}}{14}{subfigure.2.2.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {第二个小图形。如果标题很长的话，它会自动换行，这个 caption 就是这样的例子}}}{14}{subfigure.2.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 并排第一个图\relax }}{15}{figure.caption.20}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 并排第二个图\relax }}{15}{figure.caption.20}
