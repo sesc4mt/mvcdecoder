@@ -57,7 +57,15 @@
 由于MVC是H.264/AVC的一个扩展，所以我们首先想到H.264的并行编解码问题。这个方向近几年有一些文献：\onlinecite{li2005design}提出的算法使用一个处理器进行动量估计以外的运算，其余处理器进行运动向量的估计。\onlinecite{seitner2007macroblock}做了H.264解码器的宏块并行分析，\onlinecite{mesa2009scalability}给出了H.264解码器宏块并行算法。而更进一步针对多视点视频的并行解码的研究相对较少：\onlinecite{yang2006parallel}提出了一种超空间（hyper-space）的方法，\onlinecite{ugur2007parallel}通过对参考帧施加一定限制条件使得解码器等待参考帧传入的时间大幅降低，从而提升并行解码速度。
 
 %庞一等 论文
-庞一等在2009年提出了一种多核架构上并行处理多视点视频的启发式调度框架\cite{pang2009framework}。不同于以往的帧并行或宏块并行的研究，提出了通过优化解码任务调度来提高解码器并行性能的观点，并通过实验证明性能的大幅提升。
+庞一等在2009年提出了一种多核架构上并行处理多视点视频的启发式调度框架\cite{pang2009framework}。不同于以往的帧并行或宏块并行的研究，提出了通过优化解码任务调度来提高解码器并行性能的观点，并通过实验证明性能的大幅提升。该方法对多视点视频的调度如图\ref{fig:gopschedulinginmvc}所示，通过重新安排帧解码顺序，最小化多路视频解码时因为等待参考帧传入和其解码结果的等待时间，从而加快解码速度。
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{gopschedulinginmvc.png}
+\caption{多视点视频种的GOP调度}
+\label{fig:gopschedulinginmvc}
+\end{center}
+\end{figure}
+
 
 %MVC Decoder工作
 在此基础上，我们已经实现了一个成型的多视点视频编解码系统，包括编码器和解码器。编码器将若干YUV格式的视频编码为一个MVC视频。解码器将一个MVC视频解码为N个独立的YUV视频，N为该MVC视频包含的视角数量。编解码结果符合MVC的标准\cite{iso2009mvc}。
