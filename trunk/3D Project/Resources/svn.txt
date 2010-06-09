@@ -1,4 +1,14 @@
+svn://hwd.name/MVC/
 edwardtoday
 2eNEH9rB
 
-svn://hwd.name/MVC/
+
+svn checkout https://mvcdecoder.googlecode.com/svn/trunk/
+svn checkout https://arnetwiki-ui.googlecode.com/svn/trunk/
+svn checkout https://ca-simulator.googlecode.com/svn/trunk/
+svn checkout https://cg-project.googlecode.com/svn/trunk/
+svn checkout https://kde9.googlecode.com/svn/trunk/
+svn checkout https://q-ftp.googlecode.com/svn/trunk/
+svn checkout https://shapetalk.googlecode.com/svn/trunk/
+edwardtoday
+ed2Hc4zM8VK4
