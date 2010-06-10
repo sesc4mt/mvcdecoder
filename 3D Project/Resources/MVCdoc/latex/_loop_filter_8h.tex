@@ -1,0 +1,247 @@
+\hypertarget{_loop_filter_8h}{
+\section{MVCCommonLib/Codec/LoopFilter.h File Reference}
+\label{_loop_filter_8h}\index{MVCCommonLib/Codec/LoopFilter.h@{MVCCommonLib/Codec/LoopFilter.h}}
+}
+{\ttfamily \#include $<$Macros.h$>$}\par
+{\ttfamily \#include \char`\"{}PictureInfo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/Consts4Standard.h\char`\"{}}\par
+Include dependency graph for LoopFilter.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_loop_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{_loop_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_loop_filter_8h_a299f516a75a0efad87a05dfbb35c9b41}{FilterMB} (\hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{structmacroblock_info}{macroblockInfo} $\ast$mlist, int mbIdx)
+\item 
+\_\-\_\-inline int \hyperlink{_loop_filter_8h_ada62cf07541be858b5512ad9662632d2}{ClipMinMax} (int x, int mi, int ma)
+\item 
+\_\-\_\-inline bool \hyperlink{_loop_filter_8h_a302f34b646ffc2b3458b19aab8ff72e9}{isCoded} (\hyperlink{structmacroblock_info}{macroblockInfo} $\ast$mlist, int idx)
+\item 
+\_\-\_\-inline bool \hyperlink{_loop_filter_8h_ac685805284bd256ab2f9ba72afb31051}{veryNearS} (\hyperlink{structref_vector}{refVector} \&r1, \hyperlink{structref_vector}{refVector} \&r2)
+\item 
+\_\-\_\-inline bool \hyperlink{_loop_filter_8h_aca10d193cfa918f6819799ad228ac7be}{veryNearD} (\hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{structref_vector}{refVector} \&r1, \hyperlink{structref_vector}{refVector} \&r2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_loop_filter_8h_ada62cf07541be858b5512ad9662632d2}{
+\index{LoopFilter.h@{LoopFilter.h}!ClipMinMax@{ClipMinMax}}
+\index{ClipMinMax@{ClipMinMax}!LoopFilter.h@{LoopFilter.h}}
+\subsubsection[{ClipMinMax}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline int ClipMinMax (int {\em x}, \/  int {\em mi}, \/  int {\em ma})}}
+\label{_loop_filter_8h_ada62cf07541be858b5512ad9662632d2}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00011 \{
+00012         \textcolor{comment}{//if (x < mi)}
+00013         \textcolor{comment}{//      x = mi;}
+00014         \textcolor{comment}{//if (x > ma)}
+00015         \textcolor{comment}{//      x = ma;}
+00016         \textcolor{comment}{//return x;}
+00017         \textcolor{keywordflow}{if}(x>ma)
+00018                 \textcolor{keywordflow}{return} ma;
+00019         \textcolor{keywordflow}{if}(x<mi)
+00020                 \textcolor{keywordflow}{return} mi;
+00021         \textcolor{keywordflow}{return} x;
+00022 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{_loop_filter_8h_ada62cf07541be858b5512ad9662632d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_loop_filter_8h_a299f516a75a0efad87a05dfbb35c9b41}{
+\index{LoopFilter.h@{LoopFilter.h}!FilterMB@{FilterMB}}
+\index{FilterMB@{FilterMB}!LoopFilter.h@{LoopFilter.h}}
+\subsubsection[{FilterMB}]{\setlength{\rightskip}{0pt plus 5cm}void FilterMB ({\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf macroblockInfo} $\ast$ {\em mlist}, \/  int {\em mbIdx})}}
+\label{_loop_filter_8h_a299f516a75a0efad87a05dfbb35c9b41}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00491 \{
+00492         \textcolor{comment}{/*}
+00493 \textcolor{comment}{        if (disableLoopFilter)}
+00494 \textcolor{comment}{                return ;}
+00495 \textcolor{comment}{        if ( (m\_eLFMode & LFM\_NO\_INTER\_FILTER) && ! rcMbDataAccess.getMbData().is
+      intra())}
+00496 \textcolor{comment}{                return ;}
+00497 \textcolor{comment}{                */}
+00498 
+00499         \hyperlink{_loop_filter_8cpp_a3a8dcf2d543e7d8ed94120a67a50bc22}{TYPE_AAAUCBS} m\_aaaucBs;
+00500         \textcolor{comment}{//uint8 m\_aaaucBs[2][4][4];}
+00501 
+00502         \hyperlink{_types_8h_a76a8b016e5ad61faf9062cc387df5016}{Bool} b8x8 = (0!=(mlist[mbIdx].\hyperlink{structmacroblock_info_a0f244dcaf8b80e1f8adc3973e34e0a25}{transform8x8}));\textcolor{comment}{//rcMbDataAccess.getMbData()
+      .isTransformSize8x8();}
+00503 
+00504         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} idx = 0; idx < 16; ++idx)
+00505         \{
+00506                 \textcolor{keywordflow}{if}( !b8x8 || ( ( (idx&3) & 1 ) == 0 ) )
+00507                 \{
+00508                         m\_aaaucBs[0][(idx&3)][(idx>>2)]  = \hyperlink{_loop_filter_8cpp_a1f70a21e87e7aa4f5e42426b044bf8e6}{GetVerFilterStrength}( 
+      cpi, mlist, mbIdx, idx);
+00509                 \}
+00510                 \textcolor{keywordflow}{else}
+00511                 \{
+00512                         m\_aaaucBs[0][(idx&3)][(idx>>2)]  = 0;
+00513                 \}
+00514                 \textcolor{keywordflow}{if}( !b8x8 || ( ( (idx>>2) & 1 ) == 0 ) )
+00515                 \{
+00516                         m\_aaaucBs[1][(idx&3)][(idx>>2)]  = \hyperlink{_loop_filter_8cpp_afe90ea6b74a3965e2ceb0aae6d9def7a}{GetHorFilterStrength}( 
+      cpi, mlist, mbIdx, idx);
+00517                 \}
+00518                 \textcolor{keywordflow}{else}
+00519                 \{
+00520                         m\_aaaucBs[1][(idx&3)][(idx>>2)]  = 0;
+00521                 \}
+00522         \}
+00523 
+00524         \hyperlink{_loop_filter_8cpp_af5fe65e920004c9063b3b44a405ae942}{LumaVerFilter}(   cpi, mlist, mbIdx, m\_aaaucBs);
+00525         \hyperlink{_loop_filter_8cpp_a5630c9b21b9751b11fa116e9f383da5c}{LumaHorFilter}(   cpi, mlist, mbIdx, m\_aaaucBs);
+00526         \hyperlink{_loop_filter_8cpp_ae1485a034a76344a800072473e3b5b13}{ChromaVerFilter}( cpi, mlist, mbIdx, m\_aaaucBs);
+00527         \hyperlink{_loop_filter_8cpp_a3624223f3d4fb60f1915390182e18ad0}{ChromaHorFilter}( cpi, mlist, mbIdx, m\_aaaucBs);
+00528 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{_loop_filter_8h_a299f516a75a0efad87a05dfbb35c9b41_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{_loop_filter_8h_a299f516a75a0efad87a05dfbb35c9b41_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_loop_filter_8h_a302f34b646ffc2b3458b19aab8ff72e9}{
+\index{LoopFilter.h@{LoopFilter.h}!isCoded@{isCoded}}
+\index{isCoded@{isCoded}!LoopFilter.h@{LoopFilter.h}}
+\subsubsection[{isCoded}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline bool isCoded ({\bf macroblockInfo} $\ast$ {\em mlist}, \/  int {\em idx})}}
+\label{_loop_filter_8h_a302f34b646ffc2b3458b19aab8ff72e9}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00025 \{
+00026         \textcolor{keywordflow}{return} ((mlist->\hyperlink{structmacroblock_info_a8c2dc78f061142480ef5b2026b8a1dff}{coded44} & (1<<idx)) != 0);
+00027 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_loop_filter_8h_a302f34b646ffc2b3458b19aab8ff72e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_loop_filter_8h_aca10d193cfa918f6819799ad228ac7be}{
+\index{LoopFilter.h@{LoopFilter.h}!veryNearD@{veryNearD}}
+\index{veryNearD@{veryNearD}!LoopFilter.h@{LoopFilter.h}}
+\subsubsection[{veryNearD}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline bool veryNearD ({\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf refVector} \& {\em r1}, \/  {\bf refVector} \& {\em r2})}}
+\label{_loop_filter_8h_aca10d193cfa918f6819799ad228ac7be}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00043 \{
+00044         \textcolor{keywordflow}{if} (r1.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}==-1 && r2.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}==-1)
+00045                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00046         \textcolor{keywordflow}{if} (cpi->\hyperlink{struct_coding_pict_info_a8c8c3eeff0744de167b9ea6c5a7938a0}{ref_lumaStart}[0][r1.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}]!=cpi->\hyperlink{struct_coding_pict_info_a8c8c3eeff0744de167b9ea6c5a7938a0}{ref_lumaStart}[1][r2.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}])
+00047                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00048         \textcolor{keywordflow}{if} (abs(r1.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y}-r2.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y})> 3)
+00049                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00050         \textcolor{keywordflow}{if} (abs(r1.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x}-r2.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x})> 3)
+00051                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00052         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00053 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=403pt]{_loop_filter_8h_aca10d193cfa918f6819799ad228ac7be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_loop_filter_8h_ac685805284bd256ab2f9ba72afb31051}{
+\index{LoopFilter.h@{LoopFilter.h}!veryNearS@{veryNearS}}
+\index{veryNearS@{veryNearS}!LoopFilter.h@{LoopFilter.h}}
+\subsubsection[{veryNearS}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline bool veryNearS ({\bf refVector} \& {\em r1}, \/  {\bf refVector} \& {\em r2})}}
+\label{_loop_filter_8h_ac685805284bd256ab2f9ba72afb31051}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00030 \{
+00031         \textcolor{keywordflow}{if} (r1.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}!=r2.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno})
+00032                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00033         \textcolor{keywordflow}{if} (r1.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}==-1 && r2.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno}==-1)
+00034                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00035         \textcolor{keywordflow}{if} (abs(r1.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y}-r2.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y})> 3)
+00036                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00037         \textcolor{keywordflow}{if} (abs(r1.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x}-r2.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x})> 3)
+00038                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00039         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00040 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=403pt]{_loop_filter_8h_ac685805284bd256ab2f9ba72afb31051_icgraph}
+\end{center}
+\end{figure}
+
+

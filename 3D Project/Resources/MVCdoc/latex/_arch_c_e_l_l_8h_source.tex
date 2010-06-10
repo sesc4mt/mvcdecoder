@@ -1,0 +1,31 @@
+\hypertarget{_arch_c_e_l_l_8h_source}{
+\section{MVCCommonLib/Arch/LinuxCELL/ArchCELL.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifdef CELL}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#ifndef \_ARCH\_CELL\_H\_WEIDONG\_MVC\_}
+00013 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_ARCH\_CELL\_H\_WEIDONG\_MVC\_}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{preprocessor}{#ifdef CELLPPU}
+00016 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include "\hyperlink{_arch_p_p_u_8h}{ArchPPU.h}"}
+00017 \textcolor{preprocessor}{#else}
+00018 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include "\hyperlink{_arch_s_p_u_8h}{ArchSPU.h}"}
+00019 \textcolor{preprocessor}{#endif //CELLPPU}
+00020 \textcolor{preprocessor}{}
+00021 \textcolor{preprocessor}{#endif //\_ARCH\_CELL\_H\_WEIDONG\_MVC\_}
+00022 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif //CELL}
+\end{alltt}\end{footnotesize}

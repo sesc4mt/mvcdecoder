@@ -1,0 +1,54 @@
+\hypertarget{_common_8h_source}{
+\section{MVCCommonLib/Common.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_MVC\_COMMON\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_MVC\_COMMON\_H\_WEIDONG\_}
+00013 \textcolor{preprocessor}{}
+00014 \textcolor{preprocessor}{#include <memory>}
+00015 \textcolor{preprocessor}{#include <stdlib.h>}
+00016 
+00017 \textcolor{preprocessor}{#include "\hyperlink{_types_8h}{Types.h}"}
+00018 \textcolor{preprocessor}{#include "\hyperlink{_macros_8h}{Macros.h}"}
+00019 
+\hypertarget{_common_8h_source_l00020}{}\hyperlink{_common_8h_aa6d7914b9c493f457af4a099a504f6a6}{00020} \textcolor{preprocessor}{#define DISABLE\_PARALLEL}
+00021 \textcolor{preprocessor}{}
+00022 \textcolor{preprocessor}{#ifndef DISABLE\_PARALLEL}
+00023 \textcolor{preprocessor}{}
+00024 \textcolor{preprocessor}{#define NCORE 8}
+00025 \textcolor{preprocessor}{}\textcolor{comment}{// M4 320x240}
+00026 \textcolor{comment}{//#define MB\_E 0.55}
+00027 \textcolor{comment}{//#define MB\_E 0.07}
+00028 \textcolor{comment}{// M4 1024x768}
+00029 \textcolor{comment}{//#define MB\_E 0.82}
+00030 \textcolor{comment}{//#define MB\_E 0.17}
+00031 \textcolor{comment}{// M8 320x240}
+00032 \textcolor{comment}{//#define MB\_E 0.93}
+00033 \textcolor{comment}{//#define MB\_E 0.61}
+00034 \textcolor{comment}{// M8 1024x768}
+00035 \textcolor{preprocessor}{#define MB\_E 0.98}
+00036 \textcolor{preprocessor}{}\textcolor{comment}{//#define MB\_E 0.73}
+00037 
+00038 \textcolor{preprocessor}{#else //DISABLE\_PARALLEL}
+00039 \textcolor{preprocessor}{}
+\hypertarget{_common_8h_source_l00040}{}\hyperlink{_common_8h_a9a53c1a7cf3eaff832fdc197520c6fc6}{00040} \textcolor{preprocessor}{#define NCORE 1}
+\hypertarget{_common_8h_source_l00041}{}\hyperlink{_common_8h_a3a7c35b14731007b6847c0d57ba23d68}{00041} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MB\_E 0}
+00042 \textcolor{preprocessor}{}
+00043 \textcolor{preprocessor}{#endif //DISABLE\_PARALLEL}
+00044 \textcolor{preprocessor}{}
+00045 \textcolor{preprocessor}{#endif //\_MVC\_COMMON\_H\_WEIDONG\_}
+\end{alltt}\end{footnotesize}

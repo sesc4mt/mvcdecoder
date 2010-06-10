@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_bitstream_data_8h.html" title="MVCDecoder/BitstreamData.h" alt="" coords="241,83,439,112"/>
+<area shape="rect" id="node6" href="$_codec_info_8h.html" title="MVCDecoder/CodecInfo.h" alt="" coords="537,83,708,112"/>
+<area shape="rect" id="node10" href="$_frame_controller___parallel_8cpp.html" title="MVCDecoder/Controller/FrameController_Parallel.cpp" alt="" coords="5,160,333,189"/>
+<area shape="rect" id="node20" href="$_a_frame_controller_8h.html" title="MVCDecoder/Controller/AFrameController.h" alt="" coords="1151,83,1425,112"/>
+<area shape="rect" id="node27" href="$_in_stream_8h.html" title="MVCDecoder/Stream/InStream.h" alt="" coords="837,83,1048,112"/>
+<area shape="rect" id="node8" href="$_codec_info_8cpp.html" title="MVCDecoder/CodecInfo.cpp" alt="" coords="432,160,616,189"/>
+<area shape="rect" id="node13" href="$_raw_data_8h.html" title="MVCDecoder/RawData.h" alt="" coords="640,160,805,189"/>
+<area shape="rect" id="node15" href="$_in_stream_8cpp.html" title="MVCDecoder/Stream/InStream.cpp" alt="" coords="829,160,1056,189"/>
+<area shape="rect" id="node17" href="$_task_dispatcher_8cpp.html" title="MVCDecoder/TaskDispatcher.cpp" alt="" coords="1081,237,1300,267"/>
+<area shape="rect" id="node22" href="$_frame_controller___parallel_8h.html" title="MVCDecoder/Controller/FrameController_Parallel.h" alt="" coords="1131,160,1445,189"/>
+</map>

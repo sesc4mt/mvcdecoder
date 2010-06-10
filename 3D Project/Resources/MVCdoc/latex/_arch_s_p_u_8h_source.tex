@@ -1,0 +1,178 @@
+\hypertarget{_arch_s_p_u_8h_source}{
+\section{MVCCommonLib/Arch/LinuxCELL/ArchSPU.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-12-14           Weidong Hu              Tsinghua University             C
+      reate}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ ************************************************************************/}
+00009 
+00010 \textcolor{preprocessor}{#ifdef CELL}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#ifndef \_ARCH\_CELLSPU\_H\_WEIDONG\_MVC\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_ARCH\_CELLSPU\_H\_WEIDONG\_MVC\_}
+00013 \textcolor{preprocessor}{}
+00014 \textcolor{comment}{//#include <libmisc.h>}
+00015 \textcolor{preprocessor}{#include <spu\_mfcio.h>}
+00016 \textcolor{preprocessor}{#include "\hyperlink{_types_8h}{Types.h}"}
+00017 \textcolor{preprocessor}{#include <stdio.h>}
+00018 \textcolor{preprocessor}{#include <string.h>}
+00019 
+00020 \textcolor{keyword}{static} \textcolor{keywordtype}{int} bad = 0;
+00021 
+00022 \textcolor{keyword}{namespace }bugs \{
+00023         \textcolor{keyword}{static} \textcolor{keywordtype}{int} s[100];
+00024 \}
+00025 
+00026 \textcolor{keyword}{static} \textcolor{keywordtype}{void} printBugs(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})
+00027 \{
+00028         printf(\textcolor{stringliteral}{"Bug occured!(%d)\(\backslash\)n"}, \textcolor{keywordtype}{id});
+00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; ++i)
+00030                 printf(\textcolor{stringliteral}{"%4d"}, bugs::s[i]);
+00031         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00032 \}
+00033 
+00034 \textcolor{keyword}{static} \textcolor{keywordtype}{void} GetAndWait\_(\textcolor{keywordtype}{char} *dest, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} src, \textcolor{keywordtype}{int} size)
+00035 \{
+00036         \textcolor{comment}{/*}
+00037 \textcolor{comment}{        printf("Getting:(%d,%d,%d)", dest, src, size);}
+00038 \textcolor{comment}{        for (int i = 0; i < 20; ++i) printf(" ");}
+00039 \textcolor{comment}{        printf("\(\backslash\)n");}
+00040 \textcolor{comment}{        */}
+00041         \textcolor{keywordflow}{if} (src<=0 || src>2000000000)
+00042         \{
+00043                 \textcolor{comment}{//err = 2;}
+00044                 \textcolor{comment}{//bad = 2;}
+00045                 printf(\textcolor{stringliteral}{"Bug G: src=%d\(\backslash\)n"}, src);
+00046                 printBugs(2);
+00047                 return ;
+00048         \}
+00049         \textcolor{keywordtype}{int} tag = 5, tagmask = 1<<tag;
+00050         \textcolor{keywordtype}{int} idest = (int)dest;
+00051         \textcolor{keywordflow}{if} ((idest&15|src&15)||(size!=1 && size!=2 && size!=4 && size!=8 && (size
+      &15))||(size>16*1024))
+00052         \{
+00053                 \textcolor{comment}{/*static */}
+00054                 \textcolor{keywordtype}{char} buf[16] \_\_attribute\_\_ ((aligned(128)));
+00055                 mfc\_getb(buf, (src|15)^15, 16, tag, 0, 0);
+00056                 mfc\_write\_tag\_mask(tagmask);
+00057                 mfc\_read\_tag\_status\_any();
+00058                 \textcolor{keywordtype}{int} csize = 16 - (src&15);
+00059                 \textcolor{keywordflow}{if} (size<csize) csize = size;
+00060                 memcpy(dest, &buf[src&15], csize);
+00061                 size -= csize;
+00062                 dest += csize;
+00063                 src += csize;
+00064                 \textcolor{keywordflow}{while} (size)
+00065                 \{
+00066                         \textcolor{keywordflow}{if}(size<-100) \textcolor{keywordflow}{break};
+00067                         mfc\_getb(buf, src, 16, tag, 0, 0);
+00068                         mfc\_write\_tag\_mask(tagmask);
+00069                         mfc\_read\_tag\_status\_any();
+00070                         \textcolor{keywordflow}{if} (size<16)
+00071                                 csize = size;
+00072                         \textcolor{keywordflow}{else}
+00073                                 csize = 16;
+00074                         memcpy(dest, buf, csize);
+00075                         size -= csize;
+00076                         dest += csize;
+00077                         src += csize;
+00078                 \}
+00079         \}
+00080         \textcolor{keywordflow}{else}
+00081         \{
+00082                 mfc\_getb(dest, src, size, tag, 0, 0);
+00083                 mfc\_write\_tag\_mask(tagmask);
+00084                 mfc\_read\_tag\_status\_any();
+00085         \}
+00086         \textcolor{comment}{//      printf("Finished.\(\backslash\)n");}
+00087 \}
+00088 
+00089 \textcolor{keyword}{static} \textcolor{keywordtype}{void} PutAndWait\_(\textcolor{keywordtype}{char} *src, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dest, \textcolor{keywordtype}{int} size)
+00090 \{
+00091         \textcolor{comment}{/*}
+00092 \textcolor{comment}{        printf("Putting:(%d,%d,%d)", src, dest, size);}
+00093 \textcolor{comment}{        for (int i = 0; i < 20; ++i) printf(" ");}
+00094 \textcolor{comment}{        printf("\(\backslash\)n");}
+00095 \textcolor{comment}{        */}
+00096         \textcolor{keywordflow}{if} (dest<=0 || dest>2000000000)
+00097         \{
+00098                 \textcolor{comment}{//err = 1;}
+00099                 printBugs(1);
+00100                 return ;
+00101                 \textcolor{comment}{//bad = 1;}
+00102                 \textcolor{comment}{//printf("Bug: dest=%d\(\backslash\)n", dest);}
+00103                 \textcolor{comment}{//return ;}
+00104                 \textcolor{comment}{//printf("Error!\(\backslash\)n");}
+00105         \}
+00106         \textcolor{keywordtype}{int} tag = 5, tagmask = 1<<tag;
+00107         \textcolor{keywordtype}{int} isrc = (int)src;
+00108         \textcolor{keywordflow}{if} ((dest&15|isrc&15)||(size!=1 && size!=2 && size!=4 && size!=8 && (size
+      &15))||(size>16*1024))
+00109         \{
+00110                 \textcolor{comment}{/*static */}\textcolor{keywordtype}{char} buf[16] \_\_attribute\_\_ ((aligned(128)));
+00111                 \textcolor{keywordtype}{int} csize = 16 - (dest&15);
+00112                 \textcolor{keywordflow}{if} (size<csize) csize = size;
+00113                 mfc\_getb(buf, (dest|15)^15, 16, tag, 0, 0);
+00114                 mfc\_write\_tag\_mask(tagmask);
+00115                 mfc\_read\_tag\_status\_any();
+00116                 memcpy(&buf[dest&15], src, csize);
+00117                 mfc\_putb(buf, (dest|15)^15, 16, tag, 0, 0);
+00118                 mfc\_write\_tag\_mask(tagmask);
+00119                 mfc\_read\_tag\_status\_any();
+00120                 size -= csize;
+00121                 dest += csize;
+00122                 src += csize;
+00123                 csize = 16;
+00124                 \textcolor{keywordflow}{while} (size>=16)
+00125                 \{
+00126                         memcpy(buf, src, csize);
+00127                         mfc\_putb(buf, dest, 16, tag, 0, 0);
+00128                         mfc\_write\_tag\_mask(tagmask);
+00129                         mfc\_read\_tag\_status\_any();
+00130                         size -= csize;
+00131                         dest += csize;
+00132                         src += csize;
+00133                 \}
+00134                 \textcolor{keywordflow}{if} (size)
+00135                 \{
+00136                         csize = size;
+00137                         mfc\_getb(buf, dest, 16, tag, 0, 0);
+00138                         mfc\_write\_tag\_mask(tagmask);
+00139                         mfc\_read\_tag\_status\_any();
+00140                         memcpy(buf, src, csize);
+00141                         mfc\_putb(buf, dest, 16, tag, 0, 0);
+00142                         mfc\_write\_tag\_mask(tagmask);
+00143                         mfc\_read\_tag\_status\_any();
+00144                 \}
+00145         \}
+00146         \textcolor{keywordflow}{else}
+00147         \{
+00148                 mfc\_putb(src, dest, size, tag, 0, 0);
+00149                 mfc\_write\_tag\_mask(tagmask);
+00150                 mfc\_read\_tag\_status\_any();
+00151         \}
+00152         \textcolor{comment}{//      printf("Finished.\(\backslash\)n");}
+00153 \}
+00154 
+00155 \textcolor{preprocessor}{#define GetAndWait(dest, src, size) GetAndWait\_((char *)(dest), (unsigned int)(sr
+      c), size);}
+00156 \textcolor{preprocessor}{}
+00157 \textcolor{preprocessor}{#define PutAndWait(src, dest, size) PutAndWait\_((char *)(src), (unsigned int)(des
+      t), size);}
+00158 \textcolor{preprocessor}{}
+00159 \textcolor{comment}{// Called by sub-threads}
+00160 \hyperlink{_types_8h_a1134b580f8da4de94ca6b1de4d37975e}{uint32} MVCReadSignal();
+00161 \textcolor{keywordtype}{void} MVCWriteSignal(\hyperlink{_types_8h_a1134b580f8da4de94ca6b1de4d37975e}{uint32} signal);
+00162 \textcolor{keywordtype}{bool} MVCIsSignaled();
+00163 
+00164 
+00165 \textcolor{preprocessor}{#endif //\_ARCH\_CELLSPU\_H\_WEIDONG\_MVC\_}
+00166 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif //CELL}
+\end{alltt}\end{footnotesize}

@@ -1,0 +1,147 @@
+\hypertarget{_debug_8h}{
+\section{MVCCommonLib/Debug.h File Reference}
+\label{_debug_8h}\index{MVCCommonLib/Debug.h@{MVCCommonLib/Debug.h}}
+}
+{\ttfamily \#include $<$cstdlib$>$}\par
+{\ttfamily \#include $<$cstring$>$}\par
+{\ttfamily \#include $<$cstdio$>$}\par
+Include dependency graph for Debug.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=106pt]{_debug_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_debug_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_current_heap}{CurrentHeap}
+\item 
+class \hyperlink{class_block_debug}{BlockDebug}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{CURLEVEL}~200
+\item 
+\#define \hyperlink{_debug_8h_a101586fab2b90a8adffe50a3550e235d}{ASSERT}(b)~\{ if (!(b)) \{ printf(\char`\"{}Assert Error (\%s,\%d)!!!!$\backslash$n\char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-); exit(0); \} \}
+\item 
+\#define \hyperlink{_debug_8h_aecdf0db939482582d91e4efc81bee640}{DEBUGINF}(level, x)~if ((level)$>$=CURLEVEL) \{ printHeaps(); printf(\char`\"{}Debug \%s(\%d): \%s$\backslash$n\char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x); \} else \{ \}
+\item 
+\#define \hyperlink{_debug_8h_ae1d1c2422ebb35cdba48c4d07828dd16}{DEBUGINFO}(x)~DEBUGINF(10, (x));
+\item 
+\#define \hyperlink{_debug_8h_af86a9b67aa4f2f045932afb90fa17c9b}{DEBUGINFON}~DEBUGINFO(\char`\"{}\char`\"{})
+\item 
+\#define \hyperlink{_debug_8h_aa184ead4583be424a256b0ee06fea736}{DEBUGINFP}(level, x)~if ((level)$>$=CURLEVEL) \{ printHeaps(); /$\ast$printf(\char`\"{}Debug \%s(\%d): \char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-); $\ast$/printf x; printf(\char`\"{}$\backslash$n\char`\"{}); \} else \{ \}
+\item 
+\#define \hyperlink{_debug_8h_aa5e06ad1186e04514d37721c865bc48e}{DEBUGINFOP}(x)~DEBUGINFP(10, x);
+\item 
+\#define \hyperlink{_debug_8h_ab2053a211e4acc65bae3a43f579ce0e6}{DEBUGBLOCK}(x)~\hyperlink{class_block_debug}{BlockDebug} block\_\-debug\_\-var\_\-name\_\-ASDFSAFD(\_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x, 10);
+\item 
+\#define \hyperlink{_debug_8h_a0585f0bf59a4208c42ca4128c3262a40}{DEBUGBLOCKN}()~DEBUGBLOCK(\char`\"{}\char`\"{})
+\item 
+\#define \hyperlink{_debug_8h_a3f7e58a01a8beb987f565ac1a304708c}{DEBUGBLK}(level, x)~\hyperlink{class_block_debug}{BlockDebug} block\_\-debug\_\-var\_\-name\_\-ASDFSAFD(\_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x, level);
+\item 
+\#define \hyperlink{_debug_8h_a46d6c028ab6c26097031db24f743fd1d}{DEBUGBLKN}(level)~DEBUGBLK(level, \char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_debug_8h_a5c2d38f133d73274898b1dd5844a1880}{printHeaps} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_debug_8h_a101586fab2b90a8adffe50a3550e235d}{
+\index{Debug.h@{Debug.h}!ASSERT@{ASSERT}}
+\index{ASSERT@{ASSERT}!Debug.h@{Debug.h}}
+\subsubsection[{ASSERT}]{\setlength{\rightskip}{0pt plus 5cm}\#define ASSERT(b)~\{ if (!(b)) \{ printf(\char`\"{}Assert Error (\%s,\%d)!!!!$\backslash$n\char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-); exit(0); \} \}}}
+\label{_debug_8h_a101586fab2b90a8adffe50a3550e235d}
+\hypertarget{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{
+\index{Debug.h@{Debug.h}!CURLEVEL@{CURLEVEL}}
+\index{CURLEVEL@{CURLEVEL}!Debug.h@{Debug.h}}
+\subsubsection[{CURLEVEL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CURLEVEL~200}}
+\label{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}
+\hypertarget{_debug_8h_a3f7e58a01a8beb987f565ac1a304708c}{
+\index{Debug.h@{Debug.h}!DEBUGBLK@{DEBUGBLK}}
+\index{DEBUGBLK@{DEBUGBLK}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGBLK}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGBLK(level, \/  x)~{\bf BlockDebug} block\_\-debug\_\-var\_\-name\_\-ASDFSAFD(\_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x, level);}}
+\label{_debug_8h_a3f7e58a01a8beb987f565ac1a304708c}
+\hypertarget{_debug_8h_a46d6c028ab6c26097031db24f743fd1d}{
+\index{Debug.h@{Debug.h}!DEBUGBLKN@{DEBUGBLKN}}
+\index{DEBUGBLKN@{DEBUGBLKN}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGBLKN}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGBLKN(level)~DEBUGBLK(level, \char`\"{}\char`\"{})}}
+\label{_debug_8h_a46d6c028ab6c26097031db24f743fd1d}
+\hypertarget{_debug_8h_ab2053a211e4acc65bae3a43f579ce0e6}{
+\index{Debug.h@{Debug.h}!DEBUGBLOCK@{DEBUGBLOCK}}
+\index{DEBUGBLOCK@{DEBUGBLOCK}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGBLOCK}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGBLOCK(x)~{\bf BlockDebug} block\_\-debug\_\-var\_\-name\_\-ASDFSAFD(\_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x, 10);}}
+\label{_debug_8h_ab2053a211e4acc65bae3a43f579ce0e6}
+\hypertarget{_debug_8h_a0585f0bf59a4208c42ca4128c3262a40}{
+\index{Debug.h@{Debug.h}!DEBUGBLOCKN@{DEBUGBLOCKN}}
+\index{DEBUGBLOCKN@{DEBUGBLOCKN}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGBLOCKN}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGBLOCKN()~DEBUGBLOCK(\char`\"{}\char`\"{})}}
+\label{_debug_8h_a0585f0bf59a4208c42ca4128c3262a40}
+\hypertarget{_debug_8h_aecdf0db939482582d91e4efc81bee640}{
+\index{Debug.h@{Debug.h}!DEBUGINF@{DEBUGINF}}
+\index{DEBUGINF@{DEBUGINF}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGINF}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGINF(level, \/  x)~if ((level)$>$=CURLEVEL) \{ printHeaps(); printf(\char`\"{}Debug \%s(\%d): \%s$\backslash$n\char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-, x); \} else \{ \}}}
+\label{_debug_8h_aecdf0db939482582d91e4efc81bee640}
+\hypertarget{_debug_8h_ae1d1c2422ebb35cdba48c4d07828dd16}{
+\index{Debug.h@{Debug.h}!DEBUGINFO@{DEBUGINFO}}
+\index{DEBUGINFO@{DEBUGINFO}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGINFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGINFO(x)~DEBUGINF(10, (x));}}
+\label{_debug_8h_ae1d1c2422ebb35cdba48c4d07828dd16}
+\hypertarget{_debug_8h_af86a9b67aa4f2f045932afb90fa17c9b}{
+\index{Debug.h@{Debug.h}!DEBUGINFON@{DEBUGINFON}}
+\index{DEBUGINFON@{DEBUGINFON}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGINFON}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGINFON~DEBUGINFO(\char`\"{}\char`\"{})}}
+\label{_debug_8h_af86a9b67aa4f2f045932afb90fa17c9b}
+\hypertarget{_debug_8h_aa5e06ad1186e04514d37721c865bc48e}{
+\index{Debug.h@{Debug.h}!DEBUGINFOP@{DEBUGINFOP}}
+\index{DEBUGINFOP@{DEBUGINFOP}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGINFOP}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGINFOP(x)~DEBUGINFP(10, x);}}
+\label{_debug_8h_aa5e06ad1186e04514d37721c865bc48e}
+\hypertarget{_debug_8h_aa184ead4583be424a256b0ee06fea736}{
+\index{Debug.h@{Debug.h}!DEBUGINFP@{DEBUGINFP}}
+\index{DEBUGINFP@{DEBUGINFP}!Debug.h@{Debug.h}}
+\subsubsection[{DEBUGINFP}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUGINFP(level, \/  x)~if ((level)$>$=CURLEVEL) \{ printHeaps(); /$\ast$printf(\char`\"{}Debug \%s(\%d): \char`\"{}, \_\-\_\-FILE\_\-\_\-, \_\-\_\-LINE\_\-\_\-); $\ast$/printf x; printf(\char`\"{}$\backslash$n\char`\"{}); \} else \{ \}}}
+\label{_debug_8h_aa184ead4583be424a256b0ee06fea736}
+
+
+\subsection{Function Documentation}
+\hypertarget{_debug_8h_a5c2d38f133d73274898b1dd5844a1880}{
+\index{Debug.h@{Debug.h}!printHeaps@{printHeaps}}
+\index{printHeaps@{printHeaps}!Debug.h@{Debug.h}}
+\subsubsection[{printHeaps}]{\setlength{\rightskip}{0pt plus 5cm}void printHeaps ()}}
+\label{_debug_8h_a5c2d38f133d73274898b1dd5844a1880}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00020 \{
+00021         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{CurrentHeap::curHeap}; ++i)
+00022                 printf(\textcolor{stringliteral}{"  "});
+00023 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{_debug_8h_a5c2d38f133d73274898b1dd5844a1880_icgraph}
+\end{center}
+\end{figure}
+
+

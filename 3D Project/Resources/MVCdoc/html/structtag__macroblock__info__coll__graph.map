@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$structmacroblock_info.html" title="{macroblockInfo\n|+ mbtype\l+ mbR\l+ mbC\l+ mode_I\l+ mode_uv\l+ mode_i16x16\l+ mode_i4x4\l+ mb_part\l+ mb_part2\l+ submb_part\l+ dct_y_z\l+ dct_y_h\l+ dct_uv_z\l+ dct_uv_h\l+ is_skip\l+ qp_delta\l+ cbp_y\l+ coded44\l+ cbp_uv\l+ transform8x8\l+ refs\l|}" alt="" coords="5,209,115,641"/>
+<area shape="rect" id="node4" href="$structref_vector.html" title="{refVector\n|+ refno\l+ x\l+ y\l|}" alt="" coords="23,5,97,125"/>
+<area shape="rect" id="node7" href="$struct_coding_pict_info.html" title="{CodingPictInfo\n|+ PictType\l+ Size_Width\l+ Size_Height\l+ timeId\l+ viewId\l+ baseQP\l+ lumaStart\l+ chromaUStart\l+ chromaVStart\l+ Ref_Count\l+ Ref_Id\l+ ref_lumaStart\l+ ref_chromaUStart\l+ ref_chromaVStart\l+ ref_refVec\l+ refVec\l+ resultStream\l+ resultSize\l+ streamStart\l+ pictStatus\l+ log2nFrames\l+ MP\l+ Padding\l|}" alt="" coords="139,192,272,659"/>
+</map>

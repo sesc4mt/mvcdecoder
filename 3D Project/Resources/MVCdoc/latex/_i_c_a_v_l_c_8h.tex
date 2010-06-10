@@ -1,0 +1,222 @@
+\hypertarget{_i_c_a_v_l_c_8h}{
+\section{MVCDecoder/Codec/IFrame/ICAVLC.h File Reference}
+\label{_i_c_a_v_l_c_8h}\index{MVCDecoder/Codec/IFrame/ICAVLC.h@{MVCDecoder/Codec/IFrame/ICAVLC.h}}
+}
+{\ttfamily \#include \char`\"{}Common.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}PictureInfo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/Bitstream.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/CAVLC.h\char`\"{}}\par
+Include dependency graph for ICAVLC.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{_i_c_a_v_l_c_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=123pt]{_i_c_a_v_l_c_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i_c_a_v_l_c_8h_a995f6a4907273b8d56b6543ab1a57d17}{SLAVE\_\-CODE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i_c_a_v_l_c_8h_a5ca95f08673d3dcfd97990a11501c6da}{macroblock\_\-read\_\-cavlc\_\-I\_\-slice} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{structmacroblock_info}{pmacroblockInfo} info, \hyperlink{structtag__cavlc__ref__list}{cavlc\_\-ref\_\-list} $\ast$ref\_\-list)
+\item 
+void \hyperlink{_i_c_a_v_l_c_8h_aacaa2d123678a0deb8a0c2a5ee6e53b1}{T264dec\_\-mb\_\-read\_\-intra\_\-cavlc} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} mb\_\-part, \hyperlink{structmacroblock_info}{pmacroblockInfo} info, \hyperlink{structtag__cavlc__ref__list}{cavlc\_\-ref\_\-list} $\ast$ref\_\-list)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_i_c_a_v_l_c_8h_a995f6a4907273b8d56b6543ab1a57d17}{
+\index{ICAVLC.h@{ICAVLC.h}!SLAVE\_\-CODE@{SLAVE\_\-CODE}}
+\index{SLAVE\_\-CODE@{SLAVE\_\-CODE}!ICAVLC.h@{ICAVLC.h}}
+\subsubsection[{SLAVE\_\-CODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLAVE\_\-CODE}}
+\label{_i_c_a_v_l_c_8h_a995f6a4907273b8d56b6543ab1a57d17}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_c_a_v_l_c_8h_a5ca95f08673d3dcfd97990a11501c6da}{
+\index{ICAVLC.h@{ICAVLC.h}!macroblock\_\-read\_\-cavlc\_\-I\_\-slice@{macroblock\_\-read\_\-cavlc\_\-I\_\-slice}}
+\index{macroblock\_\-read\_\-cavlc\_\-I\_\-slice@{macroblock\_\-read\_\-cavlc\_\-I\_\-slice}!ICAVLC.h@{ICAVLC.h}}
+\subsubsection[{macroblock\_\-read\_\-cavlc\_\-I\_\-slice}]{\setlength{\rightskip}{0pt plus 5cm}void macroblock\_\-read\_\-cavlc\_\-I\_\-slice ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf pmacroblockInfo} {\em info}, \/  {\bf cavlc\_\-ref\_\-list} $\ast$ {\em ref\_\-list})}}
+\label{_i_c_a_v_l_c_8h_a5ca95f08673d3dcfd97990a11501c6da}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00204 \{
+00205         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} mb\_part;
+00206 
+00207         mb\_part = \hyperlink{_bitstream_8h_acad61027e3182912d2b9d95180d45250}{eg_read_ue}(bs);
+00208         \hyperlink{_i_c_a_v_l_c_8cpp_aacaa2d123678a0deb8a0c2a5ee6e53b1}{T264dec_mb_read_intra_cavlc}(bs, mb\_part, info, ref\_list);
+00209 
+00210 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_i_c_a_v_l_c_8h_a5ca95f08673d3dcfd97990a11501c6da_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_i_c_a_v_l_c_8h_a5ca95f08673d3dcfd97990a11501c6da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_c_a_v_l_c_8h_aacaa2d123678a0deb8a0c2a5ee6e53b1}{
+\index{ICAVLC.h@{ICAVLC.h}!T264dec\_\-mb\_\-read\_\-intra\_\-cavlc@{T264dec\_\-mb\_\-read\_\-intra\_\-cavlc}}
+\index{T264dec\_\-mb\_\-read\_\-intra\_\-cavlc@{T264dec\_\-mb\_\-read\_\-intra\_\-cavlc}!ICAVLC.h@{ICAVLC.h}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-intra\_\-cavlc}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-intra\_\-cavlc ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} {\em mb\_\-part}, \/  {\bf pmacroblockInfo} {\em info}, \/  {\bf cavlc\_\-ref\_\-list} $\ast$ {\em ref\_\-list})}}
+\label{_i_c_a_v_l_c_8h_aacaa2d123678a0deb8a0c2a5ee6e53b1}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00107 \{
+00108         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} i;
+00109         \textcolor{keywordtype}{int} th = 0;
+00110         \textcolor{keywordflow}{if} (mb\_part == \hyperlink{_consts4_standard_8h_abed82baf7f470b522273a3e37c24c600af6e415e1d5e44181c2ba7131f203b694}{I_4x4})
+00111         \{
+00112                 info->\hyperlink{structmacroblock_info_a6bb816cb458ac9c8f908c3f0464cd8ee}{mode_I} = \hyperlink{_consts4_standard_8h_abed82baf7f470b522273a3e37c24c600af6e415e1d5e44181c2ba7131f203b694}{I_4x4};
+00113 
+00114                 memset(info->\hyperlink{structmacroblock_info_a60437cc69d5df6184a6b768ff667a70f}{dct_y_h}, 0, 16);
+00115                 \textcolor{keywordflow}{for} (i = 0; i < 16; ++i)
+00116                         memset(info->\hyperlink{structmacroblock_info_ae8398ee14b29db905e426da03b462417}{dct_y_z}[i], 0, 16);
+00117 
+00118                 info->\hyperlink{structmacroblock_info_a0f244dcaf8b80e1f8adc3973e34e0a25}{transform8x8} = 0;
+00119                 \textcolor{comment}{//int transform8x8 = 0;}
+00120                 \textcolor{comment}{//if (pps.transform8x8Flag)}
+00121                 \{
+00122                         info->\hyperlink{structmacroblock_info_a0f244dcaf8b80e1f8adc3973e34e0a25}{transform8x8} = \hyperlink{_bitstream_8h_a930f8a3acc36d15b74015dd4579f485c}{eg_read_direct1}(bs);
+00123                 \}
+00124                 \textcolor{keywordflow}{if} (info->\hyperlink{structmacroblock_info_a0f244dcaf8b80e1f8adc3973e34e0a25}{transform8x8})
+00125                 \{
+00126                         info->\hyperlink{structmacroblock_info_a6bb816cb458ac9c8f908c3f0464cd8ee}{mode_I} = \hyperlink{_consts4_standard_8h_abed82baf7f470b522273a3e37c24c600a2e701cf3bb5800c555e0fb95d980d303}{I_8x8};
+00127                         T264\_mb\_read\_cavlc\_i8x8\_mode(bs, info, ref\_list);
+00128                 \}
+00129                 \textcolor{keywordflow}{else}
+00130                 \{
+00131                         T264\_mb\_read\_cavlc\_i4x4\_mode(bs, info, ref\_list);
+00132                 \}
+00133                 \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} cbp;
+00134                 info->\hyperlink{structmacroblock_info_a562426f4ab2f9cd93c95cff91faaa0f6}{mode_uv} = \hyperlink{_bitstream_8h_acad61027e3182912d2b9d95180d45250}{eg_read_ue}(bs);
+00135                 \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(info->\hyperlink{structmacroblock_info_a562426f4ab2f9cd93c95cff91faaa0f6}{mode_uv} <= \hyperlink{_consts4_standard_8h_a99fb83031ce9923c84392b4e92f956b5a3f5d49151d1a4cfeb047b96f8956753a}{Intra_8x8_DC128});
+00136                 cbp = i4x4\_eg\_to\_cbp[\hyperlink{_bitstream_8h_acad61027e3182912d2b9d95180d45250}{eg_read_ue}(bs)];
+00137                 info->\hyperlink{structmacroblock_info_a39296ecdc137fb62501453716a0330ac}{cbp_y} = cbp % 16;
+00138                 info->\hyperlink{structmacroblock_info_ae4618a11a8f0f396fb05879125bc449a}{cbp_uv} = cbp / 16;
+00139                 \textcolor{keywordflow}{if} (cbp > 0)
+00140                         info->\hyperlink{structmacroblock_info_a732ef45ea0429985a3833fc7a93bf9fd}{qp_delta} = eg\_read\_se(bs);
+00141                 \textcolor{keywordflow}{else}
+00142                         info->\hyperlink{structmacroblock_info_a732ef45ea0429985a3833fc7a93bf9fd}{qp_delta} = 0;
+00143         \}
+00144         \textcolor{keywordflow}{else}
+00145         \{
+00146                 \textcolor{keywordflow}{for} (i = 0; i < 4; ++i)
+00147                 \{
+00148                         ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[i].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = 0x02;
+00149                         ref\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[i].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = 0x02;
+00150                 \}
+00151                 info->\hyperlink{structmacroblock_info_a6bb816cb458ac9c8f908c3f0464cd8ee}{mode_I} = \hyperlink{_consts4_standard_8h_abed82baf7f470b522273a3e37c24c600a5fc00bf550c7dd0aa35fe3c7fe664ff6}{I_16x16};
+00152                 info->\hyperlink{structmacroblock_info_a56fac1ac121007a216cd538adc034a16}{mode_i16x16} = i16x16\_eg\_to\_cbp[mb\_part][0];
+00153                 info->\hyperlink{structmacroblock_info_a39296ecdc137fb62501453716a0330ac}{cbp_y} = i16x16\_eg\_to\_cbp[mb\_part][2];
+00154                 info->\hyperlink{structmacroblock_info_ae4618a11a8f0f396fb05879125bc449a}{cbp_uv} = i16x16\_eg\_to\_cbp[mb\_part][1];
+00155 
+00156                 info->\hyperlink{structmacroblock_info_a562426f4ab2f9cd93c95cff91faaa0f6}{mode_uv} = \hyperlink{_bitstream_8h_acad61027e3182912d2b9d95180d45250}{eg_read_ue}(bs);
+00157                 \textcolor{keywordflow}{if} (!(info->\hyperlink{structmacroblock_info_a562426f4ab2f9cd93c95cff91faaa0f6}{mode_uv} <= \hyperlink{_consts4_standard_8h_a99fb83031ce9923c84392b4e92f956b5a3f5d49151d1a4cfeb047b96f8956753a}{Intra_8x8_DC128}))
+00158                 \{
+00159                         \textcolor{comment}{//printf("\(\backslash\)n");}
+00160                 \}
+00161                 \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(info->\hyperlink{structmacroblock_info_a562426f4ab2f9cd93c95cff91faaa0f6}{mode_uv} <= \hyperlink{_consts4_standard_8h_a99fb83031ce9923c84392b4e92f956b5a3f5d49151d1a4cfeb047b96f8956753a}{Intra_8x8_DC128});
+00162 
+00163 \textcolor{comment}{//              if (info->cbp\_y | info->cbp\_uv)}
+00164                 \{
+00165                         info->\hyperlink{structmacroblock_info_a732ef45ea0429985a3833fc7a93bf9fd}{qp_delta} = eg\_read\_se(bs);
+00166                 \}
+00167 \textcolor{comment}{//              else}
+00168 \textcolor{comment}{//                      info->qp\_delta = 0;}
+00169 
+00170                 \textcolor{comment}{// dc luma}
+00171                 \textcolor{keywordtype}{int} nC = \hyperlink{vlc_pred_8h_aa95b4f7002a155287414853f2fc58279}{get_luma_pred}(ref\_list, 0);
+00172                 \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(bs, \hyperlink{vlc_8h_ad2d7f1b7e491db865767a2a38443091a}{BLOCK_INDEX_LUMA_DC}, info->\hyperlink{structmacroblock_info_a60437cc69d5df6184a6b768ff667a70f}{dct_y_h},
+       16, nC);
+00173                 th = 1;
+00174         \}
+00175         info->\hyperlink{structmacroblock_info_a8c2dc78f061142480ef5b2026b8a1dff}{coded44} = 0;
+00176         \textcolor{keywordflow}{for}(i = 0 ; i < 4 ; i ++)
+00177                 \textcolor{keywordflow}{if} (info->\hyperlink{structmacroblock_info_a39296ecdc137fb62501453716a0330ac}{cbp_y} & (1 << i))
+00178                 \{
+00179                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; ++j)
+00180                         \{
+00181                                 \textcolor{keywordtype}{int} idx = i/2 * 8 + i % 2 * 2 + j / 2 * 4 + j % 2
+      ;
+00182                                 \textcolor{keywordtype}{int} nC = \hyperlink{vlc_pred_8h_aa95b4f7002a155287414853f2fc58279}{get_luma_pred}(ref\_list, idx);
+00183                                 nC = \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(bs, i/2 * 8 + i % 
+      2 * 2 + j / 2 * 4 + j % 2, info->\hyperlink{structmacroblock_info_ae8398ee14b29db905e426da03b462417}{dct_y_z}[i/2 * 8 + i % 2 * 2 + j / 2 * 4 + j % 2]
+      +th, 16-th, nC);
+00184                                 \hyperlink{vlc_pred_8h_a534c4d1461b465b86fa6ed3294f7fc93}{set_luma_pred}(ref\_list, idx, nC);
+00185                                 \textcolor{keywordflow}{if} (nC || info->\hyperlink{structmacroblock_info_a0f244dcaf8b80e1f8adc3973e34e0a25}{transform8x8})
+00186                                 \{
+00187                                         info->\hyperlink{structmacroblock_info_a8c2dc78f061142480ef5b2026b8a1dff}{coded44} |= (1<<(idx));
+00188                                 \}
+00189                         \}
+00190                 \}
+00191                 \textcolor{keywordflow}{else}
+00192                 \{
+00193                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; ++j)
+00194                         \{
+00195                                 \textcolor{keywordtype}{int} idx = i/2 * 8 + i % 2 * 2 + j / 2 * 4 + j % 2
+      ;
+00196                                 memset(info->\hyperlink{structmacroblock_info_ae8398ee14b29db905e426da03b462417}{dct_y_z}[idx], 0, 16);
+00197                                 \hyperlink{vlc_pred_8h_a534c4d1461b465b86fa6ed3294f7fc93}{set_luma_pred}(ref\_list, idx, 0);
+00198                         \}
+00199                 \}
+00200         \hyperlink{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3}{macroblock_read_cavlc_uv}(bs, info, ref\_list);
+00201 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=372pt]{_i_c_a_v_l_c_8h_aacaa2d123678a0deb8a0c2a5ee6e53b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{_i_c_a_v_l_c_8h_aacaa2d123678a0deb8a0c2a5ee6e53b1_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node11" href="$_picture_info_8h.html" title="PictureInfo.h" alt="" coords="248,238,341,267"/>
+<area shape="rect" id="node30" href="$_arch_8h.html" title="Arch/Arch.h" alt="" coords="135,160,225,190"/>
+<area shape="rect" id="node34" href="$_configure_8h.html" title="Configure.h" alt="" coords="1645,83,1731,112"/>
+<area shape="rect" id="node36" href="$_sequence_param_8h.html" title="Codec/SequenceParam.h" alt="" coords="1253,238,1424,267"/>
+<area shape="rect" id="node40" href="$_a_frame_controller_8h.html" title="Controller/AFrameController.h" alt="" coords="720,160,912,190"/>
+<area shape="rect" id="node57" href="$_sliding_window_8h.html" title="SlidingWindow.h" alt="" coords="440,238,557,267"/>
+<area shape="rect" id="node63" href="$_frame_controller___parallel_8h.html" title="Controller/FrameController_Parallel.h" alt="" coords="564,83,799,112"/>
+<area shape="rect" id="node74" href="$_codec_info_8h.html" title="CodecInfo.h" alt="" coords="1176,160,1267,190"/>
+<area shape="rect" id="node79" href="$_bitstream_8h.html" title="Codec/Bitstream.h" alt="" coords="656,238,787,267"/>
+<area shape="rect" id="node82" href="$_in_stream_8h.html" title="Stream/InStream.h" alt="" coords="987,160,1117,190"/>
+<area shape="rect" id="node91" href="$_consts4_standard_8h.html" title="Codec/Consts4Standard.h" alt="" coords="316,83,489,112"/>
+<area shape="rect" id="node17" href="$_types_8h.html" title="Types.h" alt="" coords="287,392,353,422"/>
+<area shape="rect" id="node19" href="$_macros_8h.html" title="Macros.h" alt="" coords="316,315,391,344"/>
+<area shape="rect" id="node24" href="$_debug_8h.html" title="Debug.h" alt="" coords="121,315,191,344"/>
+<area shape="rect" id="node38" href="$_array_list_8h.html" title="ArrayList.h" alt="" coords="1053,315,1139,344"/>
+<area shape="rect" id="node42" href="$_common_8h.html" title="Common.h" alt="" coords="516,315,601,344"/>
+<area shape="rect" id="node51" href="$_picture_param_8h.html" title="Codec/PictureParam.h" alt="" coords="1077,238,1229,267"/>
+<area shape="rect" id="node54" href="$_slice_param_8h.html" title="Codec/SliceParam.h" alt="" coords="861,238,1003,267"/>
+</map>

@@ -1,0 +1,37 @@
+\hypertarget{_i_slice_8h_source}{
+\section{MVCDecoder/Codec/IFrame/ISlice.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ ************************************************************************/}
+00009 
+00010 \textcolor{preprocessor}{#ifndef \_I\_SLICE\_H\_WEIDONG\_}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_I\_SLICE\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}
+00013 \textcolor{preprocessor}{#include "\hyperlink{_common_8h}{Common.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{_bitstream_8h}{Codec/Bitstream.h}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_picture_info_8h}{PictureInfo.h}"}
+\hypertarget{_i_slice_8h_source_l00016}{}\hyperlink{_i_slice_8h_a995f6a4907273b8d56b6543ab1a57d17}{00016} \textcolor{preprocessor}{#define SLAVE\_CODE}
+00017 \textcolor{preprocessor}{}
+00018 \textcolor{keywordtype}{void} \hyperlink{_i_slice_8cpp_a62bde0c28d855f00622a319f1be6dfd2}{require_data_decode_I}(\hyperlink{struct_coding_pict_info}{CodingPictInfo} *\hyperlink{structtag__macroblock__info_ae7a0c6b68c7cbc0ffb1a82799eb386ef}{cpi}, \hyperlink{structmacroblockdata}{macroblockdata} *list, 
+      \hyperlink{structpredict_info}{predictInfo} *plist, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} cur\_r, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} cur\_c);
+00019 \textcolor{keywordtype}{void} \hyperlink{_i_slice_8cpp_a23c43acab8cba26c6a4938028715f817}{process_data_decode_I}(\hyperlink{struct_coding_pict_info}{CodingPictInfo} *\hyperlink{structtag__macroblock__info_ae7a0c6b68c7cbc0ffb1a82799eb386ef}{cpi}, \hyperlink{structmacroblockdata}{macroblockdata} *dlist, 
+      \hyperlink{structpredict_info}{predictInfo} *plist, \hyperlink{structmacroblock_info}{macroblockInfo} *mlist);
+00020 \textcolor{keywordtype}{void} \hyperlink{_i_slice_8cpp_a3d8b6dcdaff59baf9c7b27ae426f0a5a}{ISliceDecode}(\hyperlink{struct_coding_pict_info}{CodingPictInfo} *\hyperlink{structtag__macroblock__info_ae7a0c6b68c7cbc0ffb1a82799eb386ef}{cpi}, \hyperlink{struct_bitstream}{Bitstream} *bs);
+00021 
+00022 \textcolor{preprocessor}{#endif //\_I\_SLICE\_H\_WEIDONG\_}
+00023 \textcolor{preprocessor}{}
+00024 \textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00025 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00026 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00027 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

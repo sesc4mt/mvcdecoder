@@ -1,0 +1,116 @@
+\hypertarget{_array_list_8h_source}{
+\section{MVCCommonLib/ArrayList.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2009-03-18           Weidong Hu              Tsinghua University             C
+      reate}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ ************************************************************************/}
+00009 
+00010 \textcolor{preprocessor}{#ifndef \_ARRAY\_LIST\_H\_}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_ARRAY\_LIST\_H\_}
+00012 \textcolor{preprocessor}{}
+00013 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>
+\hypertarget{_array_list_8h_source_l00014}{}\hyperlink{class_array_list}{00014} \textcolor{keyword}{class }\hyperlink{class_array_list}{ArrayList} \{
+00015 \textcolor{keyword}{private}:
+00016         T *\_values;
+00017         \textcolor{keywordtype}{int} \_count;
+00018         \textcolor{keywordtype}{int} \_capacity;
+00019         
+00020         \textcolor{keywordtype}{void} RequireCapacity(\textcolor{keywordtype}{int} cap)
+00021         \{
+00022                 \textcolor{keywordflow}{if} (\_capacity < cap)
+00023                 \{
+00024                         \textcolor{keywordtype}{int} capacity = \_capacity * 2;
+00025                         \textcolor{keywordflow}{if} (cap > capacity)
+00026                                 capacity = cap;
+00027                         T* values = \textcolor{keyword}{new} T[capacity];
+00028                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_count; ++i)
+00029                                 values[i] = \_values[i];
+00030                         T* tmp = \_values;
+00031                         \_values = values;
+00032                         \_capacity = capacity;
+00033                         \textcolor{keyword}{delete}[] tmp;
+00034                 \}
+00035         \}
+00036 
+00037 \textcolor{keyword}{public}:
+\hypertarget{_array_list_8h_source_l00038}{}\hyperlink{class_array_list_a77ba51ae82bb2246563af5c4d64d438e}{00038}         \hyperlink{class_array_list_a77ba51ae82bb2246563af5c4d64d438e}{ArrayList}() : \_values(0), \_count(0), \_capacity(0)
+00039         \{
+00040         \}
+00041 
+\hypertarget{_array_list_8h_source_l00042}{}\hyperlink{class_array_list_aa4936cd0b9423eba7a9f38f3c62cfc7c}{00042}         \hyperlink{class_array_list_a77ba51ae82bb2246563af5c4d64d438e}{ArrayList}(\textcolor{keyword}{const} \hyperlink{class_array_list}{ArrayList} &right) : \_values(0), \_count(0), \_capacity(0)
+00043         \{
+00044                 *\textcolor{keyword}{this} = right;
+00045         \}
+00046 
+\hypertarget{_array_list_8h_source_l00047}{}\hyperlink{class_array_list_a4af637822f64b61267b1e0ed4d4fca33}{00047}         \hyperlink{class_array_list_a4af637822f64b61267b1e0ed4d4fca33}{~ArrayList}() \{
+00048                 \textcolor{keyword}{delete}[] \_values;
+00049         \}
+00050 
+\hypertarget{_array_list_8h_source_l00051}{}\hyperlink{class_array_list_ae27782de18cb09f54fffba59f3f77d92}{00051}         \hyperlink{class_array_list}{ArrayList} &\hyperlink{class_array_list_ae27782de18cb09f54fffba59f3f77d92}{operator =}(\textcolor{keyword}{const} \hyperlink{class_array_list}{ArrayList} &right)
+00052         \{
+00053                 RequireCapacity(right.\_count);
+00054                 \_count = right.\_count;
+00055                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_count; ++i)
+00056                         \_values[i] = right.\_values[i];
+00057                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00058         \}
+00059 
+\hypertarget{_array_list_8h_source_l00060}{}\hyperlink{class_array_list_a627f1cc60e0b9a85d869957a839bc064}{00060}         \textcolor{keyword}{const} T &\hyperlink{class_array_list_a627f1cc60e0b9a85d869957a839bc064}{operator []}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const}
+00061 \textcolor{keyword}{        }\{
+00062                 \textcolor{keywordflow}{return} \_values[index];
+00063         \}
+00064 
+\hypertarget{_array_list_8h_source_l00065}{}\hyperlink{class_array_list_aaf3e10ff2125cc396e3c5d357bf94f1e}{00065}         T &\hyperlink{class_array_list_a627f1cc60e0b9a85d869957a839bc064}{operator [] }(\textcolor{keywordtype}{int} index)
+00066         \{
+00067                 \textcolor{keywordflow}{return} \_values[index];
+00068         \}
+00069 
+\hypertarget{_array_list_8h_source_l00070}{}\hyperlink{class_array_list_aff9c6ac40886044e4653174950d23e74}{00070}         \textcolor{keywordtype}{int} \hyperlink{class_array_list_aff9c6ac40886044e4653174950d23e74}{size}()\textcolor{keyword}{ const}
+00071 \textcolor{keyword}{        }\{
+00072                 \textcolor{keywordflow}{return} \_count;
+00073         \}
+00074 
+\hypertarget{_array_list_8h_source_l00075}{}\hyperlink{class_array_list_a7b5376678a9b5af0e0ed913fbe04b902}{00075}         \textcolor{keywordtype}{void} \hyperlink{class_array_list_a7b5376678a9b5af0e0ed913fbe04b902}{push_back}(\textcolor{keyword}{const} T &value)
+00076         \{
+00077                 RequireCapacity(\_count + 1);
+00078                 \_values[\_count++] = value;
+00079         \}
+00080 
+\hypertarget{_array_list_8h_source_l00081}{}\hyperlink{class_array_list_ad98cc674ef8dcc42f53b4836416a289c}{00081}         \textcolor{keywordtype}{void} \hyperlink{class_array_list_ad98cc674ef8dcc42f53b4836416a289c}{pop_back}()
+00082         \{
+00083                 --\_count;
+00084         \}
+00085 
+\hypertarget{_array_list_8h_source_l00086}{}\hyperlink{class_array_list_a18695cf2c26e9c6ef585ec77afc19fc6}{00086}         \textcolor{keywordtype}{void} \hyperlink{class_array_list_a18695cf2c26e9c6ef585ec77afc19fc6}{erase}(\textcolor{keywordtype}{int} index)
+00087         \{
+00088                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = index; i + 1 < \_count; ++i)
+00089                         \_values[i] = \_values[i + 1];
+00090                 --\_count;
+00091         \}
+00092 
+\hypertarget{_array_list_8h_source_l00093}{}\hyperlink{class_array_list_addb12a5554260fa1f386160ce8534db0}{00093}         \textcolor{keywordtype}{void} \hyperlink{class_array_list_addb12a5554260fa1f386160ce8534db0}{insert}(\textcolor{keywordtype}{int} index, \textcolor{keyword}{const} T&value)
+00094         \{
+00095                 RequireCapacity(\_count + 1);
+00096                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = \_count; i > index; --i)
+00097                         \_values[i] = \_values[i - 1];
+00098                 \_values[index] = value;
+00099                 ++\_count;
+00100         \}
+00101 
+\hypertarget{_array_list_8h_source_l00102}{}\hyperlink{class_array_list_acb53d54675318c94332d0ec8b6819eb3}{00102}         \textcolor{keywordtype}{void} \hyperlink{class_array_list_acb53d54675318c94332d0ec8b6819eb3}{clear}()
+00103         \{
+00104                 \_count = 0;
+00105         \}
+00106 \};
+00107 
+00108 \textcolor{preprocessor}{#endif //\_ARRAY\_LIST\_H\_ }
+\end{alltt}\end{footnotesize}

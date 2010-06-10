@@ -1,0 +1,42 @@
+\hypertarget{_d_c_t_transform_8h_source}{
+\section{MVCDecoder/Codec/DCTTransform.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_DCT\_TRANSFORM\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_DCT\_TRANSFORM\_H\_WEIDONG\_}
+\hypertarget{_d_c_t_transform_8h_source_l00013}{}\hyperlink{_d_c_t_transform_8h_a995f6a4907273b8d56b6543ab1a57d17}{00013} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_common_8h}{Common.h}"}
+00016 
+\hypertarget{_d_c_t_transform_8h_source_l00017}{}\hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{00017} \textcolor{keyword}{typedef} \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{param_dct4}[4][4];
+\hypertarget{_d_c_t_transform_8h_source_l00018}{}\hyperlink{_d_c_t_transform_8h_abace759df68d8f1dcf808ffac7ed39c8}{00018} \textcolor{keyword}{typedef} \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_d_c_t_transform_8h_abace759df68d8f1dcf808ffac7ed39c8}{param_dct2}[2][2];
+00019 
+00020 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_a4537742f3b23a0045b91421a77697cf0}{dct4x4_c}(\hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{param_dct4} dt);
+00021 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_a923ec91bf45c73e8baaf4e1bbad9a289}{idct4x4_c}(\hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{param_dct4} dt);
+00022 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_a7f5a0183a4c6fe784347f8b4d0005db1}{dct4x4dc_c}(\hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{param_dct4} dt);
+00023 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_ac50d1e85c45ad67944176f8ce8219dba}{idct4x4dc_c}(\hyperlink{_d_c_t_transform_8h_adee5aa91ada08f440eadac1fa5dea16f}{param_dct4} dt);
+00024 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_a98ecb204463bfa1a4588349447a79250}{dct2x2dc_c}(\hyperlink{_d_c_t_transform_8h_abace759df68d8f1dcf808ffac7ed39c8}{param_dct2} dt);
+00025 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_ada208d2366935100bdc2375bec45cc8f}{idct2x2dc_c}(\hyperlink{_d_c_t_transform_8h_abace759df68d8f1dcf808ffac7ed39c8}{param_dct2} dt);
+00026 \textcolor{keywordtype}{void} \hyperlink{_d_c_t_transform_8cpp_aab666ffcda45ced06a5b5853c52c94bf}{idct8x8}(\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} *piCoeff );
+00027 
+00028 \textcolor{preprocessor}{#endif //\_DCT\_TRANSFORM\_H\_WEIDONG\_}
+00029 \textcolor{preprocessor}{}
+00030 \textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00031 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00032 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00033 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

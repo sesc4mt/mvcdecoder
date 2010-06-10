@@ -1,0 +1,311 @@
+\hypertarget{_quantisation_8h}{
+\section{MVCDecoder/Codec/Quantisation.h File Reference}
+\label{_quantisation_8h}\index{MVCDecoder/Codec/Quantisation.h@{MVCDecoder/Codec/Quantisation.h}}
+}
+{\ttfamily \#include \char`\"{}Common.h\char`\"{}}\par
+Include dependency graph for Quantisation.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{_quantisation_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_quantisation_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_quantisation_8h_a995f6a4907273b8d56b6543ab1a57d17}{SLAVE\_\-CODE}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} $\ast$ \hyperlink{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{param\_\-quant8}
+\item 
+typedef \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param\_\-quant4} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\item 
+typedef \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param\_\-quant2} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_quantisation_8h_af304d1aed221004504fa9475387cf32e}{quant4x4\_\-c} (\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param\_\-quant4} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} is\_\-intra)
+\item 
+void \hyperlink{_quantisation_8h_a5985492c5cf012e5d7051f11fa86821c}{iquant4x4\_\-c} (\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param\_\-quant4} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp)
+\item 
+void \hyperlink{_quantisation_8h_aeb2be591bcf2be1d22c5bb6a23537c78}{quant4x4dc\_\-c} (\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param\_\-quant4} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp)
+\item 
+void \hyperlink{_quantisation_8h_a480f9f1c650257964853863d5683ed34}{iquant4x4dc\_\-c} (\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param\_\-quant4} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp)
+\item 
+void \hyperlink{_quantisation_8h_a805f7902eccf615fd707997d06e0c1ff}{quant2x2dc\_\-c} (\hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param\_\-quant2} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} is\_\-intra)
+\item 
+void \hyperlink{_quantisation_8h_ad8c9813079b1dac9e7c7ab3d40a9a212}{iquant2x2dc\_\-c} (\hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param\_\-quant2} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp)
+\item 
+void \hyperlink{_quantisation_8h_a6096528e049a8f3c2a463926db773e42}{iquant8x8\_\-c} (\hyperlink{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{param\_\-quant8} dt, const \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_quantisation_8h_a995f6a4907273b8d56b6543ab1a57d17}{
+\index{Quantisation.h@{Quantisation.h}!SLAVE\_\-CODE@{SLAVE\_\-CODE}}
+\index{SLAVE\_\-CODE@{SLAVE\_\-CODE}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{SLAVE\_\-CODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLAVE\_\-CODE}}
+\label{_quantisation_8h_a995f6a4907273b8d56b6543ab1a57d17}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{
+\index{Quantisation.h@{Quantisation.h}!param\_\-quant2@{param\_\-quant2}}
+\index{param\_\-quant2@{param\_\-quant2}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{param\_\-quant2}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int16} {\bf param\_\-quant2}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}}}
+\label{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}
+\hypertarget{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{
+\index{Quantisation.h@{Quantisation.h}!param\_\-quant4@{param\_\-quant4}}
+\index{param\_\-quant4@{param\_\-quant4}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{param\_\-quant4}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int16} {\bf param\_\-quant4}\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}}
+\label{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}
+\hypertarget{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{
+\index{Quantisation.h@{Quantisation.h}!param\_\-quant8@{param\_\-quant8}}
+\index{param\_\-quant8@{param\_\-quant8}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{param\_\-quant8}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf int16}$\ast$ {\bf param\_\-quant8}}}
+\label{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}
+
+
+\subsection{Function Documentation}
+\hypertarget{_quantisation_8h_ad8c9813079b1dac9e7c7ab3d40a9a212}{
+\index{Quantisation.h@{Quantisation.h}!iquant2x2dc\_\-c@{iquant2x2dc\_\-c}}
+\index{iquant2x2dc\_\-c@{iquant2x2dc\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{iquant2x2dc\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void iquant2x2dc\_\-c ({\bf param\_\-quant2} {\em dt}, \/  const {\bf int32} {\em Qp})}}
+\label{_quantisation_8h_ad8c9813079b1dac9e7c7ab3d40a9a212}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00194 \{
+00195         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00196         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits = Qp / 6 - 1;
+00197         \textcolor{keywordflow}{if} (qbits > -1 )
+00198         \{
+00199                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} dmf = \hyperlink{_quantisation_8cpp_a95540d880b7a1d95ae0df24d2d8a7ee9}{dequant}[Qp % 6][0] << qbits;
+00200                 data[0] = data[0] * dmf;
+00201                 data[1] = data[1] * dmf;
+00202                 data[2] = data[2] * dmf;
+00203                 data[3] = data[3] * dmf;
+00204         \}
+00205         \textcolor{keywordflow}{else}
+00206         \{
+00207                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} dmf = \hyperlink{_quantisation_8cpp_a95540d880b7a1d95ae0df24d2d8a7ee9}{dequant}[Qp % 6][0];
+00208                 data[0] = (data[0] * dmf) >> 1;
+00209                 data[1] = (data[1] * dmf) >> 1;
+00210                 data[2] = (data[2] * dmf) >> 1;
+00211                 data[3] = (data[3] * dmf) >> 1;
+00212         \}
+00213 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_quantisation_8h_ad8c9813079b1dac9e7c7ab3d40a9a212_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_quantisation_8h_a5985492c5cf012e5d7051f11fa86821c}{
+\index{Quantisation.h@{Quantisation.h}!iquant4x4\_\-c@{iquant4x4\_\-c}}
+\index{iquant4x4\_\-c@{iquant4x4\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{iquant4x4\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void iquant4x4\_\-c ({\bf param\_\-quant4} {\em dt}, \/  const {\bf int32} {\em Qp})}}
+\label{_quantisation_8h_a5985492c5cf012e5d7051f11fa86821c}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00121 \{
+00122         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00123         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits = Qp / 6;
+00124         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} index\_mf = Qp % 6;
+00125         \textcolor{comment}{//int i;}
+00126         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 16 ; ++i)
+00127                 data[i] = (data[i] * \hyperlink{_quantisation_8cpp_a95540d880b7a1d95ae0df24d2d8a7ee9}{dequant}[index\_mf][i]) << qbits;
+00128 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_quantisation_8h_a5985492c5cf012e5d7051f11fa86821c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_quantisation_8h_a480f9f1c650257964853863d5683ed34}{
+\index{Quantisation.h@{Quantisation.h}!iquant4x4dc\_\-c@{iquant4x4dc\_\-c}}
+\index{iquant4x4dc\_\-c@{iquant4x4dc\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{iquant4x4dc\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void iquant4x4dc\_\-c ({\bf param\_\-quant4} {\em dt}, \/  const {\bf int32} {\em Qp})}}
+\label{_quantisation_8h_a480f9f1c650257964853863d5683ed34}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00158 \{
+00159         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00160         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits = Qp / 6 - 2;
+00161         \textcolor{comment}{//int32 i;}
+00162         \textcolor{keywordflow}{if} (qbits > -1)
+00163         \{
+00164                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf\_index = Qp % 6;
+00165                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} dmf = \hyperlink{_quantisation_8cpp_a95540d880b7a1d95ae0df24d2d8a7ee9}{dequant}[mf\_index][0] << qbits;
+00166                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 16 ; i ++)
+00167                         data[i] = data[i] * dmf;
+00168         \}
+00169         \textcolor{keywordflow}{else}
+00170         \{
+00171                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} dmf = \hyperlink{_quantisation_8cpp_a95540d880b7a1d95ae0df24d2d8a7ee9}{dequant}[Qp % 6][0];
+00172                 \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} t2  = 1 << (1 + qbits);
+00173                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 16 ; i ++)
+00174                         data[i] = (data[i] * dmf + t2) >> (-qbits);
+00175         \}
+00176 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_quantisation_8h_a480f9f1c650257964853863d5683ed34_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_quantisation_8h_a6096528e049a8f3c2a463926db773e42}{
+\index{Quantisation.h@{Quantisation.h}!iquant8x8\_\-c@{iquant8x8\_\-c}}
+\index{iquant8x8\_\-c@{iquant8x8\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{iquant8x8\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void iquant8x8\_\-c ({\bf param\_\-quant8} {\em dt}, \/  const {\bf int32} {\em Qp})}}
+\label{_quantisation_8h_a6096528e049a8f3c2a463926db773e42}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00131 \{
+00132         \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt;
+00133         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits = Qp / 6;
+00134         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} index\_mf = Qp % 6;
+00135         \textcolor{comment}{//int i;}
+00136         \textcolor{keywordtype}{int} iAdd = ( qbits <= 5 ? ( 1 << ( 5 - qbits ) ) : 0 );
+00137         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 64 ; i ++)
+00138                 \textcolor{comment}{//data[i] = (data[i] * dequant[index\_mf][i]) << qbits;}
+00139                 data[i] = ( ( data[i] * \hyperlink{_quantisation_8cpp_abbaef37d144eaea4f1f967739e320898}{dequant64}[index\_mf][i] * 16 + iAdd ) << q
+      bits ) >> 6;
+00140 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_quantisation_8h_a6096528e049a8f3c2a463926db773e42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_quantisation_8h_a805f7902eccf615fd707997d06e0c1ff}{
+\index{Quantisation.h@{Quantisation.h}!quant2x2dc\_\-c@{quant2x2dc\_\-c}}
+\index{quant2x2dc\_\-c@{quant2x2dc\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{quant2x2dc\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void quant2x2dc\_\-c ({\bf param\_\-quant2} {\em dt}, \/  const {\bf int32} {\em Qp}, \/  {\bf int32\_\-t} {\em is\_\-intra})}}
+\label{_quantisation_8h_a805f7902eccf615fd707997d06e0c1ff}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00179 \{
+00180         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00181         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits    = 15 + Qp / 6;
+00182         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf\_index = Qp % 6;
+00183         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf00 = \hyperlink{_quantisation_8cpp_a42abedc99a2c36f53b9cbb3fddf75992}{quant}[mf\_index][0];
+00184         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} f2 = (2 << qbits) / (is\_intra ? 3 : 6);
+00185         \textcolor{comment}{//int i;}
+00186         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 4 ; i ++)
+00187                 \textcolor{keywordflow}{if} (data[i] > 0)
+00188                         data[i] = (data[i] * mf00 + f2) >> (qbits + 1);
+00189                 \textcolor{keywordflow}{else}
+00190                         data[i] = -((-(data[i] * mf00) + f2) >> (qbits + 1));
+00191 \}
+\end{alltt}\end{footnotesize}
+
+
+\hypertarget{_quantisation_8h_af304d1aed221004504fa9475387cf32e}{
+\index{Quantisation.h@{Quantisation.h}!quant4x4\_\-c@{quant4x4\_\-c}}
+\index{quant4x4\_\-c@{quant4x4\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{quant4x4\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void quant4x4\_\-c ({\bf param\_\-quant4} {\em dt}, \/  const {\bf int32} {\em Qp}, \/  {\bf int32\_\-t} {\em is\_\-intra})}}
+\label{_quantisation_8h_af304d1aed221004504fa9475387cf32e}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00107 \{
+00108         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00109         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits    = 15 + Qp / 6;
+00110         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf\_index = Qp % 6;
+00111         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} f = (1 << qbits) / (is\_intra ? 3 : 6);
+00112         \textcolor{comment}{//int i;}
+00113         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 16 ; i ++)
+00114                 \textcolor{keywordflow}{if} (data[i] > 0)
+00115                         data[i] = (data[i] * \hyperlink{_quantisation_8cpp_a42abedc99a2c36f53b9cbb3fddf75992}{quant}[mf\_index][i] + f) >> qbits;
+00116                 \textcolor{keywordflow}{else}
+00117                         data[i] = -((-(data[i] * \hyperlink{_quantisation_8cpp_a42abedc99a2c36f53b9cbb3fddf75992}{quant}[mf\_index][i]) + f) >> qbit
+      s);
+00118 \}
+\end{alltt}\end{footnotesize}
+
+
+\hypertarget{_quantisation_8h_aeb2be591bcf2be1d22c5bb6a23537c78}{
+\index{Quantisation.h@{Quantisation.h}!quant4x4dc\_\-c@{quant4x4dc\_\-c}}
+\index{quant4x4dc\_\-c@{quant4x4dc\_\-c}!Quantisation.h@{Quantisation.h}}
+\subsubsection[{quant4x4dc\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void quant4x4dc\_\-c ({\bf param\_\-quant4} {\em dt}, \/  const {\bf int32} {\em Qp})}}
+\label{_quantisation_8h_aeb2be591bcf2be1d22c5bb6a23537c78}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00143 \{
+00144         \textcolor{comment}{/*register */}\hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} * \textcolor{keyword}{const} data = dt[0];
+00145         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} qbits    = 15 + Qp / 6;
+00146         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf\_index = Qp % 6;
+00147         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} mf00 = \hyperlink{_quantisation_8cpp_a42abedc99a2c36f53b9cbb3fddf75992}{quant}[mf\_index][0];
+00148         \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} f2 = (2 << qbits) / 3;      \textcolor{comment}{// Only 16x16 intra mode}
+00149         \textcolor{comment}{//int32 i;}
+00150         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 16 ; i ++)
+00151                 \textcolor{keywordflow}{if} (data[i] > 0)
+00152                         data[i] = (data[i] * mf00 + f2) >> (qbits + 1);
+00153                 \textcolor{keywordflow}{else}
+00154                         data[i] = -((-(data[i] * mf00) + f2) >> (qbits + 1));
+00155 \}
+\end{alltt}\end{footnotesize}
+
+

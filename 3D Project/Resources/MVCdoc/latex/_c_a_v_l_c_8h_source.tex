@@ -1,0 +1,38 @@
+\hypertarget{_c_a_v_l_c_8h_source}{
+\section{MVCDecoder/Codec/CAVLC.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_CONTEXT\_BASED\_ADAPTIVE\_VARIABLE\_LENGTH\_CODING\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_CONTEXT\_BASED\_ADAPTIVE\_VARIABLE\_LENGTH\_CODING\_H\_WEIDONG\_}
+\hypertarget{_c_a_v_l_c_8h_source_l00013}{}\hyperlink{_c_a_v_l_c_8h_a995f6a4907273b8d56b6543ab1a57d17}{00013} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00014 \textcolor{preprocessor}{}\textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00015 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00016 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00017 \textcolor{preprocessor}{}
+00018 \textcolor{preprocessor}{#include "\hyperlink{_bitstream_8h}{Codec/Bitstream.h}"}
+00019 \textcolor{preprocessor}{#include "\hyperlink{_picture_info_8h}{PictureInfo.h}"}
+00020 \textcolor{preprocessor}{#include "\hyperlink{vlc_pred_8h}{Codec/vlcPred.h}"}
+00021 
+00022 \textcolor{keywordtype}{int} \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(\hyperlink{struct_bitstream}{Bitstream} *bs, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} idx, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* z, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} cou
+      nt, \textcolor{keywordtype}{int} pred);
+00023 \textcolor{keywordtype}{void} \hyperlink{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3}{macroblock_read_cavlc_uv}(\hyperlink{struct_bitstream}{Bitstream} *bs, \hyperlink{structmacroblock_info}{pmacroblockInfo} info, 
+      \hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list);
+00024 
+00025 \textcolor{preprocessor}{#endif //\_CONTEXT\_BASED\_ADAPTIVE\_VARIABLE\_LENGTH\_CODING\_H\_WEIDONG\_}
+00026 \textcolor{preprocessor}{}
+00027 
+\end{alltt}\end{footnotesize}

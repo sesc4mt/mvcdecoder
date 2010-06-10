@@ -1,0 +1,159 @@
+\hypertarget{_picture_info_8h}{
+\section{MVCCommonLib/PictureInfo.h File Reference}
+\label{_picture_info_8h}\index{MVCCommonLib/PictureInfo.h@{MVCCommonLib/PictureInfo.h}}
+}
+{\ttfamily \#include \char`\"{}Common.h\char`\"{}}\par
+{\ttfamily \#include $<$memory$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include \char`\"{}Types.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Macros.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Debug.h\char`\"{}}\par
+Include dependency graph for PictureInfo.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{_picture_info_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_picture_info_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_coding_pict_info}{CodingPictInfo}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_picture_info_8h_ac2f16d038f94c6c57ed8648c6cfe3bb7}{PICT\_\-STATUS\_\-WAIT}~0
+\item 
+\#define \hyperlink{_picture_info_8h_aecbf7bf3158e75ca4906202b17b8f9ef}{PICT\_\-STATUS\_\-AVAIL}~1
+\item 
+\#define \hyperlink{_picture_info_8h_ade32bc4832afeaeeda7d862a70f2d70d}{PICT\_\-STATUS\_\-PROCESSING}~2
+\item 
+\#define \hyperlink{_picture_info_8h_a170d5962358e97425e08d5646653494b}{PICT\_\-STATUS\_\-FINISHED}~4
+\item 
+\#define \hyperlink{_picture_info_8h_a81f2be9d3984eb16fa6f3b7daf46466f}{PICT\_\-STATUS\_\-SAVED}~8
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a4a4a4b0f98ff5f5d64cddef4d44d3fdd}{PICT\_\-PFRAME}, 
+\hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a60c132aad6fc16b1ef692aeac612cf04}{PICT\_\-BFRAME}, 
+\hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388ad73ce3031f74fa8f39aa61bd7df91d8c}{PICT\_\-IFRAME}
+ \}
+\item 
+enum \hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174}{CMD\_\-TO\_\-SPU} \{ \hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a559a610ab332f3ca38d82e7900772e99}{CTS\_\-HALT}, 
+\hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a435cbaa1d931366ee087951abb4d6f0a}{CTS\_\-WORKNEXT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{_picture_info_8h_a82f8f71a4da739209ebbe575faa842e9}{getMemAligned} (int size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_picture_info_8h_aecbf7bf3158e75ca4906202b17b8f9ef}{
+\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-STATUS\_\-AVAIL@{PICT\_\-STATUS\_\-AVAIL}}
+\index{PICT\_\-STATUS\_\-AVAIL@{PICT\_\-STATUS\_\-AVAIL}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{PICT\_\-STATUS\_\-AVAIL}]{\setlength{\rightskip}{0pt plus 5cm}\#define PICT\_\-STATUS\_\-AVAIL~1}}
+\label{_picture_info_8h_aecbf7bf3158e75ca4906202b17b8f9ef}
+\hypertarget{_picture_info_8h_a170d5962358e97425e08d5646653494b}{
+\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-STATUS\_\-FINISHED@{PICT\_\-STATUS\_\-FINISHED}}
+\index{PICT\_\-STATUS\_\-FINISHED@{PICT\_\-STATUS\_\-FINISHED}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{PICT\_\-STATUS\_\-FINISHED}]{\setlength{\rightskip}{0pt plus 5cm}\#define PICT\_\-STATUS\_\-FINISHED~4}}
+\label{_picture_info_8h_a170d5962358e97425e08d5646653494b}
+\hypertarget{_picture_info_8h_ade32bc4832afeaeeda7d862a70f2d70d}{
+\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-STATUS\_\-PROCESSING@{PICT\_\-STATUS\_\-PROCESSING}}
+\index{PICT\_\-STATUS\_\-PROCESSING@{PICT\_\-STATUS\_\-PROCESSING}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{PICT\_\-STATUS\_\-PROCESSING}]{\setlength{\rightskip}{0pt plus 5cm}\#define PICT\_\-STATUS\_\-PROCESSING~2}}
+\label{_picture_info_8h_ade32bc4832afeaeeda7d862a70f2d70d}
+\hypertarget{_picture_info_8h_a81f2be9d3984eb16fa6f3b7daf46466f}{
+\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-STATUS\_\-SAVED@{PICT\_\-STATUS\_\-SAVED}}
+\index{PICT\_\-STATUS\_\-SAVED@{PICT\_\-STATUS\_\-SAVED}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{PICT\_\-STATUS\_\-SAVED}]{\setlength{\rightskip}{0pt plus 5cm}\#define PICT\_\-STATUS\_\-SAVED~8}}
+\label{_picture_info_8h_a81f2be9d3984eb16fa6f3b7daf46466f}
+\hypertarget{_picture_info_8h_ac2f16d038f94c6c57ed8648c6cfe3bb7}{
+\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-STATUS\_\-WAIT@{PICT\_\-STATUS\_\-WAIT}}
+\index{PICT\_\-STATUS\_\-WAIT@{PICT\_\-STATUS\_\-WAIT}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{PICT\_\-STATUS\_\-WAIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define PICT\_\-STATUS\_\-WAIT~0}}
+\label{_picture_info_8h_ac2f16d038f94c6c57ed8648c6cfe3bb7}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388}{
+\subsubsection[{"@10}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PICT\_\-PFRAME@{PICT\_\-PFRAME}!PictureInfo.h@{PictureInfo.h}}\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-PFRAME@{PICT\_\-PFRAME}}\item[{\em 
+\hypertarget{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a4a4a4b0f98ff5f5d64cddef4d44d3fdd}{
+PICT\_\-PFRAME}
+\label{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a4a4a4b0f98ff5f5d64cddef4d44d3fdd}
+}]\index{PICT\_\-BFRAME@{PICT\_\-BFRAME}!PictureInfo.h@{PictureInfo.h}}\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-BFRAME@{PICT\_\-BFRAME}}\item[{\em 
+\hypertarget{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a60c132aad6fc16b1ef692aeac612cf04}{
+PICT\_\-BFRAME}
+\label{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a60c132aad6fc16b1ef692aeac612cf04}
+}]\index{PICT\_\-IFRAME@{PICT\_\-IFRAME}!PictureInfo.h@{PictureInfo.h}}\index{PictureInfo.h@{PictureInfo.h}!PICT\_\-IFRAME@{PICT\_\-IFRAME}}\item[{\em 
+\hypertarget{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388ad73ce3031f74fa8f39aa61bd7df91d8c}{
+PICT\_\-IFRAME}
+\label{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388ad73ce3031f74fa8f39aa61bd7df91d8c}
+}]\end{description}
+\end{Desc}
+
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00019 \{\hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a4a4a4b0f98ff5f5d64cddef4d44d3fdd}{PICT_PFRAME}, \hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388a60c132aad6fc16b1ef692aeac612cf04}{PICT_BFRAME}, \hyperlink{_picture_info_8h_a385c44f6fb256e5716a2302a5b940388ad73ce3031f74fa8f39aa61bd7df91d8c}{PICT_IFRAME}\}; \textcolor{comment}{// For PictureType}
+\end{alltt}\end{footnotesize}
+
+
+\hypertarget{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174}{
+\index{PictureInfo.h@{PictureInfo.h}!CMD\_\-TO\_\-SPU@{CMD\_\-TO\_\-SPU}}
+\index{CMD\_\-TO\_\-SPU@{CMD\_\-TO\_\-SPU}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{CMD\_\-TO\_\-SPU}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CMD\_\-TO\_\-SPU}}}
+\label{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CTS\_\-HALT@{CTS\_\-HALT}!PictureInfo.h@{PictureInfo.h}}\index{PictureInfo.h@{PictureInfo.h}!CTS\_\-HALT@{CTS\_\-HALT}}\item[{\em 
+\hypertarget{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a559a610ab332f3ca38d82e7900772e99}{
+CTS\_\-HALT}
+\label{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a559a610ab332f3ca38d82e7900772e99}
+}]\index{CTS\_\-WORKNEXT@{CTS\_\-WORKNEXT}!PictureInfo.h@{PictureInfo.h}}\index{PictureInfo.h@{PictureInfo.h}!CTS\_\-WORKNEXT@{CTS\_\-WORKNEXT}}\item[{\em 
+\hypertarget{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a435cbaa1d931366ee087951abb4d6f0a}{
+CTS\_\-WORKNEXT}
+\label{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a435cbaa1d931366ee087951abb4d6f0a}
+}]\end{description}
+\end{Desc}
+
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00064              \{
+00065         \hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a559a610ab332f3ca38d82e7900772e99}{CTS_HALT}, \textcolor{comment}{// Quit}
+00066         \hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a435cbaa1d931366ee087951abb4d6f0a}{CTS_WORKNEXT} \textcolor{comment}{// Go on work}
+00067 \} \hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174}{CMD_TO_SPU};
+\end{alltt}\end{footnotesize}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_picture_info_8h_a82f8f71a4da739209ebbe575faa842e9}{
+\index{PictureInfo.h@{PictureInfo.h}!getMemAligned@{getMemAligned}}
+\index{getMemAligned@{getMemAligned}!PictureInfo.h@{PictureInfo.h}}
+\subsubsection[{getMemAligned}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ getMemAligned (int {\em size})}}
+\label{_picture_info_8h_a82f8f71a4da739209ebbe575faa842e9}

@@ -1,0 +1,92 @@
+\hypertarget{class_block_debug}{
+\section{BlockDebug Class Reference}
+\label{class_block_debug}\index{BlockDebug@{BlockDebug}}
+}
+
+
+{\ttfamily \#include $<$Debug.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}{BlockDebug} (const char $\ast$filename, int linenumber, int level)
+\item 
+\hyperlink{class_block_debug_ab104ecf455577f36f9f5ef176d53d8ae}{BlockDebug} (const char $\ast$filename, int linenumber, const char $\ast$info, int level)
+\item 
+\hyperlink{class_block_debug_a82a6d59776c3191a56b532ec23f6174e}{$\sim$BlockDebug} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}{
+\index{BlockDebug@{BlockDebug}!BlockDebug@{BlockDebug}}
+\index{BlockDebug@{BlockDebug}!BlockDebug@{BlockDebug}}
+\subsubsection[{BlockDebug}]{\setlength{\rightskip}{0pt plus 5cm}BlockDebug::BlockDebug (const char $\ast$ {\em filename}, \/  int {\em linenumber}, \/  int {\em level})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00075         \{
+00076                 setinfo(filename, linenumber, \textcolor{stringliteral}{""}, level);
+00077         \}
+\end{alltt}\end{footnotesize}
+
+
+\hypertarget{class_block_debug_ab104ecf455577f36f9f5ef176d53d8ae}{
+\index{BlockDebug@{BlockDebug}!BlockDebug@{BlockDebug}}
+\index{BlockDebug@{BlockDebug}!BlockDebug@{BlockDebug}}
+\subsubsection[{BlockDebug}]{\setlength{\rightskip}{0pt plus 5cm}BlockDebug::BlockDebug (const char $\ast$ {\em filename}, \/  int {\em linenumber}, \/  const char $\ast$ {\em info}, \/  int {\em level})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_block_debug_ab104ecf455577f36f9f5ef176d53d8ae}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00079         \{
+00080                 setinfo(filename, linenumber, info, level);
+00081         \}
+\end{alltt}\end{footnotesize}
+
+
+\hypertarget{class_block_debug_a82a6d59776c3191a56b532ec23f6174e}{
+\index{BlockDebug@{BlockDebug}!$\sim$BlockDebug@{$\sim$BlockDebug}}
+\index{$\sim$BlockDebug@{$\sim$BlockDebug}!BlockDebug@{BlockDebug}}
+\subsubsection[{$\sim$BlockDebug}]{\setlength{\rightskip}{0pt plus 5cm}BlockDebug::$\sim$BlockDebug ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_block_debug_a82a6d59776c3191a56b532ec23f6174e}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00083         \{
+00084                 \textcolor{keywordflow}{if} (lev >= \hyperlink{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{CURLEVEL})
+00085                 \{
+00086                         --\hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{CurrentHeap::curHeap};
+00087                         \hyperlink{_debug_8cpp_a5c2d38f133d73274898b1dd5844a1880}{printHeaps}();
+00088                         printf(\textcolor{stringliteral}{"Leave Block %s(%d): %s\(\backslash\)n"}, filename, linenumber, 
+      info);
+00089                 \}
+00090                 \textcolor{keyword}{delete}[] filename;
+00091                 \textcolor{keyword}{delete}[] info;
+00092         \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_block_debug_a82a6d59776c3191a56b532ec23f6174e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+MVCCommonLib/\hyperlink{_debug_8h}{Debug.h}\end{DoxyCompactItemize}
