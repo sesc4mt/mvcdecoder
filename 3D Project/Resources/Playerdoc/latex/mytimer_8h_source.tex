@@ -1,0 +1,55 @@
+\hypertarget{mytimer_8h_source}{
+\section{/Volumes/BOOTCAMP/Workspace/Solutions/MVC/proj/Direct3DTutorial/Direct3DTutorial/mytimer.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{preprocessor}{#ifndef \_MYTIMER\_H\_}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_MYTIMER\_H\_}
+00003 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <windows.h>}
+00004 
+\hypertarget{mytimer_8h_source_l00005}{}\hyperlink{class_my_timer}{00005} \textcolor{keyword}{class }\hyperlink{class_my_timer}{MyTimer} \{
+00006 \textcolor{keyword}{private}:
+00007     LONGLONG \_freq;
+00008     LARGE\_INTEGER \_begin;
+00009     LARGE\_INTEGER \_current;
+00010     LARGE\_INTEGER \_end;
+00011 
+00012 \textcolor{keyword}{public}:
+\hypertarget{mytimer_8h_source_l00013}{}\hyperlink{class_my_timer_adef1d73f6cbdc533c45766b6fa739154}{00013}     LONGLONG \hyperlink{class_my_timer_adef1d73f6cbdc533c45766b6fa739154}{costTime};            \textcolor{comment}{// 花费的时间(精确到ms)}
+00014 
+00015 \textcolor{keyword}{public}:
+\hypertarget{mytimer_8h_source_l00016}{}\hyperlink{class_my_timer_a75440365bcfd96d34be38d8a0c9c014b}{00016}     \hyperlink{class_my_timer_a75440365bcfd96d34be38d8a0c9c014b}{MyTimer}() \{
+00017         LARGE\_INTEGER tmp;
+00018         QueryPerformanceFrequency(&tmp);
+00019         \_freq = tmp.QuadPart;
+00020         \hyperlink{class_my_timer_adef1d73f6cbdc533c45766b6fa739154}{costTime} = 0;
+00021     \}
+00022 
+\hypertarget{mytimer_8h_source_l00023}{}\hyperlink{class_my_timer_a74b18b409d493579f6b3d0972590a7a6}{00023}     \textcolor{keywordtype}{void} \hyperlink{class_my_timer_a74b18b409d493579f6b3d0972590a7a6}{Start}() \{
+00024         QueryPerformanceCounter(&\_begin);
+00025     \}
+00026 
+\hypertarget{mytimer_8h_source_l00027}{}\hyperlink{class_my_timer_a9c499fe726dbd8a30c528727f42e993d}{00027}     \textcolor{keywordtype}{void} \hyperlink{class_my_timer_a9c499fe726dbd8a30c528727f42e993d}{End}() \{
+00028         QueryPerformanceCounter(&\_end);
+00029         \hyperlink{class_my_timer_adef1d73f6cbdc533c45766b6fa739154}{costTime} = (LONGLONG)((\_end.QuadPart - \_begin.QuadPart) * 1000000 / \_freq
+      );
+00030     \}
+00031 
+\hypertarget{mytimer_8h_source_l00032}{}\hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{00032}     LONGLONG \hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{getElapsedTime}() \{
+00033         QueryPerformanceCounter(&\_current);
+00034         \textcolor{keywordflow}{return} (LONGLONG)((\_current.QuadPart * 1000000 - \_begin.QuadPart* 1000000
+      )  / \_freq);
+00035     \}
+00036 
+\hypertarget{mytimer_8h_source_l00037}{}\hyperlink{class_my_timer_ae616c920850e8d388f93f0d354b25ba5}{00037}     \textcolor{keywordtype}{void} \hyperlink{class_my_timer_ae616c920850e8d388f93f0d354b25ba5}{Reset}() \{
+00038         \hyperlink{class_my_timer_adef1d73f6cbdc533c45766b6fa739154}{costTime} = 0;
+00039     \}
+00040 
+\hypertarget{mytimer_8h_source_l00041}{}\hyperlink{class_my_timer_ae695b0dd5d9c28c1d3dc46ba4c616eec}{00041}     \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \_\_int64 \hyperlink{class_my_timer_ae695b0dd5d9c28c1d3dc46ba4c616eec}{GetCycleCount}() \{
+00042         \_\_asm \_emit 0x0F
+00043         \_\_asm \_emit 0x31
+00044     \}
+00045 \};
+00046 \textcolor{preprocessor}{#endif}
+\end{alltt}\end{footnotesize}
