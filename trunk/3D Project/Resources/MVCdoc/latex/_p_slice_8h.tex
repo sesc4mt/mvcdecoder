@@ -1,0 +1,297 @@
+\hypertarget{_p_slice_8h}{
+\section{MVCDecoder/Codec/PBFrame/PSlice.h File Reference}
+\label{_p_slice_8h}\index{MVCDecoder/Codec/PBFrame/PSlice.h@{MVCDecoder/Codec/PBFrame/PSlice.h}}
+}
+{\ttfamily \#include \char`\"{}PictureInfo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/Bitstream.h\char`\"{}}\par
+Include dependency graph for PSlice.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{_p_slice_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{_p_slice_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p_slice_8h_a995f6a4907273b8d56b6543ab1a57d17}{SLAVE\_\-CODE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_p_slice_8h_ac3f1eacb9f4dd8a06904fc3aa461ac04}{PSliceEncode} (\hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+void \hyperlink{_p_slice_8h_a08458d29753b64df9de1d40b748fdf0b}{PSliceDecode} (\hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+void \hyperlink{_p_slice_8h_adbd474ce958aeafa8e8983537c851ab5}{process\_\-data\_\-encode} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{structmacroblockdata}{macroblockdata} $\ast$dlist, \hyperlink{struct_p_b_predict_info}{PBPredictInfo} $\ast$plist, \hyperlink{structmacroblock_info}{macroblockInfo} $\ast$mlist, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} sz, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} idx)
+\item 
+void \hyperlink{_p_slice_8h_a43d01662740c36c9e17435443d3e39f8}{process\_\-data\_\-decode} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{struct_coding_pict_info}{CodingPictInfo} $\ast$cpi, \hyperlink{structmacroblockdata}{macroblockdata} $\ast$dlist, \hyperlink{struct_p_b_predict_info}{PBPredictInfo} $\ast$plist, \hyperlink{structmacroblock_info}{macroblockInfo} $\ast$mlist, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} sz, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} idx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_p_slice_8h_a995f6a4907273b8d56b6543ab1a57d17}{
+\index{PSlice.h@{PSlice.h}!SLAVE\_\-CODE@{SLAVE\_\-CODE}}
+\index{SLAVE\_\-CODE@{SLAVE\_\-CODE}!PSlice.h@{PSlice.h}}
+\subsubsection[{SLAVE\_\-CODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLAVE\_\-CODE}}
+\label{_p_slice_8h_a995f6a4907273b8d56b6543ab1a57d17}
+
+
+\subsection{Function Documentation}
+\hypertarget{_p_slice_8h_a43d01662740c36c9e17435443d3e39f8}{
+\index{PSlice.h@{PSlice.h}!process\_\-data\_\-decode@{process\_\-data\_\-decode}}
+\index{process\_\-data\_\-decode@{process\_\-data\_\-decode}!PSlice.h@{PSlice.h}}
+\subsubsection[{process\_\-data\_\-decode}]{\setlength{\rightskip}{0pt plus 5cm}void process\_\-data\_\-decode ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf macroblockdata} $\ast$ {\em dlist}, \/  {\bf PBPredictInfo} $\ast$ {\em plist}, \/  {\bf macroblockInfo} $\ast$ {\em mlist}, \/  {\bf int32\_\-t} {\em sz}, \/  {\bf int32\_\-t} {\em idx})}}
+\label{_p_slice_8h_a43d01662740c36c9e17435443d3e39f8}
+\hypertarget{_p_slice_8h_adbd474ce958aeafa8e8983537c851ab5}{
+\index{PSlice.h@{PSlice.h}!process\_\-data\_\-encode@{process\_\-data\_\-encode}}
+\index{process\_\-data\_\-encode@{process\_\-data\_\-encode}!PSlice.h@{PSlice.h}}
+\subsubsection[{process\_\-data\_\-encode}]{\setlength{\rightskip}{0pt plus 5cm}void process\_\-data\_\-encode ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf macroblockdata} $\ast$ {\em dlist}, \/  {\bf PBPredictInfo} $\ast$ {\em plist}, \/  {\bf macroblockInfo} $\ast$ {\em mlist}, \/  {\bf int32\_\-t} {\em sz}, \/  {\bf int32\_\-t} {\em idx})}}
+\label{_p_slice_8h_adbd474ce958aeafa8e8983537c851ab5}
+\hypertarget{_p_slice_8h_a08458d29753b64df9de1d40b748fdf0b}{
+\index{PSlice.h@{PSlice.h}!PSliceDecode@{PSliceDecode}}
+\index{PSliceDecode@{PSliceDecode}!PSlice.h@{PSlice.h}}
+\subsubsection[{PSliceDecode}]{\setlength{\rightskip}{0pt plus 5cm}void PSliceDecode ({\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf Bitstream} $\ast$ {\em bs})}}
+\label{_p_slice_8h_a08458d29753b64df9de1d40b748fdf0b}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00165 \{
+00166         \textcolor{keywordtype}{bool} isParallel = cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP} * \hyperlink{_common_8h_a3a7c35b14731007b6847c0d57ba23d68}{MB_E} > 1.0;
+00167         \textcolor{keywordtype}{int} MBheight = cpi->\hyperlink{struct_coding_pict_info_aa6352dc53234c55d1a0c252c5b8d6141}{Size_Height} >> 4,
+00168                 MBwidth = cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width} >> 4;
+00169         \hyperlink{structmacroblock_info}{macroblockInfo} *mlist = \textcolor{keyword}{new} \hyperlink{structmacroblock_info}{macroblockInfo}[MBheight * MBwidth];
+00170         \hyperlink{structtag__macroblock__info}{macroblock_info} *mis = \textcolor{keyword}{new} \hyperlink{structtag__macroblock__info}{macroblock_info}[\textcolor{comment}{/*ConfigureSlave::PARALLEL\_SIZ
+      E*/}cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP} + 1];
+00171         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= \textcolor{comment}{/*ConfigureSlave::PARALLEL\_SIZE*/}cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP}; ++i)
+00172         \{
+00173                 mis[i].\hyperlink{structtag__macroblock__info_ae7a0c6b68c7cbc0ffb1a82799eb386ef}{cpi} = cpi;
+00174                 mis[i].\hyperlink{structtag__macroblock__info_affbe6dcc30999a24be78a7deb7a0e78b}{allow} = MBwidth;
+00175                 mis[i].\hyperlink{structtag__macroblock__info_ae6d03b766139a5abf281211e48c8d49b}{next} = mis+i+1;
+00176         \}
+00177         mis[\textcolor{comment}{/*ConfigureSlave::PARALLEL\_SIZE*/}cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP}].\hyperlink{structtag__macroblock__info_ae6d03b766139a5abf281211e48c8d49b}{next} = mis;
+00178 
+00179         \hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} ref\_list;
+00180         \hyperlink{structtag__cavlc__ref}{cavlc_ref} *topRef = \textcolor{keyword}{new} \hyperlink{structtag__cavlc__ref}{cavlc_ref}[MBwidth * 4 + 5];
+00181         memset(topRef, 0, \textcolor{keyword}{sizeof}(\hyperlink{structtag__cavlc__ref}{cavlc_ref}) * (MBwidth * 4 + 5));
+00182         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MBwidth * 4 + 5; ++i)
+00183         \{
+00184                 topRef[i].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff} = 0x40;
+00185                 topRef[i].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC} = 0x40;
+00186                 topRef[i].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = 0x40;
+00187                 topRef[i].\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[0] = 0x4000;
+00188                 topRef[i].\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[0] = 0x4000;
+00189                 topRef[i].\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[1] = 0x4000;
+00190                 topRef[i].\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[1] = 0x4000;
+00191                 topRef[i].\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[0] = -1;
+00192                 topRef[i].\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[1] = -1;
+00193         \}
+00194         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left} = \textcolor{keyword}{new} \hyperlink{structtag__cavlc__ref}{cavlc_ref}[4];
+00195         ref\_list.\hyperlink{structtag__cavlc__ref__list_ac71d66d925cb5fbc0c15812f70aa2e78}{topleft} = topRef[0];
+00196 
+00197         \textcolor{keywordtype}{int} skip = -1;
+00198         \textcolor{keywordtype}{int} cQp = cpi->\hyperlink{struct_coding_pict_info_a6e808cdf552c3a18da4b75f4d0c35c28}{baseQP};
+00199         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} refMBt = \textcolor{keyword}{sizeof}(\hyperlink{structref_vector}{refVector}),
+00200                 refStride = cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width} * 2 * refMBt;
+00201         \textcolor{keywordtype}{int} tmp\_i = 0;
+00202         for (\textcolor{keywordtype}{int} r = 0; r < MBheight; ++r)
+00203         \{
+00204                 memset(ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}, 0, \textcolor{keyword}{sizeof}(\hyperlink{structtag__cavlc__ref}{cavlc_ref}) * 4);
+00205                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; ++j)
+00206                 \{
+00207                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff} = 0x40;
+00208                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC} = 0x40;
+00209                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = 0x40;
+00210                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[0] = 0x4000;
+00211                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[0] = 0x4000;
+00212                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[1] = 0x4000;
+00213                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[1] = 0x4000;
+00214                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[0] = -1;
+00215                         ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[j].\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[1] = -1;
+00216                 \}
+00217                 ref\_list.\hyperlink{structtag__cavlc__ref__list_ac71d66d925cb5fbc0c15812f70aa2e78}{topleft} = ref\_list.\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[0];
+00218                 ref\_list.\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top} = topRef + 1;
+00219                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} c = 0; c < MBwidth; ++c)
+00220                 \{
+00221                         \hyperlink{structmacroblock_info}{macroblockInfo} *mmlist = mlist + tmp\_i;
+00222                         \hyperlink{structtag__cavlc__ref}{cavlc_ref} newTL = ref\_list.\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[3];
+00223                         memset(mmlist, 0, \textcolor{keyword}{sizeof}(*mmlist));
+00224                         \textcolor{comment}{//memset(&mlist[tmp\_i], 0, sizeof(mlist[tmp\_i]));}
+00225                         \textcolor{comment}{//mlist[tmp\_i].x = tmp\_i / MBwidth;}
+00226                         \textcolor{comment}{//mlist[tmp\_i].y = tmp\_i % MBwidth;}
+00227                         mmlist->\hyperlink{structmacroblock_info_ae46d0fbf2f0e11fc965a60845db47065}{mbR} = tmp\_i / MBwidth;
+00228                         mmlist->\hyperlink{structmacroblock_info_ab6270e45676c0f84c1450cf90a84df52}{mbC} = tmp\_i % MBwidth;
+00229                         \textcolor{keywordflow}{if} (r==1 && c==16 && cpi->\hyperlink{struct_coding_pict_info_a987595091bfba91b3166b04bca988697}{viewId}==0 && cpi->\hyperlink{struct_coding_pict_info_ad85dae4751165ea3cbb8f7b8c6e61dc3}{timeId}==16)
+00230                         \{
+00231                                 printf(\textcolor{stringliteral}{""});
+00232                         \}
+00233                         mlist[tmp\_i].\hyperlink{structmacroblock_info_ad7cf6f2dc254dc14005ab5705bde6349}{is_skip} = skip;
+00234                         \textcolor{keywordflow}{if} (cpi->\hyperlink{struct_coding_pict_info_a6bfb22b57d0d223546150c71e125fb39}{PictType} == 0)
+00235                                 \hyperlink{_p_b_c_a_v_l_c_8cpp_afe9c114999f137df97529d13c1e485bb}{macroblock_read_cavlc_P_slice}(bs, mmlist, cpi, &r
+      ef\_list);
+00236                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cpi->\hyperlink{struct_coding_pict_info_a6bfb22b57d0d223546150c71e125fb39}{PictType} == 1)
+00237                         \{
+00238                                 \textcolor{keywordtype}{int} xr = r;
+00239                                 \textcolor{keywordflow}{if} (xr >= MBheight)
+00240                                         xr = MBheight - 1;
+00241                                 \hyperlink{structref_vector}{refVector} *col\_refs = (\hyperlink{structref_vector}{refVector}*)(cpi->
+      \hyperlink{struct_coding_pict_info_a1c02c2f7c7a4a9fb4ed10e422d64bd32}{ref_refVec}[1][0] + refStride * xr + c * 32 * refMBt);
+00242                                 \hyperlink{_p_b_c_a_v_l_c_8cpp_a9d0d19143ae03ff45bcfbf2c9980b11b}{macroblock_read_cavlc_B_slice}(bs, col\_refs, mmlis
+      t, cpi, &ref\_list);
+00243                         \}
+00244                         \textcolor{keywordflow}{else}
+00245                                 \hyperlink{_debug_8h_a101586fab2b90a8adffe50a3550e235d}{ASSERT}(0);
+00246                         skip = mmlist->\hyperlink{structmacroblock_info_ad7cf6f2dc254dc14005ab5705bde6349}{is_skip};
+00247                         cQp += mmlist->\hyperlink{structmacroblock_info_a732ef45ea0429985a3833fc7a93bf9fd}{qp_delta};
+00248                         mmlist->\hyperlink{structmacroblock_info_a732ef45ea0429985a3833fc7a93bf9fd}{qp_delta} = cQp - cpi->\hyperlink{struct_coding_pict_info_a6e808cdf552c3a18da4b75f4d0c35c28}{baseQP};
+00249                         ++tmp\_i;
+00250                         ref\_list.\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top} += 4;
+00251                         ref\_list.\hyperlink{structtag__cavlc__ref__list_ac71d66d925cb5fbc0c15812f70aa2e78}{topleft} = newTL;
+00252                 \}
+00253         \}
+00254 
+00255         \textcolor{keywordtype}{int} p = 0, p1 = p + 1, p2 = p1 + 1;
+00256         \textcolor{keywordflow}{if} (\textcolor{comment}{/*ConfigureSlave::PARALLEL\_SIZE*/}cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP} == 1)
+00257                 p2 = 0;
+00258         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MBheight; ++i)
+00259         \{
+00260                 \textcolor{keywordflow}{while} (mis[p2].allow != MBwidth)
+00261                         Sleep(1);
+00262                 mis[p1].\hyperlink{structtag__macroblock__info_affbe6dcc30999a24be78a7deb7a0e78b}{allow} = 0;
+00263                 mis[p].\hyperlink{structtag__macroblock__info_a0431b0abc33b349505f0b83fd1537473}{row} = i;
+00264                 mis[p].\hyperlink{structtag__macroblock__info_a150f68ca8a911ab2443199821f7b97e5}{mblist} = mlist + i * MBwidth;
+00265                 \textcolor{keywordflow}{if} (\textcolor{comment}{/*ConfigureSlave::NO\_PARALLEL*/}!isParallel)
+00266                         \hyperlink{_p_slice_8cpp_a18283e001efb21359ea20ded9bc27eff}{macroblock_processor_PB}(mis+p);
+00267                 \textcolor{keywordflow}{else}
+00268                         MVCCreateMasterThread(\hyperlink{_p_slice_8cpp_a18283e001efb21359ea20ded9bc27eff}{macroblock_processor_PB}, mis+p);
+00269                 p = p1; p1 = p2;
+00270                 \textcolor{keywordflow}{if} (p2==\textcolor{comment}{/*ConfigureSlave::PARALLEL\_SIZE*/}cpi->\hyperlink{struct_coding_pict_info_ab254953ed2b4e1de64f05eadbc825646}{MP})
+00271                         p2 = 0;
+00272                 \textcolor{keywordflow}{else}
+00273                         ++p2;
+00274         \}
+00275         \textcolor{keywordflow}{while} (mis[p].allow != MBwidth)
+00276                 Sleep(1);
+00277 
+00278         \textcolor{keywordflow}{if} (cpi->\hyperlink{struct_coding_pict_info_a987595091bfba91b3166b04bca988697}{viewId}==0 && cpi->\hyperlink{struct_coding_pict_info_ad85dae4751165ea3cbb8f7b8c6e61dc3}{timeId}==-16)
+00279         \textcolor{comment}{//if (false)}
+00280         \{
+00281                 printf(\textcolor{stringliteral}{"===============Before==============\(\backslash\)n"});
+00282                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ii = 0; ii < MBheight; ++ii)
+00283                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} jj = 0; jj < MBwidth; ++jj)
+00284                         \{
+00285                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 16; ++i)
+00286                                 \{
+00287                                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 16; ++j)
+00288                                         \{
+00289                                                 printf(\textcolor{stringliteral}{"%4d"}, cpi->\hyperlink{struct_coding_pict_info_a62aee8cc8c9cac725d4f44a19ddc8c2b}{lumaStart}[(ii*
+      16+i)*cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width}+jj*16+j]);
+00290                                         \}
+00291                                         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00292                                 \}
+00293                                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00294                         \}
+00295                 printf(\textcolor{stringliteral}{"===Before===\(\backslash\)n"});
+00296                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ii = 0; ii < MBheight; ++ii)
+00297                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} jj = 0; jj < MBwidth; ++jj)
+00298                         \{
+00299                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i)
+00300                                 \{
+00301                                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 8; ++j)
+00302                                         \{
+00303                                                 printf(\textcolor{stringliteral}{"%4d"}, cpi->\hyperlink{struct_coding_pict_info_a103a3180ba57db0bd984a53f0668b70b}{chromaUStart}[(
+      ii*8+i)*cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width}/2+jj*8+j]);
+00304                                         \}
+00305                                         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00306                                 \}
+00307                                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00308                         \}
+00309                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MBwidth * MBheight; ++i)
+00310                 \{
+00311                         \textcolor{keywordflow}{if} (i==240)
+00312                         \{
+00313                                 printf(\textcolor{stringliteral}{""});
+00314                         \}
+00315                         \hyperlink{_loop_filter_8cpp_a299f516a75a0efad87a05dfbb35c9b41}{FilterMB}(cpi, mlist, i);
+00316                 \}
+00317                 printf(\textcolor{stringliteral}{"===============After==============\(\backslash\)n"});
+00318                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ii = 0; ii < MBheight; ++ii)
+00319                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} jj = 0; jj < MBwidth; ++jj)
+00320                         \{
+00321                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 16; ++i)
+00322                                 \{
+00323                                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 16; ++j)
+00324                                         \{
+00325                                                 printf(\textcolor{stringliteral}{"%4d"}, cpi->\hyperlink{struct_coding_pict_info_a62aee8cc8c9cac725d4f44a19ddc8c2b}{lumaStart}[(ii*
+      16+i)*cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width}+jj*16+j]);
+00326                                         \}
+00327                                         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00328                                 \}
+00329                                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00330                         \}
+00331                 printf(\textcolor{stringliteral}{"===After===\(\backslash\)n"});
+00332                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ii = 0; ii < MBheight; ++ii)
+00333                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} jj = 0; jj < MBwidth; ++jj)
+00334                         \{
+00335                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i)
+00336                                 \{
+00337                                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 8; ++j)
+00338                                         \{
+00339                                                 printf(\textcolor{stringliteral}{"%4d"}, cpi->\hyperlink{struct_coding_pict_info_a103a3180ba57db0bd984a53f0668b70b}{chromaUStart}[(
+      ii*8+i)*cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width}/2+jj*8+j]);
+00340                                         \}
+00341                                         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00342                                 \}
+00343                                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00344                         \}
+00345                 exit(0);
+00346         \}
+00347         \textcolor{keywordflow}{else}
+00348         \{
+00349                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MBwidth * MBheight; ++i)
+00350                 \{
+00351                         \hyperlink{_loop_filter_8cpp_a299f516a75a0efad87a05dfbb35c9b41}{FilterMB}(cpi, mlist, i);
+00352                 \}
+00353         \}
+00354         \textcolor{keyword}{delete} []mis;
+00355         \textcolor{keyword}{delete} []mlist;
+00356 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_p_slice_8h_a08458d29753b64df9de1d40b748fdf0b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{_p_slice_8h_a08458d29753b64df9de1d40b748fdf0b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_p_slice_8h_ac3f1eacb9f4dd8a06904fc3aa461ac04}{
+\index{PSlice.h@{PSlice.h}!PSliceEncode@{PSliceEncode}}
+\index{PSliceEncode@{PSliceEncode}!PSlice.h@{PSlice.h}}
+\subsubsection[{PSliceEncode}]{\setlength{\rightskip}{0pt plus 5cm}void PSliceEncode ({\bf CodingPictInfo} $\ast$ {\em cpi}, \/  {\bf Bitstream} $\ast$ {\em bs})}}
+\label{_p_slice_8h_ac3f1eacb9f4dd8a06904fc3aa461ac04}

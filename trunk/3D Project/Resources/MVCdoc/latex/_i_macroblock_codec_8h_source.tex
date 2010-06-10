@@ -1,0 +1,40 @@
+\hypertarget{_i_macroblock_codec_8h_source}{
+\section{MVCDecoder/Codec/IFrame/IMacroblockCodec.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_I\_MACROBLOCK\_CODEC\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_I\_MACROBLOCK\_CODEC\_H\_WEIDONG\_}
+\hypertarget{_i_macroblock_codec_8h_source_l00013}{}\hyperlink{_i_macroblock_codec_8h_a995f6a4907273b8d56b6543ab1a57d17}{00013} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_common_8h}{Common.h}"}
+00016 
+00017 \textcolor{keywordtype}{void} \hyperlink{_i_macroblock_codec_8h_a9f47eae4fe6a9058a024ec24869d9f53}{macroblockIntraDecode16x16_y}(\hyperlink{_types_8h_a15eca744b460ea898a5e04df2899d49f}{macroblockdata_y} dt, \hyperlink{_types_8h_a15eca744b460ea898a5e04df2899d49f}{macroblockdata_y} pred, \textcolor{keywordtype}{int
+      } Qp, \hyperlink{_types_8h_accfb15e4d2eec611f79a2dcbf8aea289}{scanlist_y} sl, \hyperlink{_types_8h_af5e65e12ffa06f437398787ff839cbde}{scanlist_y_h} sl\_h);
+00018 
+00019 \textcolor{keywordtype}{void} \hyperlink{_i_macroblock_codec_8cpp_a0d5a08323fa05b03ffbebb448898663e}{macroblockIntraDecode_uv}(\hyperlink{_types_8h_abb0aad4f6cc5fb3beadf8f4df08da50f}{macroblockdata_uv} dt, \hyperlink{_types_8h_abb0aad4f6cc5fb3beadf8f4df08da50f}{macroblockdata_uv} pred, \textcolor{keywordtype}{int} Q
+      p\_uv, \hyperlink{_types_8h_a4a042a6cb76a44ae3f79ece0d72bccde}{scanlist_uv} sl, \hyperlink{_types_8h_a7afd079e016df28b6c6b0f2eb7bf70c2}{scanlist_uv_h} sl\_h);
+00020 
+00021 \textcolor{keywordtype}{void} \hyperlink{_i_macroblock_codec_8cpp_acaa2acf29de1293461dea9f2882931c5}{macroblockIntraDecode}(\hyperlink{structmacroblockdata}{pmacroblockdata} dt, \textcolor{keywordtype}{int} Qp\_y, \textcolor{keywordtype}{int} Qp\_uv, 
+      \hyperlink{structmacroblock_info}{pmacroblockInfo} rst, \hyperlink{structpredict_info}{predictInfo} *plist);
+00022 
+00023 \textcolor{preprocessor}{#endif //\_I\_MACROBLOCK\_CODEC\_H\_WEIDONG\_}
+00024 \textcolor{preprocessor}{}
+00025 \textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00026 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00027 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00028 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

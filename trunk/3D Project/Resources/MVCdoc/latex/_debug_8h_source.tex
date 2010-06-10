@@ -1,0 +1,139 @@
+\hypertarget{_debug_8h_source}{
+\section{MVCCommonLib/Debug.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_DEBUG\_H\_WEIDONG\_20071229\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_DEBUG\_H\_WEIDONG\_20071229\_}
+00013 \textcolor{preprocessor}{}
+00014 \textcolor{preprocessor}{#ifndef NOPRAGMA}
+00015 \textcolor{preprocessor}{}\textcolor{preprocessor}{#pragma warning(disable:4996)}
+00016 \textcolor{preprocessor}{}\textcolor{preprocessor}{#pragma warning(disable:4311)}
+00017 \textcolor{preprocessor}{}\textcolor{preprocessor}{#pragma warning(disable:4312)}
+00018 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif //NOPRAGMA}
+00019 \textcolor{preprocessor}{}
+00020 \textcolor{comment}{//#undef NDEBUG}
+00021 \textcolor{preprocessor}{#ifdef NDEBUG}
+00022 \textcolor{preprocessor}{}
+00023 \textcolor{preprocessor}{#undef ASSERT}
+00024 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define ASSERT(b) \{ if (!(b)) \{ printf("Assert Error (%s,%d)!!!!\(\backslash\)n", \_\_FILE\_\_, \_\_
+      LINE\_\_); exit(0); \} \}}
+00025 \textcolor{preprocessor}{}
+00026 \textcolor{preprocessor}{#define DEBUGINF(level, x) \{\}}
+00027 \textcolor{preprocessor}{}
+00028 \textcolor{preprocessor}{#define DEBUGINFO(x) \{\}}
+00029 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGINFON \{\}}
+00030 \textcolor{preprocessor}{}
+00031 \textcolor{preprocessor}{#define DEBUGINFP(level, x) \{\}}
+00032 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGINFOP(x) \{\}}
+00033 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLOCK(x) \{\}}
+00034 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLOCKN() \{\}}
+00035 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLK(level, x) \{\}}
+00036 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLKN(level) \{\}}
+00037 \textcolor{preprocessor}{}
+00038 \textcolor{preprocessor}{#else //NDEBUG}
+00039 \textcolor{preprocessor}{}
+00040 \textcolor{preprocessor}{#include <cstdlib>}
+00041 \textcolor{preprocessor}{#include <cstring>}
+00042 \textcolor{preprocessor}{#include <cstdio>}
+00043 
+\hypertarget{_debug_8h_source_l00044}{}\hyperlink{class_current_heap}{00044} \textcolor{keyword}{class }\hyperlink{class_current_heap}{CurrentHeap}
+00045 \{
+00046 \textcolor{keyword}{public}:
+\hypertarget{_debug_8h_source_l00047}{}\hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{00047}         \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{curHeap};
+00048 \};
+00049 
+00050 \textcolor{keywordtype}{void} \hyperlink{_debug_8cpp_a5c2d38f133d73274898b1dd5844a1880}{printHeaps}();
+00051 
+\hypertarget{_debug_8h_source_l00052}{}\hyperlink{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{00052} \textcolor{preprocessor}{#define CURLEVEL 200}
+00053 \textcolor{preprocessor}{}\textcolor{comment}{//2147483647}
+00054 
+00055 \textcolor{preprocessor}{#undef ASSERT}
+\hypertarget{_debug_8h_source_l00056}{}\hyperlink{_debug_8h_a101586fab2b90a8adffe50a3550e235d}{00056} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define ASSERT(b) \{ if (!(b)) \{ printf("Assert Error (%s,%d)!!!!\(\backslash\)n", \_\_FILE\_\_, \_\_
+      LINE\_\_); exit(0); \} \}}
+00057 \textcolor{preprocessor}{}
+\hypertarget{_debug_8h_source_l00058}{}\hyperlink{_debug_8h_aecdf0db939482582d91e4efc81bee640}{00058} \textcolor{preprocessor}{#define DEBUGINF(level, x) if ((level)>=CURLEVEL) \{ printHeaps(); printf("Debug %
+      s(%d): %s\(\backslash\)n", \_\_FILE\_\_, \_\_LINE\_\_, x); \} else \{ \}}
+00059 \textcolor{preprocessor}{}
+\hypertarget{_debug_8h_source_l00060}{}\hyperlink{_debug_8h_ae1d1c2422ebb35cdba48c4d07828dd16}{00060} \textcolor{preprocessor}{#define DEBUGINFO(x) DEBUGINF(10, (x));}
+\hypertarget{_debug_8h_source_l00061}{}\hyperlink{_debug_8h_af86a9b67aa4f2f045932afb90fa17c9b}{00061} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGINFON DEBUGINFO("")}
+00062 \textcolor{preprocessor}{}
+\hypertarget{_debug_8h_source_l00063}{}\hyperlink{_debug_8h_aa184ead4583be424a256b0ee06fea736}{00063} \textcolor{preprocessor}{#define DEBUGINFP(level, x) if ((level)>=CURLEVEL) \{ printHeaps(); }\textcolor{comment}{/*printf("Debu
+      g %s(%d): ", \_\_FILE\_\_, \_\_LINE\_\_); */}printf x; printf("\(\backslash\)n"); \} else \{ \}
+\hypertarget{_debug_8h_source_l00064}{}\hyperlink{_debug_8h_aa5e06ad1186e04514d37721c865bc48e}{00064} \textcolor{preprocessor}{#define DEBUGINFOP(x) DEBUGINFP(10, x);}
+00065 \textcolor{preprocessor}{}
+\hypertarget{_debug_8h_source_l00066}{}\hyperlink{class_block_debug}{00066} \textcolor{keyword}{class }\hyperlink{class_block_debug}{BlockDebug}
+00067 \{
+00068 \textcolor{keyword}{private}:
+00069         \textcolor{keywordtype}{char} *info;
+00070         \textcolor{keywordtype}{char} *filename;
+00071         \textcolor{keywordtype}{int} linenumber;
+00072         \textcolor{keywordtype}{int} lev;
+00073 \textcolor{keyword}{public}:
+\hypertarget{_debug_8h_source_l00074}{}\hyperlink{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}{00074}         \hyperlink{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}{BlockDebug}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename, \textcolor{keywordtype}{int} linenumber, \textcolor{keywordtype}{int} level)
+00075         \{
+00076                 setinfo(filename, linenumber, \textcolor{stringliteral}{""}, level);
+00077         \}
+\hypertarget{_debug_8h_source_l00078}{}\hyperlink{class_block_debug_ab104ecf455577f36f9f5ef176d53d8ae}{00078}         \hyperlink{class_block_debug_ad0b4c92c068d6a2c8c89df860df29b02}{BlockDebug}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename, \textcolor{keywordtype}{int} linenumber, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * info, \textcolor{keywordtype}{int} l
+      evel)
+00079         \{
+00080                 setinfo(filename, linenumber, info, level);
+00081         \}
+\hypertarget{_debug_8h_source_l00082}{}\hyperlink{class_block_debug_a82a6d59776c3191a56b532ec23f6174e}{00082}         \hyperlink{class_block_debug_a82a6d59776c3191a56b532ec23f6174e}{~BlockDebug}()
+00083         \{
+00084                 \textcolor{keywordflow}{if} (lev >= \hyperlink{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{CURLEVEL})
+00085                 \{
+00086                         --\hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{CurrentHeap::curHeap};
+00087                         \hyperlink{_debug_8cpp_a5c2d38f133d73274898b1dd5844a1880}{printHeaps}();
+00088                         printf(\textcolor{stringliteral}{"Leave Block %s(%d): %s\(\backslash\)n"}, filename, linenumber, 
+      info);
+00089                 \}
+00090                 \textcolor{keyword}{delete}[] filename;
+00091                 \textcolor{keyword}{delete}[] info;
+00092         \}
+00093 \textcolor{keyword}{private}:
+00094         \textcolor{keywordtype}{void} setinfo(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fn, \textcolor{keywordtype}{int} ln, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} level)
+00095         \{
+00096                 filename = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(fn) + 1];
+00097                 strcpy(filename, fn);
+00098                 linenumber = ln;
+00099                 info = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(str) + 1];
+00100                 strcpy(info, str);
+00101                 lev = level;
+00102                 \textcolor{keywordflow}{if} (lev >= \hyperlink{_debug_8h_a77b6b5782a3099e95b552c23366ace9b}{CURLEVEL})
+00103                 \{
+00104                         \hyperlink{_debug_8cpp_a5c2d38f133d73274898b1dd5844a1880}{printHeaps}();
+00105                         \textcolor{comment}{//printf("Enter Block %s(%d): %s\(\backslash\)n", filename, linenumber
+      , str);}
+00106                         printf(\textcolor{stringliteral}{"Enter Block %s(%d): %s\(\backslash\)n"}, filename, linenumber, 
+      str);
+00107                         ++\hyperlink{class_current_heap_a810bf94894ae33cb375e353219e6a209}{CurrentHeap::curHeap};
+00108                 \}
+00109         \}
+00110 \};
+00111 
+\hypertarget{_debug_8h_source_l00112}{}\hyperlink{_debug_8h_ab2053a211e4acc65bae3a43f579ce0e6}{00112} \textcolor{preprocessor}{#define DEBUGBLOCK(x) BlockDebug block\_debug\_var\_name\_ASDFSAFD(\_\_FILE\_\_, \_\_LINE\_\_
+      , x, 10);}
+\hypertarget{_debug_8h_source_l00113}{}\hyperlink{_debug_8h_a0585f0bf59a4208c42ca4128c3262a40}{00113} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLOCKN() DEBUGBLOCK("")}
+\hypertarget{_debug_8h_source_l00114}{}\hyperlink{_debug_8h_a3f7e58a01a8beb987f565ac1a304708c}{00114} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLK(level, x) BlockDebug block\_debug\_var\_name\_ASDFSAFD(\_\_FILE\_\_, \_\_L
+      INE\_\_, x, level);}
+\hypertarget{_debug_8h_source_l00115}{}\hyperlink{_debug_8h_a46d6c028ab6c26097031db24f743fd1d}{00115} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DEBUGBLKN(level) DEBUGBLK(level, "")}
+00116 \textcolor{preprocessor}{} 
+00117 \textcolor{preprocessor}{#endif //NDEBUG}
+00118 \textcolor{preprocessor}{}
+00119 \textcolor{preprocessor}{#endif //\_DEBUG\_H\_WEIDONG\_20071229\_}
+00120 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_i_predict_8cpp.html#a90c2994887c21abf5825c0262aa283c5" title="do_16x16_luma_prediction" alt="" coords="207,5,383,35"/>
+<area shape="rect" id="node5" href="$_i_predict_8cpp.html#a0988f72eec8591d5de83982c52e2b539" title="do_8x8_chroma_prediction" alt="" coords="207,59,383,88"/>
+</map>

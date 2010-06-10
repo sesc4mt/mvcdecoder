@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_frame_controller___parallel.html#a51792b5fe70db6d99be59c110dbc3041" title="FrameController_Parallel::GetNextProcessing" alt="" coords="243,5,528,35"/>
+<area shape="rect" id="node5" href="$class_frame_controller___parallel.html#ac778eb523c6725a9e4da4e4239a88b2a" title="FrameController_Parallel::ProcessCompleted" alt="" coords="244,59,527,88"/>
+<area shape="rect" id="node7" href="$class_raw_data.html#ac1edea5cb8ba51fd52541b415ba36ec2" title="RawData::ProcessData" alt="" coords="307,112,464,141"/>
+</map>

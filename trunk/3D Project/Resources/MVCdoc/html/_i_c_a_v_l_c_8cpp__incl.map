@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_c_a_v_l_c_8h.html" title="Codec/CAVLC.h" alt="" coords="248,83,365,112"/>
+<area shape="rect" id="node5" href="$_bitstream_8h.html" title="Codec/Bitstream.h" alt="" coords="399,160,529,190"/>
+<area shape="rect" id="node7" href="$_common_8h.html" title="Common.h" alt="" coords="508,238,593,267"/>
+<area shape="rect" id="node18" href="$_picture_info_8h.html" title="PictureInfo.h" alt="" coords="257,160,351,190"/>
+<area shape="rect" id="node43" href="$vlc_8h.html" title="Codec/vlc.h" alt="" coords="749,83,837,112"/>
+<area shape="rect" id="node45" href="$_consts4_standard_8h.html" title="Codec/Consts4Standard.h" alt="" coords="552,83,725,112"/>
+<area shape="rect" id="node36" href="$vlc_pred_8h.html" title="Codec/vlcPred.h" alt="" coords="119,160,233,190"/>
+<area shape="rect" id="node16" href="$_types_8h.html" title="Types.h" alt="" coords="253,315,320,344"/>
+<area shape="rect" id="node24" href="$_macros_8h.html" title="Macros.h" alt="" coords="409,238,484,267"/>
+<area shape="rect" id="node28" href="$_debug_8h.html" title="Debug.h" alt="" coords="85,238,155,267"/>
+</map>

@@ -1,0 +1,89 @@
+\hypertarget{_scanner_8h_source}{
+\section{MVCDecoder/Codec/Scanner.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             M
+      odified from T264}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_SCANNER\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_SCANNER\_H\_WEIDONG\_}
+\hypertarget{_scanner_8h_source_l00013}{}\hyperlink{_scanner_8h_a995f6a4907273b8d56b6543ab1a57d17}{00013} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_common_8h}{Common.h}"}
+00016 
+00017 \textcolor{comment}{// Copied form t264 CODEC}
+00018 
+\hypertarget{_scanner_8h_source_l00019}{}\hyperlink{_scanner_8h_af6cb76630d5e47f47ae4cca010b91361}{00019} \_\_inline \textcolor{keywordtype}{void} \hyperlink{_scanner_8h_af6cb76630d5e47f47ae4cca010b91361}{scan_zig_4x4}(\hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* zig, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* dct)
+00020 \{
+00021     zig[0]  = dct[0];
+00022     zig[1]  = dct[1];
+00023     zig[2]  = dct[4];
+00024     zig[3]  = dct[8];
+00025     zig[4]  = dct[5];
+00026     zig[5]  = dct[2];
+00027     zig[6]  = dct[3];
+00028     zig[7]  = dct[6];
+00029     zig[8]  = dct[9];
+00030     zig[9]  = dct[12];
+00031     zig[10] = dct[13];
+00032     zig[11] = dct[10];
+00033     zig[12] = dct[7];
+00034     zig[13] = dct[11];
+00035     zig[14] = dct[14];
+00036     zig[15] = dct[15];
+00037 \}
+00038 
+\hypertarget{_scanner_8h_source_l00039}{}\hyperlink{_scanner_8h_a368d4bb8bcbc27ebecc3939c468dbcff}{00039} \_\_inline \textcolor{keywordtype}{void} \hyperlink{_scanner_8h_a368d4bb8bcbc27ebecc3939c468dbcff}{unscan_zig_4x4}(\hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* zig, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* dct)
+00040 \{
+00041     dct[0]  = zig[0] ;
+00042     dct[1]  = zig[1] ;
+00043         dct[2]  = zig[5] ;
+00044         dct[3]  = zig[6] ;
+00045     dct[4]  = zig[2] ;
+00046     dct[5]  = zig[4] ; 
+00047     dct[6]  = zig[7] ;
+00048         dct[7]  = zig[12];
+00049         dct[8]  = zig[3] ;
+00050     dct[9]  = zig[8] ;
+00051     dct[10] = zig[11];
+00052     dct[11] = zig[13];
+00053         dct[12] = zig[9] ;
+00054         dct[13] = zig[10];
+00055     dct[14] = zig[14];
+00056     dct[15] = zig[15];
+00057 \}
+00058 
+\hypertarget{_scanner_8h_source_l00059}{}\hyperlink{_scanner_8h_a8e9caafbe915f392e8ca7dc547e8b12f}{00059} \_\_inline \textcolor{keywordtype}{void} \hyperlink{_scanner_8h_a8e9caafbe915f392e8ca7dc547e8b12f}{scan_zig_2x2}(\hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* zig, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* dct)
+00060 \{
+00061     zig[0] = dct[0];
+00062     zig[1] = dct[1];
+00063     zig[2] = dct[2];
+00064     zig[3] = dct[3];
+00065 \}
+00066 
+\hypertarget{_scanner_8h_source_l00067}{}\hyperlink{_scanner_8h_aaa0324e6a8196220003838250cc45e75}{00067} \_\_inline \textcolor{keywordtype}{void} \hyperlink{_scanner_8h_aaa0324e6a8196220003838250cc45e75}{unscan_zig_2x2}(\hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* zig, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t}* dct)
+00068 \{
+00069     dct[0] = zig[0];
+00070     dct[1] = zig[1];
+00071     dct[2] = zig[2];
+00072     dct[3] = zig[3];
+00073 \}
+00074 
+00075 \textcolor{preprocessor}{#endif //\_SCANNER\_H\_WEIDONG\_}
+00076 \textcolor{preprocessor}{}
+00077 \textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00078 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00079 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00080 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

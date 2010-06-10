@@ -1,0 +1,92 @@
+\hypertarget{_raw_data_8h_source}{
+\section{MVCDecoder/RawData.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2009-04-09           Weidong Hu              Tsinghua University             C
+      reate}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ ************************************************************************/}
+00009 
+00010 \textcolor{preprocessor}{#ifndef \_RAW\_DATA\_H\_}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_RAW\_DATA\_H\_}
+00012 \textcolor{preprocessor}{}
+00013 \textcolor{preprocessor}{#include "\hyperlink{_sliding_window_8h}{SlidingWindow.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{_codec_info_8h}{CodecInfo.h}"}
+00015 
+\hypertarget{_raw_data_8h_source_l00016}{}\hyperlink{class_raw_data}{00016} \textcolor{keyword}{class }\hyperlink{class_raw_data}{RawData}
+00017 \{
+00018 \textcolor{keyword}{private}:
+00019         \hyperlink{class_sliding_window}{SlidingWindow} *\_slidingWindow;
+00020         FILE **\_files;
+00021         MVCMasterThreadHandle thread;
+00022         \textcolor{keyword}{static} \textcolor{keywordtype}{int} RawDataWriter(\textcolor{keywordtype}{void} *param)
+00023         \{
+00024                 \hyperlink{class_raw_data}{RawData} *\textcolor{keyword}{self} = (\hyperlink{class_raw_data}{RawData} *)param;
+00025                 \textcolor{keyword}{self}->ProcessData();
+00026                 \textcolor{keywordflow}{return} 0;
+00027         \}
+00028 \textcolor{keyword}{public}:
+\hypertarget{_raw_data_8h_source_l00029}{}\hyperlink{class_raw_data_a9a8f2f3170c5574096ea14611f38aca8}{00029}         \hyperlink{class_raw_data_a9a8f2f3170c5574096ea14611f38aca8}{RawData}(\hyperlink{class_sliding_window}{SlidingWindow} *slidingWindow, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileNames) : \_slidingWi
+      ndow(slidingWindow)
+00030         \{
+00031                 \textcolor{keywordtype}{int} viewCount = \hyperlink{class_codec_info_ad439fd8062a03d868dfe9c9b615b747e}{CodecInfo::GetInstance}().\hyperlink{class_codec_info_aee785011cec77ff3c0c646b498fe1e7d}{sps}.\hyperlink{struct_sequence_parameters_set_af32c7819f630856ccd99aaf78e8f656c}{viewCount};
+00032                 \textcolor{keywordtype}{char} fileName[128];
+00033                 \_files = \textcolor{keyword}{new} FILE*[viewCount];
+00034                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < viewCount; ++i)
+00035                 \{
+00036                         sprintf(fileName, fileNames, i);
+00037                         \_files[i] = fopen(fileName, \textcolor{stringliteral}{"wb"});
+00038                         \hyperlink{_debug_8h_a101586fab2b90a8adffe50a3550e235d}{ASSERT}(\_files[i]);
+00039                 \}
+00040                 thread = MVCCreateMasterThread(RawDataWriter, \textcolor{keyword}{this});
+00041         \}
+00042 
+\hypertarget{_raw_data_8h_source_l00043}{}\hyperlink{class_raw_data_a214d10a81d07c892cb7b35653772e4e4}{00043}         \hyperlink{class_raw_data_a214d10a81d07c892cb7b35653772e4e4}{~RawData}()
+00044         \{
+00045                 \textcolor{keywordtype}{int} viewCount = \hyperlink{class_codec_info_ad439fd8062a03d868dfe9c9b615b747e}{CodecInfo::GetInstance}().\hyperlink{class_codec_info_aee785011cec77ff3c0c646b498fe1e7d}{sps}.\hyperlink{struct_sequence_parameters_set_af32c7819f630856ccd99aaf78e8f656c}{viewCount};
+00046                 MVCWaitMasterThread(thread);
+00047                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < viewCount; ++i)
+00048                         fclose(\_files[i]);
+00049         \}
+00050 
+\hypertarget{_raw_data_8h_source_l00051}{}\hyperlink{class_raw_data_ac1edea5cb8ba51fd52541b415ba36ec2}{00051}         \textcolor{keywordtype}{void} \hyperlink{class_raw_data_ac1edea5cb8ba51fd52541b415ba36ec2}{ProcessData}()
+00052         \{
+00053                 \textcolor{keywordtype}{int} viewCount = \hyperlink{class_codec_info_ad439fd8062a03d868dfe9c9b615b747e}{CodecInfo::GetInstance}().\hyperlink{class_codec_info_aee785011cec77ff3c0c646b498fe1e7d}{sps}.\hyperlink{struct_sequence_parameters_set_af32c7819f630856ccd99aaf78e8f656c}{viewCount};
+00054                 \textcolor{keywordtype}{int} timeId = 0;
+00055                 \textcolor{keywordflow}{while} (!\_slidingWindow->\hyperlink{class_sliding_window_afd67521d283b68f9fbc769ee9c0ba4b4}{IsDataFinished}() || \_slidingWindow->
+      \hyperlink{class_sliding_window_a3df64e20282ce10a45c4c3f3011e536d}{GetUnsaved}()<\_slidingWindow->\hyperlink{class_sliding_window_a2128091c76b407cd0e244759ba5a2846}{GetFirstAvail}())
+00056                 \{
+00057                         \textcolor{keywordflow}{while} (timeId >= \_slidingWindow->\hyperlink{class_sliding_window_a2128091c76b407cd0e244759ba5a2846}{GetFirstAvail}())
+00058                                 Sleep(10);
+00059                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < viewCount; ++i)
+00060                         \{
+00061                                 \hyperlink{struct_coding_pict_info}{CodingPictInfo} *cpi = \_slidingWindow->
+      \hyperlink{class_sliding_window_ac50874323a2aaa4ef76fab47f80c9f92}{GetCodingPictInfo}(timeId, i);
+00062                                 \textcolor{keywordflow}{while} (!(cpi->\hyperlink{struct_coding_pict_info_a41498e5ba764405481005e6569d7f728}{pictStatus}&\hyperlink{_picture_info_8h_a170d5962358e97425e08d5646653494b}{PICT_STATUS_FINISHED}))
+00063                                         Sleep(2);
+00064                                 \textcolor{comment}{//printf("Writing %d %d\(\backslash\)n", timeId, i);}
+00065                                 \textcolor{keywordtype}{int} size = cpi->\hyperlink{struct_coding_pict_info_afeeb373571d44e64d473524e6127f3f7}{Size_Width}*cpi->\hyperlink{struct_coding_pict_info_aa6352dc53234c55d1a0c252c5b8d6141}{Size_Height};
+00066                                 fwrite(cpi->\hyperlink{struct_coding_pict_info_a62aee8cc8c9cac725d4f44a19ddc8c2b}{lumaStart}, size, 1, \_files[i]);
+00067                                 fwrite(cpi->\hyperlink{struct_coding_pict_info_a103a3180ba57db0bd984a53f0668b70b}{chromaUStart}, size>>2, 1, \_files[i]);
+      
+00068                                 fwrite(cpi->\hyperlink{struct_coding_pict_info_a7be3395b2a1e7f4b384421c2490dcfdc}{chromaVStart}, size>>2, 1, \_files[i]);
+      
+00069                                 cpi->\hyperlink{struct_coding_pict_info_a41498e5ba764405481005e6569d7f728}{pictStatus} |= \hyperlink{_picture_info_8h_a81f2be9d3984eb16fa6f3b7daf46466f}{PICT_STATUS_SAVED};
+00070                         \}
+00071                         ++timeId;
+00072                         \textcolor{comment}{//\_slidingWindow->IncreaseSaved();}
+00073                         \textcolor{comment}{//printf("TIMEID=%d, UNSAVED=%d\(\backslash\)n", timeId, \_slidingWindo
+      w->GetUnsaved());}
+00074                 \}
+00075         \}
+00076 \};
+00077 
+00078 \textcolor{preprocessor}{#endif //\_RAW\_DATA\_H\_}
+\end{alltt}\end{footnotesize}

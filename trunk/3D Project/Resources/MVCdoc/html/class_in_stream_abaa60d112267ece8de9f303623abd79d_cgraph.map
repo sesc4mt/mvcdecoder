@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_in_stream.html#acab96485c6978e95e5ef747ebedf09d6" title="InStream::Comment" alt="" coords="307,5,445,35"/>
+<area shape="rect" id="node5" href="$class_in_stream.html#a07d84696f5dd53b6bbc881dc7507de4c" title="InStream::ReadCode" alt="" coords="305,59,447,88"/>
+<area shape="rect" id="node7" href="$class_in_stream.html#a340f8fadf6dfc7d17236b15285bba96f" title="InStream::ReadFlag" alt="" coords="308,112,444,141"/>
+<area shape="rect" id="node9" href="$class_in_stream.html#a8e8daf92cb96e583662cafdaf211093c" title="InStream::ReadUvlc" alt="" coords="308,165,444,195"/>
+</map>

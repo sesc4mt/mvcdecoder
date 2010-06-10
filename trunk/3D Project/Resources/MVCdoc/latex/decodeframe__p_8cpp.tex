@@ -1,0 +1,142 @@
+\hypertarget{decodeframe__p_8cpp}{
+\section{MVCDecoder/spu/decodeframe\_\-p/decodeframe\_\-p.cpp File Reference}
+\label{decodeframe__p_8cpp}\index{MVCDecoder/spu/decodeframe\_\-p/decodeframe\_\-p.cpp@{MVCDecoder/spu/decodeframe\_\-p/decodeframe\_\-p.cpp}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include \char`\"{}Codec/Bitstream.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/PBFrame/PSlice.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Arch/Arch.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}decodeframe\_\-p.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Common.h\char`\"{}}\par
+Include dependency graph for decodeframe\_\-p.cpp:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{decodeframe__p_8cpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{decodeframe__p_8cpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c}{DoProcessDP} (\hyperlink{struct_coding_pict_info}{CodingPictInfo} \&pictinfoDP)
+\item 
+int \hyperlink{decodeframe__p_8cpp_a7f615124f132ce807e3850fff0997a9a}{decodeframe\_\-p} (void $\ast$unused)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{decodeframe__p_8cpp_a7f615124f132ce807e3850fff0997a9a}{
+\index{decodeframe\_\-p.cpp@{decodeframe\_\-p.cpp}!decodeframe\_\-p@{decodeframe\_\-p}}
+\index{decodeframe\_\-p@{decodeframe\_\-p}!decodeframe_p.cpp@{decodeframe\_\-p.cpp}}
+\subsubsection[{decodeframe\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}int decodeframe\_\-p (void $\ast$ {\em unused})}}
+\label{decodeframe__p_8cpp_a7f615124f132ce807e3850fff0997a9a}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00054 \{
+00055         \hyperlink{struct_coding_pict_info}{CodingPictInfo} pictinfoDP;
+00056         \textcolor{keywordflow}{while} (1)
+00057         \{
+00058                 \textcolor{keywordtype}{int} param = MVCReadSignal();
+00059                 GetAndWait(&pictinfoDP, param, \textcolor{keyword}{sizeof}(pictinfoDP));
+00060                 \hyperlink{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c}{DoProcessDP}(pictinfoDP);
+00061                 MVCWriteSignal(1);
+00062                 \textcolor{keywordtype}{int} controlCmd = MVCReadSignal();
+00063                 \textcolor{keywordflow}{if} (controlCmd==\hyperlink{_picture_info_8h_a562b615ec34d4eb99440e76b9b8a9174a559a610ab332f3ca38d82e7900772e99}{CTS_HALT})
+00064                         \textcolor{keywordflow}{break};
+00065         \}
+00066         MVCWriteSignal(1);
+00067         \textcolor{keywordflow}{return} 0;
+00068 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{decodeframe__p_8cpp_a7f615124f132ce807e3850fff0997a9a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c}{
+\index{decodeframe\_\-p.cpp@{decodeframe\_\-p.cpp}!DoProcessDP@{DoProcessDP}}
+\index{DoProcessDP@{DoProcessDP}!decodeframe_p.cpp@{decodeframe\_\-p.cpp}}
+\subsubsection[{DoProcessDP}]{\setlength{\rightskip}{0pt plus 5cm}void DoProcessDP ({\bf CodingPictInfo} \& {\em pictinfoDP})}}
+\label{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00020 \{
+00021         \textcolor{keywordtype}{long} start = \hyperlink{_arch_8h_aae16a08f453f828deb4ccd262d87a278}{MVCGetCurrentTime}();
+00022         printf(\textcolor{stringliteral}{"%ld Start (%d,%d)\(\backslash\)n"}, start, pictinfoDP.\hyperlink{struct_coding_pict_info_ad85dae4751165ea3cbb8f7b8c6e61dc3}{timeId}, pictinfoDP.
+      \hyperlink{struct_coding_pict_info_a987595091bfba91b3166b04bca988697}{viewId});
+00023         \hyperlink{_debug_8h_aa184ead4583be424a256b0ee06fea736}{DEBUGINFP}(10, (\textcolor{stringliteral}{"Decoding P Pict."}));
+00024 \textcolor{comment}{//      DEBUGINFP(10, ("Memory info: luma(%d,%d), chromau(%d,%d), chromav(%d,%d)"
+      , (int)pictinfoDP.lumaStart, pictinfoDP.lumaStride, (int)pictinfoDP.chromaUStart,
+       pictinfoDP.chromaUStride, (int)pictinfoDP.chromaVStart, pictinfoDP.chromaVStride
+      ));}
+00025 
+00026         \textcolor{comment}{/*static */}
+00027         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} streamBuf[50000] \_\_attribute\_\_ ((aligned(128)));
+00028         \hyperlink{struct_bitstream}{Bitstream} bs;
+00029 
+00030         \hyperlink{_debug_8h_aecdf0db939482582d91e4efc81bee640}{DEBUGINF}(10, \textcolor{stringliteral}{"BS Init."});
+00031 
+00032         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} sz = 0;
+00033         GetAndWait(&sz, pictinfoDP.\hyperlink{struct_coding_pict_info_a37155b7c53db0a4a94d314bdc3c95104}{resultSize}, 4);
+00034         GetAndWait(streamBuf, pictinfoDP.\hyperlink{struct_coding_pict_info_af53de7a35b8796df845ddee01d70fc5b}{resultStream}, (sz + pictinfoDP.
+      \hyperlink{struct_coding_pict_info_a589da1ebbfa6493b63005412ce79dac6}{streamStart} + 7) / 8);
+00035 
+00036         BitstreamInit(&bs, streamBuf, \textcolor{keyword}{sizeof}(streamBuf));
+00037         BitstreamSkip(&bs, pictinfoDP.\hyperlink{struct_coding_pict_info_a589da1ebbfa6493b63005412ce79dac6}{streamStart});
+00038 
+00039         \hyperlink{_debug_8h_aecdf0db939482582d91e4efc81bee640}{DEBUGINF}(10, \textcolor{stringliteral}{"Decode."});
+00040         \hyperlink{_p_slice_8cpp_a08458d29753b64df9de1d40b748fdf0b}{PSliceDecode}(&pictinfoDP, &bs);
+00041         \hyperlink{_debug_8h_aecdf0db939482582d91e4efc81bee640}{DEBUGINF}(10, \textcolor{stringliteral}{"Decode finished."});
+00042         \textcolor{keywordtype}{long} usec = \hyperlink{_arch_8h_aae16a08f453f828deb4ccd262d87a278}{MVCGetCurrentTime}() - start;
+00043 
+00044         printf(\textcolor{stringliteral}{"%ld End (%d,%d) - %ld\(\backslash\)n"}, start+usec, pictinfoDP.\hyperlink{struct_coding_pict_info_ad85dae4751165ea3cbb8f7b8c6e61dc3}{timeId}, pictinfo
+      DP.\hyperlink{struct_coding_pict_info_a987595091bfba91b3166b04bca988697}{viewId}, usec);
+00045         \hyperlink{_debug_8h_aa184ead4583be424a256b0ee06fea736}{DEBUGINFP}(1000000000, (\textcolor{stringliteral}{"Time Used (%d,%d):%ld\(\backslash\)n"}, pictinfoDP.\hyperlink{struct_coding_pict_info_ad85dae4751165ea3cbb8f7b8c6e61dc3}{timeId}, pict
+      infoDP.\hyperlink{struct_coding_pict_info_a987595091bfba91b3166b04bca988697}{viewId}, usec));
+00046 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{decodeframe__p_8cpp_a49c748890470e9cac9c8f01ad19d562c_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,1420 @@
+\hypertarget{_c_a_v_l_c_8cpp}{
+\section{MVCDecoder/Codec/CAVLC.cpp File Reference}
+\label{_c_a_v_l_c_8cpp}\index{MVCDecoder/Codec/CAVLC.cpp@{MVCDecoder/Codec/CAVLC.cpp}}
+}
+{\ttfamily \#include \char`\"{}CAVLC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/Bitstream.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}PictureInfo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/vlcPred.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/vlc.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Common.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/Consts4Standard.h\char`\"{}}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+Include dependency graph for CAVLC.cpp:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{_c_a_v_l_c_8cpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=110pt]{_c_a_v_l_c_8cpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_aa813db30dbca2b63effb00f51f5a09e8}{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$trailing\_\-ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$total\_\-coff)
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_a2f71e9151c1843ae4e79a969b62f1e7a}{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$trailing\_\-ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$total\_\-coff)
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_a8cc3a1e080c7fdffce24705a568a77d4}{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$trailing\_\-ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$total\_\-coff)
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_aabed3a424b724036b177a9b91ed2c5cc}{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$trailing\_\-ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$total\_\-coff)
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929}{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$trailing\_\-ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} $\ast$total\_\-coff)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a2de597d6ec034469f21e451d17251ec0}{T264dec\_\-mb\_\-read\_\-level\_\-prefix} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_abd7d91649a10d2b893c2c1eab9513950}{T264dec\_\-mb\_\-read\_\-total\_\-zero1} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a555e0a8e9bc797ebe40b74eeef104d6f}{T264dec\_\-mb\_\-read\_\-total\_\-zero2} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a7a1d11b2eef008bff8ff0f49c7d37f0d}{T264dec\_\-mb\_\-read\_\-total\_\-zero3} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a08ad970c75fd24cb8a40f7406b8a5c2e}{T264dec\_\-mb\_\-read\_\-total\_\-zero6} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a4ae98797fed5bfe90e01c20beb0e8bb2}{T264dec\_\-mb\_\-read\_\-total\_\-zero7} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a447e87bf54c6dd411745c9dc3be6f1fe}{T264dec\_\-mb\_\-read\_\-total\_\-zero8} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a01d3c729c686c58187d2d4f483dd201c}{T264dec\_\-mb\_\-read\_\-total\_\-zero9} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a344ce961a19c7d39d9324f45b80589d3}{T264dec\_\-mb\_\-read\_\-total\_\-zero4} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_accc49a932e74a300742a3ffc4fda2df2}{T264dec\_\-mb\_\-read\_\-total\_\-zero5} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a317d53737fb2514abc97e4f178686c83}{T264dec\_\-mb\_\-read\_\-total\_\-zero10} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a03140b30cd941dd61f78dd0f225bd669}{T264dec\_\-mb\_\-read\_\-total\_\-zero11} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a01d97551c35453f8c9d9c8ebf29720fa}{T264dec\_\-mb\_\-read\_\-total\_\-zero12} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a841395546b65d2211a8bf3f2edfce4ae}{T264dec\_\-mb\_\-read\_\-total\_\-zero13} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a708fd9f1ac45b72841f4df147310d20e}{T264dec\_\-mb\_\-read\_\-total\_\-zero14} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_acd57cb14d72d158e01f061c69d3e67f1}{T264dec\_\-mb\_\-read\_\-total\_\-zero15} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a72ccdd65c817f414847b927ef762971e}{T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} total\_\-coeff)
+\item 
+\hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} \hyperlink{_c_a_v_l_c_8cpp_a0c9db9287496d5932a5d62c1d1c4324f}{T264dec\_\-mb\_\-read\_\-run\_\-before} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8\_\-t} zero\_\-left)
+\item 
+int \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block\_\-residual\_\-read\_\-cavlc} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} idx, \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16\_\-t} $\ast$z, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32\_\-t} count, int pred)
+\item 
+void \hyperlink{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3}{macroblock\_\-read\_\-cavlc\_\-uv} (\hyperlink{struct_bitstream}{Bitstream} $\ast$bs, \hyperlink{structmacroblock_info}{pmacroblockInfo} info, \hyperlink{structtag__cavlc__ref__list}{cavlc\_\-ref\_\-list} $\ast$ref\_\-list)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{
+\index{CAVLC.cpp@{CAVLC.cpp}!block\_\-residual\_\-read\_\-cavlc@{block\_\-residual\_\-read\_\-cavlc}}
+\index{block\_\-residual\_\-read\_\-cavlc@{block\_\-residual\_\-read\_\-cavlc}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{block\_\-residual\_\-read\_\-cavlc}]{\setlength{\rightskip}{0pt plus 5cm}int block\_\-residual\_\-read\_\-cavlc ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf int32\_\-t} {\em idx}, \/  {\bf int16\_\-t} $\ast$ {\em z}, \/  {\bf int32\_\-t} {\em count}, \/  int {\em pred})}}
+\label{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00624 \{
+00625         \textcolor{keywordtype}{int} ret = 0;
+00626 
+00627         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} trailing\_ones, total\_coeff;
+00628         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} i, j;
+00629         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} zero\_left = 0;
+00630         \hyperlink{_types_8h_ae615613535a2b2445773922f5d45a861}{int16_t} level[16];
+00631         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} run[16];
+00632 \textcolor{comment}{//      int32\_t x, y;}
+00633 
+00634         \textcolor{keywordflow}{if}(idx == \hyperlink{vlc_8h_a8970a37770d210d728339bc5696f28df}{BLOCK_INDEX_CHROMA_DC})
+00635         \{
+00636                 \hyperlink{_c_a_v_l_c_8cpp_aa813db30dbca2b63effb00f51f5a09e8}{T264dec_mb_read_coff_token_t4}(bs, &trailing\_ones, &total\_coeff);
+00637         \}
+00638         \textcolor{keywordflow}{else}
+00639         \{
+00640                 \textcolor{comment}{/* T264\_mb\_predict\_non\_zero\_code return 0 <-> (16+16+1)>>1 = 16 *
+      /}
+00641                 \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} nC = 0;
+00642                 \textcolor{keyword}{typedef} void (*T264dec\_mb\_read\_coff\_token\_t)(\hyperlink{struct_bitstream}{Bitstream} *bs, 
+      \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t}* trailing\_ones, \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t}* total\_coff);
+00643                 \textcolor{keyword}{static} \textcolor{keyword}{const} T264dec\_mb\_read\_coff\_token\_t read\_coeff[17] = 
+00644                 \{
+00645                         \hyperlink{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929}{T264dec_mb_read_coff_token_t0}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929}{T264dec_mb_read_coff_token_t0},
+00646                         \hyperlink{_c_a_v_l_c_8cpp_aabed3a424b724036b177a9b91ed2c5cc}{T264dec_mb_read_coff_token_t1}, T264dec\_mb\_read\_coff\_token
+      \_t1,
+00647                         \hyperlink{_c_a_v_l_c_8cpp_a8cc3a1e080c7fdffce24705a568a77d4}{T264dec_mb_read_coff_token_t2}, T264dec\_mb\_read\_coff\_token
+      \_t2,
+00648                         T264dec\_mb\_read\_coff\_token\_t2, T264dec\_mb\_read\_coff\_token
+      \_t2,
+00649                         \hyperlink{_c_a_v_l_c_8cpp_a2f71e9151c1843ae4e79a969b62f1e7a}{T264dec_mb_read_coff_token_t3}, T264dec\_mb\_read\_coff\_token
+      \_t3,
+00650                         T264dec\_mb\_read\_coff\_token\_t3, T264dec\_mb\_read\_coff\_token
+      \_t3,
+00651                         T264dec\_mb\_read\_coff\_token\_t3, T264dec\_mb\_read\_coff\_token
+      \_t3,
+00652                         T264dec\_mb\_read\_coff\_token\_t3, T264dec\_mb\_read\_coff\_token
+      \_t3,
+00653                         T264dec\_mb\_read\_coff\_token\_t3
+00654                 \};
+00655 
+00656                 \textcolor{keywordflow}{if}(idx == \hyperlink{vlc_8h_ad2d7f1b7e491db865767a2a38443091a}{BLOCK_INDEX_LUMA_DC})
+00657                 \{
+00658                         nC = pred;
+00659 
+00660                         read\_coeff[nC](bs, &trailing\_ones, &total\_coeff);
+00661                 \}
+00662                 \textcolor{keywordflow}{else}
+00663                 \{
+00664                         nC = pred;
+00665 
+00666                         read\_coeff[nC](bs, &trailing\_ones, &total\_coeff);
+00667 
+00668                         ret = total\_coeff;
+00669 
+00670                         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_coeff != 255);
+00671                         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(trailing\_ones != 255);
+00672 
+00673                 \}
+00674         \}
+00675 
+00676         \textcolor{keywordflow}{if} (total\_coeff > 0)
+00677         \{
+00678                 \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} suffix\_length = 0;
+00679                 \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} level\_code;
+00680 
+00681                 \textcolor{keywordflow}{if} (total\_coeff > 10 && trailing\_ones < 3)
+00682                         suffix\_length = 1;
+00683 
+00684                 \textcolor{keywordflow}{for}(i = 0 ; i < trailing\_ones ; i ++)
+00685                 \{
+00686                         level[i] = 1 - 2 * \hyperlink{_bitstream_8h_a930f8a3acc36d15b74015dd4579f485c}{eg_read_direct1}(bs);
+00687                 \}
+00688 
+00689                 \textcolor{keywordflow}{for}( ; i < total\_coeff ; i ++)
+00690                 \{
+00691                         \hyperlink{_types_8h_a04909d1366bb244ff2482beb51635f37}{uint32_t} level\_suffixsize;
+00692                         \hyperlink{_types_8h_a04909d1366bb244ff2482beb51635f37}{uint32_t} level\_suffix;
+00693                         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} level\_prefix = \hyperlink{_c_a_v_l_c_8cpp_a2de597d6ec034469f21e451d17251ec0}{T264dec_mb_read_level_prefix}(bs);
+00694 
+00695                         level\_suffixsize = suffix\_length;
+00696                         \textcolor{keywordflow}{if} (suffix\_length == 0 && level\_prefix == 14)
+00697                                 level\_suffixsize = 4;
+00698                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (level\_prefix == 15)
+00699                                 level\_suffixsize = 12;
+00700                         \textcolor{keywordflow}{if} (level\_suffixsize > 0)
+00701                                 level\_suffix = \hyperlink{_bitstream_8h_a3474bd178129247b388e870a0bd602a3}{eg_read_direct}(bs, level\_suffixsiz
+      e);
+00702                         \textcolor{keywordflow}{else}
+00703                                 level\_suffix = 0;
+00704                         level\_code = (level\_prefix << suffix\_length) + level\_suff
+      ix;
+00705                         \textcolor{keywordflow}{if} (level\_prefix == 15 && suffix\_length == 0)
+00706                         \{
+00707                                 level\_code += 15;
+00708                         \}
+00709                         \textcolor{keywordflow}{if} (i == trailing\_ones && trailing\_ones < 3)
+00710                         \{
+00711                                 level\_code += 2;
+00712                         \}
+00713                         \textcolor{keywordflow}{if} (level\_code % 2 == 0)
+00714                         \{
+00715                                 level[i] = (level\_code + 2) >> 1;
+00716                         \}
+00717                         \textcolor{keywordflow}{else}
+00718                         \{
+00719                                 level[i] = (-level\_code - 1) >> 1;
+00720                         \}
+00721 
+00722                         \textcolor{keywordflow}{if} (suffix\_length == 0)
+00723                                 suffix\_length = 1;
+00724 
+00725                         \textcolor{keywordflow}{if} (\hyperlink{_macros_8h_a996f7be338ccb40d1a2a5abc1ad61759}{ABS}(level[i]) > (3 << (suffix\_length - 1)) &&
+00726                                 suffix\_length < 6)
+00727                         \{
+00728                                 suffix\_length ++;
+00729                         \}
+00730                 \}
+00731 
+00732                 \textcolor{keywordflow}{if} (total\_coeff < count)
+00733                 \{
+00734                         \textcolor{keyword}{typedef} \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} (*T264dec\_mb\_read\_total\_zero\_t)(
+      \hyperlink{struct_bitstream}{Bitstream} *);
+00735                         \textcolor{keyword}{static} T264dec\_mb\_read\_total\_zero\_t total\_zero\_f[] =
+00736                         \{
+00737                                 \hyperlink{_c_a_v_l_c_8cpp_abd7d91649a10d2b893c2c1eab9513950}{T264dec_mb_read_total_zero1}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a555e0a8e9bc797ebe40b74eeef104d6f}{T264dec_mb_read_total_zero2}, \hyperlink{_c_a_v_l_c_8cpp_a7a1d11b2eef008bff8ff0f49c7d37f0d}{T264dec_mb_read_total_zero3}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a344ce961a19c7d39d9324f45b80589d3}{T264dec_mb_read_total_zero4},
+00738                                 \hyperlink{_c_a_v_l_c_8cpp_accc49a932e74a300742a3ffc4fda2df2}{T264dec_mb_read_total_zero5}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a08ad970c75fd24cb8a40f7406b8a5c2e}{T264dec_mb_read_total_zero6}, \hyperlink{_c_a_v_l_c_8cpp_a4ae98797fed5bfe90e01c20beb0e8bb2}{T264dec_mb_read_total_zero7}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a447e87bf54c6dd411745c9dc3be6f1fe}{T264dec_mb_read_total_zero8},
+00739                                 \hyperlink{_c_a_v_l_c_8cpp_a01d3c729c686c58187d2d4f483dd201c}{T264dec_mb_read_total_zero9}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a317d53737fb2514abc97e4f178686c83}{T264dec_mb_read_total_zero10}, \hyperlink{_c_a_v_l_c_8cpp_a03140b30cd941dd61f78dd0f225bd669}{T264dec_mb_read_total_zero11}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a01d97551c35453f8c9d9c8ebf29720fa}{T264dec_mb_read_total_zero12},
+00740                                 \hyperlink{_c_a_v_l_c_8cpp_a841395546b65d2211a8bf3f2edfce4ae}{T264dec_mb_read_total_zero13}, 
+      \hyperlink{_c_a_v_l_c_8cpp_a708fd9f1ac45b72841f4df147310d20e}{T264dec_mb_read_total_zero14}, \hyperlink{_c_a_v_l_c_8cpp_acd57cb14d72d158e01f061c69d3e67f1}{T264dec_mb_read_total_zero15}
+00741                         \};
+00742 
+00743                         \textcolor{keywordflow}{if}(idx != \hyperlink{vlc_8h_a8970a37770d210d728339bc5696f28df}{BLOCK_INDEX_CHROMA_DC})
+00744                                 zero\_left = total\_zero\_f[total\_coeff - 1](bs);
+00745                         \textcolor{keywordflow}{else}
+00746                                 zero\_left = \hyperlink{_c_a_v_l_c_8cpp_a72ccdd65c817f414847b927ef762971e}{T264dec_mb_read_total_zero_chroma}(bs,
+       total\_coeff);
+00747                 \}
+00748 
+00749                 \textcolor{keywordflow}{for}(i = 0 ; i < total\_coeff - 1 ; i ++)
+00750                 \{
+00751                         \textcolor{keywordflow}{if} (zero\_left > 0)
+00752                         \{
+00753                                 run[i] = \hyperlink{_c_a_v_l_c_8cpp_a0c9db9287496d5932a5d62c1d1c4324f}{T264dec_mb_read_run_before}(bs, zero\_left
+      );
+00754                         \}
+00755                         \textcolor{keywordflow}{else}
+00756                         \{
+00757                                 run[i] = 0;
+00758                         \}
+00759                         zero\_left -= run[i];
+00760                 \}
+00761 
+00762                 run[total\_coeff - 1] = zero\_left;
+00763 
+00764                 j = -1;
+00765                 \textcolor{keywordflow}{for}(i = total\_coeff - 1 ; i >= 0 ; i --)
+00766                 \{
+00767                         j +=run[i] + 1;
+00768                         z[j] = level[i];
+00769                 \}
+00770         \}
+00771         \textcolor{keywordflow}{return} ret;
+00772 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3}{
+\index{CAVLC.cpp@{CAVLC.cpp}!macroblock\_\-read\_\-cavlc\_\-uv@{macroblock\_\-read\_\-cavlc\_\-uv}}
+\index{macroblock\_\-read\_\-cavlc\_\-uv@{macroblock\_\-read\_\-cavlc\_\-uv}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{macroblock\_\-read\_\-cavlc\_\-uv}]{\setlength{\rightskip}{0pt plus 5cm}void macroblock\_\-read\_\-cavlc\_\-uv ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf pmacroblockInfo} {\em info}, \/  {\bf cavlc\_\-ref\_\-list} $\ast$ {\em ref\_\-list})}}
+\label{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00775 \{
+00776         \textcolor{keywordtype}{int} i;
+00777         \textcolor{keywordflow}{if} (info->\hyperlink{structmacroblock_info_ae4618a11a8f0f396fb05879125bc449a}{cbp_uv} < 2)
+00778         \{
+00779                 memset(info->\hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[0], 0, \textcolor{keyword}{sizeof}(info->\hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[0][0])*4);
+00780                 memset(info->\hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[1], 0, \textcolor{keyword}{sizeof}(info->\hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[1][0])*4);
+00781                 \textcolor{keywordflow}{for}(i = 0; i < 8 ; ++i)
+00782                 \{
+00783                         memset(info->\hyperlink{structmacroblock_info_a01c5c766f5445434369110a34cd1594e}{dct_uv_z}[i>>2][i&3], 0, 16);
+00784                         \hyperlink{vlc_pred_8h_a502428eb3f92a2a6d112ad25f756c233}{set_chroma_pred}(ref\_list, i, 0);
+00785                 \}
+00786         \}
+00787         \textcolor{keywordflow}{if} (info->\hyperlink{structmacroblock_info_ae4618a11a8f0f396fb05879125bc449a}{cbp_uv} != 0)
+00788         \{
+00789                 \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(bs, \hyperlink{vlc_8h_a8970a37770d210d728339bc5696f28df}{BLOCK_INDEX_CHROMA_DC}, info->
+      \hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[0], 4, 0);
+00790                 \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(bs, \hyperlink{vlc_8h_a8970a37770d210d728339bc5696f28df}{BLOCK_INDEX_CHROMA_DC}, info->
+      \hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[1], 4, 0);
+00791                 \textcolor{keywordflow}{if} (info->\hyperlink{structmacroblock_info_ae4618a11a8f0f396fb05879125bc449a}{cbp_uv} & 0x2)
+00792                 \{
+00793                         \textcolor{keywordflow}{for}(i = 0; i < 8 ; ++i)
+00794                         \{
+00795                                 \textcolor{keywordtype}{int} nC = \hyperlink{vlc_pred_8h_a6b7594a4d633c85e42d7fcab84940eee}{get_chroma_pred}(ref\_list, i);
+00796                                 nC = \hyperlink{_c_a_v_l_c_8cpp_aeb5a2ec1c37d4efb405d9209adfb122b}{block_residual_read_cavlc}(bs, 16 + i, info->
+      \hyperlink{structmacroblock_info_a01c5c766f5445434369110a34cd1594e}{dct_uv_z}[i>>2][i&3]+1, 15, nC);
+00797                                 \hyperlink{vlc_pred_8h_a502428eb3f92a2a6d112ad25f756c233}{set_chroma_pred}(ref\_list, i, nC);
+00798                         \}
+00799                 \}
+00800                 \textcolor{keywordflow}{for} (i = 0; i < 8; ++i)
+00801                         info->\hyperlink{structmacroblock_info_a01c5c766f5445434369110a34cd1594e}{dct_uv_z}[i>>2][i&3][0] = info->\hyperlink{structmacroblock_info_a973346c837d8cf284586c33b4a4d478a}{dct_uv_h}[i>>2][i&3];
+      
+00802         \}
+00803 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_ac8715360bdf3222bff81c76624638ec3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0}}
+\index{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t0 ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} $\ast$ {\em trailing\_\-ones}, \/  {\bf uint8\_\-t} $\ast$ {\em total\_\-coff})}}
+\label{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00213 \{
+00214         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00215         \textcolor{keyword}{const} \hyperlink{structvlc__coeff__token__t}{vlc_coeff_token_t}* table;
+00216 
+00217         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 16);
+00218         \textcolor{keywordflow}{if} (code >= 8192)
+00219         \{
+00220                 table = coeff0\_5;
+00221                 code >>= 13;
+00222         \}
+00223         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 4096)
+00224         \{
+00225                 table = coeff0\_4;
+00226                 code = (code >> 10) - 4;
+00227         \}
+00228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 1024)
+00229         \{
+00230                 table = coeff0\_3;
+00231                 code = (code >> 8) - 4;
+00232         \}
+00233         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 128)
+00234         \{
+00235                 table = coeff0\_2;
+00236                 code = (code >> 5) - 4;
+00237         \}
+00238         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 64)
+00239         \{
+00240                 table = coeff0\_1;
+00241                 code = (code >> 3) - 8;
+00242         \}
+00243         \textcolor{keywordflow}{else}
+00244         \{
+00245                 table = coeff0\_0;
+00246         \}
+00247 
+00248         *trailing\_ones = table[code].\hyperlink{structvlc__coeff__token__t_aa21454773dd262167cd9b110f1fe6b92}{trailing_ones};
+00249         *total\_coff = table[code].\hyperlink{structvlc__coeff__token__t_a8f1bc5c088694aeb2e4676a3d77abc71}{total_coeff};
+00250         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, table[code].len);
+00251 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a667302ddec9d1aff7c31c331ffaec929_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_aabed3a424b724036b177a9b91ed2c5cc}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1}}
+\index{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t1 ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} $\ast$ {\em trailing\_\-ones}, \/  {\bf uint8\_\-t} $\ast$ {\em total\_\-coff})}}
+\label{_c_a_v_l_c_8cpp_aabed3a424b724036b177a9b91ed2c5cc}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00166 \{
+00167         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00168         \textcolor{keyword}{const} \hyperlink{structvlc__coeff__token__t}{vlc_coeff_token_t}* table;
+00169 
+00170         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 14);
+00171         \textcolor{keywordflow}{if} (code >= 4096)
+00172         \{
+00173                 table = coeff1\_0;
+00174                 code = (code >> 10) - 4;
+00175         \}
+00176         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 1024)
+00177         \{
+00178                 table = coeff1\_1;
+00179                 code = (code >> 8) - 4;
+00180         \}
+00181         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 128)
+00182         \{
+00183                 table = coeff1\_2;
+00184                 code = (code >> 5) - 4;
+00185         \}
+00186         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 64)
+00187         \{
+00188                 table = coeff1\_3;
+00189                 code = (code >> 3) - 8;
+00190         \}
+00191         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 32)
+00192         \{
+00193                 table = coeff1\_4;
+00194                 code = (code >> 2) - 8;
+00195         \}
+00196         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 16)
+00197         \{
+00198                 table = coeff1\_5;
+00199                 code = (code >> 1) - 8;
+00200         \}
+00201         \textcolor{keywordflow}{else}
+00202         \{
+00203                 table = coeff1\_6;
+00204         \}
+00205 
+00206         *trailing\_ones = table[code].\hyperlink{structvlc__coeff__token__t_aa21454773dd262167cd9b110f1fe6b92}{trailing_ones};
+00207         *total\_coff = table[code].\hyperlink{structvlc__coeff__token__t_a8f1bc5c088694aeb2e4676a3d77abc71}{total_coeff};
+00208         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, table[code].len);
+00209 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_aabed3a424b724036b177a9b91ed2c5cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a8cc3a1e080c7fdffce24705a568a77d4}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2}}
+\index{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t2 ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} $\ast$ {\em trailing\_\-ones}, \/  {\bf uint8\_\-t} $\ast$ {\em total\_\-coff})}}
+\label{_c_a_v_l_c_8cpp_a8cc3a1e080c7fdffce24705a568a77d4}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00118 \{
+00119         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00120         \textcolor{keyword}{const} \hyperlink{structvlc__coeff__token__t}{vlc_coeff_token_t}* table;
+00121 
+00122         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 10);
+00123         \textcolor{keywordflow}{if} (code >= 512)
+00124         \{
+00125                 table = coeff2\_0;
+00126                 code = (code >> 6) - 8;
+00127         \}
+00128         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 256)
+00129         \{
+00130                 table = coeff2\_1;
+00131                 code = (code >> 5) - 8;
+00132         \}
+00133         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 128)
+00134         \{
+00135                 table = coeff2\_2;
+00136                 code = (code >> 4) - 8;
+00137         \}
+00138         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 64)
+00139         \{
+00140                 table = coeff2\_3;
+00141                 code = (code >> 3) - 8;
+00142         \}
+00143         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 32)
+00144         \{
+00145                 table = coeff2\_4;
+00146                 code = (code >> 2) - 8;
+00147         \}
+00148         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 16)
+00149         \{
+00150                 table = coeff2\_5;
+00151                 code = (code >> 1) - 8;
+00152         \}
+00153         \textcolor{keywordflow}{else}
+00154         \{
+00155                 table = coeff2\_6;
+00156         \}
+00157 
+00158         *trailing\_ones = table[code].\hyperlink{structvlc__coeff__token__t_aa21454773dd262167cd9b110f1fe6b92}{trailing_ones};
+00159         *total\_coff = table[code].\hyperlink{structvlc__coeff__token__t_a8f1bc5c088694aeb2e4676a3d77abc71}{total_coeff};
+00160         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, table[code].len);
+00161 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a8cc3a1e080c7fdffce24705a568a77d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a2f71e9151c1843ae4e79a969b62f1e7a}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3}}
+\index{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t3 ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} $\ast$ {\em trailing\_\-ones}, \/  {\bf uint8\_\-t} $\ast$ {\em total\_\-coff})}}
+\label{_c_a_v_l_c_8cpp_a2f71e9151c1843ae4e79a969b62f1e7a}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00107 \{
+00108         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00109 
+00110         code = \hyperlink{_bitstream_8h_a3474bd178129247b388e870a0bd602a3}{eg_read_direct}(bs, 6);
+00111 
+00112         *trailing\_ones = coeff3\_0[code].trailing\_ones;
+00113         *total\_coff = coeff3\_0[code].total\_coeff;
+00114 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a2f71e9151c1843ae4e79a969b62f1e7a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_aa813db30dbca2b63effb00f51f5a09e8}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4}}
+\index{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4@{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4}]{\setlength{\rightskip}{0pt plus 5cm}void T264dec\_\-mb\_\-read\_\-coff\_\-token\_\-t4 ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} $\ast$ {\em trailing\_\-ones}, \/  {\bf uint8\_\-t} $\ast$ {\em total\_\-coff})}}
+\label{_c_a_v_l_c_8cpp_aa813db30dbca2b63effb00f51f5a09e8}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00061 \{
+00062         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00063 
+00064         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 8);
+00065         \textcolor{keywordflow}{if} (code >= 16)
+00066         \{
+00067                 \textcolor{keywordflow}{if} (code >= 128)
+00068                 \{
+00069                         \textcolor{comment}{/* 1 */}
+00070                         *trailing\_ones = 1;
+00071                         *total\_coff = 1;
+00072                         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 1);
+00073                 \}
+00074                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 64)
+00075                 \{
+00076                         \textcolor{comment}{/* 01 */}
+00077                         *trailing\_ones = 0;
+00078                         *total\_coff = 0;
+00079                         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 2);
+00080                 \}
+00081                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 32)
+00082                 \{
+00083                         \textcolor{comment}{/* 001 */}
+00084                         *trailing\_ones = 2;
+00085                         *total\_coff = 2;
+00086                         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 3);
+00087                 \}
+00088                 \textcolor{keywordflow}{else}
+00089                 \{
+00090                         code = (code >> 2) - 4;
+00091 
+00092                         *trailing\_ones = coeff4\_0[code].trailing\_ones;
+00093                         *total\_coff = coeff4\_0[code].total\_coeff;
+00094                         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 6);
+00095                 \}
+00096         \}
+00097         \textcolor{keywordflow}{else}
+00098         \{
+00099                 *trailing\_ones = coeff4\_1[code].trailing\_ones;
+00100                 *total\_coff = coeff4\_1[code].total\_coeff;
+00101                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, coeff4\_1[code].len);
+00102         \}
+00103 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_aa813db30dbca2b63effb00f51f5a09e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a2de597d6ec034469f21e451d17251ec0}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-level\_\-prefix@{T264dec\_\-mb\_\-read\_\-level\_\-prefix}}
+\index{T264dec\_\-mb\_\-read\_\-level\_\-prefix@{T264dec\_\-mb\_\-read\_\-level\_\-prefix}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-level\_\-prefix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-level\_\-prefix ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a2de597d6ec034469f21e451d17251ec0}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00254 \{
+00255         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} prefix;
+00256         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00257 
+00258         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 16);
+00259         \textcolor{keywordflow}{if} (code >= 4096)
+00260         \{
+00261                 prefix = prefix\_table0[code >> 12];
+00262         \}
+00263         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 256)
+00264         \{
+00265                 prefix = prefix\_table1[code >> 8];
+00266         \}
+00267         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (code >= 16)
+00268         \{
+00269                 prefix = prefix\_table2[code >> 4];
+00270         \}
+00271         \textcolor{keywordflow}{else}
+00272         \{
+00273                 prefix = prefix\_table3[code];
+00274         \}
+00275 
+00276         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, prefix + 1);
+00277 
+00278         \textcolor{keywordflow}{return} prefix;
+00279 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a2de597d6ec034469f21e451d17251ec0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a0c9db9287496d5932a5d62c1d1c4324f}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-run\_\-before@{T264dec\_\-mb\_\-read\_\-run\_\-before}}
+\index{T264dec\_\-mb\_\-read\_\-run\_\-before@{T264dec\_\-mb\_\-read\_\-run\_\-before}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-run\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-run\_\-before ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} {\em zero\_\-left})}}
+\label{_c_a_v_l_c_8cpp_a0c9db9287496d5932a5d62c1d1c4324f}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00581 \{
+00582         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00583         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} run\_before;
+00584 
+00585         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(zero\_left != 255);
+00586 
+00587         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 3);
+00588         \textcolor{keywordflow}{if} (zero\_left <= 6)
+00589         \{
+00590                 run\_before = run\_before\_table\_0[zero\_left - 1][code].num;
+00591                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, run\_before\_table\_0[zero\_left - 1][code].len);
+00592         \}
+00593         \textcolor{keywordflow}{else}
+00594         \{
+00595                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 3);
+00596                 \textcolor{keywordflow}{if} (code > 0)
+00597                 \{
+00598                         run\_before = run\_before\_table\_0[6][code].num;
+00599                 \}
+00600                 \textcolor{keywordflow}{else}
+00601                 \{
+00602                         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 4);
+00603                         \textcolor{keywordflow}{if} (code > 0)
+00604                         \{
+00605                                 run\_before = run\_before\_table\_1[code];
+00606                                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, run\_before - 6);
+00607                         \}
+00608                         \textcolor{keywordflow}{else}
+00609                         \{
+00610                                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, 4);
+00611                                 code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 4);
+00612                                 run\_before = run\_before\_table\_2[code];
+00613                                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, run\_before - 10);
+00614                         \}
+00615                 \}
+00616         \}
+00617 
+00618         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(run\_before <= 14);
+00619 
+00620         \textcolor{keywordflow}{return} run\_before;
+00621 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a0c9db9287496d5932a5d62c1d1c4324f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_abd7d91649a10d2b893c2c1eab9513950}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero1@{T264dec\_\-mb\_\-read\_\-total\_\-zero1}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero1@{T264dec\_\-mb\_\-read\_\-total\_\-zero1}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero1 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_abd7d91649a10d2b893c2c1eab9513950}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00282 \{
+00283         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00284         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00285 
+00286         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 9);
+00287         \textcolor{keywordflow}{if} (code >= 32)
+00288         \{
+00289                 code >>= 4;
+00290                 total\_zero = total\_zero\_table1\_1[code].num;
+00291                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table1\_1[code].len);
+00292         \}
+00293         \textcolor{keywordflow}{else}
+00294         \{
+00295                 total\_zero = total\_zero\_table1\_0[code].num;
+00296                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table1\_0[code].len);
+00297         \}
+00298 
+00299         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00300 
+00301         \textcolor{keywordflow}{return} total\_zero;
+00302 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_abd7d91649a10d2b893c2c1eab9513950_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a317d53737fb2514abc97e4f178686c83}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero10@{T264dec\_\-mb\_\-read\_\-total\_\-zero10}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero10@{T264dec\_\-mb\_\-read\_\-total\_\-zero10}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero10}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero10 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a317d53737fb2514abc97e4f178686c83}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00489 \{
+00490         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00491         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00492 
+00493         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 5);
+00494         \textcolor{keywordflow}{if} (code >= 4)
+00495         \{
+00496                 code >>= 2;
+00497                 total\_zero = total\_zero\_table10\_1[code].num;
+00498                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table10\_1[code].len);
+00499         \}
+00500         \textcolor{keywordflow}{else}
+00501         \{
+00502                 total\_zero = total\_zero\_table10\_0[code].num;
+00503                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table10\_0[code].len);
+00504         \}
+00505 
+00506         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00507 
+00508         \textcolor{keywordflow}{return} total\_zero;
+00509 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a317d53737fb2514abc97e4f178686c83_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a03140b30cd941dd61f78dd0f225bd669}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero11@{T264dec\_\-mb\_\-read\_\-total\_\-zero11}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero11@{T264dec\_\-mb\_\-read\_\-total\_\-zero11}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero11}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero11 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a03140b30cd941dd61f78dd0f225bd669}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00512 \{
+00513         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00514         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00515 
+00516         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 4);
+00517         total\_zero = total\_zero\_table11\_0[code].num;
+00518         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table11\_0[code].len);
+00519 
+00520         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00521 
+00522         \textcolor{keywordflow}{return} total\_zero;
+00523 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a03140b30cd941dd61f78dd0f225bd669_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a01d97551c35453f8c9d9c8ebf29720fa}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero12@{T264dec\_\-mb\_\-read\_\-total\_\-zero12}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero12@{T264dec\_\-mb\_\-read\_\-total\_\-zero12}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero12}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero12 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a01d97551c35453f8c9d9c8ebf29720fa}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00526 \{
+00527         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00528         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00529 
+00530         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 4);
+00531         total\_zero = total\_zero\_table12\_0[code].num;
+00532         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table12\_0[code].len);
+00533 
+00534         \textcolor{keywordflow}{return} total\_zero;
+00535 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a01d97551c35453f8c9d9c8ebf29720fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a841395546b65d2211a8bf3f2edfce4ae}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero13@{T264dec\_\-mb\_\-read\_\-total\_\-zero13}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero13@{T264dec\_\-mb\_\-read\_\-total\_\-zero13}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero13}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero13 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a841395546b65d2211a8bf3f2edfce4ae}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00538 \{
+00539         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00540         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00541 
+00542         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 3);
+00543         total\_zero = total\_zero\_table13\_0[code].num;
+00544         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table13\_0[code].len);
+00545 
+00546         \textcolor{keywordflow}{return} total\_zero;
+00547 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a841395546b65d2211a8bf3f2edfce4ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a708fd9f1ac45b72841f4df147310d20e}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero14@{T264dec\_\-mb\_\-read\_\-total\_\-zero14}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero14@{T264dec\_\-mb\_\-read\_\-total\_\-zero14}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero14}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero14 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a708fd9f1ac45b72841f4df147310d20e}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00550 \{
+00551         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00552         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00553 
+00554         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 2);
+00555         total\_zero = total\_zero\_table14\_0[code].num;
+00556         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table14\_0[code].len);
+00557 
+00558         \textcolor{keywordflow}{return} total\_zero;
+00559 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a708fd9f1ac45b72841f4df147310d20e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_acd57cb14d72d158e01f061c69d3e67f1}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero15@{T264dec\_\-mb\_\-read\_\-total\_\-zero15}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero15@{T264dec\_\-mb\_\-read\_\-total\_\-zero15}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero15}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero15 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_acd57cb14d72d158e01f061c69d3e67f1}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00562 \{
+00563         \textcolor{keywordflow}{return} \hyperlink{_bitstream_8h_a930f8a3acc36d15b74015dd4579f485c}{eg_read_direct1}(bs);
+00564 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_acd57cb14d72d158e01f061c69d3e67f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a555e0a8e9bc797ebe40b74eeef104d6f}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero2@{T264dec\_\-mb\_\-read\_\-total\_\-zero2}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero2@{T264dec\_\-mb\_\-read\_\-total\_\-zero2}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero2 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a555e0a8e9bc797ebe40b74eeef104d6f}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00305 \{
+00306         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00307         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00308 
+00309         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00310         \textcolor{keywordflow}{if} (code >= 8)
+00311         \{
+00312                 code >>= 2;
+00313                 total\_zero = total\_zero\_table2\_1[code].num;
+00314                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table2\_1[code].len);
+00315         \}
+00316         \textcolor{keywordflow}{else}
+00317         \{
+00318                 total\_zero = total\_zero\_table2\_0[code].num;
+00319                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table2\_0[code].len);
+00320         \}
+00321 
+00322         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00323 
+00324         \textcolor{keywordflow}{return} total\_zero;
+00325 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a555e0a8e9bc797ebe40b74eeef104d6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a7a1d11b2eef008bff8ff0f49c7d37f0d}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero3@{T264dec\_\-mb\_\-read\_\-total\_\-zero3}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero3@{T264dec\_\-mb\_\-read\_\-total\_\-zero3}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero3 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a7a1d11b2eef008bff8ff0f49c7d37f0d}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00328 \{
+00329         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00330         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00331 
+00332         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00333         \textcolor{keywordflow}{if} (code >= 8)
+00334         \{
+00335                 code >>= 2;
+00336                 total\_zero = total\_zero\_table3\_1[code].num;
+00337                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table3\_1[code].len);
+00338         \}
+00339         \textcolor{keywordflow}{else}
+00340         \{
+00341                 total\_zero = total\_zero\_table3\_0[code].num;
+00342                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table3\_0[code].len);
+00343         \}
+00344 
+00345         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00346 
+00347         \textcolor{keywordflow}{return} total\_zero;
+00348 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a7a1d11b2eef008bff8ff0f49c7d37f0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a344ce961a19c7d39d9324f45b80589d3}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero4@{T264dec\_\-mb\_\-read\_\-total\_\-zero4}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero4@{T264dec\_\-mb\_\-read\_\-total\_\-zero4}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero4 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a344ce961a19c7d39d9324f45b80589d3}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00443 \{
+00444         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00445         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00446 
+00447         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 5);
+00448         \textcolor{keywordflow}{if} (code >= 16)
+00449         \{
+00450                 code = (code >> 2) - 4;
+00451                 total\_zero = total\_zero\_table4\_1[code].num;
+00452                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table4\_1[code].len);
+00453         \}
+00454         \textcolor{keywordflow}{else}
+00455         \{
+00456                 total\_zero = total\_zero\_table4\_0[code].num;
+00457                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table4\_0[code].len);
+00458         \}
+00459 
+00460         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00461 
+00462         \textcolor{keywordflow}{return} total\_zero;
+00463 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a344ce961a19c7d39d9324f45b80589d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_accc49a932e74a300742a3ffc4fda2df2}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero5@{T264dec\_\-mb\_\-read\_\-total\_\-zero5}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero5@{T264dec\_\-mb\_\-read\_\-total\_\-zero5}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero5}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero5 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_accc49a932e74a300742a3ffc4fda2df2}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00466 \{
+00467         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00468         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00469 
+00470         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 5);
+00471         \textcolor{keywordflow}{if} (code >= 16)
+00472         \{
+00473                 code = (code >> 2) - 4;
+00474                 total\_zero = total\_zero\_table5\_1[code].num;
+00475                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table5\_1[code].len);
+00476         \}
+00477         \textcolor{keywordflow}{else}
+00478         \{
+00479                 total\_zero = total\_zero\_table5\_0[code].num;
+00480                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table5\_0[code].len);
+00481         \}
+00482 
+00483         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00484 
+00485         \textcolor{keywordflow}{return} total\_zero;
+00486 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_accc49a932e74a300742a3ffc4fda2df2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a08ad970c75fd24cb8a40f7406b8a5c2e}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero6@{T264dec\_\-mb\_\-read\_\-total\_\-zero6}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero6@{T264dec\_\-mb\_\-read\_\-total\_\-zero6}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero6}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero6 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a08ad970c75fd24cb8a40f7406b8a5c2e}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00351 \{
+00352         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00353         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00354 
+00355         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00356         \textcolor{keywordflow}{if} (code >= 8)
+00357         \{
+00358                 code >>= 3;
+00359                 total\_zero = total\_zero\_table6\_1[code].num;
+00360                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table6\_1[code].len);
+00361         \}
+00362         \textcolor{keywordflow}{else}
+00363         \{
+00364                 total\_zero = total\_zero\_table6\_0[code].num;
+00365                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table6\_0[code].len);
+00366         \}
+00367 
+00368         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00369 
+00370         \textcolor{keywordflow}{return} total\_zero;
+00371 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a08ad970c75fd24cb8a40f7406b8a5c2e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a4ae98797fed5bfe90e01c20beb0e8bb2}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero7@{T264dec\_\-mb\_\-read\_\-total\_\-zero7}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero7@{T264dec\_\-mb\_\-read\_\-total\_\-zero7}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero7}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero7 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a4ae98797fed5bfe90e01c20beb0e8bb2}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00374 \{
+00375         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00376         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00377 
+00378         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00379         \textcolor{keywordflow}{if} (code >= 8)
+00380         \{
+00381                 code >>= 3;
+00382                 total\_zero = total\_zero\_table7\_1[code].num;
+00383                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table7\_1[code].len);
+00384         \}
+00385         \textcolor{keywordflow}{else}
+00386         \{
+00387                 total\_zero = total\_zero\_table7\_0[code].num;
+00388                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table7\_0[code].len);
+00389         \}
+00390 
+00391         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00392 
+00393         \textcolor{keywordflow}{return} total\_zero;
+00394 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a4ae98797fed5bfe90e01c20beb0e8bb2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a447e87bf54c6dd411745c9dc3be6f1fe}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero8@{T264dec\_\-mb\_\-read\_\-total\_\-zero8}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero8@{T264dec\_\-mb\_\-read\_\-total\_\-zero8}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero8 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a447e87bf54c6dd411745c9dc3be6f1fe}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00397 \{
+00398         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00399         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00400 
+00401         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00402         \textcolor{keywordflow}{if} (code >= 8)
+00403         \{
+00404                 code >>= 3;
+00405                 total\_zero = total\_zero\_table8\_1[code].num;
+00406                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table8\_1[code].len);
+00407         \}
+00408         \textcolor{keywordflow}{else}
+00409         \{
+00410                 total\_zero = total\_zero\_table8\_0[code].num;
+00411                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table8\_0[code].len);
+00412         \}
+00413 
+00414         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00415 
+00416         \textcolor{keywordflow}{return} total\_zero;
+00417 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a447e87bf54c6dd411745c9dc3be6f1fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a01d3c729c686c58187d2d4f483dd201c}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero9@{T264dec\_\-mb\_\-read\_\-total\_\-zero9}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero9@{T264dec\_\-mb\_\-read\_\-total\_\-zero9}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero9}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero9 ({\bf Bitstream} $\ast$ {\em bs})}}
+\label{_c_a_v_l_c_8cpp_a01d3c729c686c58187d2d4f483dd201c}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00420 \{
+00421         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00422         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00423 
+00424         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 6);
+00425         \textcolor{keywordflow}{if} (code >= 8)
+00426         \{
+00427                 code >>= 3;
+00428                 total\_zero = total\_zero\_table9\_1[code].num;
+00429                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table9\_1[code].len);
+00430         \}
+00431         \textcolor{keywordflow}{else}
+00432         \{
+00433                 total\_zero = total\_zero\_table9\_0[code].num;
+00434                 \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table9\_0[code].len);
+00435         \}
+00436 
+00437         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00438 
+00439         \textcolor{keywordflow}{return} total\_zero;
+00440 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a01d3c729c686c58187d2d4f483dd201c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_c_a_v_l_c_8cpp_a72ccdd65c817f414847b927ef762971e}{
+\index{CAVLC.cpp@{CAVLC.cpp}!T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma@{T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma}}
+\index{T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma@{T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma}!CAVLC.cpp@{CAVLC.cpp}}
+\subsubsection[{T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\_\-t} T264dec\_\-mb\_\-read\_\-total\_\-zero\_\-chroma ({\bf Bitstream} $\ast$ {\em bs}, \/  {\bf uint8\_\-t} {\em total\_\-coeff})}}
+\label{_c_a_v_l_c_8cpp_a72ccdd65c817f414847b927ef762971e}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00567 \{
+00568         \hyperlink{_types_8h_a363e4d606232036a6b89060813c45489}{uint8_t} total\_zero;
+00569         \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} code;
+00570 
+00571         code = \hyperlink{_bitstream_8h_a89ddca586685b00a8a2fc90ec3514172}{eg_show}(bs, 3);
+00572         total\_zero = total\_zero\_table\_chroma[total\_coeff - 1][code].num;
+00573         \hyperlink{_bitstream_8h_ae09cd1235b1976cf290bee9c7367ddd5}{eg_read_skip}(bs, total\_zero\_table\_chroma[total\_coeff - 1][code].len);
+00574 
+00575         \hyperlink{_macros_8h_abd5c9d76934db042ded6de967acc64e4}{assert}(total\_zero != 255);
+00576 
+00577         \textcolor{keywordflow}{return} total\_zero;
+00578 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_c_a_v_l_c_8cpp_a72ccdd65c817f414847b927ef762971e_icgraph}
+\end{center}
+\end{figure}
+
+

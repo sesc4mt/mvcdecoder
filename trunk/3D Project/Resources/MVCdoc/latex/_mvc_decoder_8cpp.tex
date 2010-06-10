@@ -1,0 +1,110 @@
+\hypertarget{_mvc_decoder_8cpp}{
+\section{MVCDecoder/MvcDecoder.cpp File Reference}
+\label{_mvc_decoder_8cpp}\index{MVCDecoder/MvcDecoder.cpp@{MVCDecoder/MvcDecoder.cpp}}
+}
+{\ttfamily \#include $<$cstdio$>$}\par
+{\ttfamily \#include $<$memory$>$}\par
+{\ttfamily \#include \char`\"{}TaskDispatcher.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Windows.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Configure.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Codec/ConfigureSlave.h\char`\"{}}\par
+Include dependency graph for MvcDecoder.cpp:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{_mvc_decoder_8cpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=105pt]{_mvc_decoder_8cpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}{getInt} (const char $\ast$str)
+\item 
+int \hyperlink{_mvc_decoder_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}{
+\index{MvcDecoder.cpp@{MvcDecoder.cpp}!getInt@{getInt}}
+\index{getInt@{getInt}!MvcDecoder.cpp@{MvcDecoder.cpp}}
+\subsubsection[{getInt}]{\setlength{\rightskip}{0pt plus 5cm}int getInt (const char $\ast$ {\em str})}}
+\label{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00023 \{
+00024         \textcolor{keywordtype}{int} ret = 0;
+00025         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; str[i]; i++) 
+00026                 ret = ret * 10 + str[i] - \textcolor{charliteral}{'0'};
+00027         \textcolor{keywordflow}{return} ret;
+00028 \}
+\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=80pt]{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_mvc_decoder_8cpp_ac0f2228420376f4db7e1274f2b41667c}{
+\index{MvcDecoder.cpp@{MvcDecoder.cpp}!main@{main}}
+\index{main@{main}!MvcDecoder.cpp@{MvcDecoder.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  const char $\ast$ {\em argv}\mbox{[}$\,$\mbox{]})}}
+\label{_mvc_decoder_8cpp_ac0f2228420376f4db7e1274f2b41667c}
+
+
+
+
+\begin{footnotesize}\begin{alltt}
+00031 \{
+00032         freopen(\textcolor{stringliteral}{"testd.log"}, \textcolor{stringliteral}{"wt"}, stdout);
+00033         \textcolor{keywordflow}{if} (argc>=2)
+00034                 \hyperlink{class_configure_ac48067b7f9d47427e932b4c44f4c9248}{Configure::NUM_OF_SPU} = \hyperlink{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}{getInt}(argv[1]);
+00035         \textcolor{keywordflow}{if} (argc>=3)
+00036                 \hyperlink{class_configure_a0a595a8bf2825d2238fa77b2ecff2c5a}{Configure::GOP_LIMIT} = \hyperlink{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}{getInt}(argv[2]);
+00037         \textcolor{keywordflow}{if} (argc>=4)
+00038                 \hyperlink{class_configure_slave_aa79549b1785cff1588646653021641f2}{ConfigureSlave::PARALLEL_SIZE} = \hyperlink{_mvc_decoder_8cpp_a6f32ed4cf545c96eaaf4035a377c5d14}{getInt}(argv[3]);
+00039         \textcolor{keywordflow}{if} (argc>=5)
+00040                 \hyperlink{class_configure_aa6d6606a0e2fb33b2f828f207df7e140}{Configure::inputPattern} = argv[4];
+00041         \textcolor{keywordflow}{if} (argc>=6)
+00042                 \hyperlink{class_configure_a0e7dd4e79c40df653c7ca73ecbab5d39}{Configure::outputFileName} = argv[5];
+00043         \textcolor{keywordflow}{if} (argc>=7)
+00044                 \hyperlink{class_configure_slave_a51c09eff937ca8da9bcc20e1367ddb3d}{ConfigureSlave::NO_PARALLEL} = strcmp(argv[6], \textcolor{stringliteral}{"sp"})!=0;
+00045         printf(\textcolor{stringliteral}{"\(\backslash\)tFrame Parallel: %d\(\backslash\)n"}, \hyperlink{class_configure_ac48067b7f9d47427e932b4c44f4c9248}{Configure::NUM_OF_SPU});
+00046         printf(\textcolor{stringliteral}{"\(\backslash\)tMacroblock Parallel: %d\(\backslash\)n"}, \hyperlink{class_configure_slave_a51c09eff937ca8da9bcc20e1367ddb3d}{ConfigureSlave::NO_PARALLEL}?-1:
+      \hyperlink{class_configure_slave_aa79549b1785cff1588646653021641f2}{ConfigureSlave::PARALLEL_SIZE});
+00047         printf(\textcolor{stringliteral}{"\(\backslash\)tGOP Limit: %d\(\backslash\)n"}, \hyperlink{class_configure_a0a595a8bf2825d2238fa77b2ecff2c5a}{Configure::GOP_LIMIT});
+00048         printf(\textcolor{stringliteral}{"\(\backslash\)tYuv file: %s\(\backslash\)n"}, \hyperlink{class_configure_aa6d6606a0e2fb33b2f828f207df7e140}{Configure::inputPattern});
+00049         printf(\textcolor{stringliteral}{"\(\backslash\)tMvc file: %s\(\backslash\)n"}, \hyperlink{class_configure_a0e7dd4e79c40df653c7ca73ecbab5d39}{Configure::outputFileName});
+00050         \hyperlink{_task_dispatcher_8cpp_a1d60dff3d8b50942f03375c11e724af2}{ProcessFrames}();
+00051         \textcolor{keywordflow}{return} 0;
+00052 \}\end{alltt}\end{footnotesize}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_mvc_decoder_8cpp_ac0f2228420376f4db7e1274f2b41667c_cgraph}
+\end{center}
+\end{figure}
+
+

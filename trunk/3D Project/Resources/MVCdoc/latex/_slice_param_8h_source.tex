@@ -1,0 +1,35 @@
+\hypertarget{_slice_param_8h_source}{
+\section{MVCCommonLib/Codec/SliceParam.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2009-03-18           Weidong Hu              Tsinghua University             C
+      reate}
+00007 \textcolor{comment}{ * }
+00008 \textcolor{comment}{ ************************************************************************/}
+00009 
+00010 \textcolor{preprocessor}{#ifndef \_SLICE\_PARAMETERS\_H\_}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_SLICE\_PARAMETERS\_H\_}
+00012 \textcolor{preprocessor}{}
+00013 \textcolor{preprocessor}{#include "\hyperlink{_array_list_8h}{ArrayList.h}"}
+00014 
+\hypertarget{_slice_param_8h_source_l00015}{}\hyperlink{struct_slice_parameters}{00015} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{_slice_param_8h_source_l00016}{}\hyperlink{struct_slice_parameters_a60f8fe21acd611ec6892e47a2c6029e3}{00016}         \textcolor{keywordtype}{bool} IDR;
+\hypertarget{_slice_param_8h_source_l00017}{}\hyperlink{struct_slice_parameters_a82aa216a74ffaa7d1859aa1cfe135a8b}{00017}         \textcolor{keywordtype}{int} priority\_id; \textcolor{comment}{// Not used;}
+\hypertarget{_slice_param_8h_source_l00018}{}\hyperlink{struct_slice_parameters_ae570f1ba10b1e091c7519264534a7143}{00018}         \textcolor{keywordtype}{int} viewId;
+\hypertarget{_slice_param_8h_source_l00019}{}\hyperlink{struct_slice_parameters_ad6a26fe2f228235e4f0c31c336cf5e12}{00019}         \textcolor{keywordtype}{int} timeId;
+\hypertarget{_slice_param_8h_source_l00020}{}\hyperlink{struct_slice_parameters_a8ab83c948c5e095477d918c0664fce0a}{00020}         \textcolor{keywordtype}{int} SliceType;
+\hypertarget{_slice_param_8h_source_l00021}{}\hyperlink{struct_slice_parameters_a5ca0d343251519b63746af21c1cb9f70}{00021}         \textcolor{keywordtype}{int} QP\_Delta;
+\hypertarget{_slice_param_8h_source_l00022}{}\hyperlink{struct_slice_parameters_af8a7ea94e92b177c38277af8b827eb62}{00022}         \textcolor{keywordtype}{bool} isAnchor;
+\hypertarget{_slice_param_8h_source_l00023}{}\hyperlink{struct_slice_parameters_a7e551828136a39ab347f77457aa11dbb}{00023}         \textcolor{keywordtype}{bool} isRef;
+\hypertarget{_slice_param_8h_source_l00024}{}\hyperlink{struct_slice_parameters_a20319af06c76e833936a009f3c38d4ef}{00024}         \textcolor{keywordtype}{int} frameNum;
+00025 \} \hyperlink{struct_slice_parameters}{SliceParameters};
+00026 
+00027 \textcolor{preprocessor}{#endif //\_SLICE\_PARAMETERS\_H\_}
+\end{alltt}\end{footnotesize}

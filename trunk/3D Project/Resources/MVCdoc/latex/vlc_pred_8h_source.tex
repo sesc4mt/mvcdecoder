@@ -1,0 +1,119 @@
+\hypertarget{vlc_pred_8h_source}{
+\section{MVCCommonLib/Codec/vlcPred.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{preprocessor}{#ifndef \_VLC\_PREDICT\_H\_WEIDONG\_}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_VLC\_PREDICT\_H\_WEIDONG\_}
+\hypertarget{vlc_pred_8h_source_l00003}{}\hyperlink{vlc_pred_8h_a995f6a4907273b8d56b6543ab1a57d17}{00003} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00004 \textcolor{preprocessor}{}\textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00005 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00006 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00007 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include "\hyperlink{_types_8h}{Types.h}"}
+00008 
+\hypertarget{vlc_pred_8h_source_l00009}{}\hyperlink{structtag__cavlc__ref}{00009} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structtag__cavlc__ref}{tag_cavlc_ref} \{
+\hypertarget{vlc_pred_8h_source_l00010}{}\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{00010}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[2];
+\hypertarget{vlc_pred_8h_source_l00011}{}\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{00011}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[2];
+\hypertarget{vlc_pred_8h_source_l00012}{}\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{00012}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[2];
+\hypertarget{vlc_pred_8h_source_l00013}{}\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{00013}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff};
+\hypertarget{vlc_pred_8h_source_l00014}{}\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{00014}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC};
+\hypertarget{vlc_pred_8h_source_l00015}{}\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{00015}         \textcolor{keywordtype}{int} \hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode};
+00016 \} \hyperlink{structtag__cavlc__ref}{cavlc_ref};
+00017 
+\hypertarget{vlc_pred_8h_source_l00018}{}\hyperlink{structtag__cavlc__ref__list}{00018} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{structtag__cavlc__ref__list}{tag_cavlc_ref_list} \{
+\hypertarget{vlc_pred_8h_source_l00019}{}\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{00019}         \hyperlink{structtag__cavlc__ref}{cavlc_ref} *\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left};
+\hypertarget{vlc_pred_8h_source_l00020}{}\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{00020}         \hyperlink{structtag__cavlc__ref}{cavlc_ref} *\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top};
+\hypertarget{vlc_pred_8h_source_l00021}{}\hyperlink{structtag__cavlc__ref__list_ac71d66d925cb5fbc0c15812f70aa2e78}{00021}         \hyperlink{structtag__cavlc__ref}{cavlc_ref} \hyperlink{structtag__cavlc__ref__list_ac71d66d925cb5fbc0c15812f70aa2e78}{topleft};
+\hypertarget{vlc_pred_8h_source_l00022}{}\hyperlink{structtag__cavlc__ref__list_ae9fad3ab9c8086e7dd826492ee027b7d}{00022}         \hyperlink{structtag__cavlc__ref}{cavlc_ref} \hyperlink{structtag__cavlc__ref__list_ae9fad3ab9c8086e7dd826492ee027b7d}{lefts}[4];
+\hypertarget{vlc_pred_8h_source_l00023}{}\hyperlink{structtag__cavlc__ref__list_ab4d9282dda63bfa7f48cff76db26de04}{00023}         \hyperlink{structtag__cavlc__ref}{cavlc_ref} \hyperlink{structtag__cavlc__ref__list_ab4d9282dda63bfa7f48cff76db26de04}{tops}[5];
+00024 \} \hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list};
+00025 
+\hypertarget{vlc_pred_8h_source_l00026}{}\hyperlink{vlc_pred_8h_aa95b4f7002a155287414853f2fc58279}{00026} \_\_inline \textcolor{keywordtype}{int} \hyperlink{vlc_pred_8h_aa95b4f7002a155287414853f2fc58279}{get_luma_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} idx)
+00027 \{
+00028         \textcolor{keywordtype}{int} row = idx / 4, col = idx & 3, nA = ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff}, nB = re
+      f\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff}, nC = nA+nB;
+00029         \textcolor{keywordflow}{if} (nC & 0xC0)
+00030                 nC = nC & 0x3F;
+00031         \textcolor{keywordflow}{else}
+00032                 nC = (nC + 1) >> 1;
+00033         \textcolor{keywordflow}{return} nC & 0x3F;
+00034 \}
+00035 
+\hypertarget{vlc_pred_8h_source_l00036}{}\hyperlink{vlc_pred_8h_a534c4d1461b465b86fa6ed3294f7fc93}{00036} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_a534c4d1461b465b86fa6ed3294f7fc93}{set_luma_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} idx, \textcolor{keywordtype}{int} value)
+00037 \{
+00038         \textcolor{keywordtype}{int} row = idx / 4, col = idx & 3;
+00039         ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff} = ref\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a4fc396cd8d03fbd50466ff12a4785529}{coeff} = value;
+00040 \}
+00041 
+\hypertarget{vlc_pred_8h_source_l00042}{}\hyperlink{vlc_pred_8h_a935aabaab002233cc24a9fafbb471893}{00042} \_\_inline \textcolor{keywordtype}{int} \hyperlink{vlc_pred_8h_a935aabaab002233cc24a9fafbb471893}{get_mode_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} idx)
+00043 \{
+00044         \textcolor{keywordtype}{int} row = idx / 4, col = idx & 3, nA = ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode}, nB = re
+      f\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode};
+00045         \textcolor{keywordflow}{if} ((nA&0xC0)||(nB&0xC0))
+00046                 nA = nB = 2;
+00047         \textcolor{keywordflow}{if} (nB < nA)
+00048                 nA = nB;
+00049         \textcolor{keywordflow}{return} nA;
+00050 \}
+00051 
+\hypertarget{vlc_pred_8h_source_l00052}{}\hyperlink{vlc_pred_8h_adbc92a1e88185df25667d24d445187a5}{00052} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_adbc92a1e88185df25667d24d445187a5}{set_mode_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} idx, \textcolor{keywordtype}{int} value)
+00053 \{
+00054         \textcolor{keywordtype}{int} row = idx / 4, col = idx & 3;
+00055         ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = ref\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a76c8b0c75a3a13a59196c89cf919766f}{imode} = value;
+00056 \}
+00057 
+\hypertarget{vlc_pred_8h_source_l00058}{}\hyperlink{vlc_pred_8h_a6b7594a4d633c85e42d7fcab84940eee}{00058} \_\_inline \textcolor{keywordtype}{int} \hyperlink{vlc_pred_8h_a6b7594a4d633c85e42d7fcab84940eee}{get_chroma_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} index)
+00059 \{
+00060         \textcolor{keywordtype}{int} row = index >> 1, col = ((index & 4) >> 1) | (index & 1), nA = ref\_li
+      st->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC}, nB = ref\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC}, nC = nA+nB;
+00061         if (nC & 0xC0)
+00062                 nC = nC & 0x3F;
+00063         \textcolor{keywordflow}{else}
+00064                 nC = (nC + 1) >> 1;
+00065         \textcolor{keywordflow}{return} nC & 0x3F;
+00066 \}
+00067 
+\hypertarget{vlc_pred_8h_source_l00068}{}\hyperlink{vlc_pred_8h_a502428eb3f92a2a6d112ad25f756c233}{00068} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_a502428eb3f92a2a6d112ad25f756c233}{set_chroma_pred}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} value)
+00069 \{
+00070         \textcolor{keywordtype}{int} row = index >> 1, col = ((index & 4) >> 1) | (index & 1);
+00071         ref\_list->\hyperlink{structtag__cavlc__ref__list_a854c970004394513901757cc3dcb65e5}{left}[row].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC} = ref\_list->\hyperlink{structtag__cavlc__ref__list_af93b34de26224281e33b951333a665c7}{top}[col].\hyperlink{structtag__cavlc__ref_a38397a4aa7f4f450d2bed25146783b22}{coeffC} = value;
+00072 \}
+00073 
+\hypertarget{vlc_pred_8h_source_l00074}{}\hyperlink{vlc_pred_8h_aaadafe85e9b6ba1dcdf88a7bc3167218}{00074} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_aaadafe85e9b6ba1dcdf88a7bc3167218}{swap}(\textcolor{keywordtype}{int} &a, \textcolor{keywordtype}{int} &b)
+00075 \{
+00076         \textcolor{keywordtype}{int} c = a;
+00077         a = b; 
+00078         b = c;
+00079 \}
+00080 
+00081 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_ab68d6bc1fd9bc79cce8d7ab25983f092}{getRefXYP}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c1, \textcolor{keywordtype}{int} c2, \hyperlink{structref_vector}{refVector} &ref, \textcolor{keywordtype}{b
+      ool} allowAboveRight, \textcolor{keywordtype}{int} type, \textcolor{keywordtype}{int} prefered);
+00082 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_a1948c1579087f1b413f0db7dfdb3ca2c}{getRefXY}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} listId, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c1, \textcolor{keywordtype}{int} c2, 
+      \hyperlink{structref_vector}{refVector} &ref, \textcolor{keywordtype}{bool} allowAboveRight, \textcolor{keywordtype}{int} type = 0, \textcolor{keywordtype}{int} prefered = -1);
+00083 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_abfa7f4848a4146dd209263effc3c80d0}{getRefXY_SKIP}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} indexId, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c1, \textcolor{keywordtype}{int} c2, 
+      \hyperlink{structref_vector}{refVector} &ref, \textcolor{keywordtype}{bool} allowAboveRight, \textcolor{keywordtype}{int} type = 0);
+00084 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_a9d220d785c4b722cdecc8dcd7e1aa00f}{getRefXYB}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c1, \textcolor{keywordtype}{int} c2, \hyperlink{structref_vector}{refVector} *ref, \textcolor{keywordtype}{b
+      ool} allowAboveRight, \textcolor{keywordtype}{int} type = 0, \textcolor{keywordtype}{int} prefered0 = -1, \textcolor{keywordtype}{int} prefered1 = -1);
+00085 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_a87631dc54f2e2ca4fa038211f5bf07fa}{setRefXY}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c, \hyperlink{structref_vector}{refVector} &ref);
+00086 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_a87631dc54f2e2ca4fa038211f5bf07fa}{setRefXY}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \textcolor{keywordtype}{int} indexId, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c, \hyperlink{structref_vector}{refVector} &ref
+      );
+00087 
+\hypertarget{vlc_pred_8h_source_l00088}{}\hyperlink{vlc_pred_8h_aa818c1dd128c70486cd700b39945cf0b}{00088} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_aa818c1dd128c70486cd700b39945cf0b}{copyVector}(\hyperlink{structref_vector}{refVector} &vec, \hyperlink{structtag__cavlc__ref}{cavlc_ref} &ref)
+00089 \{
+00090         vec.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno} = ref.\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[0];
+00091         vec.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x} = ref.\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[0];
+00092         vec.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y} = ref.\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[0];
+00093 \}
+00094 
+\hypertarget{vlc_pred_8h_source_l00095}{}\hyperlink{vlc_pred_8h_aae2ee8c22c6f89b4aedfbfcce18118fe}{00095} \_\_inline \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8h_aae2ee8c22c6f89b4aedfbfcce18118fe}{copyVector2}(\hyperlink{structref_vector}{refVector} &vec, \hyperlink{structtag__cavlc__ref}{cavlc_ref} &ref)
+00096 \{
+00097         vec.\hyperlink{structref_vector_a87a1d38b9e235b983b82abd3a0eb47ab}{refno} = ref.\hyperlink{structtag__cavlc__ref_a071bb830fe08f1df5618d391ed428221}{refid}[1];
+00098         vec.\hyperlink{structref_vector_adeb9dca3f08b25112b9f6bccb5002f48}{x} = ref.\hyperlink{structtag__cavlc__ref_a890a9186d3db3787c7a451e51f4fc0bf}{mv_x}[1];
+00099         vec.\hyperlink{structref_vector_a899825821ce74c5622ea369e32dcf67c}{y} = ref.\hyperlink{structtag__cavlc__ref_abae0c90668fedb380b2cc0773cfa351d}{mv_y}[1];
+00100 \}
+00101 \textcolor{keywordtype}{void} \hyperlink{vlc_pred_8cpp_a8e3b2d1b28e66aabfcb678547cd94545}{getRefXYDirectB}(\hyperlink{structtag__cavlc__ref__list}{cavlc_ref_list} *ref\_list, \hyperlink{structref_vector}{refVector} *col\_refs, 
+      \hyperlink{structmacroblock_info}{pmacroblockInfo} info, \textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} c1, \textcolor{keywordtype}{int} c2, \hyperlink{structref_vector}{refVector} *ref);
+00102 
+00103 \textcolor{preprocessor}{#endif //\_VLC\_PREDICT\_H\_WEIDONG\_}
+\end{alltt}\end{footnotesize}

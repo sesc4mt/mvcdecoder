@@ -1,0 +1,43 @@
+\hypertarget{_quantisation_8h_source}{
+\section{MVCDecoder/Codec/Quantisation.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00007 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00008 \textcolor{comment}{ * }
+00009 \textcolor{comment}{ ************************************************************************/}
+00010 
+00011 \textcolor{preprocessor}{#ifndef \_QUANTISATION\_H\_WEIDONG\_}
+00012 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_QUANTISATION\_H\_WEIDONG\_}
+\hypertarget{_quantisation_8h_source_l00013}{}\hyperlink{_quantisation_8h_a995f6a4907273b8d56b6543ab1a57d17}{00013} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SLAVE\_CODE}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_common_8h}{Common.h}"}
+00016 
+\hypertarget{_quantisation_8h_source_l00017}{}\hyperlink{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{00017} \textcolor{keyword}{typedef} \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16}* \hyperlink{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{param_quant8};
+\hypertarget{_quantisation_8h_source_l00018}{}\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{00018} \textcolor{keyword}{typedef} \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param_quant4}[4][4];
+\hypertarget{_quantisation_8h_source_l00019}{}\hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{00019} \textcolor{keyword}{typedef} \hyperlink{_types_8h_a259fa4834387bd68627ddf37bb3ebdb9}{int16} \hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param_quant2}[2][2];
+00020 
+00021 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_af304d1aed221004504fa9475387cf32e}{quant4x4_c}(\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param_quant4} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} is\_intra);
+00022 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_a5985492c5cf012e5d7051f11fa86821c}{iquant4x4_c}(\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param_quant4} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp);
+00023 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_aeb2be591bcf2be1d22c5bb6a23537c78}{quant4x4dc_c}(\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param_quant4} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp);
+00024 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_a480f9f1c650257964853863d5683ed34}{iquant4x4dc_c}(\hyperlink{_quantisation_8h_aaf238cae50a8b754d811c856535578b4}{param_quant4} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp);
+00025 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_a805f7902eccf615fd707997d06e0c1ff}{quant2x2dc_c}(\hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param_quant2} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp, \hyperlink{_types_8h_a115ba3a1b24a8702355c5dbd61ce01e0}{int32_t} is\_intra);
+00026 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_ad8c9813079b1dac9e7c7ab3d40a9a212}{iquant2x2dc_c}(\hyperlink{_quantisation_8h_aa2419725a4ad76a3137ed57a1789cf8e}{param_quant2} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp);
+00027 \textcolor{keywordtype}{void} \hyperlink{_quantisation_8cpp_a6096528e049a8f3c2a463926db773e42}{iquant8x8_c}(\hyperlink{_quantisation_8h_a8bf84fa166851783a628e4a4e5a48888}{param_quant8} dt, \textcolor{keyword}{const} \hyperlink{_types_8h_a43d43196463bde49cb067f5c20ab8481}{int32} Qp);
+00028 
+00029 \textcolor{preprocessor}{#endif //\_QUANTISATION\_H\_WEIDONG\_}
+00030 \textcolor{preprocessor}{}
+00031 \textcolor{preprocessor}{#ifdef MASTER\_CODE}
+00032 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error "Can not include slave code in master program"}
+00033 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif // MASTER\_CODE}
+00034 \textcolor{preprocessor}{}
+\end{alltt}\end{footnotesize}

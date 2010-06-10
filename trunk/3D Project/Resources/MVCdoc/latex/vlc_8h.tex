@@ -1,0 +1,103 @@
+\hypertarget{vlc_8h}{
+\section{MVCCommonLib/Codec/vlc.h File Reference}
+\label{vlc_8h}\index{MVCCommonLib/Codec/vlc.h@{MVCCommonLib/Codec/vlc.h}}
+}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=351pt]{vlc_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structvlc__t}{vlc\_\-t}
+\item 
+struct \hyperlink{structvlc__coeff__token__t}{vlc\_\-coeff\_\-token\_\-t}
+\item 
+struct \hyperlink{structzero__count__t}{zero\_\-count\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{vlc_8h_aa680b26539d09b5954221ff39a127faa}{MKVLC}(a, b)~\{ a, b \}
+\item 
+\#define \hyperlink{vlc_8h_a8970a37770d210d728339bc5696f28df}{BLOCK\_\-INDEX\_\-CHROMA\_\-DC}~(-\/1)
+\item 
+\#define \hyperlink{vlc_8h_ad2d7f1b7e491db865767a2a38443091a}{BLOCK\_\-INDEX\_\-LUMA\_\-DC}~(-\/2)
+\item 
+\#define \hyperlink{vlc_8h_ad5a55e11f34af0eea76d2129ca93b3d3}{INITINVALIDVEC}(vec)~vec.refno = -\/1; vec.x = vec.y = 0;
+\item 
+\#define \hyperlink{vlc_8h_a7f3572774a720fd9b4bc3b1a0b65082f}{VLC}(a, b, c)~\{a, b, c\}
+\item 
+\#define \hyperlink{vlc_8h_ad3cda36b9c6132357c7f7de5e52a6c93}{VLC2}(a, b, c)~VLC(a, b, c), VLC(a, b, c)
+\item 
+\#define \hyperlink{vlc_8h_a02cdc921d8f03450b12879e8afb222cb}{VLC4}(a, b, c)~VLC2(a, b, c), VLC2(a, b, c)
+\item 
+\#define \hyperlink{vlc_8h_abcb3e8dd3767b4229f15f1fb1f2bd263}{VLC}(a, b)~\{a, b\}
+\item 
+\#define \hyperlink{vlc_8h_a9b868c0aefbcae8a49f5148c3bcf6fed}{VLC2}(a, b)~VLC(a, b), VLC(a, b)
+\item 
+\#define \hyperlink{vlc_8h_a1bc626fcc46afa5b916e5441648a3942}{VLC4}(a, b)~VLC2(a, b), VLC2(a, b)
+\item 
+\#define \hyperlink{vlc_8h_a0a94088f44f593387fb86112a6c7da9c}{VLC8}(a, b)~VLC4(a, b), VLC4(a, b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{vlc_8h_a8970a37770d210d728339bc5696f28df}{
+\index{vlc.h@{vlc.h}!BLOCK\_\-INDEX\_\-CHROMA\_\-DC@{BLOCK\_\-INDEX\_\-CHROMA\_\-DC}}
+\index{BLOCK\_\-INDEX\_\-CHROMA\_\-DC@{BLOCK\_\-INDEX\_\-CHROMA\_\-DC}!vlc.h@{vlc.h}}
+\subsubsection[{BLOCK\_\-INDEX\_\-CHROMA\_\-DC}]{\setlength{\rightskip}{0pt plus 5cm}\#define BLOCK\_\-INDEX\_\-CHROMA\_\-DC~(-\/1)}}
+\label{vlc_8h_a8970a37770d210d728339bc5696f28df}
+\hypertarget{vlc_8h_ad2d7f1b7e491db865767a2a38443091a}{
+\index{vlc.h@{vlc.h}!BLOCK\_\-INDEX\_\-LUMA\_\-DC@{BLOCK\_\-INDEX\_\-LUMA\_\-DC}}
+\index{BLOCK\_\-INDEX\_\-LUMA\_\-DC@{BLOCK\_\-INDEX\_\-LUMA\_\-DC}!vlc.h@{vlc.h}}
+\subsubsection[{BLOCK\_\-INDEX\_\-LUMA\_\-DC}]{\setlength{\rightskip}{0pt plus 5cm}\#define BLOCK\_\-INDEX\_\-LUMA\_\-DC~(-\/2)}}
+\label{vlc_8h_ad2d7f1b7e491db865767a2a38443091a}
+\hypertarget{vlc_8h_ad5a55e11f34af0eea76d2129ca93b3d3}{
+\index{vlc.h@{vlc.h}!INITINVALIDVEC@{INITINVALIDVEC}}
+\index{INITINVALIDVEC@{INITINVALIDVEC}!vlc.h@{vlc.h}}
+\subsubsection[{INITINVALIDVEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define INITINVALIDVEC(vec)~vec.refno = -\/1; vec.x = vec.y = 0;}}
+\label{vlc_8h_ad5a55e11f34af0eea76d2129ca93b3d3}
+\hypertarget{vlc_8h_aa680b26539d09b5954221ff39a127faa}{
+\index{vlc.h@{vlc.h}!MKVLC@{MKVLC}}
+\index{MKVLC@{MKVLC}!vlc.h@{vlc.h}}
+\subsubsection[{MKVLC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MKVLC(a, \/  b)~\{ a, b \}}}
+\label{vlc_8h_aa680b26539d09b5954221ff39a127faa}
+\hypertarget{vlc_8h_abcb3e8dd3767b4229f15f1fb1f2bd263}{
+\index{vlc.h@{vlc.h}!VLC@{VLC}}
+\index{VLC@{VLC}!vlc.h@{vlc.h}}
+\subsubsection[{VLC}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC(a, \/  b)~\{a, b\}}}
+\label{vlc_8h_abcb3e8dd3767b4229f15f1fb1f2bd263}
+\hypertarget{vlc_8h_a7f3572774a720fd9b4bc3b1a0b65082f}{
+\index{vlc.h@{vlc.h}!VLC@{VLC}}
+\index{VLC@{VLC}!vlc.h@{vlc.h}}
+\subsubsection[{VLC}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC(a, \/  b, \/  c)~\{a, b, c\}}}
+\label{vlc_8h_a7f3572774a720fd9b4bc3b1a0b65082f}
+\hypertarget{vlc_8h_a9b868c0aefbcae8a49f5148c3bcf6fed}{
+\index{vlc.h@{vlc.h}!VLC2@{VLC2}}
+\index{VLC2@{VLC2}!vlc.h@{vlc.h}}
+\subsubsection[{VLC2}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC2(a, \/  b)~VLC(a, b), VLC(a, b)}}
+\label{vlc_8h_a9b868c0aefbcae8a49f5148c3bcf6fed}
+\hypertarget{vlc_8h_ad3cda36b9c6132357c7f7de5e52a6c93}{
+\index{vlc.h@{vlc.h}!VLC2@{VLC2}}
+\index{VLC2@{VLC2}!vlc.h@{vlc.h}}
+\subsubsection[{VLC2}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC2(a, \/  b, \/  c)~VLC(a, b, c), VLC(a, b, c)}}
+\label{vlc_8h_ad3cda36b9c6132357c7f7de5e52a6c93}
+\hypertarget{vlc_8h_a1bc626fcc46afa5b916e5441648a3942}{
+\index{vlc.h@{vlc.h}!VLC4@{VLC4}}
+\index{VLC4@{VLC4}!vlc.h@{vlc.h}}
+\subsubsection[{VLC4}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC4(a, \/  b)~VLC2(a, b), VLC2(a, b)}}
+\label{vlc_8h_a1bc626fcc46afa5b916e5441648a3942}
+\hypertarget{vlc_8h_a02cdc921d8f03450b12879e8afb222cb}{
+\index{vlc.h@{vlc.h}!VLC4@{VLC4}}
+\index{VLC4@{VLC4}!vlc.h@{vlc.h}}
+\subsubsection[{VLC4}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC4(a, \/  b, \/  c)~VLC2(a, b, c), VLC2(a, b, c)}}
+\label{vlc_8h_a02cdc921d8f03450b12879e8afb222cb}
+\hypertarget{vlc_8h_a0a94088f44f593387fb86112a6c7da9c}{
+\index{vlc.h@{vlc.h}!VLC8@{VLC8}}
+\index{VLC8@{VLC8}!vlc.h@{vlc.h}}
+\subsubsection[{VLC8}]{\setlength{\rightskip}{0pt plus 5cm}\#define VLC8(a, \/  b)~VLC4(a, b), VLC4(a, b)}}
+\label{vlc_8h_a0a94088f44f593387fb86112a6c7da9c}

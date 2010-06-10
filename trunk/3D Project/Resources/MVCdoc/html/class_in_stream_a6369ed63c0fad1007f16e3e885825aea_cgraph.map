@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_array_list.html#acb53d54675318c94332d0ec8b6819eb3" title="ArrayList::clear" alt="" coords="299,5,408,35"/>
+<area shape="rect" id="node5" href="$class_in_stream.html#acab96485c6978e95e5ef747ebedf09d6" title="InStream::Comment" alt="" coords="284,59,423,88"/>
+<area shape="rect" id="node7" href="$class_array_list.html#a18695cf2c26e9c6ef585ec77afc19fc6" title="ArrayList::erase" alt="" coords="296,112,411,141"/>
+<area shape="rect" id="node9" href="$class_sliding_window.html#ac50874323a2aaa4ef76fab47f80c9f92" title="SlidingWindow::GetCodingPictInfo" alt="" coords="244,165,463,195"/>
+<area shape="rect" id="node17" href="$class_codec_info.html#ad439fd8062a03d868dfe9c9b615b747e" title="CodecInfo::GetInstance" alt="" coords="275,272,432,301"/>
+<area shape="rect" id="node21" href="$class_sliding_window.html#a020d2c25f1bda31337f91bf9b1a809d1" title="SlidingWindow::GetSliceParameters" alt="" coords="237,219,469,248"/>
+<area shape="rect" id="node24" href="$class_array_list.html#addb12a5554260fa1f386160ce8534db0" title="ArrayList::insert" alt="" coords="296,325,411,355"/>
+<area shape="rect" id="node26" href="$_pair_8h.html#a76ecd40e2cff7790abf204644d74645e" title="makePair" alt="" coords="315,379,392,408"/>
+<area shape="rect" id="node28" href="$class_array_list.html#ad98cc674ef8dcc42f53b4836416a289c" title="ArrayList::pop_back" alt="" coords="284,432,423,461"/>
+<area shape="rect" id="node30" href="$class_array_list.html#a7b5376678a9b5af0e0ed913fbe04b902" title="ArrayList::push_back" alt="" coords="281,485,425,515"/>
+<area shape="rect" id="node32" href="$class_in_stream.html#a07d84696f5dd53b6bbc881dc7507de4c" title="InStream::ReadCode" alt="" coords="283,539,424,568"/>
+<area shape="rect" id="node34" href="$class_in_stream.html#a340f8fadf6dfc7d17236b15285bba96f" title="InStream::ReadFlag" alt="" coords="285,592,421,621"/>
+<area shape="rect" id="node36" href="$class_in_stream.html#accc880522e6e43bd3a46297988de1c47" title="InStream::ReadSvlc" alt="" coords="285,645,421,675"/>
+<area shape="rect" id="node38" href="$class_in_stream.html#a8e8daf92cb96e583662cafdaf211093c" title="InStream::ReadUvlc" alt="" coords="285,699,421,728"/>
+<area shape="rect" id="node40" href="$class_array_list.html#aff9c6ac40886044e4653174950d23e74" title="ArrayList::size" alt="" coords="300,752,407,781"/>
+<area shape="rect" id="node11" href="$class_sliding_window.html#a3df64e20282ce10a45c4c3f3011e536d" title="SlidingWindow::GetUnsaved" alt="" coords="519,192,703,221"/>
+<area shape="rect" id="node13" href="$class_sliding_window.html#aea027ce6f77dcee09d1aafb31d5732c5" title="SlidingWindow::IncreaseSaved" alt="" coords="753,192,951,221"/>
+<area shape="rect" id="node15" href="$class_sliding_window.html#a0aafbf41ff2b7bb6c32fb60075bfeb22" title="SlidingWindow::GetKeep" alt="" coords="1001,192,1167,221"/>
+<area shape="rect" id="node19" href="$class_codec_info.html#ab2ecf673aaa2480fafb0b3d22896e4b6" title="CodecInfo::CodecInfo" alt="" coords="539,272,683,301"/>
+</map>

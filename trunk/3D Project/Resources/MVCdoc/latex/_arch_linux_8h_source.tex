@@ -1,0 +1,56 @@
+\hypertarget{_arch_linux_8h_source}{
+\section{MVCCommonLib/Arch/Linux/ArchLinux.h}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{/************************************************************************}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * MVC Codec}
+00004 \textcolor{comment}{ * }
+00005 \textcolor{comment}{ * History}
+00006 \textcolor{comment}{ * 2008-12-15           Weidong Hu              Tsinghua University             A
+      dd Locker, GetAndWait and PutAndWait}
+00007 \textcolor{comment}{ * 2008-11-29           Weidong Hu              Tsinghua University             R
+      eorganize}
+00008 \textcolor{comment}{ * 2006-2008            Weidong Hu              Tsinghua University             C
+      reate}
+00009 \textcolor{comment}{ * }
+00010 \textcolor{comment}{ ************************************************************************/}
+00011 
+00012 \textcolor{preprocessor}{#ifdef LINUX}
+00013 \textcolor{preprocessor}{}\textcolor{preprocessor}{#ifndef \_ARCH\_LINUX\_H\_WEIDONG\_MVC\_}
+00014 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define \_ARCH\_LINUX\_H\_WEIDONG\_MVC\_}
+00015 \textcolor{preprocessor}{}
+00016 \textcolor{keyword}{class }Locker
+00017 \{
+00018 \textcolor{keyword}{public}:
+00019         Locker()
+00020         \{
+00021 
+00022         \}
+00023         \textcolor{keyword}{virtual} ~Locker()
+00024         \{
+00025 
+00026         \}
+00027         \textcolor{keywordtype}{void} Lock()
+00028         \{
+00029 
+00030         \}
+00031         \textcolor{keywordtype}{void} Unlock()
+00032         \{
+00033 
+00034         \}
+00035 \};
+00036 
+00037 \textcolor{preprocessor}{#define GetAndWait\_(dest, src, size) memcpy(dest, (void*)(src), size)}
+00038 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define PutAndWait\_(src, dest, size) memcpy((void*)(dest), src, size)}
+00039 \textcolor{preprocessor}{}
+00040 \textcolor{preprocessor}{#define GetAndWait(dest, src, size) GetAndWait\_((char *)(dest), (unsigned int)(sr
+      c), size);}
+00041 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define PutAndWait(src, dest, size) PutAndWait\_((char *)(src), (unsigned int)(des
+      t), size);}
+00042 \textcolor{preprocessor}{}
+00043 \textcolor{preprocessor}{#endif //\_ARCH\_LINUX\_H\_WEIDONG\_MVC\_}
+00044 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif //LINUX}
+\end{alltt}\end{footnotesize}
