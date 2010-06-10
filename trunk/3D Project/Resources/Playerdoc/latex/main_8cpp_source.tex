@@ -1,0 +1,390 @@
+\hypertarget{main_8cpp_source}{
+\section{/Volumes/BOOTCAMP/Workspace/Solutions/MVC/proj/Direct3DTutorial/Direct3DTutorial/main.cpp}
+}
+
+
+\begin{footnotesize}\begin{alltt}
+00001 \textcolor{comment}{// include the basic windows header files and the Direct 3D header file}
+00002 \textcolor{preprocessor}{#include <windows.h>}
+00003 \textcolor{preprocessor}{#include <windowsx.h>}
+00004 \textcolor{preprocessor}{#include <d3d9.h>}
+00005 \textcolor{preprocessor}{#include <d3dx9.h>}
+00006 
+00007 \textcolor{preprocessor}{#include <string>}
+00008 \textcolor{preprocessor}{#include <iostream>}
+00009 \textcolor{preprocessor}{#include <fstream>}
+00010 \textcolor{preprocessor}{#include <sstream>}
+00011 \textcolor{preprocessor}{#include <iomanip>}
+00012 \textcolor{preprocessor}{#include <cstdlib>}
+00013 \textcolor{preprocessor}{#include <atlconv.h>}
+00014 
+00015 \textcolor{preprocessor}{#include "\hyperlink{mytimer_8h}{mytimer.h}"}
+00016 \textcolor{preprocessor}{#include "\hyperlink{utils_8h}{utils.h}"}
+00017 \textcolor{preprocessor}{#include "\hyperlink{config_8h}{config.h}"}
+00018 
+00019 \textcolor{comment}{// include the Direct3D Libary file}
+00020 \textcolor{preprocessor}{#pragma comment (lib, "d3d9.lib")}
+00021 \textcolor{preprocessor}{}\textcolor{preprocessor}{#pragma comment (lib, "d3dx9.lib")}
+00022 \textcolor{preprocessor}{}
+00023 \textcolor{keyword}{using namespace }std;
+00024 
+00025 \textcolor{comment}{// global declarations}
+\hypertarget{main_8cpp_source_l00026}{}\hyperlink{main_8cpp_aa8a3bb0b341846489cc307333d1d9811}{00026} LPDIRECT3D9 \hyperlink{main_8cpp_aa8a3bb0b341846489cc307333d1d9811}{d3d};\textcolor{comment}{//pointer to our Direct3D interface}
+\hypertarget{main_8cpp_source_l00027}{}\hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{00027} LPDIRECT3DDEVICE9 \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev};\textcolor{comment}{// the pointer to the device class}
+\hypertarget{main_8cpp_source_l00028}{}\hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{00028} IDirect3DSurface9*      \hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc} = NULL; \textcolor{comment}{//Source stereo image}
+\hypertarget{main_8cpp_source_l00029}{}\hyperlink{main_8cpp_a94593fcbf19d34c0830799636182170e}{00029} IDirect3DSurface9* \hyperlink{main_8cpp_a94593fcbf19d34c0830799636182170e}{gBackBuf} = NULL;
+\hypertarget{main_8cpp_source_l00030}{}\hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{00030} RECT \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}; \textcolor{comment}{// rectangle to change the destination of the 2 image we are loadi
+      ng}
+00031 
+00032 \textcolor{comment}{//function prototypes}
+00033 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_adc57d8d64e4c467f6818cddd81090db7}{initD3D}(HWND hWnd);\textcolor{comment}{// set up and initializes Direct3D}
+00034 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a9d208c9398ed462c31771146011c45a6}{render_frame}(\textcolor{keywordtype}{void});\textcolor{comment}{// renders a single frame}
+00035 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a6e0493c83a486408dbfaae7812e6e47a}{cleanD3D}(\textcolor{keywordtype}{void});\textcolor{comment}{// closes Direct3D and releases memory}
+00036 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a6deb2598e68338891c9b1faadea263b9}{getFilename}(\textcolor{keywordtype}{int}); \textcolor{comment}{// get filename of the next img src}
+00037 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a117a4ee6ce2172cb8d6b4ac48a6c3645}{loadFrame}(\textcolor{keywordtype}{int}); \textcolor{comment}{// load dual-view frames}
+00038 \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a94b4e3bf0d4387b63e1bc86968b6550d}{render3D}(\textcolor{keywordtype}{void}); \textcolor{comment}{// stretches our surface to the backbuffer}
+00039 
+00040 
+00041 \textcolor{comment}{// the WindowProc function prototype}
+00042 LRESULT CALLBACK \hyperlink{main_8cpp_a3481ed5b54326a7e5b2562195ee71a58}{WindowProc}(HWND hWnd, UINT message,WPARAM wParam,LPARAM lParam);
+      
+00043 
+00044 
+00045 \textcolor{comment}{// the entry point for any Windows program}
+\hypertarget{main_8cpp_source_l00046}{}\hyperlink{main_8cpp_a661c2abc03926acfaeb93b4ae7db4943}{00046} \textcolor{keywordtype}{int} WINAPI \hyperlink{main_8cpp_a661c2abc03926acfaeb93b4ae7db4943}{WinMain}(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,\textcolor{keywordtype}{in
+      t} nCmdShow) \{
+00047         \textcolor{comment}{// the handle for the window, filled by a function}
+00048         HWND hWnd;
+00049         \textcolor{comment}{// this struct holds information for the window class}
+00050         WNDCLASSEX wc;
+00051 
+00052         \textcolor{comment}{// clear out the window class for use}
+00053         ZeroMemory(&wc, \textcolor{keyword}{sizeof}(WNDCLASSEX));
+00054 
+00055         \textcolor{comment}{// fill in the struct with the needed information}
+00056         wc.cbSize = \textcolor{keyword}{sizeof}(WNDCLASSEX);
+00057         wc.style = CS\_HREDRAW | CS\_VREDRAW;
+00058         wc.lpfnWndProc = \hyperlink{main_8cpp_a3481ed5b54326a7e5b2562195ee71a58}{WindowProc};
+00059         wc.hInstance = hInstance;
+00060         wc.hCursor = LoadCursor(NULL, IDC\_ARROW);
+00061         \textcolor{comment}{// wc.hbrBackground = (HBRUSH)COLOR\_WINDOW;}
+00062         \textcolor{keywordtype}{string} lpszClassNameStr = \textcolor{stringliteral}{"WindowClass1"};
+00063         \textcolor{keywordtype}{string} windowNameStr = \textcolor{stringliteral}{"3DVision Test"};
+00064         wc.lpszClassName = lpszClassNameStr.c\_str();
+00065 
+00066         \textcolor{comment}{// register the window class}
+00067         RegisterClassEx(&wc);
+00068 
+00069         \textcolor{comment}{// create the window and use the result as the handle}
+00070         hWnd = CreateWindowEx(NULL,
+00071                 lpszClassNameStr.c\_str(),\textcolor{comment}{// name of the window class}
+00072                 windowNameStr.c\_str(), \textcolor{comment}{// title of the window}
+00073                 WS\_EX\_TOPMOST | WS\_POPUP,\textcolor{comment}{// fullscreen values}
+00074                 0,\textcolor{comment}{// x-position of the window}
+00075                 0,\textcolor{comment}{// y-position of the window}
+00076                 \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth},\textcolor{comment}{// width of the window}
+00077                 \hyperlink{config_8h_af737c15e6577f2676602957bc1ac2ab1}{gImageHeight},\textcolor{comment}{// height of the window}
+00078                 NULL,\textcolor{comment}{// we have no parent window, NULL}
+00079                 NULL,\textcolor{comment}{// we aren't using menus, NULL}
+00080                 hInstance,\textcolor{comment}{// application handle}
+00081                 NULL);\textcolor{comment}{// used with multiple windows, NULL}
+00082 
+00083         \textcolor{comment}{// display the window on the screen}
+00084         ShowWindow(hWnd, nCmdShow);
+00085 
+00086         \textcolor{comment}{// set up and initialize Direct3D}
+00087         \hyperlink{main_8cpp_adc57d8d64e4c467f6818cddd81090db7}{initD3D}(hWnd);
+00088 
+00089         \textcolor{comment}{//3D VISION}
+00090         \textcolor{comment}{// create the surface}
+00091         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->CreateOffscreenPlainSurface(gImageWidth *2, gImageHeight + 1, D3D
+      FMT\_A8R8G8B8, D3DPOOL\_DEFAULT, &\hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}, NULL);
+00092 
+00093 
+00094         \hyperlink{config_8h_a0a2814a2252fee90794304506ef2e9c0}{fout}.open(\textcolor{stringliteral}{"result.txt"});
+00095         \hyperlink{class_my_timer}{MyTimer} timerIns;
+00096         timerIns.\hyperlink{class_my_timer_a74b18b409d493579f6b3d0972590a7a6}{Start}();
+00097         LONGLONG \_start = timerIns.\hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{getElapsedTime}();
+00098         LONGLONG \_current;
+00099         \textcolor{keywordtype}{int} frameToRender;
+00100         \textcolor{keywordtype}{int} lastRenderedFrame = -1;
+00101         \textcolor{keywordtype}{bool} buffered = \textcolor{keyword}{false};
+00102         \textcolor{keywordtype}{int} counter = 0;        \textcolor{comment}{// rendered frames counter}
+00103         \textcolor{keywordtype}{int} bufcounter = 0;     \textcolor{comment}{// loaded frames counter}
+00104 
+00105         \textcolor{comment}{// Lock the stereo image}
+00106         D3DLOCKED\_RECT lr;
+00107         \hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}->LockRect(&lr,NULL,0);
+00108         \textcolor{comment}{// write stereo signature in the last raw of the stereo image}
+00109         \hyperlink{struct___nv___stereo___image___header}{LPNVSTEREOIMAGEHEADER} pSIH = (\hyperlink{struct___nv___stereo___image___header}{LPNVSTEREOIMAGEHEADER})(((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) l
+      r.pBits) + (lr.Pitch * (gImageHeight)));
+00110 
+00111         \textcolor{comment}{// Update the signature header values}
+00112         pSIH->\hyperlink{struct___nv___stereo___image___header_aac21b6be816ef3e6b98d1f1183263fd9}{dwSignature} = \hyperlink{utils_8h_a75d1758a6dea9bae825f3253943e334a}{NVSTEREO_IMAGE_SIGNATURE};
+00113         pSIH->\hyperlink{struct___nv___stereo___image___header_a9a51ead5061c21601c50b0e1ee2be9a0}{dwBPP} = 32;
+00114         \textcolor{comment}{//pSIH->dwFlags = SIH\_SWAP\_EYES; // Src image has left on left and right 
+      on right, thats why this flag is not needed.}
+00115         pSIH->\hyperlink{struct___nv___stereo___image___header_a495218c0378e538de8c3504daa0a0846}{dwWidth} = gImageWidth*2;
+00116         pSIH->\hyperlink{struct___nv___stereo___image___header_a72c1451aca7cb9c87540b647d51b25ad}{dwHeight} = gImageHeight;
+00117 
+00118         \textcolor{comment}{// Unlock surface}
+00119         \hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}->UnlockRect();
+00120 
+00121         \textcolor{comment}{// enter the main loop:}
+00122 
+00123         \textcolor{comment}{// this struct holds Windows event messages}
+00124         MSG msg;
+00125 
+00126         \textcolor{keywordflow}{while}(TRUE) \{
+00127                 \textcolor{comment}{// wait for the next message in the queue, store the result in 'm
+      sg'}
+00128                 \textcolor{keywordflow}{while}(PeekMessage(&msg, NULL, 0, 0, PM\_REMOVE)) \{
+00129                         \textcolor{comment}{// translate keystroke messages into the right format}
+00130                         TranslateMessage(&msg);
+00131 
+00132                         \textcolor{comment}{// send the message to the WindowProc function}
+00133                         DispatchMessage(&msg);
+00134                 \}
+00135 
+00136                 \textcolor{comment}{// If the message is WM\_QUIT, exit the while loop}
+00137                 \textcolor{keywordflow}{if}(msg.message == WM\_QUIT)
+00138                         \textcolor{keywordflow}{break};
+00139 
+00140                 \_current = timerIns.\hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{getElapsedTime}() - \_start;
+00141                 frameToRender = (int)(\_current * \hyperlink{config_8h_a63da2a617b72a1630998a4d8b4d26cd3}{fps} / (\textcolor{keywordtype}{double})1000000);
+00142                 \textcolor{comment}{//frameToRender = frameToRender % 3 + 400;}
+00143                 \textcolor{comment}{//if (counter>250)}
+00144                 \textcolor{comment}{//\{}
+00145                 \textcolor{comment}{//      break;}
+00146                 \textcolor{comment}{//\}}
+00147                 \textcolor{keywordflow}{if}(frameToRender + 1 > \hyperlink{config_8h_a0186bee82f4d469206cfcb18da843a46}{totalFrames}) \{
+00148                         \textcolor{comment}{//switch to another demo}
+00149                         \textcolor{keywordflow}{if}(\hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} == 2)\{
+00150                                 \hyperlink{config_8h_a6082de4d3555d07a84270f7bacac9a63}{prefixL} = \hyperlink{config_8h_afcc1487cc6eb36a2fc6233b441f2787b}{prefixL3};
+00151                                 \hyperlink{config_8h_a939852ed72b1f29dd46c267ba1894687}{prefixR} = \hyperlink{config_8h_ad994e29c70b4b20e5aa11c462d2eaa23}{prefixR3};
+00152                                 \hyperlink{config_8h_a0186bee82f4d469206cfcb18da843a46}{totalFrames} = \hyperlink{config_8h_a4058af0c43622045689a17dbf546a095}{totalFrames3};
+00153                                 \hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} = 3;
+00154                         \}
+00155                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} == 3)\{
+00156                                 \hyperlink{config_8h_a6082de4d3555d07a84270f7bacac9a63}{prefixL} = \hyperlink{config_8h_a5cfb7ac53a84ac65db638d7926c1216b}{prefixL1};
+00157                                 \hyperlink{config_8h_a939852ed72b1f29dd46c267ba1894687}{prefixR} = \hyperlink{config_8h_a0cc8c7e0d207c825f13d92d52480abfc}{prefixR1};
+00158                                 \hyperlink{config_8h_a0186bee82f4d469206cfcb18da843a46}{totalFrames} = \hyperlink{config_8h_a1daaec6dd86a744de60951adc0d7491c}{totalFrames1};
+00159                                 \hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} = 1;
+00160                         \}
+00161                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} == 1)\{
+00162                                 \hyperlink{config_8h_a6082de4d3555d07a84270f7bacac9a63}{prefixL} = \hyperlink{config_8h_ad2536ccefd202465bc9de3185f689385}{prefixL2};
+00163                                 \hyperlink{config_8h_a939852ed72b1f29dd46c267ba1894687}{prefixR} = \hyperlink{config_8h_a655684630849cbc78a1a701627a5be79}{prefixR2};
+00164                                 \hyperlink{config_8h_a0186bee82f4d469206cfcb18da843a46}{totalFrames} = \hyperlink{config_8h_a30f8e88254cae72861ca9f1082036f13}{totalFrames2};
+00165                                 \hyperlink{config_8h_a64af52e30206638c00ad08ee8894e3c8}{demo} = 2;
+00166                         \}
+00167                         \_start = timerIns.\hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{getElapsedTime}(); \textcolor{comment}{// start over}
+00168                         \textcolor{keywordflow}{continue};
+00169                         \textcolor{keywordflow}{break};
+00170                 \}
+00171                 \textcolor{keywordflow}{if}(buffered==\textcolor{keyword}{false}) \{
+00172                         \hyperlink{main_8cpp_a6deb2598e68338891c9b1faadea263b9}{getFilename}(lastRenderedFrame+1);
+00173                         \hyperlink{main_8cpp_a117a4ee6ce2172cb8d6b4ac48a6c3645}{loadFrame}(lastRenderedFrame+1);
+00174                         \textcolor{comment}{//configureSurface();}
+00175                         bufcounter++;
+00176                         buffered=\textcolor{keyword}{true};
+00177                 \}
+00178                 \textcolor{keywordflow}{if}(frameToRender!=lastRenderedFrame) \{
+00179                         \textcolor{comment}{//fout<<"rendering frame "<<frameToRender<<endl;}
+00180                         \hyperlink{main_8cpp_a9d208c9398ed462c31771146011c45a6}{render_frame}();
+00181                         counter++;
+00182                         lastRenderedFrame = frameToRender;
+00183                         buffered = \textcolor{keyword}{false};
+00184                 \}
+00185         \}
+00186 
+00187         \textcolor{comment}{// clean up DirectX and COM}
+00188 
+00189         \hyperlink{config_8h_a0a2814a2252fee90794304506ef2e9c0}{fout}<< \textcolor{stringliteral}{"total frames buffered = "}<<bufcounter<<endl;
+00190         \hyperlink{config_8h_a0a2814a2252fee90794304506ef2e9c0}{fout}<< \textcolor{stringliteral}{"total frames rendered = "}<<counter<<endl;
+00191         \textcolor{keywordtype}{double} perf = (double)counter * 1000000/ timerIns.\hyperlink{class_my_timer_abd0f6728cf64f7b5d81235588bb8e3c2}{getElapsedTime}();
+00192         \hyperlink{config_8h_a0a2814a2252fee90794304506ef2e9c0}{fout} << \textcolor{stringliteral}{"actual fps reached = "}<< perf << endl;
+00193         \hyperlink{config_8h_a0a2814a2252fee90794304506ef2e9c0}{fout}.close();
+00194         \textcolor{comment}{// return this part of the WM\_QUIT message to Windows}
+00195         \hyperlink{main_8cpp_a6e0493c83a486408dbfaae7812e6e47a}{cleanD3D}();
+00196         \textcolor{keywordflow}{return} msg.wParam;
+00197 \}
+00198 
+00200 \textcolor{comment}{// this is the main message handler for the program}
+\hypertarget{main_8cpp_source_l00201}{}\hyperlink{main_8cpp_a3481ed5b54326a7e5b2562195ee71a58}{00201} LRESULT CALLBACK \hyperlink{main_8cpp_a3481ed5b54326a7e5b2562195ee71a58}{WindowProc}(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
+      ) \{
+00202         \textcolor{comment}{// sort through and find what code to run for the message given}
+00203         \textcolor{keywordflow}{switch}(message) \{
+00204                 \textcolor{comment}{// this message is read when the window is closed}
+00205 \textcolor{keywordflow}{case} WM\_DESTROY: \{
+00206         \textcolor{comment}{// close the application entirely}
+00207         PostQuitMessage(0);
+00208         \textcolor{keywordflow}{return} 0;
+00209                                  \}
+00210                                  \textcolor{keywordflow}{break};
+00211         \}
+00212 
+00213         \textcolor{comment}{// Handle any messages the switch statement didn't}
+00214         \textcolor{keywordflow}{return} DefWindowProc (hWnd, message, wParam, lParam);
+00215 \}
+00216 
+00217 \textcolor{comment}{// this function initializes and prepares Direct3D for use}
+\hypertarget{main_8cpp_source_l00218}{}\hyperlink{main_8cpp_adc57d8d64e4c467f6818cddd81090db7}{00218} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_adc57d8d64e4c467f6818cddd81090db7}{initD3D}(HWND hWnd) \{
+00219         \hyperlink{main_8cpp_aa8a3bb0b341846489cc307333d1d9811}{d3d} = Direct3DCreate9(D3D\_SDK\_VERSION);\textcolor{comment}{// create the Direct3D interface}
+00220 
+00221         D3DPRESENT\_PARAMETERS d3dpp;\textcolor{comment}{// create a struct to hold various device inf
+      ormation}
+00222 
+00223         ZeroMemory(&d3dpp, \textcolor{keyword}{sizeof}(d3dpp));\textcolor{comment}{// clear out the struct for use}
+00224         d3dpp.Windowed = FALSE;\textcolor{comment}{// program fullscreen}
+00225         d3dpp.SwapEffect = D3DSWAPEFFECT\_DISCARD;\textcolor{comment}{// discard old frames}
+00226         d3dpp.hDeviceWindow = hWnd;\textcolor{comment}{// set the window to be used by Direct3D}
+00227         d3dpp.BackBufferFormat = D3DFMT\_A8R8G8B8;\textcolor{comment}{// set the back buffer format to
+       32 bit}
+00228         d3dpp.BackBufferWidth = \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth};
+00229         d3dpp.BackBufferHeight = \hyperlink{config_8h_af737c15e6577f2676602957bc1ac2ab1}{gImageHeight};
+00230         d3dpp.PresentationInterval = D3DPRESENT\_INTERVAL\_ONE;
+00231         d3dpp.BackBufferCount = 1;
+00232 
+00233         \textcolor{comment}{// create a device class using this information and information from the 
+      d3dpp struct}
+00234         \hyperlink{main_8cpp_aa8a3bb0b341846489cc307333d1d9811}{d3d}->CreateDevice(D3DADAPTER\_DEFAULT,D3DDEVTYPE\_HAL,hWnd,D3DCREATE\_SOFTWA
+      RE\_VERTEXPROCESSING,&d3dpp,&\hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev});
+00235 \}
+00236 
+00237 \textcolor{comment}{// this is the function used to render a single frame}
+\hypertarget{main_8cpp_source_l00238}{}\hyperlink{main_8cpp_a9d208c9398ed462c31771146011c45a6}{00238} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a9d208c9398ed462c31771146011c45a6}{render_frame}(\textcolor{keywordtype}{void}) \{
+00239         \textcolor{comment}{// clear the window to a deep blue}
+00240         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->Clear(0, NULL, D3DCLEAR\_TARGET, D3DCOLOR\_XRGB(0, 40, 100), 1.0f, 
+      0);
+00241 
+00242         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->BeginScene();\textcolor{comment}{// begins the 3D scene}
+00243 
+00244         \textcolor{comment}{// do 3D rendering on the back buffer here}
+00245         \hyperlink{main_8cpp_a94b4e3bf0d4387b63e1bc86968b6550d}{render3D}();
+00246 
+00247 
+00248         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->EndScene();\textcolor{comment}{// ends the 3D scene}
+00249 
+00250         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->Present(NULL, NULL, NULL, NULL);\textcolor{comment}{// displays the created frame}
+00251 \}
+00252 
+00253 
+00254 \textcolor{comment}{// this is the function that cleans up Direct3D and COM}
+\hypertarget{main_8cpp_source_l00255}{}\hyperlink{main_8cpp_a6e0493c83a486408dbfaae7812e6e47a}{00255} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a6e0493c83a486408dbfaae7812e6e47a}{cleanD3D}(\textcolor{keywordtype}{void}) \{
+00256         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->Release();\textcolor{comment}{// close and release the 3D device}
+00257         \hyperlink{main_8cpp_aa8a3bb0b341846489cc307333d1d9811}{d3d}->Release();\textcolor{comment}{// close and release Direct3D}
+00258 \}
+00259 
+00260 
+00261 \textcolor{comment}{// this is the function that combines two images.}
+\hypertarget{main_8cpp_source_l00262}{}\hyperlink{main_8cpp_a94b4e3bf0d4387b63e1bc86968b6550d}{00262} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a94b4e3bf0d4387b63e1bc86968b6550d}{render3D}(\textcolor{keywordtype}{void}) \{
+00263         \textcolor{comment}{// set destRect}
+00264         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.left = 0;
+00265         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.top = 0;
+00266         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.bottom = \hyperlink{config_8h_af737c15e6577f2676602957bc1ac2ab1}{gImageHeight};
+00267         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.right = \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth};
+00268 
+00269         \textcolor{comment}{// Get the Backbuffer then Stretch the Surface on it.}
+00270         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->GetBackBuffer(0, 0, D3DBACKBUFFER\_TYPE\_MONO, &\hyperlink{main_8cpp_a94593fcbf19d34c0830799636182170e}{gBackBuf});
+00271         \hyperlink{main_8cpp_a1c4528473f1127613d4edcaac0dad7f1}{d3ddev}->StretchRect(\hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}, NULL, \hyperlink{main_8cpp_a94593fcbf19d34c0830799636182170e}{gBackBuf}, &\hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}, D3DTEXF\_NONE);
+00272 \}
+00273 
+\hypertarget{main_8cpp_source_l00274}{}\hyperlink{main_8cpp_aad6fe44abbb9cde538b5e84718ee3526}{00274} wstring \hyperlink{main_8cpp_aad6fe44abbb9cde538b5e84718ee3526}{s2ws}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}& s) \{
+00275         \textcolor{keywordtype}{int} len;
+00276         \textcolor{keywordtype}{int} slength = (int)s.length() + 1;
+00277         len = MultiByteToWideChar(CP\_ACP, 0, s.c\_str(), slength, 0, 0);
+00278         \textcolor{keywordtype}{wchar\_t}* buf = \textcolor{keyword}{new} \textcolor{keywordtype}{wchar\_t}[len];
+00279         MultiByteToWideChar(CP\_ACP, 0, s.c\_str(), slength, buf, len);
+00280         wstring r(buf);
+00281         \textcolor{keyword}{delete}[] buf;
+00282         \textcolor{keywordflow}{return} r;
+00283 \}
+00284 
+\hypertarget{main_8cpp_source_l00285}{}\hyperlink{main_8cpp_a6deb2598e68338891c9b1faadea263b9}{00285} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a6deb2598e68338891c9b1faadea263b9}{getFilename}(\textcolor{keywordtype}{int} \_frame) \{
+00286         stringstream filenamer;
+00287 
+00288         filenamer<<\hyperlink{config_8h_a6082de4d3555d07a84270f7bacac9a63}{prefixL}<<setw(4)<<setfill(\textcolor{charliteral}{'0'})<<\_frame<<\hyperlink{config_8h_a887452eecbb8843e5530a1597eb8e357}{suffix};
+00289         \textcolor{comment}{//filenamer<<prefixL<<\_frame<<suffix;}
+00290         filenamer>>\hyperlink{config_8h_a65980faa7a98d89e3581eb3ac8777192}{filenameStrL};
+00291         \hyperlink{config_8h_a526270325c61739d50933ee42ef9563f}{filenameWstrL} = \hyperlink{main_8cpp_aad6fe44abbb9cde538b5e84718ee3526}{s2ws}(filenameStrL);
+00292 
+00293         filenamer.clear();
+00294         filenamer<<\hyperlink{config_8h_a939852ed72b1f29dd46c267ba1894687}{prefixR}<<setw(4)<<setfill(\textcolor{charliteral}{'0'})<<\_frame<<suffix;
+00295         \textcolor{comment}{//filenamer<<prefixR<<\_frame<<suffix;}
+00296         filenamer>>\hyperlink{config_8h_a19fa526345d6a5020afd0ef78ab58f71}{filenameStrR};
+00297         filenamer.clear();
+00298         \hyperlink{config_8h_a3b06e388f8261198f0fe86aafca02c41}{filenameWstrR} = \hyperlink{main_8cpp_aad6fe44abbb9cde538b5e84718ee3526}{s2ws}(filenameStrR);
+00299 
+00300         \hyperlink{config_8h_a9e78e5f975acc8e56d6a84214321a534}{filenameL} = \hyperlink{config_8h_a526270325c61739d50933ee42ef9563f}{filenameWstrL}.c\_str();
+00301         \hyperlink{config_8h_ab2d091b589f33f799378b4dbf379e537}{filenameR} = \hyperlink{config_8h_a3b06e388f8261198f0fe86aafca02c41}{filenameWstrR}.c\_str();
+00302         \hyperlink{config_8h_a4efd8a98fc24b184ad75501454b3c2b7}{filenameLL} = filenameStrL.c\_str();
+00303         \hyperlink{config_8h_ac31be6060769b3c9c0c533e0cf269b28}{filenameRR} = filenameStrR.c\_str();
+00304 \}
+00305 
+\hypertarget{main_8cpp_source_l00306}{}\hyperlink{main_8cpp_a117a4ee6ce2172cb8d6b4ac48a6c3645}{00306} \textcolor{keywordtype}{void} \hyperlink{main_8cpp_a117a4ee6ce2172cb8d6b4ac48a6c3645}{loadFrame}(\textcolor{keywordtype}{int} \_frame) \{
+00307         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} loaded = \textcolor{keyword}{false};
+00308         \textcolor{keyword}{static} \textcolor{keywordtype}{char} *data1 = 0, *data2 = 0;
+00309         \textcolor{keywordtype}{int} dataSize1 = 0, dataSize2 = 0;
+00310         \textcolor{comment}{/*}
+00311 \textcolor{comment}{        // set up destRect}
+00312 \textcolor{comment}{        destRect.left = 0;}
+00313 \textcolor{comment}{        destRect.top = 0;}
+00314 \textcolor{comment}{        destRect.bottom = gImageHeight;}
+00315 \textcolor{comment}{        destRect.right = gImageWidth;}
+00316 \textcolor{comment}{        //if (!loaded)}
+00317 \textcolor{comment}{        \{}
+00318 \textcolor{comment}{        loaded = true;}
+00319 \textcolor{comment}{        fout << "load file\(\backslash\)n";}
+00320 \textcolor{comment}{        FILE *f = fopen(filenameStrL.c\_str(), "rb");}
+00321 \textcolor{comment}{        //fseek(f, 0, SEEK\_END);}
+00322 \textcolor{comment}{        //int fsize = ftell(f);}
+00323 \textcolor{comment}{        //fseek(f, 0, SEEK\_SET);}
+00324 \textcolor{comment}{        fout << "file loaded \(\backslash\)n";}
+00325 \textcolor{comment}{        int fsize = 10 * 1024 * 1024;}
+00326 \textcolor{comment}{        data1 = new char[10*1024*1024];}
+00327 \textcolor{comment}{        dataSize1 = fread(data1, 1, fsize, f);}
+00328 \textcolor{comment}{        fclose(f);}
+00329 \textcolor{comment}{}
+00330 \textcolor{comment}{        f = fopen(filenameStrR.c\_str(), "rb");}
+00331 \textcolor{comment}{        //fseek(f, 0, SEEK\_END);}
+00332 \textcolor{comment}{        //fsize = ftell(f);}
+00333 \textcolor{comment}{        //fseek(f, 0, SEEK\_SET);}
+00334 \textcolor{comment}{        data2 = new char[fsize];}
+00335 \textcolor{comment}{        dataSize2 = fread(data2, 1, fsize, f);}
+00336 \textcolor{comment}{        fclose(f);}
+00337 \textcolor{comment}{}
+00338 \textcolor{comment}{        fout << "Size = " << dataSize1 << " " << dataSize2 << endl;}
+00339 \textcolor{comment}{        \}}
+00340 \textcolor{comment}{}
+00341 \textcolor{comment}{        D3DXLoadSurfaceFromMemory(gImageSrc, NULL, &destRect, data1, D3DFMT\_A8R8G
+      8B8, 0, NULL, NULL,D3DX\_DEFAULT, 0);}
+00342 \textcolor{comment}{        destRect.left = gImageWidth;}
+00343 \textcolor{comment}{        destRect.top = 0;}
+00344 \textcolor{comment}{        destRect.bottom = gImageHeight;}
+00345 \textcolor{comment}{        destRect.right = gImageWidth*2;}
+00346 \textcolor{comment}{        D3DXLoadSurfaceFromMemory(gImageSrc, NULL, &destRect, data2, D3DFMT\_A8R8G
+      8B8, 0, NULL, NULL, D3DX\_DEFAULT, 0);}
+00347 \textcolor{comment}{        */}
+00348 
+00350         \textcolor{comment}{// set up destRect}
+00351         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.left = 0;
+00352         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.top = 0;
+00353         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.bottom = \hyperlink{config_8h_af737c15e6577f2676602957bc1ac2ab1}{gImageHeight};
+00354         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.right = \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth};
+00355 
+00356         \textcolor{comment}{// load left image}
+00357         D3DXLoadSurfaceFromFile(\hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}, NULL, &\hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}, \hyperlink{config_8h_a4efd8a98fc24b184ad75501454b3c2b7}{filenameLL}, NULL, D3D
+      X\_DEFAULT, 0, NULL);
+00358 
+00359         \textcolor{comment}{// shift destRect to the right}
+00360         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.left = \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth};
+00361         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.top = 0;
+00362         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.bottom = \hyperlink{config_8h_af737c15e6577f2676602957bc1ac2ab1}{gImageHeight};
+00363         \hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}.right = \hyperlink{config_8h_a5dde88e08c88df4ec4c201ab068a909b}{gImageWidth}*2;
+00364 
+00365         \textcolor{comment}{// load right image}
+00366         D3DXLoadSurfaceFromFile(\hyperlink{main_8cpp_a35944f88a0c5556a08bd1da88b8d89db}{gImageSrc}, NULL, &\hyperlink{main_8cpp_a908970643424027cd7df53bf68a9cdad}{destRect}, \hyperlink{config_8h_ac31be6060769b3c9c0c533e0cf269b28}{filenameRR}, NULL, D3D
+      X\_DEFAULT, 0, NULL);
+00367         \textcolor{comment}{//*/}
+00368 \}
+\end{alltt}\end{footnotesize}

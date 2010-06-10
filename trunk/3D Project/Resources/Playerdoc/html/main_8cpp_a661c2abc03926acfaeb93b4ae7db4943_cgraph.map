@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$main_8cpp.html#a6e0493c83a486408dbfaae7812e6e47a" title="cleanD3D" alt="" coords="187,5,275,35"/>
+<area shape="rect" id="node5" href="$class_my_timer.html#abd0f6728cf64f7b5d81235588bb8e3c2" title="MyTimer::getElapsedTime" alt="" coords="132,59,329,88"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a6deb2598e68338891c9b1faadea263b9" title="getFilename" alt="" coords="177,112,284,141"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#adc57d8d64e4c467f6818cddd81090db7" title="initD3D" alt="" coords="195,165,267,195"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#a117a4ee6ce2172cb8d6b4ac48a6c3645" title="loadFrame" alt="" coords="185,219,276,248"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#a9d208c9398ed462c31771146011c45a6" title="render_frame" alt="" coords="175,272,287,301"/>
+<area shape="rect" id="node19" href="$class_my_timer.html#a74b18b409d493579f6b3d0972590a7a6" title="MyTimer::Start" alt="" coords="168,325,293,355"/>
+<area shape="rect" id="node21" href="$main_8cpp.html#a3481ed5b54326a7e5b2562195ee71a58" title="WindowProc" alt="" coords="180,379,281,408"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#aad6fe44abbb9cde538b5e84718ee3526" title="s2ws" alt="" coords="395,112,448,141"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a94b4e3bf0d4387b63e1bc86968b6550d" title="render3D" alt="" coords="379,272,464,301"/>
+</map>
