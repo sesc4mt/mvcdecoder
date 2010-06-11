@@ -58,10 +58,21 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 
 \subsubsection{性能分析步骤}
 \label{subsubsec:profilingprocess}
+
+在VS2008的菜单中有一个“Analyze”项，选择“New Performance Wizzard”打开一个性能分析向导。
+
+选择要分析的项目、分析的方式之后就可以开始分析了。
+
+成功执行植入了instrumental code的可执行程序之后，profiling工具收集到大量的数据。经过一段时间（在我的机器上大约两分钟）的处理，会给出一个性能分析报告。
+
 \subsubsection{性能分析结果}
 \label{subsubsec:reportexerpt}
-\subsubsection{分析结果说明}
-\label{subsubsec:commentonreport}
+
+性能分析报告中的FunctionList视图给出了各个函数（包括系统调用）占用的时间、时间的百分比以及被调用次数等等数据。我们关心的是其中的“Exclusive Time”、“Number of Calls”两列。当然，“Exclusive Time \%”也被我们选中，因为百分比相对于毫秒数让我们能更直观地了解函数占用的时间。
+
+\input{data/vs10}
+
+分析报告中仅仅MVCDecoder.exe自身的函数就有近200条记录，而大部分都占用不足$0.05\%$的时间，优化价值不大。在表\ref{tab:vs10}中我们给出了时间占用排在前10的记录。更详细的记录参见附录\ref{cha:expdatatable}中的表\ref{tab:vs50}。
 
 \subsection{VTune分析}
 \label{subsec:vtuneprofiling}
@@ -72,10 +83,18 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 
 \subsubsection{性能分析步骤}
 \label{subsubsec:profilingprocess}
+
+打开VTune Performance Analyzer之后，我们新建一个工程，选择采集call graph数据。配置好要运行的可执行文件和执行路径就可以开始分析了。与VS2008的分析一样，经过一段时间的执行和数据处理，我们的到一个性能分析报告。
+
 \subsubsection{性能分析结果}
 \label{subsubsec:reportexerpt}
-\subsubsection{分析结果说明}
-\label{subsubsec:commentonreport}
+
+\input{data/vtune10}
+
+性能分析报告包含一个函数调用关系图以及函数运行时间表，我们关注的是后者。表中大部分列与VS2008的分析结果是公共的，比如函数名、总时间、净时间等等。我们采集了与此前同样意义的几列数据，包括“Function”，“Calls”，“Self Time”和“\% in function”。我们在表\ref{tab:vtune10}中给出前10条记录。
+
+\subsection{性能分析结果说明}
+\label{subsec:commentonreport}
 
 \section{优化方案}
 \label{sec:optapproach}
