@@ -14,41 +14,101 @@
 
 \begin{itemize}
 \item {硬件平台}
+
+\begin{itemize}
+\item Intel Core2 Quad Q9400 @ 2.66GHz
+	\footnote{SpeedStep功能关闭}
+\item 4GB DDR2/800 Memory
+\item NVIDIA GeForce GTS 250 with 512MB
+\end{itemize}
+
 \item {软件平台}
+
+\begin{itemize}
+\item Microsoft Windows XP Professional SP3
+	\footnote{Lenovo ThinkCenter M6100T预装操作系统}
+\item NVIDIA WHQL Driver v197.13
+\item DirectX 9.0c
+\item Microsoft Visual Studio 2008 SP1
+	\footnote{获取自：\href{http://helpdesk.tsinghua.edu.cn/yhfw/yhfw_zbrj_tz.jsp}{清华大学校园正版软件服务}}
+\item CUDA SDK 3.0
+\item Intel VTune Performance Analyzer 9.1 Build 385
+	\footnote{30天评估版，序列号为VVVC-BDGCWFJC}
+\item Intel C++ Compiler Professional 11.1.038
+	\footnote{授权同VTune}
+\end{itemize}
+
 \end{itemize}
 
 
 \section{解码器性能分析}
 \label{sec:decoderprofiling}
 
+对解码器进行优化的过程中，首先需要对其现有的性能表现有一个细致的了解。对于每一个函数的被调用次数、运行时间、运行时间百分比等指标都需要有较为精确的测量，才能更好地进行接下来的优化。
+
+对此，我使用了两个性能分析工具来分析MVC Decoder工程。分别在接下来两节中说明。
+
 \subsection{VS2008内置性能分析}
 \label{subsec:vsprofiling}
+Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标程序进行性能分析。性能分析有两种：
+\begin{itemize}
+\item 一种是不改变编译结果，通过运行时采样，得到每个采样时刻正在运行的函数，经过汇总后的到函数在采样上的分布情况，由此估计每个函数运行时间占总运行时间的百分比。这种方式称为Sampling方式。
+\item 另一种是在编译时加入一些辅助代码，运行时通过这部分代码来标志进入和推出一个函数的时间，借助这些隐藏的输出信息得到总运行时间在各个函数内部的分布。这种方式称为Instrumental Code方式。
+\end{itemize}
+
+\subsubsection{性能分析步骤}
+\label{subsubsec:profilingprocess}
+\subsubsection{性能分析结果}
+\label{subsubsec:reportexerpt}
+\subsubsection{分析结果说明}
+\label{subsubsec:commentonreport}
 
 \subsection{VTune分析}
 \label{subsec:vtuneprofiling}
+
+在实验过程中，我们发现大部分函数运行总时间没有明显差别，与我们进行项目合作的北京世纪鼎点软件有限公司的罗翰先生指出，VS2008的性能分析可能不够准确，使用Intel的VTune或许能够的到更准确的性能分析结果。
+
+关于Intel VTune如何精确地进行性能分析，文\onlinecite{levinthal2007,levinthal2006,levinthal2008,levinthal2008a}中有介绍。
+
+\subsubsection{性能分析步骤}
+\label{subsubsec:profilingprocess}
+\subsubsection{性能分析结果}
+\label{subsubsec:reportexerpt}
+\subsubsection{分析结果说明}
+\label{subsubsec:commentonreport}
 
 \section{优化方案}
 \label{sec:optapproach}
 
 \subsection{重写函数逻辑}
 \label{subsec:rewritelogic}
-%说明
-%例子
+
+\subsubsection{重写函数逻辑的例子}
+\label{subsubsec:egrewritelogic}
 
 \subsection{循环的优化}
 \label{subsec:loopopt}
-%说明
-%例子
+
+\subsubsection{循环优化的例子}
+\label{subsubsec:egloopopt}
 
 \subsection{汇编优化}
 \label{subsec:asmopt}
-%说明
-%例子
+
+\subsubsection{汇编优化的例子}
+\label{subsubsec:egasmopt}
 
 \subsection{CUDA优化}
 \label{subsec:cudaopt}
-%说明
-%例子
+
+\subsubsection{CUDA优化的例子}
+\label{subsubsec:egcudaopt}
 
 \section{优化目标}
 \label{sec:optaim}
+
+我们进行MVC解码器优化的目标是为了能让普通用户使用PC作为终端能够收看3D视频。在显卡尚未内置MVC硬解码器的情况下，目前所有的解码任务都交给CPU来完成。我们将优化的目标设定在用户使用主流CPU能够进行两路标清视频\footnote{关于视频分辨率，有标清\href{http://en.wikipedia.org/wiki/Standard-definition_television}{SDTV}、增强型标清\href{http://en.wikipedia.org/wiki/Enhanced-definition_television}{EDTV}和高清\href{http://en.wikipedia.org/wiki/High-definition_television}{HDTV}等制式，我们所说的标清指的是国内广泛使用的\href{http://en.wikipedia.org/wiki/Enhanced-definition_television}{EDTV}中的\href{http://en.wikipedia.org/wiki/Phase_Alternating_Line}{PAL}制式视频，分辨率为$720\times576$。}的实时解码。
+
+量化的指标就是，用CPU进行两路分辨率为$720\times576$的视频，每一路都能达到30帧/秒，总计60fps的解码速率。
+
+达到上述目标之后，我们的解码器就能够用来在双目3D显示平台下开展实际应用了。如果想要使用我们同是拥有的Bolod生产的裸眼观看的3D电视，则需要输出8路信号。这在目前的CPU软解码算法上较难实现，目前有两种解决方案，一种是直接利用GPU加速解码过程，软解8路信号，另一种是CPU解码出2路信号，再用GPU通过2路立体信号合成出8路需要的信号。前一种方式已经在NVIDIA的蓝光播放器中应用了，不过其解决方案并不开源；后一种两路信号合成八路信号的项目，清华大学媒体所的李化常师兄正在进行中。在2010年3月已经实现了合成算法，将两帧画面合成出八帧大约耗时1秒，目前正在进行算法的优化工作。
