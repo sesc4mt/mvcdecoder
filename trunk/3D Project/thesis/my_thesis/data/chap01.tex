@@ -39,7 +39,7 @@
 
 %MVC相关工作
 
-在Multi-view Video Coding方向的研究在很久前就开始了。3D视频的一个特点是：传输给用户的各个视角的视频描述的是同一个场景。各个视角的视频在统计意义上的相关性很大，这些相关性就可以用来做预测，如图\ref{fig:mvcpredstruct}所示\footnote{http://mpeg.chiariglione.org/technologies/mpeg-4/mp04-mvc/image004.jpg}。综合利用时间序列以及视角间的图像预测结构，能够极大地提高编码效率\cite{merkle2005statistical,kaup2006analysis}。\onlinecite{magnor2003multi}中提及了多视点图像编码的一些前沿研究。
+在Multi-view Video Coding方向的研究在很久前就开始了。3D视频的一个特点是：传输给用户的各个视角的视频描述的是同一个场景。各个视角的视频在统计意义上的相关性很大，这些相关性就可以用来做预测，如图\ref{fig:mvcpredstruct}所示\footnote{\href{http://mpeg.chiariglione.org/technologies/mpeg-4/mp04-mvc/image004.jpg}{http://mpeg.chiariglione.org/technologies/mpeg-4/mp04-mvc/image004.jpg}}。综合利用时间序列以及视角间的图像预测结构，能够极大地提高编码效率\cite{merkle2005statistical,kaup2006analysis}。\onlinecite{magnor2003multi}中提及了多视点图像编码的一些前沿研究。
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=\textwidth]{mvcpredstruct.png}
@@ -50,7 +50,7 @@
 
 对于视角间和时间序列上的图像预测结构，有不少文献提出了不同的方法。其中，H.264/AVC时间和视角间预测的基于B帧的算法\cite{kaup2006analysis}在MPEG标准测试下性能表现最好\cite{flierl2007motion,merkle2006efficient,mueller2006multi,merkle2007efficient}。在实验中，各种指标都显示MVC远远超越了独立压缩每个视角视频的方法。不过，能够获得的性能提升对参数有一定依赖，如相机间距、帧率、内容复杂度（运动和纹理）等属性。对于一些数据集，信噪比峰值（PSNR）的增益在0.5dB以下，而最大的增益能达到3dB。
 
-这个方法在提高视频编码压缩率的同时，增加了编解码的复杂度，要求处理更大量的数据和进行更多的计算。对于MVC编解码的研究大多使用参考软件JMVC进行\footnote{由Heiko Schwarz、Tobias Hinz、Karsten Suehring等人开发。}。参考软件的编写比较注重对应多视点视频编码的原理，对于学习MVC编解码很有帮助，但也因此损失了极大的性能。在实验所使用的机器上对720$\times$576的两路视频进行编码，19帧需要大约半个小时，这远远不够实际应用的需求。诺基亚研究中心（Nokia Research Center）针对其运行Maemo的平台开发了一款MVC实时解码器\footnote{http://research.nokia.com/research/mobile3D}，针对单核心做了不少优化。由于其主要利用汇编优化，而处理器并不是x86兼容的，所以不易移植到PC上。
+这个方法在提高视频编码压缩率的同时，增加了编解码的复杂度，要求处理更大量的数据和进行更多的计算。对于MVC编解码的研究大多使用参考软件JMVC进行\footnote{由Heiko Schwarz、Tobias Hinz、Karsten Suehring等人开发。}。参考软件的编写比较注重对应多视点视频编码的原理，对于学习MVC编解码很有帮助，但也因此损失了极大的性能。在实验所使用的机器上对720$\times$576的两路视频进行编码，19帧需要大约半个小时，这远远不够实际应用的需求。诺基亚研究中心（Nokia Research Center）针对其运行Maemo的平台开发了一款MVC实时解码器\footnote{\href{http://research.nokia.com/research/mobile3D}{http://research.nokia.com/research/mobile3D}}，针对单核心做了不少优化。由于其主要利用汇编优化，而处理器并不是x86兼容的，所以不易移植到PC上。
 
 至此，我们认为有必要进行一个能够在PC上进行两路到更多路MVC视频的解码器，进行客户端的实时解码。这样的解码器是3D视频应用普及的一个重要前提。
 
