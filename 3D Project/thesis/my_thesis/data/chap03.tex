@@ -4,21 +4,51 @@
 %%% TeX-master: t
 %%% End: 
 
-\chapter{解码器性能优化思路}
+\chapter{解码器性能优化方案}
 \label{cha:optapproach}
 
-%重写函数逻辑
+\section{软硬件平台说明}
+\label{sec:platformdesc}
+
+我们的解码器支持多种硬件平台，包括x86、CELL等处理器；多种操作系统，包括Linux和Windows。本文所做的优化如无特殊说明，皆与软硬件平台无关，可以直接在其他平台上应用。为了方便实验，实验主要在以下环境下进行：
+
+\begin{itemize}
+\item {硬件平台}
+\item {软件平台}
+\end{itemize}
+
+
+\section{解码器性能分析}
+\label{sec:decoderprofiling}
+
+\subsection{VS2008内置性能分析}
+\label{subsec:vsprofiling}
+
+\subsection{VTune分析}
+\label{subsec:vtuneprofiling}
+
+\section{优化方案}
+\label{sec:optapproach}
+
+\subsection{重写函数逻辑}
+\label{subsec:rewritelogic}
 %说明
 %例子
 
-%循环优化
+\subsection{循环的优化}
+\label{subsec:loopopt}
 %说明
 %例子
 
-%汇编优化
+\subsection{汇编优化}
+\label{subsec:asmopt}
 %说明
 %例子
 
-%CUDA优化
+\subsection{CUDA优化}
+\label{subsec:cudaopt}
 %说明
 %例子
+
+\section{优化目标}
+\label{sec:optaim}
