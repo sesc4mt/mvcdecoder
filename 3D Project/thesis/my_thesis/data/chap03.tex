@@ -96,11 +96,25 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 \subsection{性能分析结果说明}
 \label{subsec:commentonreport}
 
+我们观察两个分析结果表\ref{tab:vs10}和表\ref{tab:vtune10}可以发现：虽然两个性能分析工具在结果上存在一些差别，但函数运行时间的排序大体上是一致的，耗时多的函数都排在表格靠上的位置，表中列出的前10位的函数有7个在两个表中都出现了。我们认为，可以根据性能分析的结果来确定函数优化的大体方向，优化的主要对象就是表中排在前列的函数。
+
+对这些函数进行进一步观察，我们可以将它们分类：
+\begin{description}
+\item[简单函数多次调用] 典型的例子是idct4x4\_c和iquant4x4\_c。这两个函数的调用次数都在5028960次，这仅仅是解码65帧两路视频所需要的次数。对于这类函数，哪怕是性能上的一点点提升，都会因为巨大的调用次数而对总解码时间产生较大的影响。
+\item[复杂函数] 典型的例子是macroblockGetHalfPel，这个函数仅仅执行148552次，单次执行时间是idct4x4c的14倍，iquant4x4c的53倍。这样的函数需要有很大幅度的优化才会在总时间中有所体现。
+\end{description}
+
+同时，我咨询了对整个系统十分熟悉的胡伟栋，他指出：耗时排在前列的函数大多是根据JMVC参考软件的逻辑来编写的，考虑了一些工程上扩展的需要而非性能优先，有一定的提升空间。
+
 \section{优化方案}
 \label{sec:optapproach}
 
+在经过几次组会讨论之后，我们确定了如下的几个优化方案，分别对不同类型的函数进行重写逻辑、优化循环、汇编优化和CUDA优化。从重写逻辑开始，一步步优化解码器性能，直到符合优化目标（见\ref{sec:optaim}）为止。
+
 \subsection{重写函数逻辑}
 \label{subsec:rewritelogic}
+
+解码器中有一些函数的逻辑判断有多处重复，降低了一定的性能。如果能够理清楚函数逻辑，修改函数内部执行的顺序，就能够加快一些速度。
 
 \subsubsection{重写函数逻辑的例子}
 \label{subsubsec:egrewritelogic}
@@ -108,17 +122,23 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 \subsection{循环的优化}
 \label{subsec:loopopt}
 
+对帧和宏块的处理常常有两层for循环便利一个width$\times$height的像素矩阵，逐像素进行操作。对于这样的函数，首先考虑是否能够将多次循环内的操作合并到少量循环，再考虑循环结构对cache的友好程度。
+
 \subsubsection{循环优化的例子}
 \label{subsubsec:egloopopt}
 
 \subsection{汇编优化}
 \label{subsec:asmopt}
 
+在项目讨论中，罗翰先生提出ffmpeg等开源的视频项目中可能会有一些变换的汇编优化版本，如果能够应用汇编优化，那么这些函数的性能将会有大幅度的提升。就此，我们考虑对一些函数进行汇编优化。
+
 \subsubsection{汇编优化的例子}
 \label{subsubsec:egasmopt}
 
 \subsection{CUDA优化}
 \label{subsec:cudaopt}
+
+视频处理中很常见的就是并行性无处不在，解码器的调度器保证了帧解码具有一定的并行性，而对帧和宏块内部的处理往往还有可以并行的for循环逐像素操作，利用GPU的大量核心进行简单操作可以加快这类操作的速度。
 
 \subsubsection{CUDA优化的例子}
 \label{subsubsec:egcudaopt}
