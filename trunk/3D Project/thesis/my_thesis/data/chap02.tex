@@ -59,5 +59,24 @@ H264AVCCommonLibStatic包含编解码时都需要的一些函数，例如对读�
 
 \section{自主开发的MVC解码器}
 \label{sec:mvcdecoder}
+
+我们根据参考软件和\onlinecite{richardson2003h}中的描述，实现了MVC的编解码器。其中，编码器的处理过程如图\ref{fig:mvcencoder}所示。解码器简单说来就是编码器的逆过程，其流程如图\ref{fig:mvcdecoder}所示。
+
 %TODO 解码流程图
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{mvcencoder.png}
+\caption{MVC Encoder流程图}
+\label{fig:mvcencoder}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{mvcdecoder.png}
+\caption{MVC Decoder流程图}
+\label{fig:mvcdecoder}
+\end{center}
+\end{figure}
 %TODO 解码器行为描述
+解码器中，在解码一帧之前，需要获得解码该帧所需要的全部参考帧，之后才能进行解码。所以说，帧的解码顺序与输入顺序是不一致的。在我们的解码器中，通过一个根据\onlinecite{pang2009framework}实现的调度器来安排解码顺序。我们的解码器有一个线程进行解码源数据的读取，在实验中，是读文件流；相应的，有一个线程进行解码输出的写操作，在实验中是写文件流；此外，调度器会根据参数配置，同时启用1个到N个线程执行解码任务，N不会大于设定的最大线程数。
