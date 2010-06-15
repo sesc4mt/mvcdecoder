@@ -7,24 +7,24 @@
 \chapter{解码器单核性能优化}
 \label{cha:singlecoreopt}
 
-按照第\ref{sec:optapproach}节中提到的优化方案，我们对解码器的单核性能进行了若干优化。在下文中列举其中具代表意义的部分。
+按照\refsec{sec:optapproach}中提到的优化方案，我们对解码器的单核性能进行了若干优化。在下文中列举其中具代表意义的部分。
 
 \section{函数逻辑优化}
 \label{sec:singlecorelogicopt}
 
-在MVCCommonLib模块中，PBPridict.cpp文件中包含了一些宏块预测相关的函数。此前的性能分析结果表\ref{tab:vs10}中显示，其中的macroblockGetHalfPel()函数耗时较多。这是一个使用Finite Impulse Response（FIR）计算一个Luma块的half-pel的函数。具体算法参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}第173页起的瞄述。
+在MVCCommonLib模块中，PBPridict.cpp文件中包含了一些宏块预测相关的函数。此前的性能分析结果\autoref{tab:vs10}中显示，其中的macroblockGetHalfPel()函数耗时较多。这是一个使用Finite Impulse Response（FIR）计算一个Luma块的half-pel的函数。具体算法参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}第173页起的瞄述。
 
 函数内的一部分源代码如下：
 \begin{lstlisting}[caption = {macroblockGetHalfPel()函数片段（优化前）}, label = lst:macroblockGetHalfPelorig]
 `\dots`
 for (int i = 0; i < hw; ++i){
 	for (int j = 2; j < hh - 3; ++j){
-	pif->vdata_half[0][i][j] =CLIP1((pif->vdata[i][j-2]-5*pif->vdata[i][j-1]+20*pif->vdata[i][j]+20*pif->vdata[i][j+1]-5*pif->vdata[i][j+2]+pif->vdata[i][j+3] + 16) / 32);
+		pif->vdata_half[0][i][j] = `\dots`; //some statement of vdata_half[][][] and vdata[][]
 	}
 }
 for (int i = 0; i < hw; ++i){
 	for (int j = 2; j < hh - 3; ++j){
-		tmp[i][j] =pif->vdata[i][j-2]-5*pif->vdata[i][j-1]+20*pif->vdata[i][j]+20*pif->vdata[i][j+1]-5*pif->vdata[i][j+2]+pif->vdata[i][j+3];
+		tmp[i][j] = `\dots`; //some statement of vdata[][]
 	}
 }
 `\dots`
@@ -38,15 +38,15 @@ for (int i = 0; i < hw; ++i){
 `\dots`
 for (int i = 0; i < hw; ++i)
 	for (int j = 2; j < hh - 3; ++j){
-		pif->vdata_half[0][i][j] =CLIP1((pif->vdata[i][j-2]-5*pif->vdata[i][j-1]+20*pif->vdata[i][j]+20*pif->vdata[i][j+1]-5*pif->vdata[i][j+2]+pif->vdata[i][j+3] + 16) / 32);
-		tmp[i][j] =pif->vdata[i][j-2]-5*pif->vdata[i][j-1]+20*pif->vdata[i][j]+20*pif->vdata[i][j+1]-5*pif->vdata[i][j+2]+pif->vdata[i][j+3];
+		pif->vdata_half[0][i][j] = `\dots`; //some statement of vdata_half[][][] and vdata[][]
+		tmp[i][j] = `\dots`; //some statement of vdata[][]
 	}
 `\dots`
 \end{lstlisting}
 
 这个优化使程序运行时间\footnote{这里所说的程序运行时间是指用release版本的解码器解码一个长度为65帧，分辨率为$720\times576$，路数为2的Multi-view视频所耗费的时间。下同。}缩短了1016ms\footnote{原始的版本总运行时间为26344ms。}。
 
-同样在MVCCommonLib模块中的PBPridict.cpp里，macroblockPredGetDataY()和macroblockPredGetDataUV()函数也是运行耗时很多的函数，事实上，不论是Visual Studio还是VTune的分析结果，这两个函数都是占用时间最多的（见表\ref{tab:vs10}和表\ref{tab:vtune10}）。
+同样在MVCCommonLib模块中的PBPridict.cpp里，macroblockPredGetDataY()和macroblockPredGetDataUV()函数也是运行耗时很多的函数，事实上，不论是Visual Studio还是VTune的分析结果，这两个函数都是占用时间最多的（见\autoref{tab:vs10}和\autoref{tab:vtune10}）。
 
 这两个函数大部分的时间耗费在memset和memcpy上。对于这些系统api的调用，我们无法作修改，但是仔细观察其逻辑，我们发现函数的逻辑判断结构可以做一定优化。
 

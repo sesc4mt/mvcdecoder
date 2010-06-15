@@ -79,25 +79,16 @@ NVIDIA的3D Vision驱动盘上有一个3D播放器程序，可以用来播放NVI
 
 经过不断尝试，我们终于实现了一帧静态3D图像的显示。做法如下：
 
-%TODO 此处插入 LPNVSTEREOIMAGEHEADER 结构的代码
-
-\begin{enumerate}
-\item 首先我们创建一个IDirect3DSurface9，这是Direct3D中用于渲染的表面。假设我们要显示的图像的宽度和高度分别为imgWidth和imgHeight。这个表面的宽度就应该是$2\times imgWidth$，这一点较容易理解，因为有左右两个视角的图像。但是这个表面的高度必须设为$imgHeight+1$，这个多出来的1像素是上文提及的帖子中指出的关键点之一，算是一个magic number。试验中我们把高度设为$imgHeight$得到的就不是立体图，而是两幅横向并列显示的拉伸过的图像。
-\item 有了这个表面之后，我们需要为其添加内容。以左上角$(0,0)$为原点，调用D3DXLoadSurfaceFromFile()读入左眼图像（图\ref{fig:staticleftview}），再以$(imgWidth,0)$为原点再次调用函数读入右眼图像（图\ref{fig:staticrightview}）。
-\item 在渲染之前，我们还要为这个待显示的结构写一个头，叫做$LPNVSTEREOIMAGEHEADER$，其中要指定宽度、高度、颜色深度以及一个singature，这个名为$NVSTEREO\_IMAGE\_SIGNATURE$的signature需要赋一个特定的值0x4433564e。
-\item 经过如上的操作，利用Direct3D的renderer渲染输出到显示器的图像就是立体图了(图\ref{fig:staticdualview})。注意实际透过眼镜是看不到重影的，两帧图像交替显示，眼镜快门相应地轮流遮挡视线，只能看到各自视角地图像。
-\end{enumerate}
-
 \begin{figure}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.5\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{staticLeftView.jpg}
+	\includegraphics[width=0.95\textwidth]{staticLeftView.jpg}
 	\caption{静态3D显示测试的左眼图像}
 	\label{fig:staticleftview}
 \end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.5\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{staticRightView.jpg}
+	\includegraphics[width=0.95\textwidth]{staticRightView.jpg}
 	\caption{静态3D显示测试的右眼图像}
 	\label{fig:staticrightview}
 \end{minipage}
@@ -105,19 +96,78 @@ NVIDIA的3D Vision驱动盘上有一个3D播放器程序，可以用来播放NVI
 %\label{fig:staticview}
 \end{figure}
 
+\begin{enumerate}
+\item 首先我们创建一个IDirect3DSurface9，这是Direct3D中用于渲染的表面。假设我们要显示的图像的宽度和高度分别为$imgWidth$和$imgHeight$。这个表面的宽度就应该是$2\times imgWidth$，这一点较容易理解，因为有左右两个视角的图像。但是这个表面的高度必须设为$imgHeight+1$，这个多出来的1像素是上文提及的帖子中指出的关键点之一，算是一个magic number。实验中我们把高度设为$imgHeight$得到的就不是立体图，而是两幅横向并列显示的拉伸过的图像。
+\item 有了这个表面之后，我们需要为其添加内容。以左上角$(0,0)$为原点，调用D3DXLoadSurfaceFromFile()读入左眼图像（\autoref{fig:staticleftview}），再以$(imgWidth,0)$为原点再次调用函数读入右眼图像（\autoref{fig:staticrightview}）。
+\item 在渲染之前，我们还要为这个待显示的结构写一个头，叫做$LPNVSTEREOIMAGEHEADER$，其中要指定宽度、高度、颜色深度以及一个singature，这个名为$NVSTEREO\_IMAGE\_SIGNATURE$的signature需要赋一个特定的值0x4433564e。见\autoref{lst:LPNVSTEREOIMAGEHEADER}。
+\begin{lstlisting}[caption = {LPNVSTEREOIMAGEHEADER的结构}, label = lst:LPNVSTEREOIMAGEHEADER]
+// Stereo Blitdefines
+#define NVSTEREO_IMAGE_SIGNATURE 0x4433564e //NV3D
+typedef struct _Nv_Stereo_Image_Header {
+    unsigned int dwSignature;
+    unsigned int dwWidth;
+    unsigned int dwHeight;
+    unsigned int dwBPP;
+    unsigned int dwFlags;
+} NVSTEREOIMAGEHEADER, *LPNVSTEREOIMAGEHEADER;
+\end{lstlisting}
+\item 经过如上的操作，利用Direct3D的renderer渲染输出到显示器的图像就是立体图了(\autoref{fig:staticdualview})。注意实际透过眼镜是看不到重影的，两帧图像交替显示，眼镜快门相应地轮流遮挡视线，只能看到各自视角地图像。
+\end{enumerate}
+
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{staticDualView.pdf}
+\includegraphics[width=0.7\textwidth]{staticDualView.pdf}
 \caption{渲染后输出的3D图像}
 \label{fig:staticdualview}
 \end{center}
 \end{figure}
 
+实现了一帧静态立体图的显示，就有了显示立体视频的基础，显示动态图像的部分在下一节阐述。
 
-\subsection{动态3D图像序列的显示}
+\subsection{立体视频（图像序列）的显示}
 \label{subsec:motion3dimgdisp}
 
+视频的显示可以看做以一个预设的帧率FPS（frames per second）显示一个图像序列中的一张张图像。这里的帧率根据视频的制式不同而改变，一般都在在24或30左右。
 
+视频中的FPS于游戏中的FPS有所不同。在游戏中，往往追求硬件所能处理的最高的FPS，尽可能使画面更加流畅。而在视频回放的时候，有一个固定的帧率，必须要尽可能让实际帧率接近这个预设的帧率，才能满足视频的每一帧出现在时间轴上正确的位置上。然而，视频播放和游戏的渲染又有一个共同点，当硬件资源很有限的情况下，会将帧率降到很低，出现跳帧，这也是为了保证画面的时间正确性，避免出现像“慢动作回放”一样的效果。
+
+综合以上的特点，我们就需要有一个控制帧率上限的机制，保证帧率在资源足够的时候不会超过预设值；同时要支持在资源受限时自动跳帧。
+
+为了实现这样的机制，我们需要获得较为精确的时间，来控制每一帧持续的时长。ANSI C++中提供的getTicker()函数是ms级的，比较粗糙，无法满足一些常见的（如23.97）标准帧率的控制需要。对此，我们查阅了MSDN的文档后选用了Windows API中提供的QueryPerformanceCounter()和QueryPerformanceFrequency()配合实现us级的计时器。
+
+我们实现的帧率上限控制的机制如下：在开始播放第0帧的时刻记下当前时间$t_{0}$。在渲染完第$i$帧$F_{i}$之后，获得当前时间$t_{n}$，然后准备进行第$(t_{n}-t_{0})\times FPS$的渲染。通过比较当前已渲染的帧$F_{i}$和待渲染的帧$F_{n}$是否一致来决定是否进行渲染操作。这个机制的核心就是\autoref{eqn:Fn}。
+\begin{equation}\label{eqn:Fn}
+F_{n}=(t_{n}-t_{0})\times FPS
+\end{equation}
+其中$FPS$为根据播放内容而预设的一个帧率，$t_{n}$为当前时刻，$t_{0}$为播放视频第0帧的起始时刻，$F_{n}$为当前时刻应该渲染的帧的序号。
+
+帧率上限控制算法的伪代码见\autoref{algo:frameratecap}。
+
+\begin{algorithm}
+\caption{Frame rate cap}
+\label{algo:frameratecap}
+\begin{algorithmic}[1]
+	\STATE $\_start \Leftarrow initialTime$ %\COMMENT{store the initial time}
+	\STATE $bufferd = FALSE$
+	\STATE $lastRenderedFrame \Leftarrow -1$
+	\WHILE{$TRUE$}
+		\STATE $\_current \Leftarrow currentTime - \_start$ %\COMMENT{get elapsed time}
+		\STATE $frameToRender \Leftarrow \_current * FPS$ %\COMMENT{calc the frame to render}
+		\IF{$frameToRender + 1> totalFrames$}
+			\STATE $break$ \COMMENT{break when reaching the last frame}
+		\ENDIF
+		\IF{$buffered = FALSE$}
+			\STATE load $Frame_{frameToRender+1}$ to memory
+			\STATE $buffered \Leftarrow TRUE$
+		\ENDIF
+		\IF{$frameToRender \neq lastRenderedFrame$}
+			\STATE render $Frame_{frameToRender}$
+			\STATE $lastRendered \Leftarrow frameToRender$
+			\STATE $buffered \Leftarrow FALSE$
+		\ENDIF
+	\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
 
 \section{播放器测试}
 \label{sec:3dplayerdemo}
