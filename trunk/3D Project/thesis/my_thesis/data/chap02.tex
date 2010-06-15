@@ -8,7 +8,7 @@
 \label{cha:decoderprincipleandrealization}
 
 %参见胡伟栋论文和张凤研论文
-自2006年起，胡伟栋等开始着手编写一套视频编解码系统。至2010年初基本完成，编解码的过程基本符合MVC标准\cite{iso2009mvc}的描述。编写过程中，主要参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}、T264项目\footnote{\href{http://sourceforge.net/projects/t264/}{http://sourceforge.net/projects/t264/}}和JMVC参考软件。代码参考了JMVC的框架设置。
+自2006年起，胡伟栋等开始着手编写一套视频编解码系统。至2010年初基本完成，编解码的过程基本符合MVC标准\cite{iso2009mvc}的描述。编写过程中，主要参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}、T264项目\footnote{\url{http://sourceforge.net/projects/t264/}}和JMVC参考软件。代码参考了JMVC的框架设置。
 
 \section{参考软件JMVC介绍}
 \label{sec:introtojmvc}
@@ -44,9 +44,9 @@ H264AVCCommonLibStatic包含编解码时都需要的一些函数，例如对读�
 \end{center}
 \end{figure}
 
-利用JMVC进行编解码的框架如图\ref{fig:JMVCstructure}所示。
+利用JMVC进行编解码的框架如\autoref{fig:JMVCstructure}所示。
 
-编码器的输入为若干路YUV视频，一般是同一场景从若干不同角度拍摄的视频，有相同的分辨率并且经过时间同步和校准。YUV文件要求是4:2:0格式，每$2\times2=4$个像素由一个$2\times2$的亮度矩阵和两个$1\times1$的色度矩阵。亮度矩阵顾名思义表示了4个像素的亮度，两个色度矩阵表示像素红蓝两色的平均色度，如图\ref{fig:Barn-yuv}所示。
+编码器的输入为若干路YUV视频，一般是同一场景从若干不同角度拍摄的视频，有相同的分辨率并且经过时间同步和校准。YUV文件要求是4:2:0格式，每$2\times2=4$个像素由一个$2\times2$的亮度矩阵和两个$1\times1$的色度矩阵。亮度矩阵顾名思义表示了4个像素的亮度，两个色度矩阵表示像素红蓝两色的平均色度，如\autoref{fig:Barn-yuv}所示。
 在编解码器开发期间，庞一、胡伟栋、张凤研等对编解码在帧级别的并行性进行了深入研究\cite{pang2009adaptive,yi2008parallelized}，并在编码器和解码器中都采用了帧并行的算法。
 
 \begin{figure}[htbp]
@@ -60,7 +60,7 @@ H264AVCCommonLibStatic包含编解码时都需要的一些函数，例如对读�
 \section{自主开发的MVC解码器}
 \label{sec:mvcdecoder}
 
-我们根据参考软件和\onlinecite{richardson2003h}中的描述，实现了MVC的编解码器。其中，编码器的处理过程如图\ref{fig:mvcencoder}所示。解码器简单说来就是编码器的逆过程，其流程如图\ref{fig:mvcdecoder}所示。
+我们根据参考软件和\onlinecite{richardson2003h}中的描述，实现了MVC的编解码器。其中，编码器的处理过程如\autoref{fig:mvcencoder}所示。解码器简单说来就是编码器的逆过程，其流程如\autoref{fig:mvcdecoder}所示。
 
 %TODO 解码流程图
 \begin{figure}[htbp]

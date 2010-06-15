@@ -72,7 +72,7 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 
 \input{data/vs10}
 
-分析报告中仅仅MVCDecoder.exe自身的函数就有近200条记录，而大部分都占用不足$0.05\%$的时间，优化价值不大。在表\ref{tab:vs10}中我们给出了时间占用排在前10的记录。更详细的记录参见附录\ref{cha:expdatatable}中的表\ref{tab:vs50}。
+分析报告中仅仅MVCDecoder.exe自身的函数就有近200条记录，而大部分都占用不足$0.05\%$的时间，优化价值不大。在\autoref{tab:vs10}中我们给出了时间占用排在前10的记录。更详细的记录参见\autoref{cha:expdatatable}中的\autoref{tab:vs50}。
 
 \subsection{VTune分析}
 \label{subsec:vtuneprofiling}
@@ -91,12 +91,12 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 
 \input{data/vtune10}
 
-性能分析报告包含一个函数调用关系图以及函数运行时间表，我们关注的是后者。表中大部分列与VS2008的分析结果是公共的，比如函数名、总时间、净时间等等。我们采集了与此前同样意义的几列数据，包括“Function”，“Calls”，“Self Time”和“\% in function”。我们在表\ref{tab:vtune10}中给出前10条记录。
+性能分析报告包含一个函数调用关系图以及函数运行时间表，我们关注的是后者。表中大部分列与VS2008的分析结果是公共的，比如函数名、总时间、净时间等等。我们采集了与此前同样意义的几列数据，包括“Function”，“Calls”，“Self Time”和“\% in function”。我们在\autoref{tab:vtune10}中给出前10条记录。
 
 \subsection{性能分析结果说明}
 \label{subsec:commentonreport}
 
-我们观察两个分析结果表\ref{tab:vs10}和表\ref{tab:vtune10}可以发现：虽然两个性能分析工具在结果上存在一些差别，但函数运行时间的排序大体上是一致的，耗时多的函数都排在表格靠上的位置，表中列出的前10位的函数有7个在两个表中都出现了。我们认为，可以根据性能分析的结果来确定函数优化的大体方向，优化的主要对象就是表中排在前列的函数。
+我们观察两个分析结果\autoref{tab:vs10}和\autoref{tab:vtune10}可以发现：虽然两个性能分析工具在结果上存在一些差别，但函数运行时间的排序大体上是一致的，耗时多的函数都排在表格靠上的位置，表中列出的前10位的函数有7个在两个表中都出现了。我们认为，可以根据性能分析的结果来确定函数优化的大体方向，优化的主要对象就是表中排在前列的函数。
 
 对这些函数进行进一步观察，我们可以将它们分类：
 \begin{description}
@@ -109,7 +109,7 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 \section{优化方案}
 \label{sec:optapproach}
 
-在经过几次组会讨论之后，我们确定了如下的几个优化方案，分别对不同类型的函数进行重写逻辑、优化循环、汇编优化和CUDA优化。从重写逻辑开始，一步步优化解码器性能，直到符合优化目标（见\ref{sec:optaim}）为止。
+在经过几次组会讨论之后，我们确定了如下的几个优化方案，分别对不同类型的函数进行重写逻辑、优化循环、汇编优化和CUDA优化。从重写逻辑开始，一步步优化解码器性能，直到符合优化目标（见\refsec{sec:optaim}）为止。
 
 \subsection{重写函数逻辑}
 \label{subsec:rewritelogic}
@@ -118,7 +118,7 @@ Visual Studio 2008 Team System版内置了一个Analyze功能，可以对目标�
 
 %\subsubsection{重写函数逻辑的例子}
 %\label{subsubsec:egrewritelogic}
-这样的优化在第\ref{sec:singlecorelogicopt}节中有例子及说明。
+这样的优化在\refsec{sec:singlecorelogicopt}中有例子及说明。
 
 \subsection{循环的优化}
 \label{subsec:loopopt}
