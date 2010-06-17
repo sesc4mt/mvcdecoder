@@ -1,0 +1,207 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 4
+	Yuv file: d0%d.yuv
+	Mvc file: ../../perfTest/singletest_720x576_65f.mvc
+slidingWindowSize = 64
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 28, 0
+ TIME,VIEW = 26, 0
+ TIME,VIEW = 25, 0
+ TIME,VIEW = 27, 0
+ TIME,VIEW = 32, 0
+ TIME,VIEW = 30, 0
+ TIME,VIEW = 29, 0
+ TIME,VIEW = 31, 0
+ TIME,VIEW = 36, 0
+ TIME,VIEW = 34, 0
+ TIME,VIEW = 33, 0
+ TIME,VIEW = 35, 0
+ TIME,VIEW = 40, 0
+ TIME,VIEW = 38, 0
+ TIME,VIEW = 37, 0
+ TIME,VIEW = 39, 0
+ TIME,VIEW = 44, 0
+ TIME,VIEW = 42, 0
+ TIME,VIEW = 41, 0
+ TIME,VIEW = 43, 0
+ TIME,VIEW = 48, 0
+Decoding...
+3640470 Start (0,0)
+3640486 End (0,0) - 16
+3640486 Start (12,0)
+3640501 End (12,0) - 15
+3640501 Start (24,0)
+3640532 End (24,0) - 31
+3640532 Start (36,0)
+3640564 End (36,0) - 32
+3640564 Start (4,0)
+3640579 End (4,0) - 15
+3640579 Start (8,0)
+3640610 End (8,0) - 31
+3640610 Start (16,0)
+3640642 End (16,0) - 32
+3640642 Start (20,0)
+3640657 End (20,0) - 15
+3640657 Start (28,0)
+3640688 End (28,0) - 31
+3640688 Start (32,0)
+3640704 End (32,0) - 16
+3640704 Start (40,0)
+3640735 End (40,0) - 31
+3640735 Start (44,0)
+3640766 End (44,0) - 31
+3640766 Start (2,0)
+3640798 End (2,0) - 32
+3640798 Start (6,0)
+3640829 End (6,0) - 31
+3640829 Start (10,0)
+3640844 End (10,0) - 15
+3640844 Start (14,0)
+3640876 End (14,0) - 32
+3640876 Start (18,0)
+3640907 End (18,0) - 31
+3640907 Start (22,0)
+3640938 End (22,0) - 31
+3640938 Start (26,0)
+3640969 End (26,0) - 31
+3640969 Start (30,0)
+3641000 End (30,0) - 31
+3641000 Start (34,0)
+3641016 End (34,0) - 16
+3641016 Start (38,0)
+3641047 End (38,0) - 31
+3641047 Start (42,0)
+3641078 End (42,0) - 31
+3641078 Start (1,0)
+3641094 End (1,0) - 16
+3641094 Start (3,0)
+3641125 End (3,0) - 31
+3641125 Start (5,0)
+3641156 End (5,0) - 31
+3641156 Start (7,0)
+3641188 End (7,0) - 32
+3641188 Start (9,0)
+3641234 End (9,0) - 46
+3641234 Start (11,0)
+3641266 End (11,0) - 32
+3641266 Start (13,0)
+3641297 End (13,0) - 31
+3641297 Start (15,0)
+ TIME,VIEW = 46, 0
+ TIME,VIEW = 45, 0
+ TIME,VIEW = 47, 0
+ TIME,VIEW = 52, 0
+3641312 End (15,0) - 15
+3641312 Start (48,0)
+3641344 End (48,0) - 32
+3641344 Start (46,0)
+3641375 End (46,0) - 31
+3641375 Start (17,0)
+3641390 End (17,0) - 15
+3641390 Start (19,0)
+ TIME,VIEW = 50, 0
+ TIME,VIEW = 49, 0
+ TIME,VIEW = 51, 0
+ TIME,VIEW = 56, 0
+3641422 End (19,0) - 32
+3641422 Start (52,0)
+3641453 End (52,0) - 31
+3641453 Start (50,0)
+3641484 End (50,0) - 31
+3641484 Start (21,0)
+3641515 End (21,0) - 31
+3641515 Start (23,0)
+ TIME,VIEW = 54, 0
+ TIME,VIEW = 53, 0
+ TIME,VIEW = 55, 0
+ TIME,VIEW = 60, 0
+3641546 End (23,0) - 31
+3641546 Start (56,0)
+3641562 End (56,0) - 16
+3641562 Start (54,0)
+3641609 End (54,0) - 47
+3641609 Start (25,0)
+3641624 End (25,0) - 15
+3641624 Start (27,0)
+ TIME,VIEW = 58, 0
+ TIME,VIEW = 57, 0
+ TIME,VIEW = 59, 0
+ TIME,VIEW = 64, 0
+3641656 End (27,0) - 32
+3641656 Start (60,0)
+3641687 End (60,0) - 31
+3641687 Start (58,0)
+3641734 End (58,0) - 47
+3641734 Start (29,0)
+3641749 End (29,0) - 15
+3641749 Start (31,0)
+ TIME,VIEW = 62, 0
+ TIME,VIEW = 61, 0
+ TIME,VIEW = 63, 0
+3641780 End (31,0) - 31
+3641780 Start (64,0)
+3641812 End (64,0) - 32
+3641812 Start (62,0)
+3641858 End (62,0) - 46
+3641858 Start (33,0)
+3641890 End (33,0) - 32
+3641890 Start (35,0)
+3641921 End (35,0) - 31
+3641921 Start (37,0)
+3641936 End (37,0) - 15
+3641936 Start (39,0)
+3641968 End (39,0) - 32
+3641968 Start (41,0)
+3641983 End (41,0) - 15
+3641983 Start (43,0)
+3642014 End (43,0) - 31
+3642014 Start (45,0)
+3642046 End (45,0) - 32
+3642046 Start (47,0)
+3642077 End (47,0) - 31
+3642077 Start (49,0)
+3642108 End (49,0) - 31
+3642108 Start (51,0)
+3642139 End (51,0) - 31
+3642139 Start (53,0)
+3642170 End (53,0) - 31
+3642170 Start (55,0)
+3642202 End (55,0) - 32
+3642202 Start (57,0)
+3642233 End (57,0) - 31
+3642233 Start (59,0)
+3642280 End (59,0) - 47
+3642280 Start (61,0)
+3642326 End (61,0) - 46
+3642326 Start (63,0)
+3642373 End (63,0) - 47
+Time Used:1935

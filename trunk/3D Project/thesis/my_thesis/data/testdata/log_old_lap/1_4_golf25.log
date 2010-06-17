@@ -1,0 +1,640 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 4
+	Yuv file: d0%d.yuv
+	Mvc file: ../golf25.mvc
+slidingWindowSize = 256
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 2
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 1
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 4
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 3
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 6
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 5
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 7
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 4, 2
+ TIME,VIEW = 4, 1
+ TIME,VIEW = 4, 4
+ TIME,VIEW = 4, 3
+ TIME,VIEW = 4, 6
+ TIME,VIEW = 4, 5
+ TIME,VIEW = 4, 7
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 2, 2
+ TIME,VIEW = 2, 1
+ TIME,VIEW = 2, 4
+ TIME,VIEW = 2, 3
+ TIME,VIEW = 2, 6
+ TIME,VIEW = 2, 5
+ TIME,VIEW = 2, 7
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 1, 2
+ TIME,VIEW = 1, 1
+ TIME,VIEW = 1, 4
+ TIME,VIEW = 1, 3
+ TIME,VIEW = 1, 6
+ TIME,VIEW = 1, 5
+ TIME,VIEW = 1, 7
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 3, 2
+ TIME,VIEW = 3, 1
+ TIME,VIEW = 3, 4
+ TIME,VIEW = 3, 3
+ TIME,VIEW = 3, 6
+ TIME,VIEW = 3, 5
+ TIME,VIEW = 3, 7
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 8, 2
+ TIME,VIEW = 8, 1
+ TIME,VIEW = 8, 4
+ TIME,VIEW = 8, 3
+ TIME,VIEW = 8, 6
+ TIME,VIEW = 8, 5
+ TIME,VIEW = 8, 7
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 6, 2
+ TIME,VIEW = 6, 1
+ TIME,VIEW = 6, 4
+ TIME,VIEW = 6, 3
+ TIME,VIEW = 6, 6
+ TIME,VIEW = 6, 5
+ TIME,VIEW = 6, 7
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 5, 2
+ TIME,VIEW = 5, 1
+ TIME,VIEW = 5, 4
+ TIME,VIEW = 5, 3
+ TIME,VIEW = 5, 6
+ TIME,VIEW = 5, 5
+ TIME,VIEW = 5, 7
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 7, 2
+ TIME,VIEW = 7, 1
+ TIME,VIEW = 7, 4
+ TIME,VIEW = 7, 3
+ TIME,VIEW = 7, 6
+ TIME,VIEW = 7, 5
+ TIME,VIEW = 7, 7
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 12, 2
+ TIME,VIEW = 12, 1
+ TIME,VIEW = 12, 4
+ TIME,VIEW = 12, 3
+ TIME,VIEW = 12, 6
+ TIME,VIEW = 12, 5
+ TIME,VIEW = 12, 7
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 10, 2
+ TIME,VIEW = 10, 1
+ TIME,VIEW = 10, 4
+ TIME,VIEW = 10, 3
+ TIME,VIEW = 10, 6
+ TIME,VIEW = 10, 5
+ TIME,VIEW = 10, 7
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 9, 2
+ TIME,VIEW = 9, 1
+ TIME,VIEW = 9, 4
+ TIME,VIEW = 9, 3
+ TIME,VIEW = 9, 6
+ TIME,VIEW = 9, 5
+ TIME,VIEW = 9, 7
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 11, 2
+ TIME,VIEW = 11, 1
+ TIME,VIEW = 11, 4
+ TIME,VIEW = 11, 3
+ TIME,VIEW = 11, 6
+ TIME,VIEW = 11, 5
+ TIME,VIEW = 11, 7
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 16, 2
+ TIME,VIEW = 16, 1
+ TIME,VIEW = 16, 4
+ TIME,VIEW = 16, 3
+ TIME,VIEW = 16, 6
+ TIME,VIEW = 16, 5
+ TIME,VIEW = 16, 7
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 14, 2
+ TIME,VIEW = 14, 1
+ TIME,VIEW = 14, 4
+ TIME,VIEW = 14, 3
+ TIME,VIEW = 14, 6
+ TIME,VIEW = 14, 5
+ TIME,VIEW = 14, 7
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 13, 2
+ TIME,VIEW = 13, 1
+ TIME,VIEW = 13, 4
+ TIME,VIEW = 13, 3
+ TIME,VIEW = 13, 6
+ TIME,VIEW = 13, 5
+ TIME,VIEW = 13, 7
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 15, 2
+ TIME,VIEW = 15, 1
+ TIME,VIEW = 15, 4
+ TIME,VIEW = 15, 3
+ TIME,VIEW = 15, 6
+ TIME,VIEW = 15, 5
+ TIME,VIEW = 15, 7
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 20, 2
+ TIME,VIEW = 20, 1
+ TIME,VIEW = 20, 4
+ TIME,VIEW = 20, 3
+ TIME,VIEW = 20, 6
+ TIME,VIEW = 20, 5
+ TIME,VIEW = 20, 7
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 18, 2
+ TIME,VIEW = 18, 1
+ TIME,VIEW = 18, 4
+ TIME,VIEW = 18, 3
+ TIME,VIEW = 18, 6
+ TIME,VIEW = 18, 5
+ TIME,VIEW = 18, 7
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 17, 2
+ TIME,VIEW = 17, 1
+ TIME,VIEW = 17, 4
+ TIME,VIEW = 17, 3
+ TIME,VIEW = 17, 6
+ TIME,VIEW = 17, 5
+ TIME,VIEW = 17, 7
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 19, 2
+ TIME,VIEW = 19, 1
+ TIME,VIEW = 19, 4
+ TIME,VIEW = 19, 3
+ TIME,VIEW = 19, 6
+ TIME,VIEW = 19, 5
+ TIME,VIEW = 19, 7
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 24, 2
+ TIME,VIEW = 24, 1
+ TIME,VIEW = 24, 4
+ TIME,VIEW = 24, 3
+ TIME,VIEW = 24, 6
+ TIME,VIEW = 24, 5
+ TIME,VIEW = 24, 7
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 22, 2
+ TIME,VIEW = 22, 1
+ TIME,VIEW = 22, 4
+ TIME,VIEW = 22, 3
+ TIME,VIEW = 22, 6
+ TIME,VIEW = 22, 5
+ TIME,VIEW = 22, 7
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 21, 2
+ TIME,VIEW = 21, 1
+ TIME,VIEW = 21, 4
+ TIME,VIEW = 21, 3
+ TIME,VIEW = 21, 6
+ TIME,VIEW = 21, 5
+ TIME,VIEW = 21, 7
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 23, 2
+READ 23, 2
+ TIME,VIEW = 23, 1
+READ 23, 1
+ TIME,VIEW = 23, 4
+READ 23, 4
+ TIME,VIEW = 23, 3
+READ 23, 3
+ TIME,VIEW = 23, 6
+READ 23, 6
+ TIME,VIEW = 23, 5
+READ 23, 5
+ TIME,VIEW = 23, 7
+READ 23, 7
+Decoding...
+3581970 Start (0,0)
+3581970 End (0,0) - 0
+3581970 Start (12,0)
+3581985 End (12,0) - 15
+3581985 Start (24,0)
+3581985 End (24,0) - 0
+3581985 Start (0,2)
+3581985 End (0,2) - 0
+3581985 Start (0,4)
+3582001 End (0,4) - 16
+3582001 Start (0,6)
+3582016 End (0,6) - 15
+3582016 Start (0,7)
+3582016 End (0,7) - 0
+3582016 Start (4,0)
+3582016 End (4,0) - 0
+3582016 Start (4,2)
+3582016 End (4,2) - 0
+3582016 Start (4,4)
+3582032 End (4,4) - 16
+3582032 Start (4,6)
+3582032 End (4,6) - 0
+3582032 Start (4,7)
+3582032 End (4,7) - 0
+3582032 Start (8,0)
+3582048 End (8,0) - 16
+3582048 Start (8,2)
+3582048 End (8,2) - 0
+3582048 Start (8,4)
+3582048 End (8,4) - 0
+3582048 Start (8,6)
+3582048 End (8,6) - 0
+3582048 Start (8,7)
+3582048 End (8,7) - 0
+3582048 Start (12,2)
+3582063 End (12,2) - 15
+3582063 Start (12,4)
+3582063 End (12,4) - 0
+3582063 Start (12,6)
+3582079 End (12,6) - 16
+3582079 Start (12,7)
+3582079 End (12,7) - 0
+3582079 Start (16,0)
+3582079 End (16,0) - 0
+3582079 Start (16,2)
+3582079 End (16,2) - 0
+3582079 Start (16,4)
+3582094 End (16,4) - 15
+3582094 Start (16,6)
+3582094 End (16,6) - 0
+3582094 Start (16,7)
+3582094 End (16,7) - 0
+3582094 Start (20,0)
+3582094 End (20,0) - 0
+3582094 Start (20,2)
+3582110 End (20,2) - 16
+3582110 Start (20,4)
+3582110 End (20,4) - 0
+3582110 Start (20,6)
+3582110 End (20,6) - 0
+3582110 Start (20,7)
+3582110 End (20,7) - 0
+3582110 Start (24,2)
+3582126 End (24,2) - 16
+3582126 Start (24,4)
+3582126 End (24,4) - 0
+3582126 Start (24,6)
+3582141 End (24,6) - 15
+3582141 Start (24,7)
+3582141 End (24,7) - 0
+3582141 Start (0,1)
+3582157 End (0,1) - 16
+3582157 Start (0,3)
+3582157 End (0,3) - 0
+3582157 Start (0,5)
+3582172 End (0,5) - 15
+3582172 Start (2,0)
+3582172 End (2,0) - 0
+3582172 Start (2,2)
+3582172 End (2,2) - 0
+3582172 Start (2,4)
+3582188 End (2,4) - 16
+3582188 Start (2,6)
+3582188 End (2,6) - 0
+3582188 Start (2,7)
+3582188 End (2,7) - 0
+3582188 Start (6,0)
+3582204 End (6,0) - 16
+3582204 Start (6,2)
+3582204 End (6,2) - 0
+3582204 Start (6,4)
+3582204 End (6,4) - 0
+3582204 Start (6,6)
+3582219 End (6,6) - 15
+3582219 Start (6,7)
+3582219 End (6,7) - 0
+3582219 Start (10,0)
+3582219 End (10,0) - 0
+3582219 Start (10,2)
+3582235 End (10,2) - 16
+3582235 Start (10,4)
+3582235 End (10,4) - 0
+3582235 Start (10,6)
+3582235 End (10,6) - 0
+3582235 Start (10,7)
+3582250 End (10,7) - 15
+3582250 Start (12,1)
+3582250 End (12,1) - 0
+3582250 Start (12,3)
+3582266 End (12,3) - 16
+3582266 Start (12,5)
+3582266 End (12,5) - 0
+3582266 Start (14,0)
+3582266 End (14,0) - 0
+3582266 Start (14,2)
+3582282 End (14,2) - 16
+3582282 Start (14,4)
+3582282 End (14,4) - 0
+3582282 Start (14,6)
+3582282 End (14,6) - 0
+3582282 Start (14,7)
+3582297 End (14,7) - 15
+3582297 Start (18,0)
+3582297 End (18,0) - 0
+3582297 Start (18,2)
+3582297 End (18,2) - 0
+3582297 Start (18,4)
+3582313 End (18,4) - 16
+3582313 Start (18,6)
+3582313 End (18,6) - 0
+3582313 Start (18,7)
+3582313 End (18,7) - 0
+3582313 Start (22,0)
+3582328 End (22,0) - 15
+3582328 Start (22,2)
+3582328 End (22,2) - 0
+3582328 Start (22,4)
+3582328 End (22,4) - 0
+3582328 Start (22,6)
+3582328 End (22,6) - 0
+3582328 Start (22,7)
+3582344 End (22,7) - 16
+3582344 Start (24,1)
+3582344 End (24,1) - 0
+3582344 Start (24,3)
+3582360 End (24,3) - 16
+3582360 Start (24,5)
+3582360 End (24,5) - 0
+3582360 Start (1,0)
+3582375 End (1,0) - 15
+3582375 Start (1,2)
+3582375 End (1,2) - 0
+3582375 Start (1,4)
+3582375 End (1,4) - 0
+3582375 Start (1,6)
+3582391 End (1,6) - 16
+3582391 Start (1,7)
+3582391 End (1,7) - 0
+3582391 Start (3,0)
+3582391 End (3,0) - 0
+3582391 Start (3,2)
+3582391 End (3,2) - 0
+3582391 Start (3,4)
+3582406 End (3,4) - 15
+3582406 Start (3,6)
+3582406 End (3,6) - 0
+3582406 Start (3,7)
+3582406 End (3,7) - 0
+3582406 Start (4,1)
+3582422 End (4,1) - 16
+3582422 Start (4,3)
+3582422 End (4,3) - 0
+3582422 Start (4,5)
+3582422 End (4,5) - 0
+3582422 Start (5,0)
+3582438 End (5,0) - 16
+3582438 Start (5,2)
+3582438 End (5,2) - 0
+3582438 Start (5,4)
+3582438 End (5,4) - 0
+3582438 Start (5,6)
+3582453 End (5,6) - 15
+3582453 Start (5,7)
+3582453 End (5,7) - 0
+3582453 Start (7,0)
+3582453 End (7,0) - 0
+3582453 Start (7,2)
+3582453 End (7,2) - 0
+3582453 Start (7,4)
+3582469 End (7,4) - 16
+3582469 Start (7,6)
+3582469 End (7,6) - 0
+3582469 Start (7,7)
+3582469 End (7,7) - 0
+3582469 Start (8,1)
+3582484 End (8,1) - 15
+3582484 Start (8,3)
+3582484 End (8,3) - 0
+3582484 Start (8,5)
+3582484 End (8,5) - 0
+3582484 Start (9,0)
+3582484 End (9,0) - 0
+3582484 Start (9,2)
+3582500 End (9,2) - 16
+3582500 Start (9,4)
+3582500 End (9,4) - 0
+3582500 Start (9,6)
+3582500 End (9,6) - 0
+3582500 Start (9,7)
+3582516 End (9,7) - 16
+3582516 Start (11,0)
+3582516 End (11,0) - 0
+3582516 Start (11,2)
+3582516 End (11,2) - 0
+3582516 Start (11,4)
+3582531 End (11,4) - 15
+3582531 Start (11,6)
+3582531 End (11,6) - 0
+3582531 Start (11,7)
+3582531 End (11,7) - 0
+3582531 Start (13,0)
+3582531 End (13,0) - 0
+3582547 Start (13,2)
+3582547 End (13,2) - 0
+3582547 Start (13,4)
+3582547 End (13,4) - 0
+3582547 Start (13,6)
+3582547 End (13,6) - 0
+3582547 Start (13,7)
+3582562 End (13,7) - 15
+3582562 Start (15,0)
+3582562 End (15,0) - 0
+3582562 Start (15,2)
+3582562 End (15,2) - 0
+3582562 Start (15,4)
+3582578 End (15,4) - 16
+3582578 Start (15,6)
+3582578 End (15,6) - 0
+3582578 Start (15,7)
+3582578 End (15,7) - 0
+3582578 Start (16,1)
+3582594 End (16,1) - 16
+3582594 Start (16,3)
+3582594 End (16,3) - 0
+3582594 Start (16,5)
+3582594 End (16,5) - 0
+3582594 Start (17,0)
+3582594 End (17,0) - 0
+3582594 Start (17,2)
+3582609 End (17,2) - 15
+3582609 Start (17,4)
+3582609 End (17,4) - 0
+3582609 Start (17,6)
+3582609 End (17,6) - 0
+3582609 Start (17,7)
+3582625 End (17,7) - 16
+3582625 Start (19,0)
+3582625 End (19,0) - 0
+3582625 Start (19,2)
+3582625 End (19,2) - 0
+3582625 Start (19,4)
+3582640 End (19,4) - 15
+3582640 Start (19,6)
+3582640 End (19,6) - 0
+3582640 Start (19,7)
+3582640 End (19,7) - 0
+3582640 Start (20,1)
+3582656 End (20,1) - 16
+3582656 Start (20,3)
+3582656 End (20,3) - 0
+3582656 Start (20,5)
+3582656 End (20,5) - 0
+3582656 Start (21,0)
+3582656 End (21,0) - 0
+3582656 Start (21,2)
+3582672 End (21,2) - 16
+3582672 Start (21,4)
+3582672 End (21,4) - 0
+3582672 Start (21,6)
+3582672 End (21,6) - 0
+3582672 Start (21,7)
+3582687 End (21,7) - 15
+3582687 Start (23,0)
+3582687 End (23,0) - 0
+3582687 Start (23,2)
+3582687 End (23,2) - 0
+3582687 Start (23,4)
+3582703 End (23,4) - 16
+3582703 Start (23,6)
+3582703 End (23,6) - 0
+3582703 Start (23,7)
+3582703 End (23,7) - 0
+3582703 Start (2,1)
+3582718 End (2,1) - 15
+3582718 Start (2,3)
+3582718 End (2,3) - 0
+3582718 Start (2,5)
+3582718 End (2,5) - 0
+3582718 Start (6,1)
+3582718 End (6,1) - 0
+3582718 Start (6,3)
+3582734 End (6,3) - 16
+3582734 Start (6,5)
+3582734 End (6,5) - 0
+3582734 Start (10,1)
+3582734 End (10,1) - 0
+3582734 Start (10,3)
+3582750 End (10,3) - 16
+3582750 Start (10,5)
+3582750 End (10,5) - 0
+3582750 Start (14,1)
+3582765 End (14,1) - 15
+3582765 Start (14,3)
+3582765 End (14,3) - 0
+3582765 Start (14,5)
+3582765 End (14,5) - 0
+3582765 Start (18,1)
+3582781 End (18,1) - 16
+3582781 Start (18,3)
+3582781 End (18,3) - 0
+3582781 Start (18,5)
+3582781 End (18,5) - 0
+3582781 Start (22,1)
+3582796 End (22,1) - 15
+3582796 Start (22,3)
+3582796 End (22,3) - 0
+3582796 Start (22,5)
+3582796 End (22,5) - 0
+3582796 Start (1,1)
+3582812 End (1,1) - 16
+3582812 Start (1,3)
+3582812 End (1,3) - 0
+3582812 Start (1,5)
+3582828 End (1,5) - 16
+3582828 Start (3,1)
+3582828 End (3,1) - 0
+3582828 Start (3,3)
+3582828 End (3,3) - 0
+3582828 Start (3,5)
+3582843 End (3,5) - 15
+3582843 Start (5,1)
+3582843 End (5,1) - 0
+3582843 Start (5,3)
+3582843 End (5,3) - 0
+3582843 Start (5,5)
+3582859 End (5,5) - 16
+3582859 Start (7,1)
+3582859 End (7,1) - 0
+3582859 Start (7,3)
+3582859 End (7,3) - 0
+3582859 Start (7,5)
+3582874 End (7,5) - 15
+3582874 Start (9,1)
+3582874 End (9,1) - 0
+3582874 Start (9,3)
+3582874 End (9,3) - 0
+3582874 Start (9,5)
+3582890 End (9,5) - 16
+3582890 Start (11,1)
+3582890 End (11,1) - 0
+3582890 Start (11,3)
+3582890 End (11,3) - 0
+3582890 Start (11,5)
+3582906 End (11,5) - 16
+3582906 Start (13,1)
+3582906 End (13,1) - 0
+3582906 Start (13,3)
+3582906 End (13,3) - 0
+3582906 Start (13,5)
+3582921 End (13,5) - 15
+3582921 Start (15,1)
+3582921 End (15,1) - 0
+3582921 Start (15,3)
+3582921 End (15,3) - 0
+3582921 Start (15,5)
+3582937 End (15,5) - 16
+3582937 Start (17,1)
+3582937 End (17,1) - 0
+3582937 Start (17,3)
+3582937 End (17,3) - 0
+3582937 Start (17,5)
+3582952 End (17,5) - 15
+3582952 Start (19,1)
+3582952 End (19,1) - 0
+3582952 Start (19,3)
+3582952 End (19,3) - 0
+3582952 Start (19,5)
+3582968 End (19,5) - 16
+3582968 Start (21,1)
+3582968 End (21,1) - 0
+3582968 Start (21,3)
+3582968 End (21,3) - 0
+3582968 Start (21,5)
+3582984 End (21,5) - 16
+3582984 Start (23,1)
+3582984 End (23,1) - 0
+3582984 Start (23,3)
+3582984 End (23,3) - 0
+3582984 Start (23,5)
+3582999 End (23,5) - 15
+Time Used:1029

@@ -1,0 +1,406 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 16
+	Yuv file: d0%d.yuv
+	Mvc file: ../../perfTest/dualtest_176x144_65f.mvc
+slidingWindowSize = 512
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 1
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 4, 1
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 2, 1
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 1, 1
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 3, 1
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 8, 1
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 6, 1
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 5, 1
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 7, 1
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 12, 1
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 10, 1
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 9, 1
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 11, 1
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 16, 1
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 14, 1
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 13, 1
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 15, 1
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 20, 1
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 18, 1
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 17, 1
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 19, 1
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 24, 1
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 22, 1
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 21, 1
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 23, 1
+READ 23, 1
+ TIME,VIEW = 28, 0
+ TIME,VIEW = 28, 1
+ TIME,VIEW = 26, 0
+ TIME,VIEW = 26, 1
+ TIME,VIEW = 25, 0
+ TIME,VIEW = 25, 1
+ TIME,VIEW = 27, 0
+ TIME,VIEW = 27, 1
+ TIME,VIEW = 32, 0
+ TIME,VIEW = 32, 1
+ TIME,VIEW = 30, 0
+ TIME,VIEW = 30, 1
+ TIME,VIEW = 29, 0
+ TIME,VIEW = 29, 1
+ TIME,VIEW = 31, 0
+ TIME,VIEW = 31, 1
+ TIME,VIEW = 36, 0
+ TIME,VIEW = 36, 1
+ TIME,VIEW = 34, 0
+ TIME,VIEW = 34, 1
+ TIME,VIEW = 33, 0
+ TIME,VIEW = 33, 1
+ TIME,VIEW = 35, 0
+ TIME,VIEW = 35, 1
+ TIME,VIEW = 40, 0
+ TIME,VIEW = 40, 1
+ TIME,VIEW = 38, 0
+ TIME,VIEW = 38, 1
+ TIME,VIEW = 37, 0
+ TIME,VIEW = 37, 1
+ TIME,VIEW = 39, 0
+ TIME,VIEW = 39, 1
+ TIME,VIEW = 44, 0
+ TIME,VIEW = 44, 1
+ TIME,VIEW = 42, 0
+ TIME,VIEW = 42, 1
+ TIME,VIEW = 41, 0
+ TIME,VIEW = 41, 1
+ TIME,VIEW = 43, 0
+ TIME,VIEW = 43, 1
+ TIME,VIEW = 48, 0
+ TIME,VIEW = 48, 1
+ TIME,VIEW = 46, 0
+ TIME,VIEW = 46, 1
+ TIME,VIEW = 45, 0
+ TIME,VIEW = 45, 1
+ TIME,VIEW = 47, 0
+ TIME,VIEW = 47, 1
+ TIME,VIEW = 52, 0
+ TIME,VIEW = 52, 1
+ TIME,VIEW = 50, 0
+ TIME,VIEW = 50, 1
+ TIME,VIEW = 49, 0
+ TIME,VIEW = 49, 1
+ TIME,VIEW = 51, 0
+ TIME,VIEW = 51, 1
+ TIME,VIEW = 56, 0
+ TIME,VIEW = 56, 1
+ TIME,VIEW = 54, 0
+ TIME,VIEW = 54, 1
+ TIME,VIEW = 53, 0
+ TIME,VIEW = 53, 1
+ TIME,VIEW = 55, 0
+ TIME,VIEW = 55, 1
+ TIME,VIEW = 60, 0
+ TIME,VIEW = 60, 1
+ TIME,VIEW = 58, 0
+ TIME,VIEW = 58, 1
+ TIME,VIEW = 57, 0
+ TIME,VIEW = 57, 1
+ TIME,VIEW = 59, 0
+ TIME,VIEW = 59, 1
+ TIME,VIEW = 64, 0
+ TIME,VIEW = 64, 1
+ TIME,VIEW = 62, 0
+ TIME,VIEW = 62, 1
+ TIME,VIEW = 61, 0
+ TIME,VIEW = 61, 1
+ TIME,VIEW = 63, 0
+ TIME,VIEW = 63, 1
+Decoding...
+3832507 Start (0,0)
+3832507 End (0,0) - 0
+3832507 Start (12,0)
+3832507 End (12,0) - 0
+3832507 Start (24,0)
+3832507 End (24,0) - 0
+3832507 Start (36,0)
+3832507 End (36,0) - 0
+3832507 Start (48,0)
+3832507 End (48,0) - 0
+3832507 Start (60,0)
+3832507 End (60,0) - 0
+3832507 Start (0,1)
+3832507 End (0,1) - 0
+3832507 Start (4,0)
+3832507 End (4,0) - 0
+3832507 Start (4,1)
+3832523 End (4,1) - 16
+3832523 Start (8,0)
+3832523 End (8,0) - 0
+3832523 Start (8,1)
+3832523 End (8,1) - 0
+3832523 Start (12,1)
+3832523 End (12,1) - 0
+3832523 Start (16,0)
+3832523 End (16,0) - 0
+3832523 Start (16,1)
+3832523 End (16,1) - 0
+3832523 Start (20,0)
+3832523 End (20,0) - 0
+3832523 Start (20,1)
+3832538 End (20,1) - 15
+3832538 Start (24,1)
+3832538 End (24,1) - 0
+3832538 Start (28,0)
+3832538 End (28,0) - 0
+3832538 Start (28,1)
+3832538 End (28,1) - 0
+3832538 Start (32,0)
+3832538 End (32,0) - 0
+3832538 Start (32,1)
+3832538 End (32,1) - 0
+3832538 Start (36,1)
+3832538 End (36,1) - 0
+3832554 Start (40,0)
+3832554 End (40,0) - 0
+3832554 Start (40,1)
+3832554 End (40,1) - 0
+3832554 Start (44,0)
+3832554 End (44,0) - 0
+3832554 Start (44,1)
+3832554 End (44,1) - 0
+3832554 Start (48,1)
+3832554 End (48,1) - 0
+3832554 Start (52,0)
+3832554 End (52,0) - 0
+3832554 Start (52,1)
+3832554 End (52,1) - 0
+3832554 Start (56,0)
+3832570 End (56,0) - 16
+3832570 Start (56,1)
+3832570 End (56,1) - 0
+3832570 Start (60,1)
+3832570 End (60,1) - 0
+3832570 Start (64,0)
+3832570 End (64,0) - 0
+3832570 Start (64,1)
+3832570 End (64,1) - 0
+3832570 Start (2,0)
+3832570 End (2,0) - 0
+3832570 Start (2,1)
+3832570 End (2,1) - 0
+3832570 Start (6,0)
+3832585 End (6,0) - 15
+3832585 Start (6,1)
+3832585 End (6,1) - 0
+3832585 Start (10,0)
+3832585 End (10,0) - 0
+3832585 Start (10,1)
+3832585 End (10,1) - 0
+3832585 Start (14,0)
+3832585 End (14,0) - 0
+3832585 Start (14,1)
+3832585 End (14,1) - 0
+3832585 Start (18,0)
+3832585 End (18,0) - 0
+3832585 Start (18,1)
+3832601 End (18,1) - 16
+3832601 Start (22,0)
+3832601 End (22,0) - 0
+3832601 Start (22,1)
+3832601 End (22,1) - 0
+3832601 Start (26,0)
+3832601 End (26,0) - 0
+3832601 Start (26,1)
+3832601 End (26,1) - 0
+3832601 Start (30,0)
+3832601 End (30,0) - 0
+3832601 Start (30,1)
+3832601 End (30,1) - 0
+3832616 Start (34,0)
+3832616 End (34,0) - 0
+3832616 Start (34,1)
+3832616 End (34,1) - 0
+3832616 Start (38,0)
+3832616 End (38,0) - 0
+3832616 Start (38,1)
+3832616 End (38,1) - 0
+3832616 Start (42,0)
+3832616 End (42,0) - 0
+3832616 Start (42,1)
+3832616 End (42,1) - 0
+3832616 Start (46,0)
+3832616 End (46,0) - 0
+3832616 Start (46,1)
+3832632 End (46,1) - 16
+3832632 Start (50,0)
+3832632 End (50,0) - 0
+3832632 Start (50,1)
+3832632 End (50,1) - 0
+3832632 Start (54,0)
+3832632 End (54,0) - 0
+3832632 Start (54,1)
+3832632 End (54,1) - 0
+3832632 Start (58,0)
+3832632 End (58,0) - 0
+3832632 Start (58,1)
+3832632 End (58,1) - 0
+3832632 Start (62,0)
+3832648 End (62,0) - 16
+3832648 Start (62,1)
+3832648 End (62,1) - 0
+3832648 Start (1,0)
+3832648 End (1,0) - 0
+3832648 Start (1,1)
+3832648 End (1,1) - 0
+3832648 Start (3,0)
+3832648 End (3,0) - 0
+3832648 Start (3,1)
+3832648 End (3,1) - 0
+3832648 Start (5,0)
+3832648 End (5,0) - 0
+3832648 Start (5,1)
+3832663 End (5,1) - 15
+3832663 Start (7,0)
+3832663 End (7,0) - 0
+3832663 Start (7,1)
+3832663 End (7,1) - 0
+3832663 Start (9,0)
+3832663 End (9,0) - 0
+3832663 Start (9,1)
+3832663 End (9,1) - 0
+3832663 Start (11,0)
+3832663 End (11,0) - 0
+3832663 Start (11,1)
+3832679 End (11,1) - 16
+3832679 Start (13,0)
+3832679 End (13,0) - 0
+3832679 Start (13,1)
+3832679 End (13,1) - 0
+3832679 Start (15,0)
+3832679 End (15,0) - 0
+3832679 Start (15,1)
+3832679 End (15,1) - 0
+3832679 Start (17,0)
+3832679 End (17,0) - 0
+3832679 Start (17,1)
+3832679 End (17,1) - 0
+3832679 Start (19,0)
+3832694 End (19,0) - 15
+3832694 Start (19,1)
+3832694 End (19,1) - 0
+3832694 Start (21,0)
+3832694 End (21,0) - 0
+3832694 Start (21,1)
+3832694 End (21,1) - 0
+3832694 Start (23,0)
+3832694 End (23,0) - 0
+3832694 Start (23,1)
+3832694 End (23,1) - 0
+3832694 Start (25,0)
+3832710 End (25,0) - 16
+3832710 Start (25,1)
+3832710 End (25,1) - 0
+3832710 Start (27,0)
+3832710 End (27,0) - 0
+3832710 Start (27,1)
+3832710 End (27,1) - 0
+3832710 Start (29,0)
+3832710 End (29,0) - 0
+3832710 Start (29,1)
+3832710 End (29,1) - 0
+3832710 Start (31,0)
+3832710 End (31,0) - 0
+3832710 Start (31,1)
+3832726 End (31,1) - 16
+3832726 Start (33,0)
+3832726 End (33,0) - 0
+3832726 Start (33,1)
+3832726 End (33,1) - 0
+3832726 Start (35,0)
+3832726 End (35,0) - 0
+3832726 Start (35,1)
+3832726 End (35,1) - 0
+3832726 Start (37,0)
+3832726 End (37,0) - 0
+3832726 Start (37,1)
+3832726 End (37,1) - 0
+3832726 Start (39,0)
+3832741 End (39,0) - 15
+3832741 Start (39,1)
+3832741 End (39,1) - 0
+3832741 Start (41,0)
+3832741 End (41,0) - 0
+3832741 Start (41,1)
+3832741 End (41,1) - 0
+3832741 Start (43,0)
+3832741 End (43,0) - 0
+3832741 Start (43,1)
+3832741 End (43,1) - 0
+3832741 Start (45,0)
+3832741 End (45,0) - 0
+3832741 Start (45,1)
+3832757 End (45,1) - 16
+3832757 Start (47,0)
+3832757 End (47,0) - 0
+3832757 Start (47,1)
+3832757 End (47,1) - 0
+3832757 Start (49,0)
+3832757 End (49,0) - 0
+3832757 Start (49,1)
+3832757 End (49,1) - 0
+3832757 Start (51,0)
+3832757 End (51,0) - 0
+3832757 Start (51,1)
+3832772 End (51,1) - 15
+3832772 Start (53,0)
+3832772 End (53,0) - 0
+3832772 Start (53,1)
+3832772 End (53,1) - 0
+3832772 Start (55,0)
+3832772 End (55,0) - 0
+3832772 Start (55,1)
+3832772 End (55,1) - 0
+3832772 Start (57,0)
+3832772 End (57,0) - 0
+3832772 Start (57,1)
+3832772 End (57,1) - 0
+3832772 Start (59,0)
+3832788 End (59,0) - 16
+3832788 Start (59,1)
+3832788 End (59,1) - 0
+3832788 Start (61,0)
+3832788 End (61,0) - 0
+3832788 Start (61,1)
+3832788 End (61,1) - 0
+3832788 Start (63,0)
+3832788 End (63,0) - 0
+3832788 Start (63,1)
+3832788 End (63,1) - 0
+Time Used:296
