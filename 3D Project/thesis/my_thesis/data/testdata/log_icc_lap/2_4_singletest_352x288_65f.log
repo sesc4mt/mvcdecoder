@@ -1,0 +1,42 @@
+	Frame Parallel: 2
+	Macroblock Parallel: -1
+	GOP Limit: 4
+	Yuv file: d0%d.yuv
+	Mvc file: ../../perfTest/singletest_352x288_65f.mvc
+slidingWindowSize = 32
+Decoding...
+1929451 Start (0,0)
+1929467 End (0,0) - 16
+1929467 Start (12,0)
+1929467 Start (4,0)
+1929467 End (12,0) - 0
+1929467 Start (16,0)
+1929467 End (4,0) - 0
+1929482 End (16,0) - 15
+1929482 Start (8,0)
+1929482 Start (20,0)
+1929482 End (20,0) - 0
+1929498 End (8,0) - 16
+1929560 Start (24,0)
+1929576 End (24,0) - 16
+1929576 Start (28,0)
+1929591 End (28,0) - 15
+1929591 Start (32,0)
+1929591 End (32,0) - 0
+1929623 Start (36,0)
+1929623 End (36,0) - 0
+1929638 Start (40,0)
+1929638 End (40,0) - 0
+1929638 Start (44,0)
+1929638 End (44,0) - 0
+1929669 Start (48,0)
+1929685 End (48,0) - 16
+1929685 Start (52,0)
+1929685 End (52,0) - 0
+1929685 Start (56,0)
+1929701 End (56,0) - 16
+1929716 Start (60,0)
+1929716 End (60,0) - 0
+1929747 Start (64,0)
+1929763 End (64,0) - 16
+Time Used:343
