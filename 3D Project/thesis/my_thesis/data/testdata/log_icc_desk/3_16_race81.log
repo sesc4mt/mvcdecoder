@@ -1,0 +1,6 @@
+	Frame Parallel: 3
+	Macroblock Parallel: -1
+	GOP Limit: 16
+	Yuv file: d0%d.yuv
+	Mvc file: ../race81
+Assert Error (.\BitstreamData.h,41)!!!!
