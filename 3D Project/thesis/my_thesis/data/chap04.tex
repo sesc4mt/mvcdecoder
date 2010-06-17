@@ -7,7 +7,9 @@
 \chapter{解码器单核性能优化}
 \label{cha:singlecoreopt}
 
-按照\refsec{sec:optapproach}中提到的优化方案，我们对解码器的单核性能进行了若干优化。在下文中列举其中具代表意义的部分。
+按照\refsec{sec:optapproach}中提到的优化方案，我们对解码器的单核性能进行了若干优化。本章中列举其中具代表意义的部分。
+
+\refsec{sec:singlecorelogicopt}详细介绍了对函数逻辑的优化，\refsec{sec:singlecoreloopopt}介绍了对循环的优化并举例说明，\refsec{sec:singlecoreasmopt}介绍了汇编优化，\refsec{sec:singlecoreothers}提及了其他一些优化。
 
 \section{函数逻辑优化}
 \label{sec:singlecorelogicopt}
@@ -19,12 +21,12 @@
 `\dots`
 for (int i = 0; i < hw; ++i){
 	for (int j = 2; j < hh - 3; ++j){
-		pif->vdata_half[0][i][j] = `\dots`; //some statement of vdata_half[][][] and vdata[][]
+		pif->vdata_half[0][i][j] = `\dots`; //some expression of vdata_half[][][] and vdata[][]
 	}
 }
 for (int i = 0; i < hw; ++i){
 	for (int j = 2; j < hh - 3; ++j){
-		tmp[i][j] = `\dots`; //some statement of vdata[][]
+		tmp[i][j] = `\dots`; //some expression of vdata[][]
 	}
 }
 `\dots`
@@ -38,8 +40,8 @@ for (int i = 0; i < hw; ++i){
 `\dots`
 for (int i = 0; i < hw; ++i)
 	for (int j = 2; j < hh - 3; ++j){
-		pif->vdata_half[0][i][j] = `\dots`; //some statement of vdata_half[][][] and vdata[][]
-		tmp[i][j] = `\dots`; //some statement of vdata[][]
+		pif->vdata_half[0][i][j] = `\dots`; //some expression of vdata_half[][][] and vdata[][]
+		tmp[i][j] = `\dots`; //some expression of vdata[][]
 	}
 `\dots`
 \end{lstlisting}
@@ -54,17 +56,29 @@ for (int i = 0; i < hw; ++i)
 
 \begin{lstlisting}[caption = {macroblockPredGetDataY()函数片段（优化前）}, label = lst:macroblockPredGetDataYorig]
 `\dots`
-
+if (x<0) x = 0;
+if (x >= pif->sizeh) x = pif->sizeh - 1;
+`\dots`
+if (le < 0) le = 0;
+if (le > 0)
+	memcpy(pif->vdata[i]+dl, linef + sl, le);`\label{line:memcpy}`
 `\dots`
 \end{lstlisting}
 
-观察发现，
+由于pif->sizeh的物理意义决定了它必然是非负的，当x=0的时候不可能出现x>=pif->sizeh的情况，所以每次调用macroblockPredGetDataY()的时候，如果x<0，都做了多余判断。
+
+le是int类型，所以当le<0时，顺序执行语句不可能出现le>0的情况，也存在多余判断问题。事实上，第\ref{line:memcpy}行的memcpy语句只有在le>=1的情况下才会执行，而当le<1时，le都会被赋值为0。
 
 经过优化后的代码如下：
 
 \begin{lstlisting}[caption = {macroblockPredGetDataY()函数片段（优化后）}, label = lst:macroblockPredGetDataYopt]
 `\dots`
-
+if (x<0) x = 0;
+else if (x >= pif->sizeh) x = pif->sizeh - 1;
+`\dots`
+if (le < 1) le = 0;
+else
+	memcpy(pif->vdata[i]+dl, linef + sl, le);
 `\dots`
 \end{lstlisting}
 
@@ -77,17 +91,67 @@ for (int i = 0; i < hw; ++i)
 \section{循环优化}
 \label{sec:singlecoreloopopt}
 
-% macroblockGetPred_axb
-% 循环变量的声明 1031ms
+% macroblockGetPred_axb 1031ms
+macroblockGetPred\_axb()函数耗时在\autoref{tab:vs10}和\autoref{tab:vtune10}中分别列在第4和第5位，也是耗时极多的函数。除了上一节提到的if语句改写成switch语句之外，我们还对其进行了循环内部的优化。
+% 循环变量的声明
+首先是循环变量的声明，根据我们的经验，编译器会对循环变量的声明放在循环体内部的写法做优化，至少在linux平台下的gcc会这样做。再加上将循环变量的声明放在循环内部可以避免变量在作用域之外被使用，所以我们将所有的循环变量声明全部移到循环体内部。
+
+其次，我们观察代码发现有多处如\autoref{lst: macroblockGetPred_axborig}所示的循环。
+
+\begin{lstlisting}[caption = {macroblockGetPred\_axb()函数片段（优化前）}, label = lst: macroblockGetPred_axborig]
+`\dots`
+for (i = 0; i < sizex; ++i)
+	for (j = 0; j < sizey; ++j)
+		pred->y[i+off_in_x][j+off_in_y] = pif->vdata_half[halfid][i+borderT][j+borderL];`\label{line:index}`
+`\dots`
+\end{lstlisting}
+
+这些循环内的操作有一个特点：使用包含循环变量的表达式作为数组访问的下标。
+
+以\autoref{lst: macroblockGetPred_axborig}中第\ref{line:index}行为例，在整个循环中，计算了$sizex\times sizey$次$i+off\_in\_x$和$i+borderT$。实际上可以在内层循环外就进行计算，这样就只用计算$sizex$次，极大地减少了加法操作，同时大幅减少了变量访问次数：本来要访问两个变量，放在寄存器中，再做加法；现在只用访问一个计算好的变量即可。
+
+优化后的代码如下：
+\begin{lstlisting}[caption = {macroblockGetPred\_axb()函数片段（优化后）}, label = lst: macroblockGetPred_axbopt]
+`\dots`
+for (int i = 0; i < sizex; ++i){
+	int ioffinx = i+off_in_x;
+	int iboarterT = i+borderT;
+	for (int j = 0; j < sizey; ++j)
+		pred->y[ioffinx][j+off_in_y] = pif->vdata_half[halfid][iboarterT][j+borderL];
+}
+`\dots`
+\end{lstlisting}
+
+经过上述优化，程序运行时间缩短了1031ms。
+
 % 循环内外层对cache的优化
 
 \section{汇编优化}
 \label{sec:singlecoreasmopt}
 
 %此处说idct8x8
+我们查找了一些文献，发现可以用MMX和SSE等扩展指令集来加速一些矩阵变换函数，例如idct8x8。
+Intel Application Note AP-922\cite{intel-ap922}说明了如何用MMX和SSE加速DCT变换。AP-945\cite{intel-ap945}说明了如何用SSE2加速IDCT变换。
+
+实际操作中，我们采用了Laurent Aimar、Loren Merritt、Holger Lubitz和Min Chen编写的SSE2-optimized H.264 iDCT代码替换C++实现的iDCT代码。
+
+由于我们测试用的样例视频对idct8x8的使用远不及idct4x4频繁，所以这部分优化在程序运行时间上并没有明显的体现。这是由于我们目前主要测试的是H.264的Base Profile，当我们的解码器将来支持High Profile的时候，就会大量调用8x8的变换了。
 
 \section{其他优化}
 \label{sec:singlecoreothers}
 
 % 内容相关的判断顺序微调
+除了以上优化之外，我们还进行了一些细微的优化。
+
+在每一路H.264码流的解码过程中，我们经常需要判断一些标志位的值，根据这些标志位来选择做什么样的操作。这往往是通过一系列的if-else判断实现的。这就出现了很多的选择分支，进入每个分支的概率是不同的。我们通过解码大量不同的视频文件，记录这些分支的选择情况，对判断的顺序进行了微调。将大概率的事件优先判断，执行相应的操作，省去了一些在进入分支之前的无效判断。
+
+这样的优化对所有的测试样例平均提高1\%的性能。
+
 % 编译器ICC
+我们还尝试了更换编译器，使用Intel C++ Compiler Professional（见\refsec{sec:platformdesc}）来替换Visual Studio包含的编译器。
+
+用ICC编译的代码比VS默认编译器编译出来的代码快5\%到6\%。
+
+\section{小结}
+\label{sec:sum4}
+本章主要介绍了对解码器进行的逻辑重构、循环优化、汇编优化以及其他一些例如编译器上的优化。这些优化主要提高了单核解码性能，对比初始的代码大约提高了40\%到50\%的性能。
