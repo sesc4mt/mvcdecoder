@@ -1,0 +1,166 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 8
+	Yuv file: d0%d.yuv
+	Mvc file: ../golf25dual.mvc
+slidingWindowSize = 128
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 1
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 4, 1
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 2, 1
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 1, 1
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 3, 1
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 8, 1
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 6, 1
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 5, 1
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 7, 1
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 12, 1
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 10, 1
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 9, 1
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 11, 1
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 16, 1
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 14, 1
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 13, 1
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 15, 1
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 20, 1
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 18, 1
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 17, 1
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 19, 1
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 24, 1
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 22, 1
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 21, 1
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 23, 1
+READ 23, 1
+Decoding...
+569289046 Start (0,0)
+569289046 End (0,0) - 0
+569289046 Start (12,0)
+569289046 End (12,0) - 0
+569289046 Start (24,0)
+569289062 End (24,0) - 16
+569289062 Start (0,1)
+569289062 End (0,1) - 0
+569289062 Start (4,0)
+569289062 End (4,0) - 0
+569289062 Start (4,1)
+569289062 End (4,1) - 0
+569289062 Start (8,0)
+569289062 End (8,0) - 0
+569289062 Start (8,1)
+569289078 End (8,1) - 16
+569289078 Start (12,1)
+569289078 End (12,1) - 0
+569289078 Start (16,0)
+569289078 End (16,0) - 0
+569289078 Start (16,1)
+569289078 End (16,1) - 0
+569289078 Start (20,0)
+569289078 End (20,0) - 0
+569289078 Start (20,1)
+569289093 End (20,1) - 15
+569289093 Start (24,1)
+569289093 End (24,1) - 0
+569289093 Start (2,0)
+569289093 End (2,0) - 0
+569289093 Start (2,1)
+569289093 End (2,1) - 0
+569289093 Start (6,0)
+569289109 End (6,0) - 16
+569289109 Start (6,1)
+569289109 End (6,1) - 0
+569289109 Start (10,0)
+569289109 End (10,0) - 0
+569289109 Start (10,1)
+569289109 End (10,1) - 0
+569289109 Start (14,0)
+569289125 End (14,0) - 16
+569289125 Start (14,1)
+569289125 End (14,1) - 0
+569289125 Start (18,0)
+569289125 End (18,0) - 0
+569289125 Start (18,1)
+569289125 End (18,1) - 0
+569289125 Start (22,0)
+569289140 End (22,0) - 15
+569289140 Start (22,1)
+569289140 End (22,1) - 0
+569289140 Start (1,0)
+569289140 End (1,0) - 0
+569289140 Start (1,1)
+569289140 End (1,1) - 0
+569289140 Start (3,0)
+569289156 End (3,0) - 16
+569289156 Start (3,1)
+569289156 End (3,1) - 0
+569289156 Start (5,0)
+569289156 End (5,0) - 0
+569289156 Start (5,1)
+569289156 End (5,1) - 0
+569289156 Start (7,0)
+569289171 End (7,0) - 15
+569289171 Start (7,1)
+569289171 End (7,1) - 0
+569289171 Start (9,0)
+569289171 End (9,0) - 0
+569289171 Start (9,1)
+569289171 End (9,1) - 0
+569289171 Start (11,0)
+569289171 End (11,0) - 0
+569289171 Start (11,1)
+569289187 End (11,1) - 16
+569289187 Start (13,0)
+569289187 End (13,0) - 0
+569289187 Start (13,1)
+569289187 End (13,1) - 0
+569289187 Start (15,0)
+569289187 End (15,0) - 0
+569289187 Start (15,1)
+569289203 End (15,1) - 16
+569289203 Start (17,0)
+569289203 End (17,0) - 0
+569289203 Start (17,1)
+569289203 End (17,1) - 0
+569289203 Start (19,0)
+569289203 End (19,0) - 0
+569289203 Start (19,1)
+569289218 End (19,1) - 15
+569289218 Start (21,0)
+569289218 End (21,0) - 0
+569289218 Start (21,1)
+569289218 End (21,1) - 0
+569289218 Start (23,0)
+569289218 End (23,0) - 0
+569289218 Start (23,1)
+569289234 End (23,1) - 16
+Time Used:188
