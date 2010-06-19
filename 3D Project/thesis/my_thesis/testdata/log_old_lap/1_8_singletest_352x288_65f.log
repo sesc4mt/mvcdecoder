@@ -1,0 +1,207 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 8
+	Yuv file: d0%d.yuv
+	Mvc file: ../../perfTest/singletest_352x288_65f.mvc
+slidingWindowSize = 64
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 28, 0
+ TIME,VIEW = 26, 0
+ TIME,VIEW = 25, 0
+ TIME,VIEW = 27, 0
+ TIME,VIEW = 32, 0
+ TIME,VIEW = 30, 0
+ TIME,VIEW = 29, 0
+ TIME,VIEW = 31, 0
+ TIME,VIEW = 36, 0
+ TIME,VIEW = 34, 0
+ TIME,VIEW = 33, 0
+ TIME,VIEW = 35, 0
+ TIME,VIEW = 40, 0
+ TIME,VIEW = 38, 0
+ TIME,VIEW = 37, 0
+ TIME,VIEW = 39, 0
+ TIME,VIEW = 44, 0
+ TIME,VIEW = 42, 0
+ TIME,VIEW = 41, 0
+ TIME,VIEW = 43, 0
+ TIME,VIEW = 48, 0
+ TIME,VIEW = 46, 0
+ TIME,VIEW = 45, 0
+ TIME,VIEW = 47, 0
+ TIME,VIEW = 52, 0
+Decoding...
+3784272 Start (0,0)
+3784287 End (0,0) - 15
+3784287 Start (12,0)
+3784287 End (12,0) - 0
+3784287 Start (24,0)
+3784287 End (24,0) - 0
+3784287 Start (36,0)
+3784303 End (36,0) - 16
+3784303 Start (48,0)
+3784303 End (48,0) - 0
+3784303 Start (4,0)
+3784303 End (4,0) - 0
+3784303 Start (8,0)
+3784319 End (8,0) - 16
+3784319 Start (16,0)
+3784319 End (16,0) - 0
+3784319 Start (20,0)
+3784319 End (20,0) - 0
+3784319 Start (28,0)
+3784334 End (28,0) - 15
+3784334 Start (32,0)
+3784334 End (32,0) - 0
+3784334 Start (40,0)
+3784334 End (40,0) - 0
+3784334 Start (44,0)
+3784334 End (44,0) - 0
+3784350 Start (2,0)
+3784350 End (2,0) - 0
+3784350 Start (6,0)
+3784350 End (6,0) - 0
+3784350 Start (10,0)
+3784365 End (10,0) - 15
+3784365 Start (14,0)
+3784365 End (14,0) - 0
+3784365 Start (18,0)
+3784381 End (18,0) - 16
+3784381 Start (22,0)
+3784381 End (22,0) - 0
+3784381 Start (26,0)
+3784381 End (26,0) - 0
+3784381 Start (30,0)
+3784397 End (30,0) - 16
+3784397 Start (34,0)
+3784397 End (34,0) - 0
+3784397 Start (38,0)
+3784412 End (38,0) - 15
+3784412 Start (42,0)
+3784412 End (42,0) - 0
+3784412 Start (46,0)
+3784412 End (46,0) - 0
+3784412 Start (1,0)
+3784428 End (1,0) - 16
+3784428 Start (3,0)
+3784428 End (3,0) - 0
+3784428 Start (5,0)
+3784443 End (5,0) - 15
+3784443 Start (7,0)
+3784443 End (7,0) - 0
+3784443 Start (9,0)
+3784443 End (9,0) - 0
+3784443 Start (11,0)
+3784459 End (11,0) - 16
+3784459 Start (13,0)
+ TIME,VIEW = 50, 0
+ TIME,VIEW = 49, 0
+ TIME,VIEW = 51, 0
+ TIME,VIEW = 56, 0
+3784459 End (13,0) - 0
+3784459 Start (52,0)
+ TIME,VIEW = 54, 0
+ TIME,VIEW = 53, 0
+ TIME,VIEW = 55, 0
+ TIME,VIEW = 60, 0
+3784475 End (52,0) - 16
+3784475 Start (56,0)
+3784475 End (56,0) - 0
+3784475 Start (50,0)
+3784475 End (50,0) - 0
+3784475 Start (54,0)
+3784490 End (54,0) - 15
+3784490 Start (15,0)
+3784490 End (15,0) - 0
+3784490 Start (17,0)
+3784506 End (17,0) - 16
+3784506 Start (19,0)
+ TIME,VIEW = 58, 0
+ TIME,VIEW = 57, 0
+ TIME,VIEW = 59, 0
+ TIME,VIEW = 64, 0
+3784506 End (19,0) - 0
+3784506 Start (60,0)
+3784521 End (60,0) - 15
+3784521 Start (58,0)
+3784521 End (58,0) - 0
+3784521 Start (21,0)
+3784537 End (21,0) - 16
+3784537 Start (23,0)
+3784537 End (23,0) - 0
+ TIME,VIEW = 62, 0
+ TIME,VIEW = 61, 0
+3784537 Start (25,0)
+ TIME,VIEW = 63, 0
+3784553 End (25,0) - 16
+3784553 Start (64,0)
+3784553 End (64,0) - 0
+3784553 Start (62,0)
+3784568 End (62,0) - 15
+3784568 Start (27,0)
+3784568 End (27,0) - 0
+3784568 Start (29,0)
+3784584 End (29,0) - 16
+3784584 Start (31,0)
+3784584 End (31,0) - 0
+3784584 Start (33,0)
+3784584 End (33,0) - 0
+3784584 Start (35,0)
+3784599 End (35,0) - 15
+3784599 Start (37,0)
+3784599 End (37,0) - 0
+3784599 Start (39,0)
+3784615 End (39,0) - 16
+3784615 Start (41,0)
+3784615 End (41,0) - 0
+3784615 Start (43,0)
+3784615 End (43,0) - 0
+3784615 Start (45,0)
+3784631 End (45,0) - 16
+3784631 Start (47,0)
+3784631 End (47,0) - 0
+3784631 Start (49,0)
+3784646 End (49,0) - 15
+3784646 Start (51,0)
+3784646 End (51,0) - 0
+3784646 Start (53,0)
+3784662 End (53,0) - 16
+3784662 Start (55,0)
+3784662 End (55,0) - 0
+3784662 Start (57,0)
+3784677 End (57,0) - 15
+3784677 Start (59,0)
+3784677 End (59,0) - 0
+3784677 Start (61,0)
+3784693 End (61,0) - 16
+3784693 Start (63,0)
+3784709 End (63,0) - 16
+Time Used:437

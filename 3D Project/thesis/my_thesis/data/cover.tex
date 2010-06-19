@@ -41,35 +41,35 @@
 
 % 定义中英文摘要和关键字
 \begin{cabstract}
-  论文的摘要是对论文研究内容和成果的高度概括。摘要应对论文所研究的问题及其研究目
-  的进行描述，对研究方法和过程进行简单介绍，对研究成果和所得结论进行概括。摘要应
-  具有独立性和自明性，其内容应包含与论文全文同等量的主要信息。使读者即使不阅读全
-  文，通过摘要就能了解论文的总体内容和主要成果。
 
-  论文摘要的书写应力求精确、简明。切忌写成对论文书写内容进行提要的形式，尤其要避
-  免“第 1 章……；第 2 章……；……”这种或类似的陈述方式。
+视频编解码的并行在近几年CPU向多核方向发展之后成为一个热门的研究领域。最近成为标准的多视点视频由于其数据量庞大、编解码运算复杂,很难依靠单核的处理器达到实用的解码速度。多核并行解码多视点视频势在必行。
 
-  本文介绍清华大学论文模板 \thuthesis{} 的使用方法。本模板符合学校的本科、硕士、
-  博士论文格式要求。
+我们以现有的多视点视频解码器为基础,通过对解码器函数级的优化,包括函数逻辑、减少循环内部的计算量、使用汇编实现部分函数,以及一个可以稳定运行的并行解码框架的实现,最终使得多视点视频的解码可以在主流PC上实现两路标清的实时解码。
 
-  本文的创新点主要有：
-  \begin{itemize}
-    \item 用例子来解释模板的使用方法；
-    \item 用废话来填充无关紧要的部分；
-    \item 一边学习摸索一边编写新代码。
-  \end{itemize}
+本文的主要贡献是：
+\begin{itemize}
+\item 首次实现了非商业化的解码器在PC上的两路多视点视频实时解码
+\item 使用庞一等在2009年提出的多视点视频编解码并行调度框架\cite{pang2009framework}在解码器中实现了稳定地调度器
+\end{itemize}
 
-  关键词是为了文献标引工作、用以表示全文主要内容信息的单词或术语。关键词不超过 5
-  个，每个关键词中间用分号分隔。（模板作者注：关键词分隔符不用考虑，模板会自动处
-  理。英文关键词同理。）
 \end{cabstract}
 
-\ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
+\ckeywords{多视点, 并行, 实时, 解码}
 
 \begin{eabstract} 
-   
+
+With the multi-core trend of processor design and production, research efforts on the parallelization of video coding has been strengthened. Multi-view coding (MVC), which has been standardized recently, demands massive space for storage and an enormous amount of computation to encode and decode and therefore is hardly possible to be decoded in realtime with a single processor core. A parallel decoder for multi-view coding is highly in demand.
+
+On the basis of an available decoder, we applied multiple ways of optimization on function level, including rewriting the logic structure, decreasing the amount of computations inside loops and replacing some of the function body with assembler code. Meanwhile, a stable parallel framework for scheduling and decoding is implemented. All the optimizations add up to reach the performance guideline of realtime decoding of dual-view standard definition (SD) video on mainstream PC platform.
+
+The main contributions of this paper are
+\begin{itemize}
+\item realized the first noncommercial decoder capable of decoding dual-view MVC video in real-time
+\item implemented a stable version of scheduler and decoder with the framework\cite{pang2009framework} put forward by Pang, et.al, in 2009
+\end{itemize}
+
 \end{eabstract}
 
-\ekeywords{\TeX, \LaTeX, CJK, template, thesis}
+\ekeywords{Multi-view Coding(MVC), Parallel, Realtime, Decoding}
 
 %{\shuji[多视点（\hspace{0.2em}\raisebox{2pt}{Multi-view Coding}\hspace{-0.25em} ）视频的并行实时解码]}

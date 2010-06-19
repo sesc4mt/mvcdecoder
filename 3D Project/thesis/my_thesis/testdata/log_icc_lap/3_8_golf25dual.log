@@ -1,0 +1,36 @@
+	Frame Parallel: 3
+	Macroblock Parallel: -1
+	GOP Limit: 8
+	Yuv file: d0%d.yuv
+	Mvc file: ../golf25dual.mvc
+slidingWindowSize = 64
+Decoding...
+2191361 Start (0,0)
+2191361 Start (12,0)
+2191361 End (0,0) - 0
+2191361 End (12,0) - 0
+2191361 Start (24,0)
+2191361 End (24,0) - 0
+2191361 Start (4,0)
+2191361 Start (0,1)
+2191361 End (4,0) - 0
+2191377 End (0,1) - 16
+2191377 Start (8,0)
+2191377 Start (4,1)
+2191377 End (8,0) - 0
+2191377 End (4,1) - 0
+2191377 Start (16,0)
+2191377 Start (8,1)
+2191377 End (16,0) - 0
+2191377 End (8,1) - 0
+2191377 Start (24,1)
+2191377 Start (20,0)
+2191377 End (20,0) - 0
+2191377 Start (12,1)
+2191392 End (24,1) - 15
+2191392 End (12,1) - 15
+2191392 Start (16,1)
+2191392 End (16,1) - 0
+2191392 Start (20,1)
+2191392 End (20,1) - 0
+Time Used:109

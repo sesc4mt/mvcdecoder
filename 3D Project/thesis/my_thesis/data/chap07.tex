@@ -126,7 +126,7 @@ typedef struct _Nv_Stereo_Image_Header {
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{staticDualView.pdf}
+\includegraphics[width=0.9\textwidth]{staticDualView.pdf}
 \caption{渲染后输出的3D图像}
 \label{fig:staticdualview}
 \end{center}
@@ -213,3 +213,5 @@ F_{n}=(t_{n}-t_{0})\times FPS
 
 \section{小结}
 \label{sec:sum7}
+
+本章介绍了3D播放器设计实现的全部过程，从调研阶段遇到的各种问题、种种尝试，到发现一种可能的解决方案，然后经过一些尝试，最终借助Direct3D实现了支持3D Vision套装的立体视频播放器。不过依然存在一定的性能瓶颈，有待进一步解决。

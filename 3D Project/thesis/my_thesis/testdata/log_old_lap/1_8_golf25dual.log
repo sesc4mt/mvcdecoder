@@ -1,0 +1,166 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 8
+	Yuv file: d0%d.yuv
+	Mvc file: ../golf25dual.mvc
+slidingWindowSize = 128
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 1
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 4, 1
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 2, 1
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 1, 1
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 3, 1
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 8, 1
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 6, 1
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 5, 1
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 7, 1
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 12, 1
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 10, 1
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 9, 1
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 11, 1
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 16, 1
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 14, 1
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 13, 1
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 15, 1
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 20, 1
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 18, 1
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 17, 1
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 19, 1
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 24, 1
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 22, 1
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 21, 1
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 23, 1
+READ 23, 1
+Decoding...
+3727269 Start (0,0)
+3727269 End (0,0) - 0
+3727269 Start (12,0)
+3727285 End (12,0) - 16
+3727285 Start (24,0)
+3727285 End (24,0) - 0
+3727285 Start (0,1)
+3727300 End (0,1) - 15
+3727300 Start (4,0)
+3727300 End (4,0) - 0
+3727300 Start (4,1)
+3727300 End (4,1) - 0
+3727300 Start (8,0)
+3727300 End (8,0) - 0
+3727300 Start (8,1)
+3727300 End (8,1) - 0
+3727300 Start (12,1)
+3727316 End (12,1) - 16
+3727316 Start (16,0)
+3727316 End (16,0) - 0
+3727316 Start (16,1)
+3727316 End (16,1) - 0
+3727316 Start (20,0)
+3727316 End (20,0) - 0
+3727316 Start (20,1)
+3727331 End (20,1) - 15
+3727331 Start (24,1)
+3727331 End (24,1) - 0
+3727331 Start (2,0)
+3727331 End (2,0) - 0
+3727331 Start (2,1)
+3727347 End (2,1) - 16
+3727347 Start (6,0)
+3727347 End (6,0) - 0
+3727347 Start (6,1)
+3727347 End (6,1) - 0
+3727347 Start (10,0)
+3727363 End (10,0) - 16
+3727363 Start (10,1)
+3727363 End (10,1) - 0
+3727363 Start (14,0)
+3727363 End (14,0) - 0
+3727363 Start (14,1)
+3727363 End (14,1) - 0
+3727363 Start (18,0)
+3727378 End (18,0) - 15
+3727378 Start (18,1)
+3727378 End (18,1) - 0
+3727378 Start (22,0)
+3727378 End (22,0) - 0
+3727378 Start (22,1)
+3727394 End (22,1) - 16
+3727394 Start (1,0)
+3727394 End (1,0) - 0
+3727394 Start (1,1)
+3727394 End (1,1) - 0
+3727394 Start (3,0)
+3727409 End (3,0) - 15
+3727409 Start (3,1)
+3727409 End (3,1) - 0
+3727409 Start (5,0)
+3727409 End (5,0) - 0
+3727409 Start (5,1)
+3727425 End (5,1) - 16
+3727425 Start (7,0)
+3727425 End (7,0) - 0
+3727425 Start (7,1)
+3727425 End (7,1) - 0
+3727425 Start (9,0)
+3727441 End (9,0) - 16
+3727441 Start (9,1)
+3727441 End (9,1) - 0
+3727441 Start (11,0)
+3727441 End (11,0) - 0
+3727441 Start (11,1)
+3727441 End (11,1) - 0
+3727441 Start (13,0)
+3727456 End (13,0) - 15
+3727456 Start (13,1)
+3727456 End (13,1) - 0
+3727456 Start (15,0)
+3727456 End (15,0) - 0
+3727456 Start (15,1)
+3727472 End (15,1) - 16
+3727472 Start (17,0)
+3727472 End (17,0) - 0
+3727472 Start (17,1)
+3727472 End (17,1) - 0
+3727472 Start (19,0)
+3727487 End (19,0) - 15
+3727487 Start (19,1)
+3727487 End (19,1) - 0
+3727487 Start (21,0)
+3727487 End (21,0) - 0
+3727487 Start (21,1)
+3727503 End (21,1) - 16
+3727503 Start (23,0)
+3727503 End (23,0) - 0
+3727503 Start (23,1)
+3727503 End (23,1) - 0
+Time Used:250

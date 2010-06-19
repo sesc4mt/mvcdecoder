@@ -1,0 +1,207 @@
+	Frame Parallel: 1
+	Macroblock Parallel: -1
+	GOP Limit: 4
+	Yuv file: d0%d.yuv
+	Mvc file: ../../perfTest/singletest_176x144_65f.mvc
+slidingWindowSize = 64
+	IDR Picture ID = 0
+ TIME,VIEW = 0, 0
+		no_output_of_prior_pics_flag = 1
+		long_term_reference_flag = 0
+ TIME,VIEW = 4, 0
+ TIME,VIEW = 2, 0
+ TIME,VIEW = 1, 0
+ TIME,VIEW = 3, 0
+ TIME,VIEW = 8, 0
+ TIME,VIEW = 6, 0
+ TIME,VIEW = 5, 0
+ TIME,VIEW = 7, 0
+ TIME,VIEW = 12, 0
+ TIME,VIEW = 10, 0
+ TIME,VIEW = 9, 0
+ TIME,VIEW = 11, 0
+ TIME,VIEW = 16, 0
+ TIME,VIEW = 14, 0
+ TIME,VIEW = 13, 0
+ TIME,VIEW = 15, 0
+ TIME,VIEW = 20, 0
+ TIME,VIEW = 18, 0
+ TIME,VIEW = 17, 0
+ TIME,VIEW = 19, 0
+ TIME,VIEW = 24, 0
+ TIME,VIEW = 22, 0
+ TIME,VIEW = 21, 0
+ TIME,VIEW = 23, 0
+READ 23, 0
+ TIME,VIEW = 28, 0
+ TIME,VIEW = 26, 0
+ TIME,VIEW = 25, 0
+ TIME,VIEW = 27, 0
+ TIME,VIEW = 32, 0
+ TIME,VIEW = 30, 0
+ TIME,VIEW = 29, 0
+ TIME,VIEW = 31, 0
+ TIME,VIEW = 36, 0
+ TIME,VIEW = 34, 0
+ TIME,VIEW = 33, 0
+ TIME,VIEW = 35, 0
+ TIME,VIEW = 40, 0
+Decoding...
+3639815 Start (0,0)
+3639815 End (0,0) - 0
+3639815 Start (12,0)
+3639815 End (12,0) - 0
+3639815 Start (24,0)
+3639830 End (24,0) - 15
+3639830 Start (36,0)
+3639830 End (36,0) - 0
+3639830 Start (4,0)
+3639830 End (4,0) - 0
+3639830 Start (8,0)
+3639830 End (8,0) - 0
+3639830 Start (16,0)
+3639830 End (16,0) - 0
+3639830 Start (20,0)
+3639830 End (20,0) - 0
+3639830 Start (28,0)
+3639830 End (28,0) - 0
+3639830 Start (32,0)
+3639830 End (32,0) - 0
+3639830 Start (2,0)
+3639830 End (2,0) - 0
+3639830 Start (6,0)
+3639830 End (6,0) - 0
+3639830 Start (10,0)
+3639830 End (10,0) - 0
+3639830 Start (14,0)
+3639846 End (14,0) - 16
+3639846 Start (18,0)
+3639846 End (18,0) - 0
+3639846 Start (22,0)
+3639846 End (22,0) - 0
+3639846 Start (26,0)
+3639846 End (26,0) - 0
+3639846 Start (30,0)
+3639846 End (30,0) - 0
+3639846 Start (34,0)
+3639846 End (34,0) - 0
+3639846 Start (1,0)
+3639846 End (1,0) - 0
+3639846 Start (3,0)
+3639846 End (3,0) - 0
+3639846 Start (5,0)
+3639862 End (5,0) - 16
+3639862 Start (7,0)
+3639862 End (7,0) - 0
+3639862 Start (9,0)
+3639862 End (9,0) - 0
+3639862 Start (11,0)
+3639862 End (11,0) - 0
+3639862 Start (13,0)
+3639862 End (13,0) - 0
+3639862 Start (15,0)
+3639862 End (15,0) - 0
+3639862 Start (17,0)
+3639862 End (17,0) - 0
+3639862 Start (19,0)
+3639862 End (19,0) - 0
+ TIME,VIEW = 38, 0
+ TIME,VIEW = 37, 0
+ TIME,VIEW = 39, 0
+ TIME,VIEW = 44, 0
+ TIME,VIEW = 42, 0
+ TIME,VIEW = 41, 0
+ TIME,VIEW = 43, 0
+ TIME,VIEW = 48, 0
+ TIME,VIEW = 46, 0
+ TIME,VIEW = 45, 0
+ TIME,VIEW = 47, 0
+ TIME,VIEW = 52, 0
+3639862 Start (21,0)
+3639877 End (21,0) - 15
+3639877 Start (48,0)
+3639877 End (48,0) - 0
+3639877 Start (40,0)
+3639877 End (40,0) - 0
+3639877 Start (44,0)
+3639877 End (44,0) - 0
+3639877 Start (38,0)
+3639877 End (38,0) - 0
+3639877 Start (42,0)
+3639877 End (42,0) - 0
+3639877 Start (46,0)
+3639877 End (46,0) - 0
+3639877 Start (23,0)
+3639877 End (23,0) - 0
+3639877 Start (25,0)
+3639877 End (25,0) - 0
+3639877 Start (27,0)
+3639877 End (27,0) - 0
+3639893 Start (29,0)
+ TIME,VIEW = 50, 0
+ TIME,VIEW = 49, 0
+ TIME,VIEW = 51, 0
+ TIME,VIEW = 56, 0
+ TIME,VIEW = 54, 0
+ TIME,VIEW = 53, 0
+ TIME,VIEW = 55, 0
+ TIME,VIEW = 60, 0
+3639893 End (29,0) - 0
+3639893 Start (52,0)
+3639893 End (52,0) - 0
+3639893 Start (56,0)
+3639893 End (56,0) - 0
+3639893 Start (50,0)
+3639893 End (50,0) - 0
+3639893 Start (54,0)
+3639893 End (54,0) - 0
+3639893 Start (31,0)
+3639908 End (31,0) - 15
+3639908 Start (33,0)
+3639908 End (33,0) - 0
+3639908 Start (35,0)
+3639908 End (35,0) - 0
+3639908 Start (37,0)
+3639908 End (37,0) - 0
+3639908 Start (39,0)
+ TIME,VIEW = 58, 0
+ TIME,VIEW = 57, 0
+ TIME,VIEW = 59, 0
+ TIME,VIEW = 64, 0
+ TIME,VIEW = 62, 0
+ TIME,VIEW = 61, 0
+ TIME,VIEW = 63, 0
+3639908 End (39,0) - 0
+3639908 Start (60,0)
+3639908 End (60,0) - 0
+3639908 Start (64,0)
+3639908 End (64,0) - 0
+3639908 Start (58,0)
+3639908 End (58,0) - 0
+3639908 Start (62,0)
+3639924 End (62,0) - 16
+3639924 Start (41,0)
+3639924 End (41,0) - 0
+3639924 Start (43,0)
+3639924 End (43,0) - 0
+3639924 Start (45,0)
+3639924 End (45,0) - 0
+3639924 Start (47,0)
+3639924 End (47,0) - 0
+3639924 Start (49,0)
+3639924 End (49,0) - 0
+3639924 Start (51,0)
+3639924 End (51,0) - 0
+3639924 Start (53,0)
+3639940 End (53,0) - 16
+3639940 Start (55,0)
+3639940 End (55,0) - 0
+3639940 Start (57,0)
+3639940 End (57,0) - 0
+3639940 Start (59,0)
+3639940 End (59,0) - 0
+3639940 Start (61,0)
+3639940 End (61,0) - 0
+3639940 Start (63,0)
+3639940 End (63,0) - 0
+Time Used:140
