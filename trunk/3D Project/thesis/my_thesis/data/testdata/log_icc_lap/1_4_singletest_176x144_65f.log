@@ -1,6 +1,0 @@
-	Frame Parallel: 1
-	Macroblock Parallel: -1
-	GOP Limit: 4
-	Yuv file: d0%d.yuv
-	Mvc file: ../../perfTest/singletest_176x144_65f.mvc
-Assert Error (.\Stream\InStream.cpp,256)!!!!
