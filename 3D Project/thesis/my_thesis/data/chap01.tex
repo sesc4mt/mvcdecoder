@@ -68,9 +68,7 @@
 
 
 %MVC Decoder工作
-在此基础上，我们已经实现了一个成型的多视点视频编解码系统，包括编码器和解码器。编码器将若干YUV格式的视频编码为一个MVC视频。解码器将一个MVC视频解码为N个独立的YUV视频，N为该MVC视频包含的视角数量。编解码结果符合MVC的标准\cite{iso2009mvc}。
-
-在\refsec{sec:mvcdecoder}中将进一步介绍解码器部分。
+在此基础上，我们已经实现了一个成型的多视点视频编解码系统，包括编码器和解码器。编码器将若干YUV格式的视频编码为一个MVC视频。解码器将一个MVC视频解码为N个独立的YUV视频，N为该MVC视频包含的视角数量。编解码结果符合MVC的标准\cite{iso2009mvc}。在\refsec{sec:mvcdecoder}中将进一步介绍解码器部分。
 
 \section{本文的任务}
 \label{sec:workbrief}
@@ -83,3 +81,5 @@
 \label{sec:thesisstructure}
 
 本文\refchapter{cha:decoderprincipleandrealization}介绍需要优化的多视点视频解码器的原理和实现。\refchapter{cha:optapproach}说明我们进行解码器性能优化的基本思路。\refchapter{cha:singlecoreopt}和\refchapter{cha:parallelopt}分别详述单核心性能优化和多核处理的并行优化过程。\refchapter{cha:optresultandanalysis}介绍实验结果并进行了一定的分析。同时进行的3D播放器设计与实现部分与解码器优化是两个独立的工作，所以单列在\refchapter{cha:3Dplayerdesignandrealization}。最后在\refchapter{cha:conclusionandforesight}总结解码器优化和3D播放器的工作，并对下一步的工作有所展望。
+
+\cleardoublepage
