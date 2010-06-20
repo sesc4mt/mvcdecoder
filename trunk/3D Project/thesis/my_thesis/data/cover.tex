@@ -42,14 +42,14 @@
 % 定义中英文摘要和关键字
 \begin{cabstract}
 
-视频编解码的并行在近几年CPU向多核方向发展之后成为一个热门的研究领域。最近成为标准的多视点视频由于其数据量庞大、编解码运算复杂,很难依靠单核的处理器达到实用的解码速度。多核并行解码多视点视频势在必行。
+视频编解码的并行在近几年CPU向多核方向发展之后成为一个热门的研究领域。最近成为标准的多视点视频由于其数据量庞大、编解码运算复杂,很难依靠单核的处理器达到实用的解码速度。因此，多核并行解码多视点视频势在必行。
 
 我们以现有的多视点视频解码器为基础,通过对解码器函数级的优化,包括函数逻辑、减少循环内部的计算量、使用汇编实现部分函数,以及一个可以稳定运行的并行解码框架的实现,最终使得多视点视频的解码可以在主流PC上实现两路标清的实时解码。
 
 本文的主要贡献是：
 \begin{itemize}
-\item 首次实现了非商业化的解码器在PC上的两路多视点视频实时解码
-\item 使用庞一等在2009年提出的多视点视频编解码并行调度框架\cite{pang2009framework}在解码器中实现了稳定地调度器
+\item 首次实现了非商业化的解码器在PC上的两路多视点视频实时解码；
+\item 使用庞一等在2009年提出的多视点视频编解码并行调度框架\cite{pang2009framework}在解码器中实现了稳定的调度器。
 \end{itemize}
 
 \end{cabstract}
@@ -58,14 +58,14 @@
 
 \begin{eabstract} 
 
-With the multi-core trend of processor design and production, research efforts on the parallelization of video coding has been strengthened. Multi-view coding (MVC), which has been standardized recently, demands massive space for storage and an enormous amount of computation to encode and decode and therefore is hardly possible to be decoded in realtime with a single processor core. A parallel decoder for multi-view coding is highly in demand.
+With the multi-core trend of processor design and production, research efforts on the parallelization of video coding have been strengthened. Multi-view coding (MVC), which has been standardized recently, demands massive space for storage and an enormous amount of computation to encode and decode and therefore is therefore almost impossible to be decoded in realtime with a single processor core. A parallel decoder for multi-view coding is highly in demand.
 
-On the basis of an available decoder, we applied multiple ways of optimization on function level, including rewriting the logic structure, decreasing the amount of computations inside loops and replacing some of the function body with assembler code. Meanwhile, a stable parallel framework for scheduling and decoding is implemented. All the optimizations add up to reach the performance guideline of realtime decoding of dual-view standard definition (SD) video on mainstream PC platform.
+On the basis of an available decoder, we apply multiple ways of optimization on function level, including rewriting the logic structure, decreasing the amount of computations inside loops and replacing some of the function body with assembler code. Meanwhile, a stable parallel framework for scheduling and decoding is implemented. All the optimizations add up to reach the performance guideline of realtime decoding of dual-view standard definition (SD) video on mainstream PC platforms.
 
 The main contributions of this paper are
 \begin{itemize}
-\item realized the first noncommercial decoder capable of decoding dual-view MVC video in real-time
-\item implemented a stable version of scheduler and decoder with the framework\cite{pang2009framework} put forward by Pang, et.al, in 2009
+\item to realize the first noncommercial decoder capable of decoding dual-view MVC video in real-time;
+\item implemented a stable version of scheduler and decoder with the framework\cite{pang2009framework} put forward by Pang, et.al, in 2009.
 \end{itemize}
 
 \end{eabstract}
