@@ -10,13 +10,13 @@
 \section{实验平台}
 \label{sec:3dplayerhardwareplatform}
 
-\subsection{NVIDIA 3D Vision套装介绍}
-\label{subsec:nvidia3dvisionbrief}
+%\subsection{NVIDIA 3D Vision套装介绍}
+%\label{subsec:nvidia3dvisionbrief}
 
 % 此处可以插入一段介绍以及图片
 
-\subsection{实验平台}
-\label{subsec:3dplayerplatform}
+%\subsection{实验平台}
+%\label{subsec:3dplayerplatform}
 % 平台的介绍
 我们希望利用NVIDIA 3D Vision套装进行3D播放器的立体显示。由于3D Vision只支持Windows Vista和Windows 7，所以实验的操作系统有限制。实验主要在以下环境下进行：
 
@@ -83,6 +83,23 @@ NVAPI_INTERFACE NvAPI_Stereo_CaptureJpegImage(StereoHandle stereoHandle, NvU32 q
 \subsection{静态3D图像的显示}
 \label{subsec:static3dimgdisp}
 
+\begin{figure}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{staticLeftView.jpg}
+	\caption{静态3D显示测试的左眼图像}
+	\label{fig:staticleftview}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{staticRightView.jpg}
+	\caption{静态3D显示测试的右眼图像}
+	\label{fig:staticrightview}
+\end{minipage}
+%\caption{用于静态3D显示测试的图像}
+%\label{fig:staticview}
+\end{figure}
+
 有了一次成功调用3D眼镜的经历，我们找到了一些头绪，并就此开始设计3D播放器。
 
 我们希望3D播放器能够接收一系列的图像，这些图像分为两个序列，分别是左眼和右眼视角的图像。然后播放器以一个预设的帧率交替播放这两个序列中的图像。如果NVIDIA的驱动能够成功开启3D眼镜，此时我们通过3D眼镜就能看到立体图像了。
@@ -107,22 +124,6 @@ typedef struct _Nv_Stereo_Image_Header {
 \item 经过如上的操作，利用Direct3D的renderer渲染输出到显示器的图像就是立体图了(\autoref{fig:staticdualview})。注意实际透过眼镜是看不到重影的，两帧图像交替显示，眼镜快门相应地轮流遮挡视线，只能看到各自视角地图像。
 \end{enumerate}
 
-\begin{figure}
-\begin{minipage}{0.5\textwidth}
-	\centering
-	\includegraphics[width=0.95\textwidth]{staticLeftView.jpg}
-	\caption{静态3D显示测试的左眼图像}
-	\label{fig:staticleftview}
-\end{minipage}\hfill
-\begin{minipage}{0.5\textwidth}
-	\centering
-	\includegraphics[width=0.95\textwidth]{staticRightView.jpg}
-	\caption{静态3D显示测试的右眼图像}
-	\label{fig:staticrightview}
-\end{minipage}
-%\caption{用于静态3D显示测试的图像}
-%\label{fig:staticview}
-\end{figure}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -215,3 +216,5 @@ F_{n}=(t_{n}-t_{0})\times FPS
 \label{sec:sum7}
 
 本章介绍了3D播放器设计实现的全部过程，从调研阶段遇到的各种问题、种种尝试，到发现一种可能的解决方案，然后经过一些尝试，最终借助Direct3D实现了支持3D Vision套装的立体视频播放器。不过依然存在一定的性能瓶颈，有待进一步解决。
+
+\cleardoublepage
