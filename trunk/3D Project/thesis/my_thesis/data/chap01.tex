@@ -19,7 +19,7 @@
 3D电视经过多年的发展，已经逐渐走向成熟。在CES(Consumer Electronics Show) 2010的展厅里，“3D”成了最大的赢家，备受关注。Panasonic的VT25平板3D电视也获得了这届CES的“Best in Show Award”。无论是各大家电厂商展台上的3D电视，还是可以用在现有系统上的NVIDIA 3D Vision套装，都令消费者们感受到了3D时代即将来临。其实，3D电视的起源并不比2D电视晚很长时间\cite{smolic2007coding}，但是由于其对计算、存储和传输的资源消耗比普通2D电视高出一倍甚至数倍，所以一直以来未能普及。
 
 %3D视频编码的发展
-为了满足资源有限条件下的3D视频应用，各种编码技术陆续诞生，以一定量的比特率来描述多视频信号，达到一定的压缩率，同时尽可能减小失真。在这个过程中，国际标准化组织应运而生。目前国际上有两个音视频编码标准化组织：
+为了满足资源有限条件下的3D视频应用，各种编码技术陆续诞生，这些编码使用一定量的比特率来描述多视频信号，达到一定的压缩率，同时尽可能减小失真。在这个过程中，国际标准化组织应运而生。目前国际上有两个音视频编码标准化组织：
 \begin{itemize}
 \item 一是国际电信联盟标准化组（ITU-T）下属的视频编码专家组（VCEG：Video Coding Expert Group）。制定了一系列视频通信协议和标准，包括H.261、H.263、H.263+、H.264等。主要应用在视频通信领域，如视频会议等。
 \item 二是国际标准化组织（ISO）和国际电工委员会（IEC）下属的运动图像编码专家组（MEPG：Motion Picture Expert Group）。自1988年成立以来，研究和开发了多种多媒体压缩标准，包括MPEG-1、MPEG-2、MPEG-4、MPEG-7等。主要应用在存储媒介（DVD）、广播电视网、有流媒体传输等。
@@ -32,7 +32,7 @@
 \end{center}
 \end{figure}
 
-在2001年6月，经过评估发现，H.26L编码技术基本能够满足MPEG的标准需求，因此MPEG与VCEG的成员共同成立了一个新的工作组JVT（Joint Video Team），来推动和管理H.26L的最后标准化开发，并在2003年形成了视频标准，同时被MPEG和VCEG采纳：MPEG将其定为MEEG-4 part 10，VCEG将其定为H.264。H.264/MPEG-4 part 10标准称为高级视频编码（AVC：Advanced Video Coding），扩展性较好，用于3D视频的多视点视频编解码（MVC：Multi-view Video Coding）就是其一个扩展。MPEG与VCEG及JVT制定的主要视频标准如\autoref{fig:codecroadmap}所示。
+在2001年6月，经过评估发现，H.26L编码技术基本能够满足MPEG的标准需求，因此MPEG与VCEG的成员共同成立了一个新的工作组JVT（Joint Video Team），来推动和管理H.26L的最后标准化开发，并在2003年形成了视频标准，同时被MPEG和VCEG采纳：MPEG将其定为MEEG-4 part 10，VCEG将其定为H.264。H.264/MPEG-4 part 10标准称为高级视频编码（AVC：Advanced Video Coding），扩展性较好。用于3D视频的多视点视频编解码（MVC：Multi-view Video Coding）就是其一个扩展。MPEG与VCEG及JVT制定的主要视频标准如\autoref{fig:codecroadmap}所示。
 
 \section{已有研究}
 \label{sec:previouswork}
@@ -54,10 +54,10 @@
 
 至此，我们认为有必要进行一个能够在PC上进行两路到更多路MVC视频的解码器，进行客户端的实时解码。这样的解码器是3D视频应用普及的一个重要前提。
 
-由于MVC是H.264/AVC的一个扩展，所以我们首先想到H.264的并行编解码问题。这个方向近几年有一些文献：\onlinecite{li2005design}提出的算法使用一个处理器进行动量估计以外的运算，其余处理器进行运动向量的估计。\onlinecite{seitner2007macroblock}做了H.264解码器的宏块并行分析，\onlinecite{mesa2009scalability}给出了H.264解码器宏块并行算法。而更进一步针对多视点视频的并行解码的研究相对较少：\onlinecite{yang2006parallel}提出了一种超空间（hyper-space）的方法，\onlinecite{ugur2007parallel}通过对参考帧施加一定限制条件使得解码器等待参考帧传入的时间大幅降低，从而提升并行解码速度。
+由于MVC是H.264/AVC的一个扩展，所以我们首先想到H.264的并行编解码问题。这个方向近几年有一些文献：\onlinecite{li2005design}提出的算法使用一个处理器进行动量估计以外的运算，其余处理器进行运动向量的估计。\onlinecite{seitner2007macroblock}做了H.264解码器的宏块并行分析，\onlinecite{mesa2009scalability}给出了H.264解码器宏块并行算法。而更进一步针对多视点视频的并行解码的研究则相对较少：\onlinecite{yang2006parallel}提出了一种超空间（hyper-space）的方法，\onlinecite{ugur2007parallel}通过对参考帧施加一定限制条件使得解码器等待参考帧传入的时间大幅降低，从而提升并行解码速度。
 
 %庞一等 论文
-庞一等在2009年提出了一种多核架构上并行处理多视点视频的启发式调度框架\cite{pang2009framework}。不同于以往的帧并行或宏块并行的研究，提出了通过优化解码任务调度来提高解码器并行性能的观点，并通过实验证明性能的大幅提升。该方法实现一个如\autoref{fig:pang2009framework}所示的框架，通过重新安排帧解码顺序，最小化多路视频解码时因为等待参考帧传入和其解码结果的等待时间，从而加快解码速度。
+庞一等在2009年提出了一种多核架构上并行处理多视点视频的启发式调度框架\cite{pang2009framework}。不同于以往的帧并行或宏块并行的研究，他们提出了通过优化解码任务调度来提高解码器并行性能的观点，并通过实验证明性能的大幅提升。该方法实现一个如\autoref{fig:pang2009framework}所示的框架，通过重新安排帧解码顺序，最小化多路视频解码时因为等待参考帧传入和其解码结果的等待时间，从而加快解码速度。
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{pang2009framework.png}
@@ -73,7 +73,7 @@
 \section{本文的任务}
 \label{sec:workbrief}
 
-目前已有的MVC Decoder工程速度较慢，不能满足实时解码播放的要求。本文主要通过针对单核和多核结构的优化，是现有的MVC解码器能够在CPU上做到至少两路分辨率为720$\times$576的视频的实时解码。
+目前已有的MVC Decoder工程速度较慢，不能满足实时解码播放的要求。本文主要通过针对单核和多核结构的优化，使现有的MVC解码器能够在CPU上做到至少两路分辨率为720$\times$576的视频的实时解码。
 
 此外，由于MVC视频的标准\cite{iso2009mvc}发布尚不足一年，硬件也尚未普及，还没有一种播放器能够支持各种硬件平台上的MVC视频播放。我们的实验环境有Bolod的3D平板电视和nVidia的3D Vision眼镜套装，为了实现一个从采集到播放的完整系统，除了解码器的优化以外，我们还需要设计实现一个3D播放器，让用户能够看到三维的播放效果。
 

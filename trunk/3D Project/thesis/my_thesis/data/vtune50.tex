@@ -7,61 +7,71 @@
 \multicolumn{4}{c}{续表~\thetable\hskip1em VTune性能分析报告(前50项记录)}\\
 \toprule[1.5pt]
 \multicolumn{1}{l}{\textbf{Function}} & \multicolumn{1}{r}{\textbf{Calls}} & \multicolumn{1}{r}{\textbf{Self Time}} & \multicolumn{1}{r}{\textbf{\% in fuction}}\\ 
-%\midrule[1pt]
+\midrule[1pt]
 \endhead
-%\hline
+\hline
 \multicolumn{4}{r}{续下页}
 \endfoot
 \endlastfoot
-    macroblockPredGetDataUV & 2632478 & 774863 & 0.61 \\ \hline
-    macroblockPredGetDataY & 1316239 & 702575 & 0.58 \\ \hline
-    idct4x4\_c & 5028960 & 398076 & 1 \\ \hline
-    macroblockInterDecode16x16\_y & 184171 & 328834 & 0.46 \\ \hline
-    macroblockGetPred\_axb & 1316239 & 311730 & 0.11 \\ \hline
-    FilterMB & 210600 & 203506 & 0.21 \\ \hline
-    Filter & 6215308 & 191937 & 1 \\ \hline
-    iquant4x4\_c & 5028960 & 157459 & 1 \\ \hline
-    macroblockInterDecode\_uv & 184171 & 154697 & 0.48 \\ \hline
-    macroblockPBPrediction & 184171 & 150609 & 0.05 \\ \hline
-    macroblockGetHalfPel & 148552 & 134793 & 1 \\ \hline
-    macroblockGetPred\_axb\_Bi & 571944 & 132951 & 0.05 \\ \hline
-    GetVerFilterStrength & 3325760 & 125372 & 0.64 \\ \hline
-    GetHorFilterStrength & 3325760 & 117207 & 0.65 \\ \hline
-    CheckMvDataB & 4916240 & 115925 & 1 \\ \hline
-    calc\_B\_skip\_refs & 145645 & 83987 & 0.47 \\ \hline
-    addMacroblockdata & 184171 & 82547 & 1 \\ \hline
-    save\_data\_pb & 200880 & 66356 & 0.76 \\ \hline
-    setRefXY & 2330348 & 59615 & 1 \\ \hline
-    LumaHorFilter & 210600 & 56700 & 0.49 \\ \hline
-    LumaVerFilter & 210600 & 56175 & 0.46 \\ \hline
-    unscan\_zig\_4x4 & 2942655 & 55896 & 1 \\ \hline
-    macroblock\_read\_cavlc\_B\_slice & 155520 & 55255 & 0.23 \\ \hline
-    macroblockIntraDecode\_y & 26429 & 47460 & 0.42 \\ \hline
-    ChromaVerFilter & 210600 & 37978 & 0.51 \\ \hline
-    ChromaHorFilter & 210600 & 37163 & 0.55 \\ \hline
-    getRefXYDirectB & 582670 & 36556 & 1 \\ \hline
-    macroblock\_processor\_PB & 4464  & 29068 & 0.01 \\ \hline
-    macroblockIntraDecode\_uv & 26429 & 28597 & 0.5 \\ \hline
-    PSliceDecode & 124   & 19439 & 0 \\ \hline
-    CheckMvDataP & 868249 & 18065 & 1 \\ \hline
-    macroblock\_read\_cavlc\_P\_slice & 45360 & 13979 & 0.36 \\ \hline
-    \_security\_check\_cookie & 942387 & 13589 & 1 \\ \hline
-    block\_residual\_read\_cavlc & 106045 & 12540 & 0.64 \\ \hline
-    iquant2x2dc\_c & 421200 & 9292  & 1 \\ \hline
-    T264dec\_mb\_read\_intra\_cavlc & 26429 & 9065  & 0.31 \\ \hline
-    require\_data\_decode & 184171 & 8725  & 1 \\ \hline
-    BitstreamGetBits & 580391 & 8431  & 1 \\ \hline
-    idct8x8 & 21920 & 4918  & 1 \\ \hline
-    macroblock\_read\_cavlc\_PB\_y & 15493 & 3735  & 0.42 \\ \hline
-    process\_data\_decode\_I & 26429 & 3681  & 0.02 \\ \hline
-    save\_data & 9720  & 3592  & 1 \\ \hline
-    ProcessData & 1     & 2619  & 0 \\ \hline
-    idct4x4dc\_c & 21359 & 2584  & 1 \\ \hline
-    iquant8x8\_c & 21920 & 2566  & 1 \\ \hline
-    macroblock\_read\_cavlc\_uv & 41922 & 2561  & 0.55 \\ \hline
-    require\_data\_decode\_I & 26429 & 2389  & 1 \\ \hline
-    do\_16x16\_luma\_prediction & 21359 & 2251  & 0.96 \\ \hline
-    do\_8x8\_luma\_prediction & 15560 & 2192  & 0.93 \\ \hline
-    T264dec\_mb\_read\_coff\_token\_t0 & 83162 & 2112  & 1 \\
+	\rowcolor{gray!15}
+    macroblockPredGetDataUV	&	2632478	&	774863	&	0.61	\\
+    macroblockPredGetDataY	&	1316239	&	702575	&	0.58	\\ \rowcolor{gray!15}
+    idct4x4\_c					&	5028960	&	398076	&	1		\\
+    macroblockInterDecode16x16\_y	
+    							&	184171	&	328834	&	0.46	\\ \rowcolor{gray!15}
+    macroblockGetPred\_axb	&	1316239	&	311730	&	0.11	\\
+    FilterMB					&	210600	&	203506	&	0.21	\\ \rowcolor{gray!15}
+    Filter						&	6215308	&	191937	&	1		\\
+    iquant4x4\_c				&	5028960	&	157459	&	1		\\ \rowcolor{gray!15}
+    macroblockInterDecode\_uv	&	184171	&	154697	&	0.48	\\
+    macroblockPBPrediction	&	184171	&	150609	&	0.05	\\ \rowcolor{gray!15}
+    macroblockGetHalfPel		&	148552	&	134793	&	1		\\
+    macroblockGetPred\_axb\_Bi&	571944	&	132951	&	0.05	\\ \rowcolor{gray!15}
+    GetVerFilterStrength		&	3325760	&	125372	&	0.64	\\
+    GetHorFilterStrength		&	3325760	&	117207	&	0.65	\\ \rowcolor{gray!15}
+    CheckMvDataB				&	4916240	&	115925	&	1		\\
+    calc\_B\_skip\_refs		&	145645	&	83987	&	0.47	\\ \rowcolor{gray!15}
+    addMacroblockdata			&	184171	&	82547	&	1		\\
+    save\_data\_pb				&	200880	&	66356	&	0.76	\\ \rowcolor{gray!15}
+    setRefXY					&	2330348	&	59615	&	1		\\
+    LumaHorFilter				&	210600	&	56700	&	0.49	\\ \rowcolor{gray!15}
+    LumaVerFilter				&	210600	&	56175	&	0.46	\\
+    unscan\_zig\_4x4			&	2942655	&	55896	&	1		\\ \rowcolor{gray!15}
+    macroblock\_read\_cavlc\_B\_slice
+    							&	155520	&	55255	&	0.23	\\
+    macroblockIntraDecode\_y	&	26429	&	47460	&	0.42	\\ \rowcolor{gray!15}
+    ChromaVerFilter			&	210600	&	37978	&	0.51	\\
+    ChromaHorFilter			&	210600	&	37163	&	0.55	\\ \rowcolor{gray!15}
+    getRefXYDirectB			&	582670	&	36556	&	1		\\
+    macroblock\_processor\_PB	&	4464 	&	29068	&	0.01	\\ \rowcolor{gray!15}
+    macroblockIntraDecode\_uv	&	26429	&	28597	&	0.5		\\
+    PSliceDecode				&	124  	&	19439	&	0		\\ \rowcolor{gray!15}
+    CheckMvDataP				&	868249	&	18065	&	1		\\
+    macroblock\_read\_cavlc\_P\_slice	
+    							&	45360	&	13979	&	0.36	\\ \rowcolor{gray!15}
+    \_security\_check\_cookie	&	942387	&	13589	&	1		\\
+    block\_residual\_read\_cavlc	
+    							&	106045	&	12540	&	0.64	\\ \rowcolor{gray!15}
+    iquant2x2dc\_c				&	421200	&	9292 	&	1		\\
+    T264dec\_mb\_read\_intra\_cavlc	
+    							&	26429	&	9065 	&	0.31	\\ \rowcolor{gray!15}
+    require\_data\_decode		&	184171	&	8725 	&	1		\\
+    BitstreamGetBits			&	580391	&	8431 	&	1		\\ \rowcolor{gray!15}
+    idct8x8						&	21920	&	4918 	&	1		\\
+    macroblock\_read\_cavlc\_PB\_y	
+    							&	15493	&	3735 	&	0.42	\\ \rowcolor{gray!15}
+    process\_data\_decode\_I	&	26429	&	3681 	&	0.02	\\
+    save\_data					&	9720 	&	3592 	&	1		\\ \rowcolor{gray!15}
+    ProcessData				&	1    	&	2619 	&	0		\\
+    idct4x4dc\_c				&	21359	&	2584 	&	1		\\ \rowcolor{gray!15}
+    iquant8x8\_c				&	21920	&	2566 	&	1		\\
+    macroblock\_read\_cavlc\_uv	
+    							&	41922	&	2561 	&	0.55	\\ \rowcolor{gray!15}
+    require\_data\_decode\_I	&	26429	&	2389 	&	1		\\
+    do\_16x16\_luma\_prediction	
+    							&	21359	&	2251 	&	0.96	\\ \rowcolor{gray!15}
+    do\_8x8\_luma\_prediction	&	15560	&	2192 	&	0.93	\\
+    T264dec\_mb\_read\_coff\_token\_t0	
+    							&	83162	&	2112 	&	1		\\
     \bottomrule[1.5pt]
 \end{longtable}
