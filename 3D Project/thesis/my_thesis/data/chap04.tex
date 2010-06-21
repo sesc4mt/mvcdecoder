@@ -9,12 +9,12 @@
 
 按照\refsec{sec:optapproach}中提到的优化方案，我们对解码器的单核性能进行了若干优化。本章中列举其中具代表意义的部分。
 
-\refsec{sec:singlecorelogicopt}详细介绍了对函数逻辑的优化，\refsec{sec:singlecoreloopopt}介绍了对循环的优化并举例说明，\refsec{sec:singlecoreasmopt}介绍了汇编优化，\refsec{sec:singlecoreothers}提及了其他一些优化。
+\refsec{sec:singlecorelogicopt}详细介绍了对函数逻辑的优化，\refsec{sec:singlecoreloopopt}介绍了对循环的优化并举例说明，\refsec{sec:singlecoreasmopt}介绍了汇编优化，\refsec{sec:singlecoreothers}提及了其它一些优化。
 
 \section{函数逻辑优化}
 \label{sec:singlecorelogicopt}
 
-在MVCCommonLib模块中，PBPridict.cpp文件中包含了一些宏块预测相关的函数。此前的性能分析结果\autoref{tab:vs10}中显示，其中的macroblockGetHalfPel()函数耗时较多。这是一个使用Finite Impulse Response（FIR）计算一个Luma块的half-pel的函数。具体算法参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}第173页起的瞄述。
+在MVCCommonLib模块中，PBPridict.cpp文件中包含了一些宏块预测相关的函数。此前的性能分析结果\autoref{tab:vs10}中显示，其中的macroblockGetHalfPel()函数耗时较多。这是一个使用Finite Impulse Response（FIR）计算一个Luma块的half-pel的函数。具体算法参考了《H.264 and MPEG-4 video compression, video coding for next-generation multimedia》\cite{richardson2003h}第173页起的描述。
 
 函数内的一部分源代码如下：
 \begin{lstlisting}[caption = {macroblockGetHalfPel()函数片段（优化前）}, label = lst:macroblockGetHalfPelorig]
@@ -138,7 +138,7 @@ Intel Application Note AP-922\cite{intel-ap922}说明了如何用MMX和SSE加速
 
 由于我们测试用的样例视频对idct8x8的使用远不及idct4x4频繁，所以这部分优化在程序运行时间上并没有明显的体现。这是由于我们目前主要测试的是H.264的Base Profile，当我们的解码器将来支持High Profile的时候，就会大量调用8x8的变换了。
 
-\section{其他优化}
+\section{其它优化}
 \label{sec:singlecoreothers}
 
 % 内容相关的判断顺序微调
@@ -155,6 +155,6 @@ Intel Application Note AP-922\cite{intel-ap922}说明了如何用MMX和SSE加速
 
 \section{小结}
 \label{sec:sum4}
-本章主要介绍了对解码器进行优化，包括逻辑重构、循环优化、汇编优化以及其他（例如编译器）的优化。这些优化主要提高了单核解码性能。尽管有了这些优化，解码器的单核性能仍然不能满足需求，所以还需要做并行化，这一部分在下一章中展开。
+本章主要介绍了对解码器进行优化，包括逻辑重构、循环优化、汇编优化以及其它（例如编译器）的优化。这些优化主要提高了单核解码性能。尽管有了这些优化，解码器的单核性能仍然不能满足需求，所以还需要做并行化，这一部分在下一章中展开。
 
 \cleardoublepage

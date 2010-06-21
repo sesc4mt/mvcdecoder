@@ -18,7 +18,7 @@
 \begin{description}
 \item[InputFile] 输入的文件名格式，golf1表示输入的各路视频为golf1\_0.yuv、golf1\_1.yuv、\dots、golf1\_7.yuv。
 \item[OutputFile] 输出的文件名格式，与InputFile类似。输出的文件扩展名为.264。
-\item[SourceWidth] 待编码的视频水平分辨率\footnote{由于YUV视频的内容只是视频每一帧的实际数据，不像我们常使用的一些被包装在容器中的视频格式，并没有存储视频的分辨率、帧率等参数。}，如320。
+\item[SourceWidth] 待编码视频的水平分辨率\footnote{由于YUV视频的内容只是视频每一帧的实际数据，不像我们常使用的一些被包装在容器中的视频格式，并没有存储视频的分辨率、帧率等参数。}，如320。
 \item[SourceHeight] 待编码视频的垂直分辨率，如240。
 \item[FrameRate] 待编码视频的帧率，如30.0。
 \item[FramesToBeEncoded] 从YUV文件的第一帧算起，一共需要编码的帧数，如623。
@@ -26,7 +26,7 @@
 \item[NumViewsMinusOne] 编码视频的路数减1，如7。
 \item[ViewOrder] 各路视频的编码顺序，如0-2-1-4-3-6-5-7。
 \end{description}
-其他还有一些对每一路视频的参考结构的限定，我们采用与JMVC的demo中相同的参考结构。
+其它还有一些对每一路视频的参考结构的限定，我们采用与JMVC的demo中相同的参考结构。
 \item 有了上述的配置文件MVC.cfg\footnote{文件名可以取任意合法的文件名，对扩展名没有要求。}之后就可以使用如下的命令来编码了\\H264AVCEncoderLibTestStatic.exe -vf MVC.cfg 0\\这个命令使用MVC.cfg中定义的参数对View 0进行编码。想要编码全部8路视频需要严格按照MVC.cfg中ViewOrder定义的顺序进行编码。
 \item 编码生成了8个H.264码流之后，我们需要将其打包成一个文件。MVCBitStreamAssemblerStatic就是这样的一个packer，它也需要一个配置文件，样例见\autoref{lst:assemblercfg}。其中定义了输入输出的文件名以及视频的路数。这里对输入文件的列举顺序没有要求，只要文件与视角对应即可。使用如下命令可以将码流打包：\\MVCBitStreamAssemblerStatic.exe -vf assembler.cfg
 \item 由于JMVC的编码器性能极其低下\footnote{我们编码这个分辨率为$320\times 240$，一共623帧的golf623.mvc总共耗费了近四个小时。}，我们推荐使用批处理来依次执行这些编码命令，免去每隔十几或几十分钟需要人工进行下一步编码命令的输入操作。一个批处理的样例见\autoref{lst:batchEncode}。
@@ -59,7 +59,7 @@ ffmpeg.exe -y -i The\_World\_of\_Pandora.mov -ss 15 -vframes 65 -s 1280x720 sing
 \section{实验结果及说明}
 \label{sec:optresult}
 
-我们用解码器解码\autoref{tab:testclips}中地每一个视频。优化前的基准性能见\autoref{tab:desktopBaseline}，Visual Studio自带的编译器编译出的解码器的性能见\autoref{tab:desktopMS}，ICC编译出来的解码器性能见\autoref{tab:desktopICC}。
+我们用解码器解码\autoref{tab:testclips}中的每一个视频。优化前的基准性能见\autoref{tab:desktopBaseline}，Visual Studio自带的编译器编译出的解码器的性能见\autoref{tab:desktopMS}，ICC编译出来的解码器性能见\autoref{tab:desktopICC}。
 
 参考《$\LaTeX$ and and the GNUPLOT Plotting Program》\cite{kotz1991latex}和《gnuplot 4.4: An Interactive Plotting Program》\cite{williams2009interactive}，用gnuplot\footnote{\url{http://www.gnuplot.info/}}对其中部分数据制图。
 % 对比
@@ -92,14 +92,14 @@ ffmpeg.exe -y -i The\_World\_of\_Pandora.mov -ss 15 -vframes 65 -s 1280x720 sing
 \end{center}
 \end{figure}
 
-经过优化后的解码器支持大于1的解码线程数。用Visual Studio内置的微软编译器编译的解码器用1到4个线程解码各个测试样例的性能与优化前的基准性能相比的加速比如\autoref{fig:speedupMS}所示。用ICC编译器编译的解码器的加速比如\autoref{fig:speedupICC}所示。更清晰的版本附在在本章末尾的\autoref{fig:speedupMS2}和\autoref{fig:speedupICC2}。
+经过优化后的解码器支持大于1的解码线程数。用Visual Studio内置的微软编译器编译的解码器用1到4个线程解码各个测试样例的性能与优化前的基准性能相比的加速比如\autoref{fig:speedupMS}所示。用ICC编译器编译的解码器的加速比如\autoref{fig:speedupICC}所示。更清晰的版本附在本章末尾的\autoref{fig:speedupMS2}和\autoref{fig:speedupICC2}。
 
 可以看出，几条折线的趋势都证明增加线程数能够加快解码速度，而几条折线在线程数为3和4时的变化又有所不同：
 \begin{itemize}
 \item dual144的加速比正好为线程数，这是一个巧合。不过也能部分说明当视频的并行性足够时，增加的线程资源能够被充分利用。
 \item golf25、golf25dual、dual288和race81这四个视频也能充分利用额外的资源。
-\item single144、single288、single576、single720这些单路的视频加速比都没有超2.6，这是由于一路视频的参考结构比较简单，没有视角间的参考。调度器很难安排出能够并行处理的大于2个任务。
-\item golf623的加速比低于预期，我们推测的原因时编码时的GOPSize设成4对于8路视频偏小了，造成并行程度不够。
+\item single144、single288、single576、single720这些单路的视频加速比都没有超过2.6，这是由于一路视频的参考结构比较简单，没有视角间的参考。调度器很难安排出能够并行处理的大于2个任务。
+\item golf623的加速比低于预期，我们推测原因在于编码时的GOPSize设成4对于8路视频偏小了，造成并行程度不够。
 \end{itemize}
 
 
@@ -118,7 +118,7 @@ ffmpeg.exe -y -i The\_World\_of\_Pandora.mov -ss 15 -vframes 65 -s 1280x720 sing
 \section{小结}
 \label{sec:sum6}
 
-本章详细介绍了测试解码器性能的视频准备工作；比较了优化后的解码器优化前的性能提升，不同的测试视频得到了不同的结果，但是总的趋势是符合逻辑的；数据表明优化后的解码器达到了先前设定的目标。
+本章详细介绍了测试解码器性能的视频准备工作；对比了优化后与优化前的解码器性能，不同的测试视频得到了不同的结果，但是总的趋势是符合逻辑的；数据表明优化后的解码器达到了先前设定的目标。
 
 
 \begin{figure}[htbp]

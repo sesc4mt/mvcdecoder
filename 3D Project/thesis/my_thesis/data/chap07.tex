@@ -47,7 +47,7 @@
 \section{调研阶段}
 \label{sec:3Dplayersurvey}
 
-想要实现3D播放器需要能够利用硬件资源，至少要能让3D Vision的眼镜工作起来。对此，我们进行了一段时间的调研，希望找到一些资料，了解如何调用这些资源。
+想要实现3D播放器就需要调用硬件资源，至少要能让3D Vision的眼镜工作起来。对此，我们进行了一段时间的调研，希望找到一些资料，了解如何调用这些资源。
 
 %nvapi
 
@@ -121,7 +121,7 @@ typedef struct _Nv_Stereo_Image_Header {
     unsigned int dwFlags;
 } NVSTEREOIMAGEHEADER, *LPNVSTEREOIMAGEHEADER;
 \end{lstlisting}
-\item 经过如上的操作，利用Direct3D的renderer渲染输出到显示器的图像就是立体图了(\autoref{fig:staticdualview})。注意实际透过眼镜是看不到重影的，两帧图像交替显示，眼镜快门相应地轮流遮挡视线，只能看到各自视角地图像。
+\item 经过如上的操作，利用Direct3D的renderer渲染输出到显示器的图像就是立体图了(\autoref{fig:staticdualview})。注意实际透过眼镜是看不到重影的，两帧图像交替显示，眼镜快门相应地轮流遮挡视线，只能看到各自视角的图像。
 \end{enumerate}
 
 
@@ -138,9 +138,9 @@ typedef struct _Nv_Stereo_Image_Header {
 \subsection{立体视频（图像序列）的显示}
 \label{subsec:motion3dimgdisp}
 
-视频的显示可以看做以一个预设的帧率FPS（frames per second）显示一个图像序列中的一张张图像。这里的帧率根据视频的制式不同而改变，一般都在在24或30左右。
+视频的显示可以看做以一个预设的帧率FPS（frames per second）显示一个图像序列中的一张张图像。这里的帧率根据视频的制式不同而改变，一般都在24或30左右。
 
-视频中的FPS于游戏中的FPS有所不同。在游戏中，往往追求硬件所能处理的最高的FPS，尽可能使画面更加流畅。而在视频回放的时候，有一个固定的帧率，必须要尽可能让实际帧率接近这个预设的帧率，才能满足视频的每一帧出现在时间轴上正确的位置上。然而，视频播放和游戏的渲染又有一个共同点，当硬件资源很有限的情况下，会将帧率降到很低，出现跳帧，这也是为了保证画面的时间正确性，避免出现像“慢动作回放”一样的效果。
+视频中的FPS与游戏中的FPS有所不同。在游戏中，往往追求硬件所能处理的最高的FPS，尽可能使画面更加流畅。而在视频回放的时候，有一个固定的帧率，必须要尽可能让实际帧率接近这个预设的帧率，才能满足视频的每一帧出现在时间轴的正确位置上。然而，视频播放和游戏的渲染又有一个共同点，当硬件资源很有限的情况下，会将帧率降到很低，出现跳帧，这也是为了保证画面的时间正确性，避免出现像“慢动作回放”一样的效果。
 
 综合以上的特点，我们就需要有一个控制帧率上限的机制，保证帧率在资源足够的时候不会超过预设值；同时要支持在资源受限时自动跳帧。
 
@@ -184,9 +184,9 @@ F_{n}=(t_{n}-t_{0})\times FPS
 \label{sec:3dplayerdemo}
 
 %功能
-我们实现地播放器具有如下功能：
+我们实现的播放器具有如下功能：
 \begin{description}
-\item[输入] 左右两个视点的图像序列文件名格式。实际采用的式“前缀＋序号＋后缀”的方式。前缀为文件相对路径，图像的文件名包含其对应的帧序号，后缀为文件扩展名。\\
+\item[输入] 左右两个视点的图像序列文件名格式。实验中采用了“前缀＋序号＋后缀”的方式。前缀为文件相对路径，图像的文件名包含其对应的帧序号，后缀为文件扩展名。\\
 	图像序列的总帧数$totalFrames$，见\autoref{algo:frameratecap}的第7行。\\
 	播放时的帧率$FPS$，见\autoref{algo:frameratecap}的第6行。
 \item[输出] 在显示器上输出如\autoref{fig:staticdualview}效果的立体图序列，帧率为$FPS$。通过3D眼镜可以看到立体视频。
@@ -200,7 +200,7 @@ F_{n}=(t_{n}-t_{0})\times FPS
 \item 有了JPEG和BMP的对比，我们认为磁盘I/O可能是一个瓶颈。对此，我们划分了500MB的内存作为一个RAMDISK。用HD Tune测试这个分区的读写速度和随机访问时间等指标如下：
 \begin{description}
 \item[Transfer Rate (Min)] 2751.7MB/sec
-\item[Transfer Rate (Mac)] 3363.2MB/sec
+\item[Transfer Rate (Max)] 3363.2MB/sec
 \item[Transfer Rate (Avg)] 3239.8MB/sec
 \item[Access Time (Avg)] 0.0ms
 \item[Burst Rate] 3670.7MB/sec
