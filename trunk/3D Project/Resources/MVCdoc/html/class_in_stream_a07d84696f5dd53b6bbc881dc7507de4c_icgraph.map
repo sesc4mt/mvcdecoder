@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_in_stream.html#a95ef1b146ee1d6ab6152001fc7719478" title="InStream::GetNalType" alt="" coords="268,5,417,35"/>
-<area shape="rect" id="node5" href="$class_in_stream.html#a0f4a6aeef628f4ec90e8ff9ea2e8b566" title="InStream::ReadPictureParameterSet" alt="" coords="227,59,459,88"/>
-<area shape="rect" id="node7" href="$class_in_stream.html#abaa60d112267ece8de9f303623abd79d" title="InStream::ReadSequenceParameterSet" alt="" coords="217,112,468,141"/>
-<area shape="rect" id="node9" href="$class_in_stream.html#a6369ed63c0fad1007f16e3e885825aea" title="InStream::ReadSliceHeader" alt="" coords="252,165,433,195"/>
-<area shape="rect" id="node11" href="$class_in_stream.html#ab40abe55d480a2dc42e484a8a7eb53a4" title="InStream::ReadSlicePrefix" alt="" coords="256,219,429,248"/>
-<area shape="rect" id="node13" href="$class_in_stream.html#abb8e8d2b7eef014e7b6285e130a19a0a" title="InStream::ReadSubsetSequenceParameterSet" alt="" coords="197,272,488,301"/>
-</map>

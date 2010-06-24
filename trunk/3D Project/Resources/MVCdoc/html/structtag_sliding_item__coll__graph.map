@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$struct_slice_parameters.html" title="{SliceParameters\n|+ IDR\l+ priority_id\l+ viewId\l+ timeId\l+ SliceType\l+ QP_Delta\l+ isAnchor\l+ isRef\l+ frameNum\l|}" alt="" coords="5,127,123,351"/>
-<area shape="rect" id="node4" href="$struct_coding_pict_info.html" title="{CodingPictInfo\n|+ PictType\l+ Size_Width\l+ Size_Height\l+ timeId\l+ viewId\l+ baseQP\l+ lumaStart\l+ chromaUStart\l+ chromaVStart\l+ Ref_Count\l+ Ref_Id\l+ ref_lumaStart\l+ ref_chromaUStart\l+ ref_chromaVStart\l+ ref_refVec\l+ refVec\l+ resultStream\l+ resultSize\l+ streamStart\l+ pictStatus\l+ log2nFrames\l+ MP\l+ Padding\l|}" alt="" coords="147,5,280,472"/>
-</map>

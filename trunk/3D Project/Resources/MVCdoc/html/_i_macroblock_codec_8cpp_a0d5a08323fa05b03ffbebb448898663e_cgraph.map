@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_i_predict_8cpp.html#a0988f72eec8591d5de83982c52e2b539" title="do_8x8_chroma_prediction" alt="" coords="233,5,409,35"/>
-<area shape="rect" id="node5" href="$_d_c_t_transform_8cpp.html#ada208d2366935100bdc2375bec45cc8f" title="idct2x2dc_c" alt="" coords="276,59,367,88"/>
-<area shape="rect" id="node7" href="$_d_c_t_transform_8cpp.html#a923ec91bf45c73e8baaf4e1bbad9a289" title="idct4x4_c" alt="" coords="283,112,360,141"/>
-<area shape="rect" id="node9" href="$_quantisation_8cpp.html#ad8c9813079b1dac9e7c7ab3d40a9a212" title="iquant2x2dc_c" alt="" coords="268,165,375,195"/>
-<area shape="rect" id="node11" href="$_quantisation_8cpp.html#a5985492c5cf012e5d7051f11fa86821c" title="iquant4x4_c" alt="" coords="276,219,367,248"/>
-<area shape="rect" id="node13" href="$_scanner_8h.html#aaa0324e6a8196220003838250cc45e75" title="unscan_zig_2x2" alt="" coords="264,272,379,301"/>
-<area shape="rect" id="node15" href="$_scanner_8h.html#a368d4bb8bcbc27ebecc3939c468dbcff" title="unscan_zig_4x4" alt="" coords="264,325,379,355"/>
-</map>
