@@ -21,7 +21,8 @@
 `\dots`
 for (int i = 0; i < hw; ++i){
 	for (int j = 2; j < hh - 3; ++j){
-		pif->vdata_half[0][i][j] = `\dots`; //some expression of vdata_half[][][] and vdata[][]
+		pif->vdata_half[0][i][j] = `\dots`; //some expression of vdata_half[][][]
+		                              //                  and vdata[][]
 	}
 }
 for (int i = 0; i < hw; ++i){
@@ -93,12 +94,6 @@ else
 
 % macroblockGetPred_axb 1031ms
 macroblockGetPred\_axb()函数耗时在\autoref{tab:vs10}和\autoref{tab:vtune10}中分别列在第4和第5位，也是耗时极多的函数。除了上一节提到的if语句改写成switch语句之外，我们还对其进行了循环内部的优化。
-
-% 循环变量的声明
-首先是循环变量的声明，根据我们的经验，编译器会对循环变量的声明放在循环体内部的写法做优化，至少在linux平台下的gcc会这样做。再加上将循环变量的声明放在循环内部可以避免变量在作用域之外被使用，所以我们将所有的循环变量声明全部移到循环体内部。
-
-其次，我们观察代码发现有多处如\autoref{lst: macroblockGetPred_axborig}所示的循环。
-
 \begin{lstlisting}[caption = {macroblockGetPred\_axb()函数片段（优化前）}, label = lst: macroblockGetPred_axborig]
 `\dots`
 for (i = 0; i < sizex; ++i)
@@ -106,6 +101,12 @@ for (i = 0; i < sizex; ++i)
 		pred->y[i+off_in_x][j+off_in_y] = pif->vdata_half[halfid][i+borderT][j+borderL];`\label{line:index}`
 `\dots`
 \end{lstlisting}
+
+% 循环变量的声明
+首先是循环变量的声明，根据我们的经验，编译器会对循环变量的声明放在循环体内部的写法做优化，至少在linux平台下的gcc会这样做。再加上将循环变量的声明放在循环内部可以避免变量在作用域之外被使用，所以我们将所有的循环变量声明全部移到循环体内部。
+
+其次，我们观察代码发现有多处如\autoref{lst: macroblockGetPred_axborig}所示的循环。
+
 
 这些循环内的操作有一个特点：使用包含循环变量的表达式作为数组访问的下标。
 
