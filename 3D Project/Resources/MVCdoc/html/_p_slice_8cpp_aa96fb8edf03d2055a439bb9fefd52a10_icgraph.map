@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_p_slice_8cpp.html#a18283e001efb21359ea20ded9bc27eff" title="macroblock_processor_PB" alt="" coords="203,32,381,61"/>
-<area shape="rect" id="node5" href="$_p_slice_8h.html#a08458d29753b64df9de1d40b748fdf0b" title="PSliceDecode" alt="" coords="429,32,533,61"/>
-<area shape="rect" id="node7" href="$decodeframe__b_8cpp.html#a01538ccadc6514406416e19a6ebae001" title="DoProcessDB" alt="" coords="581,5,685,35"/>
-<area shape="rect" id="node11" href="$decodeframe__p_8cpp.html#a49c748890470e9cac9c8f01ad19d562c" title="DoProcessDP" alt="" coords="581,59,685,88"/>
-<area shape="rect" id="node9" href="$decodeframe__b_8cpp.html#a501cfeae2c764e7998e9c9f2240748bd" title="decodeframe_b" alt="" coords="735,5,844,35"/>
-<area shape="rect" id="node13" href="$decodeframe__p_8cpp.html#a7f615124f132ce807e3850fff0997a9a" title="decodeframe_p" alt="" coords="735,59,844,88"/>
-</map>

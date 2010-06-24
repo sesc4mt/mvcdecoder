@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_codec_info_8cpp.html" title="MVCDecoder/CodecInfo.cpp" alt="" coords="5,83,189,112"/>
-<area shape="rect" id="node5" href="$_frame_controller___parallel_8cpp.html" title="MVCDecoder/Controller/FrameController_Parallel.cpp" alt="" coords="213,83,541,112"/>
-<area shape="rect" id="node8" href="$_raw_data_8h.html" title="MVCDecoder/RawData.h" alt="" coords="589,83,755,112"/>
-<area shape="rect" id="node10" href="$_in_stream_8cpp.html" title="MVCDecoder/Stream/InStream.cpp" alt="" coords="779,83,1005,112"/>
-<area shape="rect" id="node12" href="$_task_dispatcher_8cpp.html" title="MVCDecoder/TaskDispatcher.cpp" alt="" coords="1029,83,1248,112"/>
-</map>

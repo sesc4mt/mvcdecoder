@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_array_list.html#acb53d54675318c94332d0ec8b6819eb3" title="ArrayList::clear" alt="" coords="363,5,472,35"/>
-<area shape="rect" id="node5" href="$class_in_stream.html#acab96485c6978e95e5ef747ebedf09d6" title="InStream::Comment" alt="" coords="348,59,487,88"/>
-<area shape="rect" id="node7" href="$class_array_list.html#a7b5376678a9b5af0e0ed913fbe04b902" title="ArrayList::push_back" alt="" coords="345,112,489,141"/>
-<area shape="rect" id="node9" href="$class_in_stream.html#a07d84696f5dd53b6bbc881dc7507de4c" title="InStream::ReadCode" alt="" coords="347,165,488,195"/>
-<area shape="rect" id="node11" href="$class_in_stream.html#a340f8fadf6dfc7d17236b15285bba96f" title="InStream::ReadFlag" alt="" coords="349,219,485,248"/>
-<area shape="rect" id="node13" href="$class_in_stream.html#a8e8daf92cb96e583662cafdaf211093c" title="InStream::ReadUvlc" alt="" coords="349,272,485,301"/>
-</map>

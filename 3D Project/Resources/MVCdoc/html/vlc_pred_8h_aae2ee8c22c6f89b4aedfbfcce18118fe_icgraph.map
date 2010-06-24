@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_p_b_c_a_v_l_c_8cpp.html#a4a7eda3fa0f5c1be7775144cf14ff34e" title="calc_B_skip_refs" alt="" coords="151,5,271,35"/>
-<area shape="rect" id="node5" href="$_p_b_c_a_v_l_c_8h.html#a9d0d19143ae03ff45bcfbf2c9980b11b" title="macroblock_read_cavlc_B_slice" alt="" coords="321,32,527,61"/>
-<area shape="rect" id="node7" href="$_p_slice_8h.html#a08458d29753b64df9de1d40b748fdf0b" title="PSliceDecode" alt="" coords="576,32,680,61"/>
-<area shape="rect" id="node9" href="$decodeframe__b_8cpp.html#a01538ccadc6514406416e19a6ebae001" title="DoProcessDB" alt="" coords="728,5,832,35"/>
-<area shape="rect" id="node13" href="$decodeframe__p_8cpp.html#a49c748890470e9cac9c8f01ad19d562c" title="DoProcessDP" alt="" coords="728,59,832,88"/>
-<area shape="rect" id="node11" href="$decodeframe__b_8cpp.html#a501cfeae2c764e7998e9c9f2240748bd" title="decodeframe_b" alt="" coords="881,5,991,35"/>
-<area shape="rect" id="node15" href="$decodeframe__p_8cpp.html#a7f615124f132ce807e3850fff0997a9a" title="decodeframe_p" alt="" coords="881,59,991,88"/>
-</map>

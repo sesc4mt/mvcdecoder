@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_i_predict_8cpp.html#a361d9df978bf786c596b971b88dce5b5" title="best_16x16_luma_prediction" alt="" coords="244,5,431,35"/>
-<area shape="rect" id="node5" href="$_i_predict_8cpp.html#a90c2994887c21abf5825c0262aa283c5" title="do_16x16_luma_prediction" alt="" coords="483,32,659,61"/>
-<area shape="rect" id="node8" href="$_i_predict_8cpp.html#a65ac7f68565585d305395aff3fdba4ae" title="enum_16x16_luma_prediction" alt="" coords="240,109,435,139"/>
-</map>

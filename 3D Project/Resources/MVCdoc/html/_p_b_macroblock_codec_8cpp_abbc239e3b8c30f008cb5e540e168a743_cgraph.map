@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_d_c_t_transform_8cpp.html#a923ec91bf45c73e8baaf4e1bbad9a289" title="idct4x4_c" alt="" coords="281,5,359,35"/>
-<area shape="rect" id="node5" href="$_d_c_t_transform_8cpp.html#aab666ffcda45ced06a5b5853c52c94bf" title="idct8x8" alt="" coords="288,59,352,88"/>
-<area shape="rect" id="node7" href="$_quantisation_8cpp.html#a5985492c5cf012e5d7051f11fa86821c" title="iquant4x4_c" alt="" coords="275,112,365,141"/>
-<area shape="rect" id="node9" href="$_quantisation_8cpp.html#a6096528e049a8f3c2a463926db773e42" title="iquant8x8_c" alt="" coords="275,165,365,195"/>
-<area shape="rect" id="node11" href="$_scanner_8h.html#a368d4bb8bcbc27ebecc3939c468dbcff" title="unscan_zig_4x4" alt="" coords="263,219,377,248"/>
-</map>

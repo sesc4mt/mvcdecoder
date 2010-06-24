@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_frame_controller___parallel.html#a51792b5fe70db6d99be59c110dbc3041" title="FrameController_Parallel::GetNextProcessing" alt="" coords="272,5,557,35"/>
-<area shape="rect" id="node5" href="$class_sliding_window.html#a012dbfd5902b37d5ce3d37a115d9a96e" title="SlidingWindow::InitPictInfo" alt="" coords="328,59,501,88"/>
-<area shape="rect" id="node7" href="$class_raw_data.html#ac1edea5cb8ba51fd52541b415ba36ec2" title="RawData::ProcessData" alt="" coords="336,112,493,141"/>
-<area shape="rect" id="node9" href="$class_in_stream.html#a6369ed63c0fad1007f16e3e885825aea" title="InStream::ReadSliceHeader" alt="" coords="324,165,505,195"/>
-</map>

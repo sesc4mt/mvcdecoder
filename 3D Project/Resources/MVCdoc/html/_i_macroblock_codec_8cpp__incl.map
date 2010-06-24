@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node4" href="$_common_8h.html" title="Common.h" alt="" coords="312,160,397,190"/>
-<area shape="rect" id="node15" href="$_d_c_t_transform_8h.html" title="Codec/DCTTransform.h" alt="" coords="24,83,178,112"/>
-<area shape="rect" id="node18" href="$_quantisation_8h.html" title="Codec/Quantisation.h" alt="" coords="202,83,349,112"/>
-<area shape="rect" id="node21" href="$_scanner_8h.html" title="Codec/Scanner.h" alt="" coords="373,83,496,112"/>
-<area shape="rect" id="node24" href="$_i_predict_8h.html" title="Codec/IFrame/IPredict.h" alt="" coords="520,83,682,112"/>
-<area shape="rect" id="node27" href="$_consts4_standard_8h.html" title="Codec/Consts4Standard.h" alt="" coords="706,83,880,112"/>
-<area shape="rect" id="node13" href="$_types_8h.html" title="Types.h" alt="" coords="453,238,520,267"/>
-</map>
