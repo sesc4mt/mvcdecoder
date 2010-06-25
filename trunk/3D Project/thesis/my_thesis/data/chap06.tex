@@ -4,6 +4,8 @@
 %%% TeX-master: t
 %%% End: 
 
+\cleardoublepage
+
 \chapter{解码器性能优化实验结果}
 \label{cha:optresultandanalysis}
 
@@ -92,7 +94,7 @@ ffmpeg.exe -y -i The\_World\_of\_Pandora.mov -ss 15 -vframes 65 -s 1280x720 sing
 \end{center}
 \end{figure}
 
-经过优化后的解码器支持大于1的解码线程数。用Visual Studio内置的微软编译器编译的解码器用1到4个线程解码各个测试样例的性能与优化前的基准性能相比的加速比如\autoref{fig:speedupMS}所示。用ICC编译器编译的解码器的加速比如\autoref{fig:speedupICC}所示。更清晰的版本附在本章末尾的\autoref{fig:speedupMS2}和\autoref{fig:speedupICC2}。
+经过优化后的解码器支持大于1的解码线程数。用Visual Studio内置的微软编译器编译的解码器用1到4个线程解码各个测试样例的性能与优化前的基准性能相比的加速比如\autoref{fig:speedupMS}所示。用ICC编译器编译的解码器的加速比如\autoref{fig:speedupICC}所示。%更清晰的版本附在本章末尾的\autoref{fig:speedupMS2}和\autoref{fig:speedupICC2}。
 
 可以看出，几条折线的趋势都证明增加线程数能够加快解码速度，而几条折线在线程数为3和4时的变化又有所不同：
 \begin{itemize}
@@ -103,7 +105,8 @@ ffmpeg.exe -y -i The\_World\_of\_Pandora.mov -ss 15 -vframes 65 -s 1280x720 sing
 \end{itemize}
 
 
-对部分测试视频的解码帧率如\autoref{fig:viewerfps}。这里计算的帧率是同时解码N路时的帧率，也就是观看者实际看到的等效帧率。对两路视频而言，要达到30fps的等效帧率，必须能够实际解码速率达到60fps。
+对部分测试视频的解码帧率如\autoref{fig:viewerfps}%，本章末尾附有同样内容，幅面更大的\autoref{fig:viewerfps2}
+。这里计算的帧率是同时解码N路时的帧率，也就是观看者实际看到的等效帧率。对两路视频而言，要达到30fps的等效帧率，必须能够实际解码速率达到60fps。
 
 从图中可以看到，对于实验目标针对的$720\times 576$的两路视频，只要线程数超过一个，就已经达到并超过了设定的实验目标。
 
@@ -113,7 +116,7 @@ single576$_{MS}$这段测试视频的预测结构蕴含的并行性不高，多�
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\textwidth]{viewerfps}
+\includegraphics[height =\textwidth,angle=-90]{viewerfps}
 \caption{部分视频解码的等效帧率}
 \label{fig:viewerfps}
 \end{center}
@@ -125,22 +128,29 @@ single576$_{MS}$这段测试视频的预测结构蕴含的并行性不高，多�
 本章详细介绍了测试解码器性能的视频准备工作，利用ffmpeg和JMVC生成了用于测试的单路、两路和八路的视频片段；利用解码器对这些视频片段进行解码，记录解码耗时，得到解码器的性能；对比了优化后与优化前的解码器性能，解码不同的测试视频得到了不同的结果，但是总的趋势是符合逻辑的{\pozhehao}当测试视频的预测结构蕴含更大的并行性时，多线程解码就能获得更高的加速比；测试数据还证明了优化后的解码器达到了先前设定的实时解码$720\times576$两路立体视频的优化目标。
 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=\textwidth]{speedupMS}
-\caption{解码不同视频的加速比(使用MS编译器)}
-\label{fig:speedupMS2}
-\end{center}
-\end{figure}
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=\textwidth]{viewerfps}
+%\caption{部分视频解码的等效帧率}
+%\label{fig:viewerfps2}
+%\end{center}
+%\end{figure}
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=\textwidth]{speedupMS}
+%\caption{解码不同视频的加速比(使用MS编译器)}
+%\label{fig:speedupMS2}
+%\end{center}
+%\end{figure}
+%
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=\textwidth]{speedupICC}
+%\caption{解码不同视频的加速比(使用ICC编译器)}
+%\label{fig:speedupICC2}
+%\end{center}
+%\end{figure}
 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=\textwidth]{speedupICC}
-\caption{解码不同视频的加速比(使用ICC编译器)}
-\label{fig:speedupICC2}
-\end{center}
-\end{figure}
-
-
-\cleardoublepage
