@@ -4,6 +4,8 @@
 %%% TeX-master: t
 %%% End: 
 
+\cleardoublepage
+
 \chapter{解码器单核性能优化}
 \label{cha:singlecoreopt}
 
@@ -158,4 +160,4 @@ Intel Application Note AP-922\cite{intel-ap922}说明了如何用MMX和SSE加速
 \label{sec:sum4}
 本章主要介绍了对解码器进行优化，包括逻辑重构、循环优化、汇编优化以及其它（例如编译器）的优化。这些优化主要提高了单核解码性能。尽管有了这些优化，解码器的单核性能仍然不能满足需求，所以还需要做并行化，这一部分在下一章中展开。
 
-\cleardoublepage
+

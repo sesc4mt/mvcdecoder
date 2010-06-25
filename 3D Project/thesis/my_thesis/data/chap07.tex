@@ -4,6 +4,8 @@
 %%% TeX-master: t
 %%% End: 
 
+\cleardoublepage
+
 \chapter{3D播放器设计与实现}
 \label{cha:3Dplayerdesignandrealization}
 
@@ -203,8 +205,8 @@ F_{n}=(t_{n}-t_{0})\times FPS
 \item[Transfer Rate (Max)] 3363.2MB/sec
 \item[Transfer Rate (Avg)] 3239.8MB/sec
 \item[Access Time (Avg)] 0.0ms
-\item[Burst Rate] 3670.7MB/sec
-\item[CPU Usage] 0.0\%
+%\item[Burst Rate] 3670.7MB/sec
+%\item[CPU Usage] 0.0\%
 \end{description}
 将图像序列存放在该RAMDISK分区上再次进行测试，帧率依然在21fps左右。所以磁盘IO被排除在瓶颈之外。
 \item 此时我们决定用性能分析工具分析我们的程序，找出其中时间耗费最多的部分，将该部分打散成多个小的函数再次分析。如此循环了几次，终于找到性能瓶颈所在：我们调用D3D中的D3DXLoadSurfaceFromFile()函数两次，分别将左右眼的图像绘制到渲染的表面上。而这两个函数调用占用了整个程序运行总时间的95\%以上。
@@ -217,4 +219,4 @@ F_{n}=(t_{n}-t_{0})\times FPS
 
 本章介绍了3D播放器设计实现的全部过程，从调研阶段遇到的各种问题、种种尝试，到发现一种可能的解决方案，然后经过一些尝试，最终借助Direct3D实现了支持3D Vision套装的立体视频播放器。不过依然存在一定的性能瓶颈，有待进一步解决。
 
-\cleardoublepage
+
