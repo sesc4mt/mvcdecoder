@@ -1,0 +1,24 @@
+\begin{denotation}
+
+\item[CABAC] 基于上下文的自适应二进制算数编码（context-based adaptive binary arithmetic coding）：CABAC的设计概念对于发生机率 > 0.5 的事件有效地编码，改进了传统霍夫曼编码法需要大量的乘法运算的问题，而在效能与压缩效率上取得相当大的改善空间。。
+\item[CAVLC] 基于上下文的自适应变长编码（context-based adaptive variable-length code）：适用于DCT转换后的整系数矩阵，经过zig-zag顺序扫描之后，在最高层的系数通常为+1/-1；又取得以zig-zag顺序扫描时，连续出现的0，或非零系数的总数、最后一个非零系数前零的数目等参数，作为查表时的坐标。CAVLC针对不同的块大小设计了不同的查找表，对各种不同的上下文, 使用不同的查找表进行编码，有效缩短输出比特流长度。。
+
+\item[GOP]	group of pictures：一个GOP中所有帧的参有固定的参考结构；下一个GOP中的帧与上一个GOP中的帧的参考结构一样。
+
+\item[MB]	宏块 (macroblock)：一个16$\times$16的亮度块采样和对应的两个色度块采样。
+
+\item[MVC]	多视点视频编解码 (multi-view video coding)。
+
+\item[NAL unit] 网络抽象层（network abstract layer）单元：一个语法结构，包含后续数据的类型指示和所包含的字节数，数据以RBSP形式出现，必要时其中还散布有防伪字节。
+
+%\item[RBSB] 原始字节序列载荷（raw byte sequence payload）：一个语法结构，包含整数个封装于NAL单元中的字节。RBSP或为空，或包含具有数字比特串形式的语法元素，其后跟随RBSP截止位和零个或多个连续的0值比特。RBSP的截止位为值为1的比特，RBSP的数据比特串的结束位置可以通过搜索RBSP中最后一个非零比特（截止位）得到。
+%
+%\item[SODB] 数据比特串（string of data bits）：表示语法元素的若干比特位的序列，出现在RBSP截止位之前。在SODB中，最左边的比特位是第一位并且是最高位，最右边的则是最后一位且是最低位。
+%
+%\item[语法元素] syntax element：比特流中表示数据的元素。
+%
+%\item[语法结构] syntax structure：零个或多个语法元素按照规定顺序一起出现在比特流中。
+
+\end{denotation}
+
+\cleardoublepage
