@@ -1,0 +1,72 @@
+\begin{longtable}[\textwidth]{lrrr}
+\caption{VS2008性能分析报告(前50项记录)}\label{tab:vs50}\\
+\toprule[1.5pt]
+\multicolumn{1}{l}{\textbf{Function Name}} & \multicolumn{1}{r}{\textbf{Exclusive Time (ms)}} & \multicolumn{1}{r}{\textbf{\% in Function}} & \multicolumn{1}{r}{\textbf{Num. of Calls}}\\
+\midrule[1.5pt]
+\endfirsthead
+\multicolumn{4}{c}{续表~\thetable\hskip1em VS2008性能分析报告(前50项记录)}\\
+\toprule[1.5pt]
+\multicolumn{1}{l}{\textbf{Function Name}} & \multicolumn{1}{r}{\textbf{Exclusive Time (ms)}} & \multicolumn{1}{r}{\textbf{\% in Function}} & \multicolumn{1}{r}{\textbf{Num. of Calls}}\\ 
+\midrule[1pt]
+\endhead
+\hline
+\multicolumn{4}{r}{续下页}
+\endfoot
+\endlastfoot
+\rowcolor{gray!15}
+    macroblockPredGetDataUV		&	341.01	&	14.41	&	2,632,478	\\
+    macroblockPredGetDataY		&	321.37	&	13.58	&	1,316,239	\\ \rowcolor{gray!15}
+    idct4x4\_c						&	316.86	&	13.39	&	5,028,960	\\
+    macroblockGetPred\_axb		&	181.29	&	7.66 	&	1,316,239	\\ \rowcolor{gray!15}
+    macroblockGetPred\_axb\_Bi	&	133.42	&	5.64 	&	571,944		\\
+    macroblockGetHalfPel			&	132.47	&	5.6  	&	148,552		\\ \rowcolor{gray!15}
+    Filter							&	101.92	&	4.31 	&	6,215,308	\\
+    addMacroblockdata				&	85.36	&	3.61 	&	184,171		\\ \rowcolor{gray!15}
+    iquant4x4\_c					&	84.48	&	3.57 	&	5,028,960	\\
+    macroblockPBPrediction		&	70.95	&	3    	&	184,171		\\ \rowcolor{gray!15}
+    macroblockInterDecode\_uv		&	67.05	&	2.83 	&	184,171		\\
+    save\_data\_pb					&	55.32	&	2.34 	&	200,880		\\ \rowcolor{gray!15}
+    macroblockInterDecode16x16\_y	&	54.34	&	2.3  	&	184,171		\\
+    PSliceDecode					&	46.38	&	1.96 	&	124			\\ \rowcolor{gray!15}
+    macroblock\_read\_cavlc\_B\_slice	
+    								&	37.29	&	1.58 	&	155,520		\\
+    GetHorFilterStrength			&	33.17	&	1.4  	&	3,325,760	\\ \rowcolor{gray!15}
+    CheckMvDataB					&	31.38	&	1.33 	&	4,916,240	\\
+    getRefXYDirectB				&	29.65	&	1.25 	&	582,670		\\ \rowcolor{gray!15}
+    macroblockIntraDecode\_y		&	26.87	&	1.14 	&	26,429		\\
+    FilterMB						&	25.12	&	1.06 	&	210,600		\\ \rowcolor{gray!15}
+    calc\_B\_skip\_refs			&	19.16	&	0.81 	&	145,645		\\
+    LumaHorFilter					&	14.34	&	0.61 	&	210,600		\\ \rowcolor{gray!15}
+    macroblockIntraDecode\_uv		&	14.24	&	0.6  	&	26,429		\\
+    setRefXY						&	13.78	&	0.58 	&	2,330,348	\\ \rowcolor{gray!15}
+    LumaVerFilter					&	13.15	&	0.56 	&	210,600		\\
+    unscan\_zig\_4x4				&	12.03	&	0.51 	&	2,942,655	\\ \rowcolor{gray!15}
+    GetVerFilterStrength			&	9.82 	&	0.42 	&	3,325,760	\\
+    macroblock\_read\_cavlc\_P\_slice	
+    								&	8.92 	&	0.38 	&	45,360		\\ \rowcolor{gray!15}
+    ChromaHorFilter				&	8.86 	&	0.37 	&	210,600		\\
+    ChromaVerFilter				&	8.7  	&	0.37 	&	210,600		\\ \rowcolor{gray!15}
+    require\_data\_decode			&	7.72 	&	0.33 	&	184,171		\\
+    macroblock\_processor\_PB		&	6.02 	&	0.25 	&	4,464		\\ \rowcolor{gray!15}
+    iquant2x2dc\_c					&	4.67 	&	0.2  	&	421,200		\\
+    idct8x8							&	4.66 	&	0.2  	&	21,920		\\ \rowcolor{gray!15}
+    T264dec\_mb\_read\_intra\_cavlc
+    								&	3.61 	&	0.15 	&	26,429		\\
+    CheckMvDataP					&	2.55 	&	0.11 	&	868,249		\\ \rowcolor{gray!15}
+    block\_residual\_read\_cavlc	&	2.52 	&	0.11 	&	106,045		\\
+    ISliceDecode					&	2.47 	&	0.1  	&	6			\\ \rowcolor{gray!15}
+    save\_data						&	2.46 	&	0.1  	&	9,720		\\
+    iquant8x8\_c					&	2.31 	&	0.1  	&	21,920		\\ \rowcolor{gray!15}
+    process\_data\_decode\_I		&	2.31 	&	0.1  	&	26,429		\\
+    macroblock\_read\_cavlc\_PB\_y
+    								&	2.26 	&	0.1  	&	15,493		\\ \rowcolor{gray!15}
+    do\_16x16\_luma\_prediction	&	2.24 	&	0.09 	&	21,359		\\
+    idct4x4dc\_c					&	2.01 	&	0.08 	&	21,359		\\ \rowcolor{gray!15}
+    \_printf						&	1.89 	&	0.08 	&	911			\\
+    do\_8x8\_luma\_prediction		&	1.85 	&	0.08 	&	15,560		\\ \rowcolor{gray!15}
+    require\_data\_decode\_I		&	1.6  	&	0.07 	&	26,429		\\
+    macroblock\_read\_cavlc\_uv	&	1.31 	&	0.06 	&	41,922		\\ \rowcolor{gray!15}
+    do\_8x8\_chroma\_prediction	&	1.29 	&	0.05 	&	52,858		\\
+    BitstreamGetBits				&	1.21 	&	0.05 	&	580,391		\\
+    \bottomrule[1.5pt]
+\end{longtable}
